@@ -21,11 +21,9 @@ layer of indirection. I use property injection:
 Make sure your initializer sets the default to the real UIAlertController:
 
 ```obj-c
-- (id)initWithCoder:(NSCoder *)coder
-{
+- (id)initWithCoder:(NSCoder *)coder {
     self = [super initWithCoder:coder];
-    if (self)
-    {
+    if (self) {
         _alertControllerClass = [UIAlertController class];
     }
     return self;
@@ -36,10 +34,10 @@ Then modify any calls to UIAlertController that you want to make unit-testable.
 Replace `UIAlertController` with `self.alertControllerClass`:
 
 ```obj-c
-    UIAlertController *alertController =
-            [self.alertControllerClass alertControllerWithTitle:@"Title"
-                                                        message:@"Message"
-                                                 preferredStyle:UIAlertControllerStyleAlert];
+UIAlertController *alertController =
+        [self.alertControllerClass alertControllerWithTitle:@"Title"
+                                                    message:@"Message"
+                                             preferredStyle:UIAlertControllerStyleAlert];
 ```
  
 
