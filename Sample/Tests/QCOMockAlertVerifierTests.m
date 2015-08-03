@@ -1,17 +1,18 @@
-#import "ViewController.h"
+#import "QCOMockAlertVerifier.h"
 
 #import "QCOMockAlertController.h"
-#import "QCOMockAlertVerifier.h"
+#import "ViewController.h"
+
 #import <XCTest/XCTest.h>
 
 #define HC_SHORTHAND
 #import <OCHamcrestIOS/OCHamcrestIOS.h>
 
 
-@interface ViewControllerTests_Internal : XCTestCase
+@interface QCOMockAlertVerifierTests : XCTestCase
 @end
 
-@implementation ViewControllerTests_Internal
+@implementation QCOMockAlertVerifierTests
 {
     ViewController *sut;
 }

@@ -19,7 +19,7 @@
 		0E748FC71B6585F900B29AED /* QCOMockAlertVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E748FC51B6585F900B29AED /* QCOMockAlertVerifier.m */; };
 		609E900BACCCAAA0C993E78D /* UIViewController+QCOMockAlerts.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E99971B2448166EE4FB1A /* UIViewController+QCOMockAlerts.m */; };
 		609E99FAD779BE4CB8239938 /* QCOMockPopoverPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E98A7662248F6000E04D0 /* QCOMockPopoverPresentationController.m */; };
-		609E9B6130BB35372D63FC0F /* ViewControllerTests-Internal.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E95F254C2B32C24D9C980 /* ViewControllerTests-Internal.m */; };
+		609E9B6130BB35372D63FC0F /* QCOMockAlertVerifierTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E95F254C2B32C24D9C980 /* QCOMockAlertVerifierTests.m */; };
 		609E9B9655FA38A27FF87A2D /* ViewControllerTests-OCHamcrest.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E9314897852939CA75DFB /* ViewControllerTests-OCHamcrest.m */; };
 		609E9F1E2EC677BB9B797C36 /* ViewControllerTests-PlainXCTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E96C55D81BBE28BD81748 /* ViewControllerTests-PlainXCTest.m */; };
 /* End PBXBuildFile section */
@@ -55,7 +55,7 @@
 		0E748FC41B6585F900B29AED /* QCOMockAlertVerifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCOMockAlertVerifier.h; sourceTree = "<group>"; };
 		0E748FC51B6585F900B29AED /* QCOMockAlertVerifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCOMockAlertVerifier.m; sourceTree = "<group>"; };
 		609E9314897852939CA75DFB /* ViewControllerTests-OCHamcrest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewControllerTests-OCHamcrest.m"; sourceTree = "<group>"; };
-		609E95F254C2B32C24D9C980 /* ViewControllerTests-Internal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewControllerTests-Internal.m"; sourceTree = "<group>"; };
+		609E95F254C2B32C24D9C980 /* QCOMockAlertVerifierTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCOMockAlertVerifierTests.m; sourceTree = "<group>"; };
 		609E96A3FEE32752639F8CED /* QCOMockPopoverPresentationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCOMockPopoverPresentationController.h; sourceTree = "<group>"; };
 		609E96C55D81BBE28BD81748 /* ViewControllerTests-PlainXCTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewControllerTests-PlainXCTest.m"; sourceTree = "<group>"; };
 		609E98A7662248F6000E04D0 /* QCOMockPopoverPresentationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCOMockPopoverPresentationController.m; sourceTree = "<group>"; };
@@ -131,7 +131,7 @@
 				0E748FAE1B6543A000B29AED /* Supporting Files */,
 				609E9314897852939CA75DFB /* ViewControllerTests-OCHamcrest.m */,
 				609E96C55D81BBE28BD81748 /* ViewControllerTests-PlainXCTest.m */,
-				609E95F254C2B32C24D9C980 /* ViewControllerTests-Internal.m */,
+				609E95F254C2B32C24D9C980 /* QCOMockAlertVerifierTests.m */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -287,7 +287,7 @@
 				609E900BACCCAAA0C993E78D /* UIViewController+QCOMockAlerts.m in Sources */,
 				609E99FAD779BE4CB8239938 /* QCOMockPopoverPresentationController.m in Sources */,
 				0E34FEA21B6892AA00FF90A6 /* UIAlertAction+QCOMockAlerts.m in Sources */,
-				609E9B6130BB35372D63FC0F /* ViewControllerTests-Internal.m in Sources */,
+				609E9B6130BB35372D63FC0F /* QCOMockAlertVerifierTests.m in Sources */,
 				609E9F1E2EC677BB9B797C36 /* ViewControllerTests-PlainXCTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
