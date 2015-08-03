@@ -4,7 +4,6 @@
 // Test support
 #import "QCOMockAlertController.h"
 #import "QCOMockAlertVerifier.h"
-#import "QCOMockPopoverPresentationController.h"
 #import <XCTest/XCTest.h>
 
 

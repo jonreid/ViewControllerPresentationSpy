@@ -1,9 +1,8 @@
-//  MockUIAlertController by Jon Reid, http://qualitycoding.org/about/
+//  MockAlerts by Jon Reid, http://qualitycoding.org/about/
 //  Copyright 2015 Jonathan M. Reid. See LICENSE.txt
 
 #import <UIKit/UIKit.h>
 
-@class QCOMockPopoverPresentationController;
 
 extern NSString *const QCOMockAlertControllerPresentedNotification;
 

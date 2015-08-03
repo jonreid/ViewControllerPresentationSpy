@@ -3,7 +3,7 @@
 
 #import <UIKit/UIKit.h>
 
-@class QCOMockPopoverPresentationController;
+#import "QCOMockPopoverPresentationController.h"    // Convenience import instead of @class
 
 
 /**
