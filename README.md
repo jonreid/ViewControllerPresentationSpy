@@ -53,14 +53,13 @@ In other tests:
 3. Invoke the code to create and present your alert or action sheet.
 
 Information about the alert or action sheet is then available through the
-`QCOMockAlertVerifier`.
+[QCOMockAlertVerifier](https://github.com/jonreid/MockUIAlertController/blob/master/TestSupport/QCOMockAlertVerifier.h).
 
 For example, here's a test verifying the title. `sut` is the system under test
 in the test fixture.
 
 ```obj-c
-- (void)testShowAlert_PresentedAlertShouldHaveTitle
-{
+- (void)testShowAlert_PresentedAlertShouldHaveTitle {
     QCOMockAlertVerifier *alertVerifier = [[QCOMockAlertVerifier alloc] init];
     sut.alertControllerClass = [QCOMockAlertController class];
 
@@ -78,5 +77,5 @@ is not required.
 ## How can I invoke the block associated with a UIAlertAction?
 
 Go through steps 1, 2 and 3 above to present your alert or action sheet using
-QCOMockAlertController. Then call `-executeActionForButtonWithTitle:` on your
-QCOMockAlertVerifier with the button title.
+`QCOMockAlertController`. Then call `-executeActionForButtonWithTitle:` on your
+`QCOMockAlertVerifier` with the button title.
