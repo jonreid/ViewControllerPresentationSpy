@@ -1,0 +1,488 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0E34FEA21B6892AA00FF90A6 /* UIAlertAction+QCOMockAlerts.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E34FEA11B6892AA00FF90A6 /* UIAlertAction+QCOMockAlerts.m */; };
+		0E748F971B6543A000B29AED /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E748F961B6543A000B29AED /* main.m */; };
+		0E748F9A1B6543A000B29AED /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E748F991B6543A000B29AED /* AppDelegate.m */; };
+		0E748F9D1B6543A000B29AED /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E748F9C1B6543A000B29AED /* ViewController.m */; };
+		0E748FA01B6543A000B29AED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E748F9E1B6543A000B29AED /* Main.storyboard */; };
+		0E748FA21B6543A000B29AED /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E748FA11B6543A000B29AED /* Images.xcassets */; };
+		0E748FBD1B65487700B29AED /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0E748FBB1B65487700B29AED /* LICENSE.txt */; };
+		0E748FBE1B65487700B29AED /* OCHamcrestIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E748FBC1B65487700B29AED /* OCHamcrestIOS.framework */; };
+		0E748FC61B6585F900B29AED /* QCOMockAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E748FC31B6585F900B29AED /* QCOMockAlertController.m */; };
+		0E748FC71B6585F900B29AED /* QCOMockAlertVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E748FC51B6585F900B29AED /* QCOMockAlertVerifier.m */; };
+		609E900BACCCAAA0C993E78D /* UIViewController+QCOMockAlerts.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E99971B2448166EE4FB1A /* UIViewController+QCOMockAlerts.m */; };
+		609E99FAD779BE4CB8239938 /* QCOMockPopoverPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E98A7662248F6000E04D0 /* QCOMockPopoverPresentationController.m */; };
+		609E9B6130BB35372D63FC0F /* ViewControllerTests-Internal.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E95F254C2B32C24D9C980 /* ViewControllerTests-Internal.m */; };
+		609E9B9655FA38A27FF87A2D /* ViewControllerTests-OCHamcrest.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E9314897852939CA75DFB /* ViewControllerTests-OCHamcrest.m */; };
+		609E9F1E2EC677BB9B797C36 /* ViewControllerTests-PlainXCTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E96C55D81BBE28BD81748 /* ViewControllerTests-PlainXCTest.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0E748FAB1B6543A000B29AED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0E748F891B6543A000B29AED /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0E748F901B6543A000B29AED;
+			remoteInfo = MockAlertsExample;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0E34FEA01B6892AA00FF90A6 /* UIAlertAction+QCOMockAlerts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertAction+QCOMockAlerts.h"; sourceTree = "<group>"; };
+		0E34FEA11B6892AA00FF90A6 /* UIAlertAction+QCOMockAlerts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertAction+QCOMockAlerts.m"; sourceTree = "<group>"; };
+		0E748F911B6543A000B29AED /* MockUIAlertControllerSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MockUIAlertControllerSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E748F951B6543A000B29AED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0E748F961B6543A000B29AED /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0E748F981B6543A000B29AED /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		0E748F991B6543A000B29AED /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		0E748F9B1B6543A000B29AED /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		0E748F9C1B6543A000B29AED /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		0E748F9F1B6543A000B29AED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0E748FA11B6543A000B29AED /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		0E748FAA1B6543A000B29AED /* MockUIAlertControllerSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MockUIAlertControllerSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E748FAF1B6543A000B29AED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0E748FBB1B65487700B29AED /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		0E748FBC1B65487700B29AED /* OCHamcrestIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OCHamcrestIOS.framework; sourceTree = "<group>"; };
+		0E748FC21B6585F900B29AED /* QCOMockAlertController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCOMockAlertController.h; sourceTree = "<group>"; };
+		0E748FC31B6585F900B29AED /* QCOMockAlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCOMockAlertController.m; sourceTree = "<group>"; };
+		0E748FC41B6585F900B29AED /* QCOMockAlertVerifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCOMockAlertVerifier.h; sourceTree = "<group>"; };
+		0E748FC51B6585F900B29AED /* QCOMockAlertVerifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCOMockAlertVerifier.m; sourceTree = "<group>"; };
+		609E9314897852939CA75DFB /* ViewControllerTests-OCHamcrest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewControllerTests-OCHamcrest.m"; sourceTree = "<group>"; };
+		609E95F254C2B32C24D9C980 /* ViewControllerTests-Internal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewControllerTests-Internal.m"; sourceTree = "<group>"; };
+		609E96A3FEE32752639F8CED /* QCOMockPopoverPresentationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCOMockPopoverPresentationController.h; sourceTree = "<group>"; };
+		609E96C55D81BBE28BD81748 /* ViewControllerTests-PlainXCTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewControllerTests-PlainXCTest.m"; sourceTree = "<group>"; };
+		609E98A7662248F6000E04D0 /* QCOMockPopoverPresentationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCOMockPopoverPresentationController.m; sourceTree = "<group>"; };
+		609E99971B2448166EE4FB1A /* UIViewController+QCOMockAlerts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+QCOMockAlerts.m"; sourceTree = "<group>"; };
+		609E9DFDC91CB102931D83C9 /* UIViewController+QCOMockAlerts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+QCOMockAlerts.h"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0E748F8E1B6543A000B29AED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0E748FA71B6543A000B29AED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E748FBE1B65487700B29AED /* OCHamcrestIOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0E748F881B6543A000B29AED = {
+			isa = PBXGroup;
+			children = (
+				0E748F931B6543A000B29AED /* SampleApp */,
+				0E748FAD1B6543A000B29AED /* Tests */,
+				0E748F921B6543A000B29AED /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0E748F921B6543A000B29AED /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0E748F911B6543A000B29AED /* MockUIAlertControllerSample.app */,
+				0E748FAA1B6543A000B29AED /* MockUIAlertControllerSampleTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0E748F931B6543A000B29AED /* SampleApp */ = {
+			isa = PBXGroup;
+			children = (
+				0E748F981B6543A000B29AED /* AppDelegate.h */,
+				0E748F991B6543A000B29AED /* AppDelegate.m */,
+				0E748F9B1B6543A000B29AED /* ViewController.h */,
+				0E748F9C1B6543A000B29AED /* ViewController.m */,
+				0E748F9E1B6543A000B29AED /* Main.storyboard */,
+				0E748FA11B6543A000B29AED /* Images.xcassets */,
+				0E748F941B6543A000B29AED /* Supporting Files */,
+			);
+			path = SampleApp;
+			sourceTree = "<group>";
+		};
+		0E748F941B6543A000B29AED /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0E748F951B6543A000B29AED /* Info.plist */,
+				0E748F961B6543A000B29AED /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0E748FAD1B6543A000B29AED /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				0E748FC11B6585F900B29AED /* TestSupport */,
+				0E748FBA1B65487700B29AED /* OCHamcrest-4.1.1 */,
+				0E748FAE1B6543A000B29AED /* Supporting Files */,
+				609E9314897852939CA75DFB /* ViewControllerTests-OCHamcrest.m */,
+				609E96C55D81BBE28BD81748 /* ViewControllerTests-PlainXCTest.m */,
+				609E95F254C2B32C24D9C980 /* ViewControllerTests-Internal.m */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		0E748FAE1B6543A000B29AED /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0E748FAF1B6543A000B29AED /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0E748FBA1B65487700B29AED /* OCHamcrest-4.1.1 */ = {
+			isa = PBXGroup;
+			children = (
+				0E748FBB1B65487700B29AED /* LICENSE.txt */,
+				0E748FBC1B65487700B29AED /* OCHamcrestIOS.framework */,
+			);
+			path = "OCHamcrest-4.1.1";
+			sourceTree = "<group>";
+		};
+		0E748FC11B6585F900B29AED /* TestSupport */ = {
+			isa = PBXGroup;
+			children = (
+				0E748FC21B6585F900B29AED /* QCOMockAlertController.h */,
+				0E748FC31B6585F900B29AED /* QCOMockAlertController.m */,
+				0E748FC41B6585F900B29AED /* QCOMockAlertVerifier.h */,
+				0E748FC51B6585F900B29AED /* QCOMockAlertVerifier.m */,
+				609E96A3FEE32752639F8CED /* QCOMockPopoverPresentationController.h */,
+				609E98A7662248F6000E04D0 /* QCOMockPopoverPresentationController.m */,
+				0E34FEA01B6892AA00FF90A6 /* UIAlertAction+QCOMockAlerts.h */,
+				0E34FEA11B6892AA00FF90A6 /* UIAlertAction+QCOMockAlerts.m */,
+				609E9DFDC91CB102931D83C9 /* UIViewController+QCOMockAlerts.h */,
+				609E99971B2448166EE4FB1A /* UIViewController+QCOMockAlerts.m */,
+			);
+			name = TestSupport;
+			path = ../../TestSupport;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0E748F901B6543A000B29AED /* MockUIAlertControllerSample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0E748FB41B6543A000B29AED /* Build configuration list for PBXNativeTarget "MockUIAlertControllerSample" */;
+			buildPhases = (
+				0E748F8D1B6543A000B29AED /* Sources */,
+				0E748F8E1B6543A000B29AED /* Frameworks */,
+				0E748F8F1B6543A000B29AED /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MockUIAlertControllerSample;
+			productName = MockAlertsExample;
+			productReference = 0E748F911B6543A000B29AED /* MockUIAlertControllerSample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0E748FA91B6543A000B29AED /* MockUIAlertControllerSampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0E748FB71B6543A000B29AED /* Build configuration list for PBXNativeTarget "MockUIAlertControllerSampleTests" */;
+			buildPhases = (
+				0E748FA61B6543A000B29AED /* Sources */,
+				0E748FA71B6543A000B29AED /* Frameworks */,
+				0E748FA81B6543A000B29AED /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0E748FAC1B6543A000B29AED /* PBXTargetDependency */,
+			);
+			name = MockUIAlertControllerSampleTests;
+			productName = MockAlertsExampleTests;
+			productReference = 0E748FAA1B6543A000B29AED /* MockUIAlertControllerSampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0E748F891B6543A000B29AED /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = "Jon Reid";
+				TargetAttributes = {
+					0E748F901B6543A000B29AED = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					0E748FA91B6543A000B29AED = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = 0E748F901B6543A000B29AED;
+					};
+				};
+			};
+			buildConfigurationList = 0E748F8C1B6543A000B29AED /* Build configuration list for PBXProject "MockUIAlertControllerSample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0E748F881B6543A000B29AED;
+			productRefGroup = 0E748F921B6543A000B29AED /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0E748F901B6543A000B29AED /* MockUIAlertControllerSample */,
+				0E748FA91B6543A000B29AED /* MockUIAlertControllerSampleTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0E748F8F1B6543A000B29AED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E748FA01B6543A000B29AED /* Main.storyboard in Resources */,
+				0E748FA21B6543A000B29AED /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0E748FA81B6543A000B29AED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E748FBD1B65487700B29AED /* LICENSE.txt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0E748F8D1B6543A000B29AED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E748F9D1B6543A000B29AED /* ViewController.m in Sources */,
+				0E748F9A1B6543A000B29AED /* AppDelegate.m in Sources */,
+				0E748F971B6543A000B29AED /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0E748FA61B6543A000B29AED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E748FC71B6585F900B29AED /* QCOMockAlertVerifier.m in Sources */,
+				0E748FC61B6585F900B29AED /* QCOMockAlertController.m in Sources */,
+				609E9B9655FA38A27FF87A2D /* ViewControllerTests-OCHamcrest.m in Sources */,
+				609E900BACCCAAA0C993E78D /* UIViewController+QCOMockAlerts.m in Sources */,
+				609E99FAD779BE4CB8239938 /* QCOMockPopoverPresentationController.m in Sources */,
+				0E34FEA21B6892AA00FF90A6 /* UIAlertAction+QCOMockAlerts.m in Sources */,
+				609E9B6130BB35372D63FC0F /* ViewControllerTests-Internal.m in Sources */,
+				609E9F1E2EC677BB9B797C36 /* ViewControllerTests-PlainXCTest.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0E748FAC1B6543A000B29AED /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0E748F901B6543A000B29AED /* MockUIAlertControllerSample */;
+			targetProxy = 0E748FAB1B6543A000B29AED /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0E748F9E1B6543A000B29AED /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0E748F9F1B6543A000B29AED /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0E748FB21B6543A000B29AED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0E748FB31B6543A000B29AED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0E748FB51B6543A000B29AED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SampleApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = MockUIAlertControllerSample;
+			};
+			name = Debug;
+		};
+		0E748FB61B6543A000B29AED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SampleApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = MockUIAlertControllerSample;
+			};
+			name = Release;
+		};
+		0E748FB81B6543A000B29AED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(PROJECT_DIR)/Tests/OCHamcrest-4.1.1",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = MockUIAlertControllerSampleTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MockUIAlertControllerSample.app/MockUIAlertControllerSample";
+			};
+			name = Debug;
+		};
+		0E748FB91B6543A000B29AED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(PROJECT_DIR)/Tests/OCHamcrest-4.1.1",
+				);
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = MockUIAlertControllerSampleTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MockUIAlertControllerSample.app/MockUIAlertControllerSample";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0E748F8C1B6543A000B29AED /* Build configuration list for PBXProject "MockUIAlertControllerSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0E748FB21B6543A000B29AED /* Debug */,
+				0E748FB31B6543A000B29AED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0E748FB41B6543A000B29AED /* Build configuration list for PBXNativeTarget "MockUIAlertControllerSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0E748FB51B6543A000B29AED /* Debug */,
+				0E748FB61B6543A000B29AED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0E748FB71B6543A000B29AED /* Build configuration list for PBXNativeTarget "MockUIAlertControllerSampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0E748FB81B6543A000B29AED /* Debug */,
+				0E748FB91B6543A000B29AED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0E748F891B6543A000B29AED /* Project object */;
+}
