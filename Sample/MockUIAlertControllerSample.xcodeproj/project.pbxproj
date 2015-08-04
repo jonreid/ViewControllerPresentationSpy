@@ -434,6 +434,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Tests/OCHamcrest-4.1.1",
 				);
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -454,6 +456,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Tests/OCHamcrest-4.1.1",
 				);
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = MockUIAlertControllerSampleTests;

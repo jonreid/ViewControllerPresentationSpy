@@ -4,8 +4,12 @@ osx_image: xcode6.4
 before_install:
   - brew update
   - if brew outdated | grep -qx xctool; then brew upgrade xctool; fi
+  - sudo easy_install cpp-coveralls
 
 script:
   - xctool test -project Sample/MockUIAlertControllerSample.xcodeproj -scheme MockUIAlertControllerSample -sdk iphonesimulator8.4 -destination "platform=iOS Simulator,name=iPhone 5,OS=8.4"
   - xctool test -project Sample/MockUIAlertControllerSample.xcodeproj -scheme MockUIAlertControllerSample -sdk iphonesimulator8.4 -destination "platform=iOS Simulator,name=iPhone 5s,OS=8.4"
   - xctool test -project Sample/MockUIAlertControllerSample.xcodeproj -scheme MockUIAlertControllerSample -sdk iphonesimulator8.4 -destination "platform=iOS Simulator,name=iPad Air,OS=8.4"
+
+after_success:
+  - ./coveralls.rb
