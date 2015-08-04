@@ -1,0 +1,9 @@
+language: objective-c
+
+before_install:
+  - brew update
+  - if brew outdated | grep -qx xctool; then brew upgrade xctool; fi
+
+script:
+  - xctool test -project Sample/MockUIAlertControllerSample.xcodeproj -scheme libochamcrest -sdk iphonesimulator8.4 -destination "platform=iOS Simulator,name=iPhone 5,OS=8.4"
+  - xctool test -project Sample/MockUIAlertControllerSample.xcodeproj -scheme libochamcrest -sdk iphonesimulator8.4 -destination "platform=iOS Simulator,name=iPhone 5s,OS=8.4"
