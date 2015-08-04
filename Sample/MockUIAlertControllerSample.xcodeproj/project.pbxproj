@@ -13,7 +13,6 @@
 		0E748F9D1B6543A000B29AED /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E748F9C1B6543A000B29AED /* ViewController.m */; };
 		0E748FA01B6543A000B29AED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E748F9E1B6543A000B29AED /* Main.storyboard */; };
 		0E748FA21B6543A000B29AED /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E748FA11B6543A000B29AED /* Images.xcassets */; };
-		0E748FBD1B65487700B29AED /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0E748FBB1B65487700B29AED /* LICENSE.txt */; };
 		0E748FBE1B65487700B29AED /* OCHamcrestIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E748FBC1B65487700B29AED /* OCHamcrestIOS.framework */; };
 		0E748FC61B6585F900B29AED /* QCOMockAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E748FC31B6585F900B29AED /* QCOMockAlertController.m */; };
 		0E748FC71B6585F900B29AED /* QCOMockAlertVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E748FC51B6585F900B29AED /* QCOMockAlertVerifier.m */; };
@@ -260,7 +259,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E748FBD1B65487700B29AED /* LICENSE.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
