@@ -1,5 +1,7 @@
 # MockUIAlertController
 
+[![Build Status](https://travis-ci.org/jonreid/MockUIAlertController.svg?branch=master)](https://travis-ci.org/jonreid/MockUIAlertController)
+
 MockUIAlertController lets you mock iOS alerts and action sheets for unit tests,
 based on the UIAlertController introduced for iOS 8.
 
