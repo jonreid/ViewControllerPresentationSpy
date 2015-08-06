@@ -1,6 +1,6 @@
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController <UIAlertViewDelegate, UIActionSheetDelegate>
+@interface ViewController : UIViewController
 
 @property (nonatomic, strong) Class alertControllerClass;
 @property (nonatomic, strong) IBOutlet UIButton *showAlertButton;
