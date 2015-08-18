@@ -2,8 +2,6 @@ language: objective-c
 osx_image: xcode6.4
 
 before_install:
-  - brew update
-  - if brew outdated | grep -qx xctool; then brew upgrade xctool; fi
   - sudo easy_install cpp-coveralls
 
 script:
