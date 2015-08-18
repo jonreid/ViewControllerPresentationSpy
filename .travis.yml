@@ -8,6 +8,5 @@ script:
   - xctool test -project Sample/MockUIAlertControllerSample.xcodeproj -scheme MockUIAlertControllerSample -sdk iphonesimulator8.4 -destination "platform=iOS Simulator,name=iPhone 5,OS=8.4"
   - xctool test -project Sample/MockUIAlertControllerSample.xcodeproj -scheme MockUIAlertControllerSample -sdk iphonesimulator8.4 -destination "platform=iOS Simulator,name=iPad Air,OS=8.4"
 
-
 after_success:
   - ./coveralls.rb --exclude-folder Sample
