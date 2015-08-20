@@ -61,7 +61,8 @@ For example, here's a test verifying the title. `sut` is the system under test
 in the test fixture.
 
 ```obj-c
-- (void)testShowAlert_AlertShouldHaveTitle {
+- (void)testShowAlert_AlertShouldHaveTitle
+{
     QCOMockAlertVerifier *alertVerifier = [[QCOMockAlertVerifier alloc] init];
     sut.alertControllerClass = [QCOMockAlertController class];
 
