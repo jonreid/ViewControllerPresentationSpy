@@ -2,15 +2,12 @@
 
 @implementation ViewController
 
-- (id)initWithCoder:(NSCoder *)coder
+- (Class)alertControllerClass
 {
-    self = [super initWithCoder:coder];
-    if (self)
-    {
-        // Use the real UIAlertController by default. Make sure you have a test verifying this.
+    // Use the real UIAlertController by default. Make sure you have a test verifying this.
+    if (!_alertControllerClass)
         _alertControllerClass = [UIAlertController class];
-    }
-    return self;
+    return _alertControllerClass;
 }
 
 - (IBAction)showAlert:(id)sender

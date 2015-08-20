@@ -15,21 +15,20 @@ No actual alerts are presented. This means:
 ## What do I need to change in production code?
 
 To support redirection between UIAlertController and the mock, we need an extra
-layer of indirection. I use property injection:
+layer of indirection. I use property injection with a lazy getter that defaults
+to the real UIAlertController:
 
 ```obj-c
 @property (nonatomic, strong) Class alertControllerClass;
 ```
 
-Make sure your initializer sets the default to the real UIAlertController:
-
 ```obj-c
-- (id)initWithCoder:(NSCoder *)coder {
-    self = [super initWithCoder:coder];
-    if (self) {
+- (Class)alertControllerClass
+{
+    if (!_alertControllerClass) {
         _alertControllerClass = [UIAlertController class];
     }
-    return self;
+    return _alertControllerClass;
 }
 ```
 
@@ -62,7 +61,7 @@ For example, here's a test verifying the title. `sut` is the system under test
 in the test fixture.
 
 ```obj-c
-- (void)testShowAlert_PresentedAlertShouldHaveTitle {
+- (void)testShowAlert_AlertShouldHaveTitle {
     QCOMockAlertVerifier *alertVerifier = [[QCOMockAlertVerifier alloc] init];
     sut.alertControllerClass = [QCOMockAlertController class];
 
