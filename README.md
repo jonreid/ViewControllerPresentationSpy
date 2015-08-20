@@ -6,6 +6,9 @@
 MockUIAlertController lets you mock iOS alerts and action sheets for unit tests,
 based on the UIAlertController introduced for iOS 8.
 
+(For old UIAlertView or UIActionSheet mocking, use
+[MockUIAlertViewActionSheet](https://github.com/jonreid/MockUIAlertViewActionSheet).)
+
 No actual alerts are presented. This means:
 
 * The workflow doesn't pause for an action to be selected
