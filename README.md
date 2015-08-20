@@ -23,8 +23,7 @@ to the real UIAlertController:
 ```
 
 ```obj-c
-- (Class)alertControllerClass
-{
+- (Class)alertControllerClass {
     if (!_alertControllerClass) {
         _alertControllerClass = [UIAlertController class];
     }
