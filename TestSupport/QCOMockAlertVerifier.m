@@ -4,7 +4,6 @@
 #import "QCOMockAlertVerifier.h"
 
 #import "QCOMockAlertController.h"
-#import "QCOMockPopoverPresentationController.h"
 #import "UIAlertAction+QCOMockAlerts.h"
 #import "UIViewController+QCOMockAlerts.h"
 
