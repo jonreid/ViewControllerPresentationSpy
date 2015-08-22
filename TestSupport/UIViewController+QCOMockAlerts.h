@@ -3,6 +3,8 @@
 
 #import <UIKit/UIKit.h>
 
+extern NSString *const QCOMockViewControllerAnimatedKey;
+
 
 @interface UIViewController (QCOMockAlerts)
 

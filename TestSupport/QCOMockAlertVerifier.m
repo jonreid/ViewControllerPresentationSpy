@@ -45,7 +45,7 @@
 {
     UIAlertController *alertController = notification.object;
     self.presentedCount += 1;
-    self.animated = notification.userInfo[@"animated"];
+    self.animated = notification.userInfo[QCOMockViewControllerAnimatedKey];
     self.title = alertController.title;
     self.message = alertController.message;
     self.preferredStyle = alertController.qcoMock_preferredAlertStyle;
