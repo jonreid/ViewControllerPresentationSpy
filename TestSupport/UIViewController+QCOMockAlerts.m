@@ -9,7 +9,7 @@
 
 @implementation UIViewController (QCOMockAlerts)
 
-+ (void)qcoMockAlerts_swizzle
++ (void)qcoMock_swizzle
 {
     [self qcoMockAlerts_replaceInstanceMethod:@selector(presentViewController:animated:completion:)
                                    withMethod:@selector(qcoMockAlerts_presentViewController:animated:completion:)];

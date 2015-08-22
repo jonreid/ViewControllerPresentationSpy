@@ -19,7 +19,7 @@ static char const * const mockPopoverKey = "qcoMockAlerts_mockPopover";
 
 @implementation UIAlertController (QCOMockAlerts)
 
-+ (void)qcoMockAlerts_swizzle
++ (void)qcoMock_swizzle
 {
     [self qcoMockAlerts_replaceClassMethod:@selector(alertControllerWithTitle:message:preferredStyle:)
                                 withMethod:@selector(qcoMockAlerts_alertControllerWithTitle:message:preferredStyle:)];

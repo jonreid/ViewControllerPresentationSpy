@@ -9,7 +9,7 @@
 
 @implementation UIAlertAction (QCOMockAlerts)
 
-+ (void)qcoMockAlerts_swizzle
++ (void)qcoMock_swizzle
 {
     [self qcoMockAlerts_replaceClassMethod:@selector(actionWithTitle:style:handler:)
                                 withMethod:@selector(qcoMockAlerts_actionWithTitle:style:handler:)];
@@ -20,13 +20,13 @@
                                       handler:(void (^)(UIAlertAction *action))handler
 {
     UIAlertAction *action = [self qcoMockAlerts_actionWithTitle:title style:style handler:handler];
-    objc_setAssociatedObject(action, @selector(qco_handler), handler, OBJC_ASSOCIATION_COPY_NONATOMIC);
+    objc_setAssociatedObject(action, @selector(qcoMock_handler), handler, OBJC_ASSOCIATION_COPY_NONATOMIC);
     return action;
 }
 
-- (void (^)(UIAlertAction *action))qco_handler
+- (void (^)(UIAlertAction *action))qcoMock_handler
 {
-    return objc_getAssociatedObject(self, @selector(qco_handler));
+    return objc_getAssociatedObject(self, @selector(qcoMock_handler));
 }
 
 @end

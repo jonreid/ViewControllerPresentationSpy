@@ -6,6 +6,6 @@
 
 @interface UIViewController (QCOMockAlerts)
 
-+ (void)qcoMockAlerts_swizzle;
++ (void)qcoMock_swizzle;
 
 @end

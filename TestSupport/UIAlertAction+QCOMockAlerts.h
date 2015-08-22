@@ -6,8 +6,8 @@
 
 @interface UIAlertAction (QCOMockAlerts)
 
-+ (void)qcoMockAlerts_swizzle;
++ (void)qcoMock_swizzle;
 
-- (void (^)(UIAlertAction *action))qco_handler;
+- (void (^)(UIAlertAction *action))qcoMock_handler;
 
 @end
