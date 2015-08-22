@@ -4,6 +4,7 @@
 #import "UIAlertController+QCOMockAlerts.h"
 
 #import "QCOMockPopoverPresentationController.h"
+#import "NSObject+QCOMockAlerts.h"
 #import <objc/runtime.h>
 
 
@@ -21,17 +22,10 @@ static char const * const mockPopoverKey = "qcoMockAlerts_mockPopover";
 
 + (void)qcoMockAlerts_swizzle
 {
-    SEL originalFactorySelector = @selector(alertControllerWithTitle:message:preferredStyle:);
-    SEL swizzledFactorySelector = @selector(qcoMockAlerts_alertControllerWithTitle:message:preferredStyle:);
-    Method originalFactoryMethod = class_getClassMethod(self, originalFactorySelector);
-    Method swizzledFactoryMethod = class_getClassMethod(self, swizzledFactorySelector);
-    method_exchangeImplementations(originalFactoryMethod, swizzledFactoryMethod);
-
-    SEL originalPopoverSelector = @selector(popoverPresentationController);
-    SEL swizzledPopoverSelector = @selector(qcoMockAlerts_popoverPresentationController);
-    Method originalPopoverMethod = class_getInstanceMethod(self, originalPopoverSelector);
-    Method swizzledPopoverMethod = class_getInstanceMethod(self, swizzledPopoverSelector);
-    method_exchangeImplementations(originalPopoverMethod, swizzledPopoverMethod);
+    [self replaceClassMethod:@selector(alertControllerWithTitle:message:preferredStyle:)
+                  withMethod:@selector(qcoMockAlerts_alertControllerWithTitle:message:preferredStyle:)];
+    [self replaceInstanceMethod:@selector(popoverPresentationController)
+                     withMethod:@selector(qcoMockAlerts_popoverPresentationController)];
 }
 
 + (instancetype)qcoMockAlerts_alertControllerWithTitle:(NSString *)title

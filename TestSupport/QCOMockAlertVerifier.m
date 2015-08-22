@@ -23,19 +23,22 @@
                                                  selector:@selector(alertControllerWasPresented:)
                                                      name:QCOMockAlertControllerPresentedNotification
                                                    object:nil];
-        [UIAlertAction qcoMockAlerts_swizzle];
-        [UIAlertController qcoMockAlerts_swizzle];
-        [UIViewController qcoMockAlerts_swizzle];
+        [self swizzleMockAlerts];
     }
     return self;
 }
 
 - (void)dealloc
 {
+    [self swizzleMockAlerts];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)swizzleMockAlerts
+{
     [UIAlertAction qcoMockAlerts_swizzle];
     [UIAlertController qcoMockAlerts_swizzle];
     [UIViewController qcoMockAlerts_swizzle];
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)alertControllerWasPresented:(NSNotification *)notification

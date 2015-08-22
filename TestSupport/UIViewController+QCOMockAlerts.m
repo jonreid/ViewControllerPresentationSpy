@@ -4,6 +4,7 @@
 #import "UIViewController+QCOMockAlerts.h"
 
 #import "UIAlertController+QCOMockAlerts.h"
+#import "NSObject+QCOMockAlerts.h"
 #import <objc/runtime.h>
 
 
@@ -11,11 +12,8 @@
 
 + (void)qcoMockAlerts_swizzle
 {
-    SEL originalSelector = @selector(presentViewController:animated:completion:);
-    SEL swizzledSelector = @selector(qcoMockAlerts_presentViewController:animated:completion:);
-    Method originalMethod = class_getInstanceMethod(self, originalSelector);
-    Method swizzledMethod = class_getInstanceMethod(self, swizzledSelector);
-    method_exchangeImplementations(originalMethod, swizzledMethod);
+    [self replaceInstanceMethod:@selector(presentViewController:animated:completion:)
+                     withMethod:@selector(qcoMockAlerts_presentViewController:animated:completion:)];
 }
 
 - (void)qcoMockAlerts_presentViewController:(UIViewController *)viewControllerToPresent
