@@ -48,7 +48,7 @@
     self.animated = notification.userInfo[@"animated"];
     self.title = alertController.title;
     self.message = alertController.message;
-    self.preferredStyle = alertController.qcoMockAlerts_preferredAlertStyle;
+    self.preferredStyle = alertController.qcoMock_preferredAlertStyle;
     self.actions = alertController.actions;
     self.popover = (id)alertController.popoverPresentationController;
 }

@@ -8,7 +8,7 @@ extern NSString *const QCOMockAlertControllerPresentedNotification;
 
 @interface UIAlertController (QCOMockAlerts)
 
-@property (nonatomic, assign) UIAlertControllerStyle qcoMockAlerts_preferredAlertStyle;
+@property (nonatomic, assign) UIAlertControllerStyle qcoMock_preferredAlertStyle;
 
 + (void)qcoMock_swizzle;
 

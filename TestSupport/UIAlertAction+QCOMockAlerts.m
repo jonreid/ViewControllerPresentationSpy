@@ -11,15 +11,15 @@
 
 + (void)qcoMock_swizzle
 {
-    [self qcoMockAlerts_replaceClassMethod:@selector(actionWithTitle:style:handler:)
-                                withMethod:@selector(qcoMockAlerts_actionWithTitle:style:handler:)];
+    [self qcoMock_replaceClassMethod:@selector(actionWithTitle:style:handler:)
+                          withMethod:@selector(qcoMock_actionWithTitle:style:handler:)];
 }
 
-+ (instancetype)qcoMockAlerts_actionWithTitle:(NSString *)title
-                                        style:(UIAlertActionStyle)style
-                                      handler:(void (^)(UIAlertAction *action))handler
++ (instancetype)qcoMock_actionWithTitle:(NSString *)title
+                                  style:(UIAlertActionStyle)style
+                                handler:(void (^)(UIAlertAction *action))handler
 {
-    UIAlertAction *action = [self qcoMockAlerts_actionWithTitle:title style:style handler:handler];
+    UIAlertAction *action = [self qcoMock_actionWithTitle:title style:style handler:handler];
     objc_setAssociatedObject(action, @selector(qcoMock_handler), handler, OBJC_ASSOCIATION_COPY_NONATOMIC);
     return action;
 }

@@ -11,13 +11,13 @@
 
 + (void)qcoMock_swizzle
 {
-    [self qcoMockAlerts_replaceInstanceMethod:@selector(presentViewController:animated:completion:)
-                                   withMethod:@selector(qcoMockAlerts_presentViewController:animated:completion:)];
+    [self qcoMock_replaceInstanceMethod:@selector(presentViewController:animated:completion:)
+                             withMethod:@selector(qcoMock_presentViewController:animated:completion:)];
 }
 
-- (void)qcoMockAlerts_presentViewController:(UIViewController *)viewControllerToPresent
-                                   animated:(BOOL)flag
-                                 completion:(void (^)(void))completion
+- (void)qcoMock_presentViewController:(UIViewController *)viewControllerToPresent
+                             animated:(BOOL)flag
+                           completion:(void (^)(void))completion
 {
     NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
     [nc postNotificationName:QCOMockAlertControllerPresentedNotification

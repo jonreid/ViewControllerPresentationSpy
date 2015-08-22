@@ -10,7 +10,7 @@
 NSString *const QCOMockAlertControllerPresentedNotification = @"QCOMockAlertControllerPresentedNotification";
 
 @interface UIAlertController ()
-@property (nonatomic, strong) QCOMockPopoverPresentationController *qcoMockAlerts_mockPopover;
+@property (nonatomic, strong) QCOMockPopoverPresentationController *qcoMock_mockPopover;
 @end
 
 
@@ -18,15 +18,15 @@ NSString *const QCOMockAlertControllerPresentedNotification = @"QCOMockAlertCont
 
 + (void)qcoMock_swizzle
 {
-    [self qcoMockAlerts_replaceClassMethod:@selector(alertControllerWithTitle:message:preferredStyle:)
-                                withMethod:@selector(qcoMockAlerts_alertControllerWithTitle:message:preferredStyle:)];
-    [self qcoMockAlerts_replaceInstanceMethod:@selector(popoverPresentationController)
-                                   withMethod:@selector(qcoMockAlerts_popoverPresentationController)];
+    [self qcoMock_replaceClassMethod:@selector(alertControllerWithTitle:message:preferredStyle:)
+                          withMethod:@selector(qcoMock_alertControllerWithTitle:message:preferredStyle:)];
+    [self qcoMock_replaceInstanceMethod:@selector(popoverPresentationController)
+                             withMethod:@selector(qcoMock_popoverPresentationController)];
 }
 
-+ (instancetype)qcoMockAlerts_alertControllerWithTitle:(NSString *)title
-                                               message:(NSString *)message
-                                        preferredStyle:(UIAlertControllerStyle)preferredStyle
++ (instancetype)qcoMock_alertControllerWithTitle:(NSString *)title
+                                         message:(NSString *)message
+                                  preferredStyle:(UIAlertControllerStyle)preferredStyle
 {
     return [[self alloc] initQCOMockWithTitle:title message:message preferredStyle:preferredStyle];
 }
@@ -40,36 +40,36 @@ NSString *const QCOMockAlertControllerPresentedNotification = @"QCOMockAlertCont
     {
         self.title = title;
         self.message = message;
-        self.qcoMockAlerts_preferredAlertStyle = style;
-        self.qcoMockAlerts_mockPopover = [[QCOMockPopoverPresentationController alloc] init];
+        self.qcoMock_preferredAlertStyle = style;
+        self.qcoMock_mockPopover = [[QCOMockPopoverPresentationController alloc] init];
     }
     return self;
 }
 
-- (UIPopoverPresentationController *)qcoMockAlerts_popoverPresentationController
+- (UIPopoverPresentationController *)qcoMock_popoverPresentationController
 {
-    return (id)self.qcoMockAlerts_mockPopover;
+    return (id)self.qcoMock_mockPopover;
 }
 
-- (UIAlertControllerStyle)qcoMockAlerts_preferredAlertStyle
+- (UIAlertControllerStyle)qcoMock_preferredAlertStyle
 {
-    NSNumber *style = objc_getAssociatedObject(self, @selector(qcoMockAlerts_preferredAlertStyle));
+    NSNumber *style = objc_getAssociatedObject(self, @selector(qcoMock_preferredAlertStyle));
     return (UIAlertControllerStyle)style.intValue;
 }
 
-- (void)setQcoMockAlerts_preferredAlertStyle:(UIAlertControllerStyle)style
+- (void)setQcoMock_preferredAlertStyle:(UIAlertControllerStyle)style
 {
-    objc_setAssociatedObject(self, @selector(qcoMockAlerts_preferredAlertStyle), @(style), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, @selector(qcoMock_preferredAlertStyle), @(style), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (QCOMockPopoverPresentationController *)qcoMockAlerts_mockPopover
+- (QCOMockPopoverPresentationController *)qcoMock_mockPopover
 {
-    return objc_getAssociatedObject(self, @selector(qcoMockAlerts_mockPopover));
+    return objc_getAssociatedObject(self, @selector(qcoMock_mockPopover));
 }
 
-- (void)setQcoMockAlerts_mockPopover:(QCOMockPopoverPresentationController *)popover
+- (void)setQcoMock_mockPopover:(QCOMockPopoverPresentationController *)popover
 {
-    objc_setAssociatedObject(self, @selector(qcoMockAlerts_mockPopover), popover, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, @selector(qcoMock_mockPopover), popover, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 @end
