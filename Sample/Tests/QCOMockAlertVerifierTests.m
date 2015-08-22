@@ -1,6 +1,5 @@
 #import "QCOMockAlertVerifier.h"
 
-#import "QCOMockAlertController.h"
 #import "ViewController.h"
 
 #import <XCTest/XCTest.h>
@@ -28,7 +27,6 @@
 - (void)testShowAlert_TryingToGetStyleForNonexistentButton_ShouldThrowInternalInconsistency
 {
     QCOMockAlertVerifier *alertVerifier = [[QCOMockAlertVerifier alloc] init];
-    sut.alertControllerClass = [QCOMockAlertController class];
     [sut showAlert:nil];
 
     XCTAssertThrowsSpecificNamed(
@@ -40,7 +38,6 @@
 - (void)testShowAlert_TryingToGetStyleForNonexistentButton_ShouldThrowExceptionWithReason
 {
     QCOMockAlertVerifier *alertVerifier = [[QCOMockAlertVerifier alloc] init];
-    sut.alertControllerClass = [QCOMockAlertController class];
     [sut showAlert:nil];
 
     @try
@@ -56,7 +53,6 @@
 - (void)testShowAlert_TryingToExecuteActionForNonexistentButton_ShouldThrowInternalInconsistency
 {
     QCOMockAlertVerifier *alertVerifier = [[QCOMockAlertVerifier alloc] init];
-    sut.alertControllerClass = [QCOMockAlertController class];
 
     [sut showAlert:nil];
 
@@ -69,7 +65,6 @@
 - (void)testShowAlert_TryingToExecuteActionForNonexistentButton_ShouldThrowExceptionWithReason
 {
     QCOMockAlertVerifier *alertVerifier = [[QCOMockAlertVerifier alloc] init];
-    sut.alertControllerClass = [QCOMockAlertController class];
     [sut showAlert:nil];
 
     @try

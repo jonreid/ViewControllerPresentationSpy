@@ -12,8 +12,7 @@
 
 - (IBAction)showAlert:(id)sender
 {
-    // Call self.alertControllerClass instead of UIAlertController
-    UIAlertController *alertController = [self.alertControllerClass alertControllerWithTitle:@"Title"
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Title"
                                                                                      message:@"Message"
                                                                               preferredStyle:UIAlertControllerStyleAlert];
     [self setUpActionsForAlertController:alertController];
@@ -22,8 +21,7 @@
 
 - (IBAction)showActionSheet:(id)sender
 {
-    // Call self.alertControllerClass instead of UIAlertController
-    UIAlertController *alertController = [self.alertControllerClass alertControllerWithTitle:@"Title"
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Title"
                                                                                      message:@"Message"
                                                                               preferredStyle:UIAlertControllerStyleActionSheet];
     [self setUpActionsForAlertController:alertController];

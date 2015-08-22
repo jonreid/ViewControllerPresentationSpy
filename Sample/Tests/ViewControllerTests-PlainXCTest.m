@@ -2,7 +2,6 @@
 #import "ViewController.h"
 
 // Test support
-#import "QCOMockAlertController.h"
 #import "QCOMockAlertVerifier.h"
 #import <XCTest/XCTest.h>
 
@@ -57,18 +56,10 @@
     XCTAssertEqualObjects(touchUpActions[0], @"showActionSheet:");
 }
 
-- (void)testDefaultAlertControllerClass_ShouldBeUIAlertController
-{
-    Class aClass = sut.alertControllerClass;
-
-    XCTAssertEqualObjects(aClass, [UIAlertController class]);
-}
-
 - (void)testShowAlert_ShouldPresentModal
 {
     QCOMockAlertVerifier *alertVerifier = [[QCOMockAlertVerifier alloc] init];
-    sut.alertControllerClass = [QCOMockAlertController class];
-    
+
     [sut showAlert:nil];
     
     XCTAssertEqual(alertVerifier.presentedCount, (NSUInteger)1);
@@ -77,7 +68,6 @@
 - (void)testShowActionSheet_ShouldPresentModal
 {
     QCOMockAlertVerifier *alertVerifier = [[QCOMockAlertVerifier alloc] init];
-    sut.alertControllerClass = [QCOMockAlertController class];
 
     [sut showActionSheet:nil];
 
@@ -87,7 +77,6 @@
 - (void)testShowAlert_ShouldPreferAlert
 {
     QCOMockAlertVerifier *alertVerifier = [[QCOMockAlertVerifier alloc] init];
-    sut.alertControllerClass = [QCOMockAlertController class];
 
     [sut showAlert:nil];
 
@@ -97,7 +86,6 @@
 - (void)testShowActionSheet_ShouldPreferActionSheet
 {
     QCOMockAlertVerifier *alertVerifier = [[QCOMockAlertVerifier alloc] init];
-    sut.alertControllerClass = [QCOMockAlertController class];
 
     [sut showActionSheet:nil];
 
@@ -107,7 +95,6 @@
 - (void)testShowAlert_ShouldPresentWithAnimation
 {
     QCOMockAlertVerifier *alertVerifier = [[QCOMockAlertVerifier alloc] init];
-    sut.alertControllerClass = [QCOMockAlertController class];
 
     [sut showAlert:nil];
 
@@ -117,7 +104,6 @@
 - (void)testShowActionSheet_ShouldPresentWithAnimation
 {
     QCOMockAlertVerifier *alertVerifier = [[QCOMockAlertVerifier alloc] init];
-    sut.alertControllerClass = [QCOMockAlertController class];
 
     [sut showActionSheet:nil];
 
@@ -127,7 +113,6 @@
 - (void)testShowAlert_PresentedAlertShouldHaveTitle
 {
     QCOMockAlertVerifier *alertVerifier = [[QCOMockAlertVerifier alloc] init];
-    sut.alertControllerClass = [QCOMockAlertController class];
 
     [sut showAlert:nil];
 
@@ -137,7 +122,6 @@
 - (void)testShowActionSheet_PresentedSheetShouldHaveTitle
 {
     QCOMockAlertVerifier *alertVerifier = [[QCOMockAlertVerifier alloc] init];
-    sut.alertControllerClass = [QCOMockAlertController class];
 
     [sut showActionSheet:nil];
 
@@ -147,7 +131,6 @@
 - (void)testShowAlert_PresentedAlertShouldHaveMessage
 {
     QCOMockAlertVerifier *alertVerifier = [[QCOMockAlertVerifier alloc] init];
-    sut.alertControllerClass = [QCOMockAlertController class];
 
     [sut showAlert:nil];
 
@@ -157,7 +140,6 @@
 - (void)testShowActionSheet_PresentedSheetShouldHaveMessage
 {
     QCOMockAlertVerifier *alertVerifier = [[QCOMockAlertVerifier alloc] init];
-    sut.alertControllerClass = [QCOMockAlertController class];
 
     [sut showActionSheet:nil];
 
@@ -167,7 +149,6 @@
 - (void)testShowAlert_PresentedAlertShouldHaveActions
 {
     QCOMockAlertVerifier *alertVerifier = [[QCOMockAlertVerifier alloc] init];
-    sut.alertControllerClass = [QCOMockAlertController class];
 
     [sut showAlert:nil];
 
@@ -180,7 +161,6 @@
 - (void)testShowActionSheet_PresentedSheetShouldHaveActions
 {
     QCOMockAlertVerifier *alertVerifier = [[QCOMockAlertVerifier alloc] init];
-    sut.alertControllerClass = [QCOMockAlertController class];
 
     [sut showActionSheet:nil];
 
@@ -193,7 +173,6 @@
 - (void)testShowAlert_DefaultButtonShouldHaveDefaultStyle
 {
     QCOMockAlertVerifier *alertVerifier = [[QCOMockAlertVerifier alloc] init];
-    sut.alertControllerClass = [QCOMockAlertController class];
 
     [sut showAlert:nil];
 
@@ -203,7 +182,6 @@
 - (void)testShowAlert_CancelButtonShouldHaveCancelStyle
 {
     QCOMockAlertVerifier *alertVerifier = [[QCOMockAlertVerifier alloc] init];
-    sut.alertControllerClass = [QCOMockAlertController class];
 
     [sut showAlert:nil];
 
@@ -213,7 +191,6 @@
 - (void)testShowAlert_DestroyButtonShouldHaveDestructiveStyle
 {
     QCOMockAlertVerifier *alertVerifier = [[QCOMockAlertVerifier alloc] init];
-    sut.alertControllerClass = [QCOMockAlertController class];
 
     [sut showAlert:nil];
 
@@ -223,7 +200,6 @@
 - (void)testShowAlert_ExecutingActionForDefaultButton_ShouldDoSomethingMeaningful
 {
     QCOMockAlertVerifier *alertVerifier = [[QCOMockAlertVerifier alloc] init];
-    sut.alertControllerClass = [QCOMockAlertController class];
 
     [sut showAlert:nil];
     [alertVerifier executeActionForButtonWithTitle:@"Default"];
@@ -234,7 +210,6 @@
 - (void)testShowAlert_ExecutingActionForCancelButton_ShouldDoSomethingMeaningful
 {
     QCOMockAlertVerifier *alertVerifier = [[QCOMockAlertVerifier alloc] init];
-    sut.alertControllerClass = [QCOMockAlertController class];
 
     [sut showAlert:nil];
     [alertVerifier executeActionForButtonWithTitle:@"Cancel"];
@@ -245,7 +220,6 @@
 - (void)testShowAlert_ExecutingActionForDestroyButton_ShouldDoSomethingMeaningful
 {
     QCOMockAlertVerifier *alertVerifier = [[QCOMockAlertVerifier alloc] init];
-    sut.alertControllerClass = [QCOMockAlertController class];
 
     [sut showAlert:nil];
     [alertVerifier executeActionForButtonWithTitle:@"Destroy"];
@@ -256,7 +230,6 @@
 - (void)testShowActionSheet_PopoverSourceViewShouldBeTappedButton
 {
     QCOMockAlertVerifier *alertVerifier = [[QCOMockAlertVerifier alloc] init];
-    sut.alertControllerClass = [QCOMockAlertController class];
     UIButton *tappedButton = [[UIButton alloc] initWithFrame:CGRectMake(1, 2, 3, 4)];
     
     [sut showActionSheet:tappedButton];
@@ -267,7 +240,6 @@
 - (void)testShowActionSheet_PopoverSourceRectShouldBeTappedButtonBounds
 {
     QCOMockAlertVerifier *alertVerifier = [[QCOMockAlertVerifier alloc] init];
-    sut.alertControllerClass = [QCOMockAlertController class];
     UIButton *tappedButton = [[UIButton alloc] initWithFrame:CGRectMake(1, 2, 3, 4)];
 
     [sut showActionSheet:tappedButton];
@@ -278,7 +250,6 @@
 - (void)testShowActionSheet_PopoverPermittedArrowDirectionsShouldBeAnyDirection
 {
     QCOMockAlertVerifier *alertVerifier = [[QCOMockAlertVerifier alloc] init];
-    sut.alertControllerClass = [QCOMockAlertController class];
 
     [sut showActionSheet:nil];
 

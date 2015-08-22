@@ -3,7 +3,7 @@
 
 #import "UIViewController+QCOMockAlerts.h"
 
-#import "QCOMockAlertController.h"
+#import "UIAlertController+QCOMockAlerts.h"
 #import <objc/runtime.h>
 
 
@@ -18,14 +18,10 @@
     method_exchangeImplementations(originalMethod, swizzledMethod);
 }
 
-- (void)qcoMockAlerts_presentViewController:(UIViewController *)viewControllerToPresent animated:(BOOL)flag completion:(void (^)(void))completion
+- (void)qcoMockAlerts_presentViewController:(UIViewController *)viewControllerToPresent
+                                   animated:(BOOL)flag
+                                 completion:(void (^)(void))completion
 {
-    if (![viewControllerToPresent isKindOfClass:[QCOMockAlertController class]])
-    {
-        [self qcoMockAlerts_presentViewController:viewControllerToPresent animated:flag completion:completion];
-        return;
-    }
-
     NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
     [nc postNotificationName:QCOMockAlertControllerPresentedNotification
                       object:viewControllerToPresent

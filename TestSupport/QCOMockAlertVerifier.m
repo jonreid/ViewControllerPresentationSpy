@@ -3,8 +3,8 @@
 
 #import "QCOMockAlertVerifier.h"
 
-#import "QCOMockAlertController.h"
 #import "UIAlertAction+QCOMockAlerts.h"
+#import "UIAlertController+QCOMockAlerts.h"
 #import "UIViewController+QCOMockAlerts.h"
 
 
@@ -24,6 +24,7 @@
                                                      name:QCOMockAlertControllerPresentedNotification
                                                    object:nil];
         [UIAlertAction qcoMockAlerts_swizzle];
+        [UIAlertController qcoMockAlerts_swizzle];
         [UIViewController qcoMockAlerts_swizzle];
     }
     return self;
@@ -32,18 +33,19 @@
 - (void)dealloc
 {
     [UIAlertAction qcoMockAlerts_swizzle];
+    [UIAlertController qcoMockAlerts_swizzle];
     [UIViewController qcoMockAlerts_swizzle];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)alertControllerWasPresented:(NSNotification *)notification
 {
-    QCOMockAlertController *alertController = notification.object;
+    UIAlertController *alertController = notification.object;
     self.presentedCount += 1;
     self.animated = notification.userInfo[@"animated"];
     self.title = alertController.title;
     self.message = alertController.message;
-    self.preferredStyle = alertController.preferredAlertStyle;
+    self.preferredStyle = alertController.qcoMockAlerts_preferredAlertStyle;
     self.actions = alertController.actions;
     self.popover = (id)alertController.popoverPresentationController;
 }

@@ -17,45 +17,12 @@ No actual alerts are presented. This means:
 
 ## What do I need to change in production code?
 
-To support redirection between UIAlertController and the mock, we need an extra
-layer of indirection. I use property injection with a lazy getter that defaults
-to the real UIAlertController:
-
-```obj-c
-@property (nonatomic, strong) Class alertControllerClass;
-```
-
-```obj-c
-- (Class)alertControllerClass
-{
-    if (!_alertControllerClass) {
-        _alertControllerClass = [UIAlertController class];
-    }
-    return _alertControllerClass;
-}
-```
-
-Then modify any calls to UIAlertController that you want to make unit-testable.
-Replace `UIAlertController` with `self.alertControllerClass`:
-
-```obj-c
-UIAlertController *alertController =
-        [self.alertControllerClass alertControllerWithTitle:@"Title"
-                                                    message:@"Message"
-                                             preferredStyle:UIAlertControllerStyleAlert];
-```
- 
+Nothing.
 
 ## What can I test?
 
-For starters, make sure you have a test verifying the default value of
-`alertControllerClass`.
-
-In other tests:
-
 1. Instantiate a `QCOMockAlertVerifier` before the execution phase of the test.
-2. Inject `QCOMockAlertController` as the `alertControllerClass`.
-3. Invoke the code to create and present your alert or action sheet.
+2. Invoke the code to create and present your alert or action sheet.
 
 Information about the alert or action sheet is then available through the
 [QCOMockAlertVerifier](https://github.com/jonreid/MockUIAlertController/blob/master/TestSupport/QCOMockAlertVerifier.h).
@@ -67,7 +34,6 @@ in the test fixture.
 - (void)testShowAlert_AlertShouldHaveTitle
 {
     QCOMockAlertVerifier *alertVerifier = [[QCOMockAlertVerifier alloc] init];
-    sut.alertControllerClass = [QCOMockAlertController class];
 
     [sut showAlert:nil];
 
