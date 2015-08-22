@@ -3,8 +3,8 @@
 
 #import "UIAlertController+QCOMockAlerts.h"
 
-#import "QCOMockPopoverPresentationController.h"
 #import "NSObject+QCOMockAlerts.h"
+#import "QCOMockPopoverPresentationController.h"
 #import <objc/runtime.h>
 
 

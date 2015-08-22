@@ -3,9 +3,8 @@
 
 #import "UIViewController+QCOMockAlerts.h"
 
-#import "UIAlertController+QCOMockAlerts.h"
 #import "NSObject+QCOMockAlerts.h"
-#import <objc/runtime.h>
+#import "UIAlertController+QCOMockAlerts.h"
 
 
 @implementation UIViewController (QCOMockAlerts)
