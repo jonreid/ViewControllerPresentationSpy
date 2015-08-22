@@ -12,6 +12,13 @@
 @end
 
 
+static void swizzleMocks(void)
+{
+    [UIAlertAction qcoMock_swizzle];
+    [UIAlertController qcoMock_swizzle];
+    [UIViewController qcoMock_swizzle];
+}
+
 @implementation QCOMockAlertVerifier
 
 - (id)init
@@ -23,22 +30,15 @@
                                                  selector:@selector(alertControllerWasPresented:)
                                                      name:QCOMockAlertControllerPresentedNotification
                                                    object:nil];
-        [self swizzleMocks];
+        swizzleMocks();
     }
     return self;
 }
 
 - (void)dealloc
 {
-    [self swizzleMocks];
+    swizzleMocks();
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-}
-
-- (void)swizzleMocks
-{
-    [UIAlertAction qcoMock_swizzle];
-    [UIAlertController qcoMock_swizzle];
-    [UIViewController qcoMock_swizzle];
 }
 
 - (void)alertControllerWasPresented:(NSNotification *)notification
