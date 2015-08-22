@@ -7,10 +7,10 @@
 #import "UIAlertController+QCOMockAlerts.h"
 #import "UIViewController+QCOMockAlerts.h"
 
-
 @interface QCOMockAlertVerifier ()
 @property (nonatomic, copy) NSArray *actions;
 @end
+
 
 @implementation QCOMockAlertVerifier
 

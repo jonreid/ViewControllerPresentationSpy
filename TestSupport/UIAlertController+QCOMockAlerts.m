@@ -7,16 +7,15 @@
 #import "QCOMockPopoverPresentationController.h"
 #import <objc/runtime.h>
 
-
 NSString *const QCOMockAlertControllerPresentedNotification = @"QCOMockAlertControllerPresentedNotification";
 
 static char const * const preferredAlertStyleKey = "qcoMockAlerts_preferredAlertStyle";
 static char const * const mockPopoverKey = "qcoMockAlerts_mockPopover";
 
-
 @interface UIAlertController ()
 @property (nonatomic, strong) QCOMockPopoverPresentationController *qcoMockAlerts_mockPopover;
 @end
+
 
 @implementation UIAlertController (QCOMockAlerts)
 
