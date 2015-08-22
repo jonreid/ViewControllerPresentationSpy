@@ -1,7 +1,7 @@
 //  MockUIAlertController by Jon Reid, http://qualitycoding.org/about/
 //  Copyright 2015 Jonathan M. Reid. See LICENSE.txt
 
-#import "UIAlertController+QCOMockAlerts.h"
+#import "UIAlertController+QCOMock.h"
 
 #import "NSObject+QCOMockAlerts.h"
 #import "QCOMockPopoverPresentationController.h"
@@ -14,14 +14,14 @@ NSString *const QCOMockAlertControllerPresentedNotification = @"QCOMockAlertCont
 @end
 
 
-@implementation UIAlertController (QCOMockAlerts)
+@implementation UIAlertController (QCOMock)
 
 + (void)qcoMock_swizzle
 {
-    [self qcoMock_replaceClassMethod:@selector(alertControllerWithTitle:message:preferredStyle:)
-                          withMethod:@selector(qcoMock_alertControllerWithTitle:message:preferredStyle:)];
-    [self qcoMock_replaceInstanceMethod:@selector(popoverPresentationController)
-                             withMethod:@selector(qcoMock_popoverPresentationController)];
+    [self qcoMockAlerts_replaceClassMethod:@selector(alertControllerWithTitle:message:preferredStyle:)
+                                withMethod:@selector(qcoMock_alertControllerWithTitle:message:preferredStyle:)];
+    [self qcoMockAlerts_replaceInstanceMethod:@selector(popoverPresentationController)
+                                   withMethod:@selector(qcoMock_popoverPresentationController)];
 }
 
 + (instancetype)qcoMock_alertControllerWithTitle:(NSString *)title

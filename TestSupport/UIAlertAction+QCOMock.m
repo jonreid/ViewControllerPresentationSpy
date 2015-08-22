@@ -1,18 +1,18 @@
 //  MockUIAlertController by Jon Reid, http://qualitycoding.org/about/
 //  Copyright 2015 Jonathan M. Reid. See LICENSE.txt
 
-#import "UIAlertAction+QCOMockAlerts.h"
+#import "UIAlertAction+QCOMock.h"
 
 #import "NSObject+QCOMockAlerts.h"
 #import <objc/runtime.h>
 
 
-@implementation UIAlertAction (QCOMockAlerts)
+@implementation UIAlertAction (QCOMock)
 
 + (void)qcoMock_swizzle
 {
-    [self qcoMock_replaceClassMethod:@selector(actionWithTitle:style:handler:)
-                          withMethod:@selector(qcoMock_actionWithTitle:style:handler:)];
+    [self qcoMockAlerts_replaceClassMethod:@selector(actionWithTitle:style:handler:)
+                                withMethod:@selector(qcoMock_actionWithTitle:style:handler:)];
 }
 
 + (instancetype)qcoMock_actionWithTitle:(NSString *)title

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0E34FEA21B6892AA00FF90A6 /* UIAlertAction+QCOMockAlerts.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E34FEA11B6892AA00FF90A6 /* UIAlertAction+QCOMockAlerts.m */; };
+		0E34FEA21B6892AA00FF90A6 /* UIAlertAction+QCOMock.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E34FEA11B6892AA00FF90A6 /* UIAlertAction+QCOMock.m */; };
 		0E748F971B6543A000B29AED /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E748F961B6543A000B29AED /* main.m */; };
 		0E748F9A1B6543A000B29AED /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E748F991B6543A000B29AED /* AppDelegate.m */; };
 		0E748F9D1B6543A000B29AED /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E748F9C1B6543A000B29AED /* ViewController.m */; };
@@ -15,8 +15,8 @@
 		0E748FA21B6543A000B29AED /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E748FA11B6543A000B29AED /* Images.xcassets */; };
 		0E748FBE1B65487700B29AED /* OCHamcrestIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E748FBC1B65487700B29AED /* OCHamcrestIOS.framework */; };
 		0E748FC71B6585F900B29AED /* QCOMockAlertVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E748FC51B6585F900B29AED /* QCOMockAlertVerifier.m */; };
-		609E900BACCCAAA0C993E78D /* UIViewController+QCOMockAlerts.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E99971B2448166EE4FB1A /* UIViewController+QCOMockAlerts.m */; };
-		609E92C2BC899C57A8F6C4AF /* UIAlertController+QCOMockAlerts.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E923D9A5563179A90035E /* UIAlertController+QCOMockAlerts.m */; };
+		609E900BACCCAAA0C993E78D /* UIViewController+QCOMock.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E99971B2448166EE4FB1A /* UIViewController+QCOMock.m */; };
+		609E92C2BC899C57A8F6C4AF /* UIAlertController+QCOMock.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E923D9A5563179A90035E /* UIAlertController+QCOMock.m */; };
 		609E95CC3AE8903B8C93988B /* NSObject+QCOMockAlerts.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E9406A99791F41F6333B7 /* NSObject+QCOMockAlerts.m */; };
 		609E99FAD779BE4CB8239938 /* QCOMockPopoverPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E98A7662248F6000E04D0 /* QCOMockPopoverPresentationController.m */; };
 		609E9B6130BB35372D63FC0F /* QCOMockAlertVerifierTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E95F254C2B32C24D9C980 /* QCOMockAlertVerifierTests.m */; };
@@ -35,8 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0E34FEA01B6892AA00FF90A6 /* UIAlertAction+QCOMockAlerts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertAction+QCOMockAlerts.h"; sourceTree = "<group>"; };
-		0E34FEA11B6892AA00FF90A6 /* UIAlertAction+QCOMockAlerts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertAction+QCOMockAlerts.m"; sourceTree = "<group>"; };
+		0E34FEA01B6892AA00FF90A6 /* UIAlertAction+QCOMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertAction+QCOMock.h"; sourceTree = "<group>"; };
+		0E34FEA11B6892AA00FF90A6 /* UIAlertAction+QCOMock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertAction+QCOMock.m"; sourceTree = "<group>"; };
 		0E748F911B6543A000B29AED /* MockUIAlertControllerSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MockUIAlertControllerSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E748F951B6543A000B29AED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E748F961B6543A000B29AED /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -53,16 +53,16 @@
 		0E748FC41B6585F900B29AED /* QCOMockAlertVerifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCOMockAlertVerifier.h; sourceTree = "<group>"; };
 		0E748FC51B6585F900B29AED /* QCOMockAlertVerifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCOMockAlertVerifier.m; sourceTree = "<group>"; };
 		0EFDCE181B707B4F0030F268 /* XcodeWarnings.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = XcodeWarnings.xcconfig; sourceTree = "<group>"; };
-		609E923D9A5563179A90035E /* UIAlertController+QCOMockAlerts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+QCOMockAlerts.m"; sourceTree = "<group>"; };
+		609E923D9A5563179A90035E /* UIAlertController+QCOMock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+QCOMock.m"; sourceTree = "<group>"; };
 		609E9314897852939CA75DFB /* ViewControllerTests-OCHamcrest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewControllerTests-OCHamcrest.m"; sourceTree = "<group>"; };
 		609E9406A99791F41F6333B7 /* NSObject+QCOMockAlerts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+QCOMockAlerts.m"; sourceTree = "<group>"; };
 		609E95F254C2B32C24D9C980 /* QCOMockAlertVerifierTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCOMockAlertVerifierTests.m; sourceTree = "<group>"; };
 		609E96A3FEE32752639F8CED /* QCOMockPopoverPresentationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCOMockPopoverPresentationController.h; sourceTree = "<group>"; };
 		609E96C55D81BBE28BD81748 /* ViewControllerTests-PlainXCTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewControllerTests-PlainXCTest.m"; sourceTree = "<group>"; };
 		609E98A7662248F6000E04D0 /* QCOMockPopoverPresentationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCOMockPopoverPresentationController.m; sourceTree = "<group>"; };
-		609E99971B2448166EE4FB1A /* UIViewController+QCOMockAlerts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+QCOMockAlerts.m"; sourceTree = "<group>"; };
-		609E99DD72688DBD138AD6A8 /* UIAlertController+QCOMockAlerts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+QCOMockAlerts.h"; sourceTree = "<group>"; };
-		609E9DFDC91CB102931D83C9 /* UIViewController+QCOMockAlerts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+QCOMockAlerts.h"; sourceTree = "<group>"; };
+		609E99971B2448166EE4FB1A /* UIViewController+QCOMock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+QCOMock.m"; sourceTree = "<group>"; };
+		609E99DD72688DBD138AD6A8 /* UIAlertController+QCOMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+QCOMock.h"; sourceTree = "<group>"; };
+		609E9DFDC91CB102931D83C9 /* UIViewController+QCOMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+QCOMock.h"; sourceTree = "<group>"; };
 		609E9E97E4520921125C49EC /* NSObject+QCOMockAlerts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+QCOMockAlerts.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -166,12 +166,12 @@
 				609E98A7662248F6000E04D0 /* QCOMockPopoverPresentationController.m */,
 				609E9E97E4520921125C49EC /* NSObject+QCOMockAlerts.h */,
 				609E9406A99791F41F6333B7 /* NSObject+QCOMockAlerts.m */,
-				0E34FEA01B6892AA00FF90A6 /* UIAlertAction+QCOMockAlerts.h */,
-				0E34FEA11B6892AA00FF90A6 /* UIAlertAction+QCOMockAlerts.m */,
-				609E99DD72688DBD138AD6A8 /* UIAlertController+QCOMockAlerts.h */,
-				609E923D9A5563179A90035E /* UIAlertController+QCOMockAlerts.m */,
-				609E9DFDC91CB102931D83C9 /* UIViewController+QCOMockAlerts.h */,
-				609E99971B2448166EE4FB1A /* UIViewController+QCOMockAlerts.m */,
+				0E34FEA01B6892AA00FF90A6 /* UIAlertAction+QCOMock.h */,
+				0E34FEA11B6892AA00FF90A6 /* UIAlertAction+QCOMock.m */,
+				609E99DD72688DBD138AD6A8 /* UIAlertController+QCOMock.h */,
+				609E923D9A5563179A90035E /* UIAlertController+QCOMock.m */,
+				609E9DFDC91CB102931D83C9 /* UIViewController+QCOMock.h */,
+				609E99971B2448166EE4FB1A /* UIViewController+QCOMock.m */,
 			);
 			name = TestSupport;
 			path = ../../TestSupport;
@@ -288,12 +288,12 @@
 			files = (
 				0E748FC71B6585F900B29AED /* QCOMockAlertVerifier.m in Sources */,
 				609E9B9655FA38A27FF87A2D /* ViewControllerTests-OCHamcrest.m in Sources */,
-				609E900BACCCAAA0C993E78D /* UIViewController+QCOMockAlerts.m in Sources */,
+				609E900BACCCAAA0C993E78D /* UIViewController+QCOMock.m in Sources */,
 				609E99FAD779BE4CB8239938 /* QCOMockPopoverPresentationController.m in Sources */,
-				0E34FEA21B6892AA00FF90A6 /* UIAlertAction+QCOMockAlerts.m in Sources */,
+				0E34FEA21B6892AA00FF90A6 /* UIAlertAction+QCOMock.m in Sources */,
 				609E9B6130BB35372D63FC0F /* QCOMockAlertVerifierTests.m in Sources */,
 				609E9F1E2EC677BB9B797C36 /* ViewControllerTests-PlainXCTest.m in Sources */,
-				609E92C2BC899C57A8F6C4AF /* UIAlertController+QCOMockAlerts.m in Sources */,
+				609E92C2BC899C57A8F6C4AF /* UIAlertController+QCOMock.m in Sources */,
 				609E95CC3AE8903B8C93988B /* NSObject+QCOMockAlerts.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

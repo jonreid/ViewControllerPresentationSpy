@@ -3,9 +3,9 @@
 
 #import "QCOMockAlertVerifier.h"
 
-#import "UIAlertAction+QCOMockAlerts.h"
-#import "UIAlertController+QCOMockAlerts.h"
-#import "UIViewController+QCOMockAlerts.h"
+#import "UIAlertAction+QCOMock.h"
+#import "UIAlertController+QCOMock.h"
+#import "UIViewController+QCOMock.h"
 
 @interface QCOMockAlertVerifier ()
 @property (nonatomic, copy) NSArray *actions;

@@ -1,20 +1,20 @@
 //  MockUIAlertController by Jon Reid, http://qualitycoding.org/about/
 //  Copyright 2015 Jonathan M. Reid. See LICENSE.txt
 
-#import "UIViewController+QCOMockAlerts.h"
+#import "UIViewController+QCOMock.h"
 
 #import "NSObject+QCOMockAlerts.h"
-#import "UIAlertController+QCOMockAlerts.h"
+#import "UIAlertController+QCOMock.h"
 
 NSString *const QCOMockViewControllerAnimatedKey = @"QCOMockViewControllerAnimatedKey";
 
 
-@implementation UIViewController (QCOMockAlerts)
+@implementation UIViewController (QCOMock)
 
 + (void)qcoMock_swizzle
 {
-    [self qcoMock_replaceInstanceMethod:@selector(presentViewController:animated:completion:)
-                             withMethod:@selector(qcoMock_presentViewController:animated:completion:)];
+    [self qcoMockAlerts_replaceInstanceMethod:@selector(presentViewController:animated:completion:)
+                                   withMethod:@selector(qcoMock_presentViewController:animated:completion:)];
 }
 
 - (void)qcoMock_presentViewController:(UIViewController *)viewControllerToPresent

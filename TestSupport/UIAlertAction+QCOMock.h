@@ -4,7 +4,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface UIAlertAction (QCOMockAlerts)
+@interface UIAlertAction (QCOMock)
 
 + (void)qcoMock_swizzle;
 
