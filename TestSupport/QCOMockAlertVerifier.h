@@ -7,7 +7,7 @@
 
 
 /**
-    Captures QCOMockAlertController arguments.
+    Captures mocked UIAlertController arguments.
  */
 @interface QCOMockAlertVerifier : NSObject
 
