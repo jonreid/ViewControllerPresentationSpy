@@ -48,6 +48,6 @@ is not required.
 
 ## How can I invoke the block associated with a UIAlertAction?
 
-Go through steps 1, 2 and 3 above to present your alert or action sheet using
+Go through steps 1 and 2 above to present your alert or action sheet using
 `QCOMockAlertController`. Then call `-executeActionForButtonWithTitle:` on your
 `QCOMockAlertVerifier` with the button title.
