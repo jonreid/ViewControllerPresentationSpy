@@ -9,9 +9,6 @@
 
 NSString *const QCOMockAlertControllerPresentedNotification = @"QCOMockAlertControllerPresentedNotification";
 
-static char const * const preferredAlertStyleKey = "qcoMockAlerts_preferredAlertStyle";
-static char const * const mockPopoverKey = "qcoMockAlerts_mockPopover";
-
 @interface UIAlertController ()
 @property (nonatomic, strong) QCOMockPopoverPresentationController *qcoMockAlerts_mockPopover;
 @end
@@ -56,23 +53,23 @@ static char const * const mockPopoverKey = "qcoMockAlerts_mockPopover";
 
 - (UIAlertControllerStyle)qcoMockAlerts_preferredAlertStyle
 {
-    NSNumber *style = objc_getAssociatedObject(self, preferredAlertStyleKey);
+    NSNumber *style = objc_getAssociatedObject(self, @selector(qcoMockAlerts_preferredAlertStyle));
     return (UIAlertControllerStyle)style.intValue;
 }
 
 - (void)setQcoMockAlerts_preferredAlertStyle:(UIAlertControllerStyle)style
 {
-    objc_setAssociatedObject(self, preferredAlertStyleKey, @(style), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, @selector(qcoMockAlerts_preferredAlertStyle), @(style), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 - (QCOMockPopoverPresentationController *)qcoMockAlerts_mockPopover
 {
-    return objc_getAssociatedObject(self, mockPopoverKey);
+    return objc_getAssociatedObject(self, @selector(qcoMockAlerts_mockPopover));
 }
 
 - (void)setQcoMockAlerts_mockPopover:(QCOMockPopoverPresentationController *)popover
 {
-    objc_setAssociatedObject(self, mockPopoverKey, popover, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, @selector(qcoMockAlerts_mockPopover), popover, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 @end
