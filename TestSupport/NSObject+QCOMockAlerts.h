@@ -6,7 +6,7 @@
 
 @interface NSObject (QCOMockAlerts)
 
-+ (void)replaceClassMethod:(SEL)originalSelector withMethod:(SEL)swizzledSelector;
-+ (void)replaceInstanceMethod:(SEL)originalSelector withMethod:(SEL)swizzledSelector;
++ (void)qcoMockAlerts_replaceClassMethod:(SEL)originalSelector withMethod:(SEL)swizzledSelector;
++ (void)qcoMockAlerts_replaceInstanceMethod:(SEL)originalSelector withMethod:(SEL)swizzledSelector;
 
 @end

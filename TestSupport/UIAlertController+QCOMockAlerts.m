@@ -21,10 +21,10 @@ static char const * const mockPopoverKey = "qcoMockAlerts_mockPopover";
 
 + (void)qcoMockAlerts_swizzle
 {
-    [self replaceClassMethod:@selector(alertControllerWithTitle:message:preferredStyle:)
-                  withMethod:@selector(qcoMockAlerts_alertControllerWithTitle:message:preferredStyle:)];
-    [self replaceInstanceMethod:@selector(popoverPresentationController)
-                     withMethod:@selector(qcoMockAlerts_popoverPresentationController)];
+    [self qcoMockAlerts_replaceClassMethod:@selector(alertControllerWithTitle:message:preferredStyle:)
+                                withMethod:@selector(qcoMockAlerts_alertControllerWithTitle:message:preferredStyle:)];
+    [self qcoMockAlerts_replaceInstanceMethod:@selector(popoverPresentationController)
+                                   withMethod:@selector(qcoMockAlerts_popoverPresentationController)];
 }
 
 + (instancetype)qcoMockAlerts_alertControllerWithTitle:(NSString *)title

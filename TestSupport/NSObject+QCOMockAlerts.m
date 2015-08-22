@@ -8,14 +8,14 @@
 
 @implementation NSObject (QCOMockAlerts)
 
-+ (void)replaceClassMethod:(SEL)originalSelector withMethod:(SEL)swizzledSelector
++ (void)qcoMockAlerts_replaceClassMethod:(SEL)originalSelector withMethod:(SEL)swizzledSelector
 {
     Method originalMethod = class_getClassMethod(self, originalSelector);
     Method swizzledMethod = class_getClassMethod(self, swizzledSelector);
     method_exchangeImplementations(originalMethod, swizzledMethod);
 }
 
-+ (void)replaceInstanceMethod:(SEL)originalSelector withMethod:(SEL)swizzledSelector
++ (void)qcoMockAlerts_replaceInstanceMethod:(SEL)originalSelector withMethod:(SEL)swizzledSelector
 {
     Method originalMethod = class_getInstanceMethod(self, originalSelector);
     Method swizzledMethod = class_getInstanceMethod(self, swizzledSelector);

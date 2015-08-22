@@ -11,8 +11,8 @@
 
 + (void)qcoMockAlerts_swizzle
 {
-    [self replaceInstanceMethod:@selector(presentViewController:animated:completion:)
-                     withMethod:@selector(qcoMockAlerts_presentViewController:animated:completion:)];
+    [self qcoMockAlerts_replaceInstanceMethod:@selector(presentViewController:animated:completion:)
+                                   withMethod:@selector(qcoMockAlerts_presentViewController:animated:completion:)];
 }
 
 - (void)qcoMockAlerts_presentViewController:(UIViewController *)viewControllerToPresent

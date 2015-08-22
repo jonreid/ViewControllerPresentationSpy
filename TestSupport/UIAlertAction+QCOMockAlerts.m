@@ -11,8 +11,8 @@
 
 + (void)qcoMockAlerts_swizzle
 {
-    [self replaceClassMethod:@selector(actionWithTitle:style:handler:)
-                  withMethod:@selector(qcoMockAlerts_actionWithTitle:style:handler:)];
+    [self qcoMockAlerts_replaceClassMethod:@selector(actionWithTitle:style:handler:)
+                                withMethod:@selector(qcoMockAlerts_actionWithTitle:style:handler:)];
 }
 
 + (instancetype)qcoMockAlerts_actionWithTitle:(NSString *)title
