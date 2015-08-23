@@ -2,7 +2,6 @@
 
 @interface ViewController : UIViewController
 
-@property (nonatomic, strong) Class alertControllerClass;
 @property (nonatomic, strong) IBOutlet UIButton *showAlertButton;
 @property (nonatomic, strong) IBOutlet UIButton *showActionSheetButton;
 @property (nonatomic, assign) BOOL alertDefaultActionExecuted;
