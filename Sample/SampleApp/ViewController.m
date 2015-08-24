@@ -2,14 +2,6 @@
 
 @implementation ViewController
 
-- (Class)alertControllerClass
-{
-    // Use the real UIAlertController by default. Make sure you have a test verifying this.
-    if (!_alertControllerClass)
-        _alertControllerClass = [UIAlertController class];
-    return _alertControllerClass;
-}
-
 - (IBAction)showAlert:(id)sender
 {
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Title"
