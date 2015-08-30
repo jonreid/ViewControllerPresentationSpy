@@ -51,4 +51,17 @@ is not required.
 
 Go through steps 1 and 2 above to present your alert or action sheet using
 `QCOMockAlertController`. Then call `-executeActionForButtonWithTitle:` on your
-`QCOMockAlertVerifier` with the button title.
+`QCOMockAlertVerifier` with the button title. For example:
+
+
+```obj-c
+- (void)testShowAlert_ExecutingActionForOKButton_ShouldDoSomething
+{
+    QCOMockAlertVerifier *alertVerifier = [[QCOMockAlertVerifier alloc] init];
+
+    [sut showAlert:nil];
+    [alertVerifier executeActionForButtonWithTitle:@"OK"];
+
+    // Now assert what you want
+}
+```
