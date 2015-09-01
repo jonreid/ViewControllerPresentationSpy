@@ -15,6 +15,8 @@ No actual alerts are presented. This means:
 * The workflow doesn't pause for an action to be selected
 * Tests are blazing fast.
 
+For more discussion, see my blog post [How to Test UIAlertControllers and Control Swizzling](http://qualitycoding.org/testing-uialertcontrollers/).
+
 
 ## What do I need to change in production code?
 
