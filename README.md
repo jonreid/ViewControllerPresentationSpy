@@ -3,6 +3,7 @@
 [![Build Status](https://travis-ci.org/jonreid/MockUIAlertController.svg?branch=master)](https://travis-ci.org/jonreid/MockUIAlertController)
 [![Coverage Status](https://coveralls.io/repos/jonreid/MockUIAlertController/badge.svg?branch=master&service=github)](https://coveralls.io/github/jonreid/MockUIAlertController?branch=master)
 [![Cocoapods Version](https://cocoapod-badges.herokuapp.com/v/MockUIAlertController/badge.png)](http://cocoapods.org/?q=MockUIAlertController)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 MockUIAlertController lets you mock iOS alerts and action sheets for unit tests,
 based on the UIAlertController introduced for iOS 8.
@@ -18,14 +19,42 @@ No actual alerts are presented. This means:
 For more discussion, see my blog post [How to Test UIAlertControllers and Control Swizzling](http://qualitycoding.org/testing-uialertcontrollers/).
 
 
-## What do I need to change in production code?
+## Adding it to your project
+
+### CocoaPods
+
+Add the following to your Podfile, changing "MyTests" to the name of your test target:
+
+```ruby
+target :MyTests, :exclusive => true do
+  pod 'MockUIAlertController', '~> 1.0'
+end
+```
+
+### Carthage
+
+Add the following to your Cartfile:
+
+```
+github "jonreid/MockUIAlertController" ~> 1.0
+```
+
+### Building It Yourself
+
+Make sure to take everything from Source/MockUIAlertController.
+
+
+## Writing Tests
+
+### What do I need to change in production code?
 
 Nothing.
 
-## What can I test?
+## How do I test an alert controller?
 
-1. Instantiate a `QCOMockAlertVerifier` before the execution phase of the test.
-2. Invoke the code to create and present your alert or action sheet.
+1. `#import <MockUIAlertController/QCOMockAlertVerifier.h>`
+2. Instantiate a `QCOMockAlertVerifier` before the execution phase of the test.
+3. Invoke the code to create and present your alert or action sheet.
 
 Information about the alert or action sheet is then available through the
 [QCOMockAlertVerifier](https://github.com/jonreid/MockUIAlertController/blob/master/TestSupport/QCOMockAlertVerifier.h).
@@ -48,12 +77,11 @@ See the sample app for more examples. One set of examples use
 [OCHamcrest assertions](https://github.com/hamcrest/OCHamcrest), but OCHamcrest
 is not required.
 
-
 ## How can I invoke the block associated with a UIAlertAction?
 
-Go through steps 1 and 2 above to present your alert or action sheet using
-`QCOMockAlertController`. Then call `-executeActionForButtonWithTitle:` on your
-`QCOMockAlertVerifier` with the button title. For example:
+Go through the steps above to present your alert or action sheet using `QCOMockAlertController`.
+Then call `-executeActionForButtonWithTitle:` on your `QCOMockAlertVerifier` with the button title.
+For example:
 
 
 ```obj-c
@@ -67,3 +95,7 @@ Go through steps 1 and 2 above to present your alert or action sheet using
     // Now assert what you want
 }
 ```
+
+### Can I see some examples?
+
+See the sample app. Run it on both phone & pad to see what it does, then read the tests.
