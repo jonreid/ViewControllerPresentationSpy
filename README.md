@@ -73,10 +73,6 @@ in the test fixture.
 }
 ```
 
-See the sample app for more examples. One set of examples use
-[OCHamcrest assertions](https://github.com/hamcrest/OCHamcrest), but OCHamcrest
-is not required.
-
 ## How can I invoke the block associated with a UIAlertAction?
 
 Go through the steps above to present your alert or action sheet using `QCOMockAlertController`.
@@ -98,4 +94,5 @@ For example:
 
 ### Can I see some examples?
 
-See the sample app. Run it on both phone & pad to see what it does, then read the tests.
+See the sample app. Run it on both phone & pad to see what it does, then read the ViewController
+tests.
