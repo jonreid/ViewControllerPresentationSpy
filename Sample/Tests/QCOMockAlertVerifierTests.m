@@ -2,10 +2,8 @@
 
 #import "ViewController.h"
 
-@import XCTest;
-
-#define HC_SHORTHAND
 #import <OCHamcrestIOS/OCHamcrestIOS.h>
+@import XCTest;
 
 
 @interface QCOMockAlertVerifierTests : XCTestCase
@@ -28,11 +26,9 @@
 {
     QCOMockAlertVerifier *alertVerifier = [[QCOMockAlertVerifier alloc] init];
     [sut showAlert:nil];
-
-    XCTAssertThrowsSpecificNamed(
-            [alertVerifier styleForButtonWithTitle:@"NO SUCH BUTTON"],
-            NSException,
-            NSInternalInconsistencyException);
+    
+    assertThat(^{ [alertVerifier styleForButtonWithTitle:@"NO SUCH BUTTON"]; },
+            throwsException(hasProperty(@"name", NSInternalInconsistencyException)));
 }
 
 - (void)testShowAlert_TryingToGetStyleForNonexistentButton_ShouldThrowExceptionWithReason
@@ -40,14 +36,8 @@
     QCOMockAlertVerifier *alertVerifier = [[QCOMockAlertVerifier alloc] init];
     [sut showAlert:nil];
 
-    @try
-    {
-        [alertVerifier styleForButtonWithTitle:@"NO SUCH BUTTON"];
-    }
-    @catch (NSException *exception)
-    {
-        assertThat(exception.reason, is(@"Button not found"));
-    }
+    assertThat(^{ [alertVerifier styleForButtonWithTitle:@"NO SUCH BUTTON"]; },
+            throwsException(hasProperty(@"reason", @"Button not found")));
 }
 
 - (void)testShowAlert_TryingToExecuteActionForNonexistentButton_ShouldThrowInternalInconsistency
@@ -56,10 +46,8 @@
 
     [sut showAlert:nil];
 
-    XCTAssertThrowsSpecificNamed(
-            [alertVerifier executeActionForButtonWithTitle:@"NO SUCH BUTTON"],
-            NSException,
-            NSInternalInconsistencyException);
+    assertThat(^{ [alertVerifier executeActionForButtonWithTitle:@"NO SUCH BUTTON"]; },
+            throwsException(hasProperty(@"name", NSInternalInconsistencyException)));
 }
 
 - (void)testShowAlert_TryingToExecuteActionForNonexistentButton_ShouldThrowExceptionWithReason
@@ -67,14 +55,8 @@
     QCOMockAlertVerifier *alertVerifier = [[QCOMockAlertVerifier alloc] init];
     [sut showAlert:nil];
 
-    @try
-    {
-        [alertVerifier executeActionForButtonWithTitle:@"NO SUCH BUTTON"];
-    }
-    @catch (NSException *exception)
-    {
-        assertThat(exception.reason, is(@"Button not found"));
-    }
+    assertThat(^{ [alertVerifier executeActionForButtonWithTitle:@"NO SUCH BUTTON"]; },
+            throwsException(hasProperty(@"reason", @"Button not found")));
 }
 
 @end
