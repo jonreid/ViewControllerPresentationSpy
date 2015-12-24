@@ -35,7 +35,7 @@ end
 
 Add the following to your Cartfile:
 
-```ruby
+```
 github "jonreid/MockUIAlertController" ~> 1.0
 ```
 
