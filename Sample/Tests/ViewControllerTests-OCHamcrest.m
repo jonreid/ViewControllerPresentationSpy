@@ -2,7 +2,7 @@
 #import "ViewController.h"
 
 // Test support
-#import "QCOMockAlertVerifier.h"
+#import <MockUIAlertController/QCOMockAlertVerifier.h>
 #import <XCTest/XCTest.h>
 
 #define HC_SHORTHAND
