@@ -2,11 +2,9 @@
 #import "ViewController.h"
 
 // Test support
+#import <OCHamcrestIOS/OCHamcrestIOS.h>
 #import <MockUIAlertController/QCOMockAlertVerifier.h>
 @import XCTest;
-
-#define HC_SHORTHAND
-#import <OCHamcrestIOS/OCHamcrestIOS.h>
 
 
 @interface ViewControllerTests_OCHamcrest : XCTestCase
@@ -44,7 +42,7 @@
     NSArray *touchUpActions = [sut.showAlertButton actionsForTarget:sut
                                                     forControlEvent:UIControlEventTouchUpInside];
 
-    assertThat(touchUpActions, contains(@"showAlert:", nil));
+    assertThat(touchUpActions, containsIn(@[ @"showAlert:" ]));
 }
 
 - (void)testShowActionSheetButton_ShouldHaveAction
@@ -54,7 +52,7 @@
     NSArray *touchUpActions = [sut.showActionSheetButton actionsForTarget:sut
                                                           forControlEvent:UIControlEventTouchUpInside];
 
-    assertThat(touchUpActions, contains(@"showActionSheet:", nil));
+    assertThat(touchUpActions, containsIn(@[ @"showActionSheet:" ]));
 }
 
 - (void)testShowAlert_ShouldPresentModal
@@ -153,7 +151,7 @@
 
     [sut showAlert:nil];
 
-    assertThat(alertVerifier.actionTitles, contains(@"Default", @"Cancel", @"Destroy", nil));
+    assertThat(alertVerifier.actionTitles, containsIn(@[ @"Default", @"Cancel", @"Destroy" ]));
 }
 
 - (void)testShowActionSheet_PresentedSheetShouldHaveActions
@@ -162,7 +160,7 @@
 
     [sut showActionSheet:nil];
 
-    assertThat(alertVerifier.actionTitles, contains(@"Default", @"Cancel", @"Destroy", nil));
+    assertThat(alertVerifier.actionTitles, containsIn(@[ @"Default", @"Cancel", @"Destroy" ]));
 }
 
 - (void)testShowAlert_DefaultButtonShouldHaveDefaultStyle
