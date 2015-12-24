@@ -57,7 +57,7 @@ static void swizzleMocks(void)
 {
     NSMutableArray *array = [[NSMutableArray alloc] init];
     for (UIAlertAction *action in self.actions)
-        [array addObject:action.title];
+        [array addObject: action.title ? action.title : [NSNull null]];
     return [array copy];
 }
 
