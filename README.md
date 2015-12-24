@@ -35,7 +35,7 @@ end
 
 Add the following to your Cartfile:
 
-```
+```ruby
 github "jonreid/MockUIAlertController" ~> 1.0
 ```
 
@@ -57,7 +57,7 @@ Nothing.
 3. Invoke the code to create and present your alert or action sheet.
 
 Information about the alert or action sheet is then available through the
-[QCOMockAlertVerifier](https://github.com/jonreid/MockUIAlertController/blob/master/TestSupport/QCOMockAlertVerifier.h).
+[QCOMockAlertVerifier](https://github.com/jonreid/MockUIAlertController/blob/master/Source/MockUIAlertController/QCOMockAlertVerifier.h).
 
 For example, here's a test verifying the title. `sut` is the system under test
 in the test fixture.
