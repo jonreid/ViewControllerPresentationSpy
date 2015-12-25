@@ -4,10 +4,8 @@
 #import <UIKit/UIKit.h>
 
 
-/**
-    Essentially a copy of UIPopoverPresentationController's interface, except:
-    - Nothing from superclasses
-    - arrowDirection changed from readonly to readwrite
+/*!
+ * @abstract Same as UIPopoverPresentationController, but changing arrowDirection to readwrite.
  */
 @interface QCOMockPopoverPresentationController : NSObject
 
