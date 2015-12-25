@@ -21,7 +21,7 @@ static void swizzleMocks(void)
 
 @implementation QCOMockAlertVerifier
 
-- (id)init
+- (instancetype)init
 {
     self = [super init];
     if (self)
