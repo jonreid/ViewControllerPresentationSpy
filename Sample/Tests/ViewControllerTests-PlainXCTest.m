@@ -256,4 +256,13 @@
     XCTAssertEqual(alertVerifier.popover.permittedArrowDirections, UIPopoverArrowDirectionAny);
 }
 
+- (void)testShowModalController_NotTracked
+{
+  QCOMockAlertVerifier *alertVerifier = [[QCOMockAlertVerifier alloc] init];
+  
+  [sut showModalController:nil];
+
+  XCTAssertNil(alertVerifier.message);
+}
+
 @end
