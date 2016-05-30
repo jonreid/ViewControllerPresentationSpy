@@ -75,7 +75,7 @@
 {
     QCOMockAlertVerifier *alertVerifier = [[QCOMockAlertVerifier alloc] init];
 
-    [sut presentNonAlert:nil];
+    [sut presentNonAlert];
 
     assertThat(@(alertVerifier.presentedCount), is(@0));
 }

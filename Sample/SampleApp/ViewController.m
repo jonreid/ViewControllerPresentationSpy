@@ -30,7 +30,7 @@
     [self presentViewController:alertController animated:YES completion:nil];
 }
 
-- (IBAction)presentNonAlert:(id)sender
+- (void)presentNonAlert
 {
     [self presentViewController:[[UIViewController alloc] init] animated:NO completion:nil];
 }
