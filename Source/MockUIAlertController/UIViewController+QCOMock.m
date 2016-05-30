@@ -21,12 +21,14 @@ NSString *const QCOMockViewControllerAnimatedKey = @"QCOMockViewControllerAnimat
                              animated:(BOOL)flag
                            completion:(void (^)(void))completion
 {
+  if ([viewControllerToPresent isKindOfClass:[UIAlertController class]]) {
     NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
     [nc postNotificationName:QCOMockAlertControllerPresentedNotification
                       object:viewControllerToPresent
                     userInfo:@{ QCOMockViewControllerAnimatedKey : @(flag) }];
     if (completion)
         completion();
+  }
 }
 
 @end
