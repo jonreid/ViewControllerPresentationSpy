@@ -4,7 +4,7 @@
 // Test support
 #import <OCHamcrestIOS/OCHamcrestIOS.h>
 #import <MockUIAlertController/QCOMockAlertVerifier.h>
-@import XCTest;
+#import <XCTest/XCTest.h>
 
 
 @interface ViewControllerTests_OCHamcrest : XCTestCase
