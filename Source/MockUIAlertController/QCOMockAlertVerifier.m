@@ -70,7 +70,10 @@ static void swizzleMocks(void)
 - (void)executeActionForButtonWithTitle:(NSString *)title
 {
     UIAlertAction *action = [self actionWithTitle:title];
-    [action qcoMock_handler](action);
+    void (^handler)(UIAlertAction *action) = [action qcoMock_handler];
+    if (handler) {
+        handler(action);
+    }
 }
 
 - (UIAlertAction *)actionWithTitle:(NSString *)title
