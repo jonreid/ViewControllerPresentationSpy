@@ -152,10 +152,11 @@
 
     [sut showAlert:nil];
 
-    XCTAssertEqual(alertVerifier.actionTitles.count, (NSUInteger)3);
+    XCTAssertEqual(alertVerifier.actionTitles.count, (NSUInteger)4);
     XCTAssertEqualObjects(alertVerifier.actionTitles[0], @"Default");
     XCTAssertEqualObjects(alertVerifier.actionTitles[1], @"Cancel");
     XCTAssertEqualObjects(alertVerifier.actionTitles[2], @"Destroy");
+    XCTAssertEqualObjects(alertVerifier.actionTitles[3], @"No Handler");
 }
 
 - (void)testShowActionSheet_PresentedSheetShouldHaveActions
@@ -164,10 +165,11 @@
 
     [sut showActionSheet:nil];
 
-    XCTAssertEqual(alertVerifier.actionTitles.count, (NSUInteger)3);
+    XCTAssertEqual(alertVerifier.actionTitles.count, (NSUInteger)4);
     XCTAssertEqualObjects(alertVerifier.actionTitles[0], @"Default");
     XCTAssertEqualObjects(alertVerifier.actionTitles[1], @"Cancel");
     XCTAssertEqualObjects(alertVerifier.actionTitles[2], @"Destroy");
+    XCTAssertEqualObjects(alertVerifier.actionTitles[3], @"No Handler");
 }
 
 - (void)testShowAlert_DefaultButtonShouldHaveDefaultStyle
