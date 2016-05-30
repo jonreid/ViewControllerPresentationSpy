@@ -1,3 +1,10 @@
+NEXT RELEASE
+------------
+
+- Change UIAlertController's actual `preferredStyle` instead of keeping it in an associated
+  property, to avoid UIKit consistency exceptions. _Thank to: nirgin_
+
+
 Version 1.1.0
 -------------
 _24 Dec 2015_

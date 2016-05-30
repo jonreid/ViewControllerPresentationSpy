@@ -48,7 +48,7 @@ static void swizzleMocks(void)
     self.animated = notification.userInfo[QCOMockViewControllerAnimatedKey];
     self.title = alertController.title;
     self.message = alertController.message;
-    self.preferredStyle = alertController.qcoMock_preferredAlertStyle;
+    self.preferredStyle = alertController.preferredStyle;
     self.actions = alertController.actions;
     self.popover = (id)alertController.popoverPresentationController;
 }
