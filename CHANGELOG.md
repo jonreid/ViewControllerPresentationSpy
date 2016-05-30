@@ -4,6 +4,7 @@ NEXT RELEASE
 - Change UIAlertController's actual `preferredStyle` instead of keeping it in an associated
   property, to avoid UIKit consistency exceptions. _Thanks to: nirgin_
 - Allow `executeActionForButtonWithTitle:` even when no handler was set. _Thanks to: John Foulkes_
+- Don't record presentation of non-alerts. _Thanks to: Tom Bates_
 
 
 Version 1.1.0
