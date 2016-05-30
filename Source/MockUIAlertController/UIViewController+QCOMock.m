@@ -24,6 +24,7 @@ NSString *const QCOMockViewControllerAnimatedKey = @"QCOMockViewControllerAnimat
     if (![viewControllerToPresent isKindOfClass:[UIAlertController class]])
         return;
 
+    [viewControllerToPresent view];
     NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
     [nc postNotificationName:QCOMockAlertControllerPresentedNotification
                       object:viewControllerToPresent
