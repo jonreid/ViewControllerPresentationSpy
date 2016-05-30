@@ -11,6 +11,6 @@
 
 - (IBAction)showAlert:(id)sender;
 - (IBAction)showActionSheet:(id)sender;
-- (IBAction)showModalController:(id)sender;
+- (IBAction)presentNonAlert:(id)sender;
 
 @end

@@ -71,4 +71,13 @@
     [alertVerifier executeActionForButtonWithTitle:@"No Handler"];
 }
 
+- (void)testPresentingViewControllerThatIsNotAnAlert_ShouldNotTriggerVerifier
+{
+    QCOMockAlertVerifier *alertVerifier = [[QCOMockAlertVerifier alloc] init];
+
+    [sut presentNonAlert:nil];
+
+    assertThat(@(alertVerifier.presentedCount), is(@0));
+}
+
 @end

@@ -30,12 +30,9 @@
     [self presentViewController:alertController animated:YES completion:nil];
 }
 
-- (IBAction)showModalController:(id)sender
+- (IBAction)presentNonAlert:(id)sender
 {
-  UIViewController *modalController = [self.storyboard instantiateViewControllerWithIdentifier:@"ModalViewController"];
-  [self presentViewController:modalController
-                     animated:true
-                   completion:nil];
+    [self presentViewController:[[UIViewController alloc] init] animated:NO completion:nil];
 }
 
 - (void)setUpActionsForAlertController:(UIAlertController *)alertController
