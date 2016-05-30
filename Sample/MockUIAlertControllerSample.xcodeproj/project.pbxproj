@@ -14,10 +14,6 @@
 		0E748F9D1B6543A000B29AED /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E748F9C1B6543A000B29AED /* ViewController.m */; };
 		0E748FA01B6543A000B29AED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E748F9E1B6543A000B29AED /* Main.storyboard */; };
 		0E748FA21B6543A000B29AED /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E748FA11B6543A000B29AED /* Images.xcassets */; };
-		0EAFDDF91CFCDD9400B879DF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EAFDDF81CFCDD9400B879DF /* UIKit.framework */; };
-		0EAFDDFB1CFCDD9A00B879DF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EAFDDFA1CFCDD9A00B879DF /* Foundation.framework */; };
-		0EAFDDFC1CFCDDCD00B879DF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EAFDDFA1CFCDD9A00B879DF /* Foundation.framework */; };
-		0EAFDDFD1CFCDDD100B879DF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EAFDDF81CFCDD9400B879DF /* UIKit.framework */; };
 		609E9B6130BB35372D63FC0F /* QCOMockAlertVerifierTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E95F254C2B32C24D9C980 /* QCOMockAlertVerifierTests.m */; };
 		609E9B9655FA38A27FF87A2D /* ViewControllerTests-OCHamcrest.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E9314897852939CA75DFB /* ViewControllerTests-OCHamcrest.m */; };
 		609E9F1E2EC677BB9B797C36 /* ViewControllerTests-PlainXCTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E96C55D81BBE28BD81748 /* ViewControllerTests-PlainXCTest.m */; };
@@ -57,8 +53,6 @@
 		0E748FAA1B6543A000B29AED /* MockUIAlertControllerSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MockUIAlertControllerSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E748FAF1B6543A000B29AED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0EAFDDF41CFCD87B00B879DF /* SampleApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SampleApp-Prefix.pch"; sourceTree = "<group>"; };
-		0EAFDDF81CFCDD9400B879DF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		0EAFDDFA1CFCDD9A00B879DF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		609E9314897852939CA75DFB /* ViewControllerTests-OCHamcrest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewControllerTests-OCHamcrest.m"; sourceTree = "<group>"; };
 		609E95F254C2B32C24D9C980 /* QCOMockAlertVerifierTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCOMockAlertVerifierTests.m; sourceTree = "<group>"; };
 		609E96C55D81BBE28BD81748 /* ViewControllerTests-PlainXCTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewControllerTests-PlainXCTest.m"; sourceTree = "<group>"; };
@@ -69,8 +63,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0EAFDDFB1CFCDD9A00B879DF /* Foundation.framework in Frameworks */,
-				0EAFDDF91CFCDD9400B879DF /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,8 +70,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0EAFDDFD1CFCDDD100B879DF /* UIKit.framework in Frameworks */,
-				0EAFDDFC1CFCDDCD00B879DF /* Foundation.framework in Frameworks */,
 				0E14BAC71C2C793E00314F3E /* MockUIAlertController.framework in Frameworks */,
 				0E14BAE91C2C874600314F3E /* OCHamcrestIOS.framework in Frameworks */,
 			);
@@ -108,8 +98,6 @@
 		0E748F881B6543A000B29AED = {
 			isa = PBXGroup;
 			children = (
-				0EAFDDFA1CFCDD9A00B879DF /* Foundation.framework */,
-				0EAFDDF81CFCDD9400B879DF /* UIKit.framework */,
 				0E14BABA1C2C621500314F3E /* MockUIAlertController.xcodeproj */,
 				0E748F931B6543A000B29AED /* SampleApp */,
 				0E748FAD1B6543A000B29AED /* Tests */,
@@ -389,6 +377,12 @@
 				);
 				INFOPLIST_FILE = SampleApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					UIKit,
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.qualitycoding.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = MockUIAlertControllerSample;
 			};
@@ -404,6 +398,12 @@
 				);
 				INFOPLIST_FILE = SampleApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					UIKit,
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.qualitycoding.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = MockUIAlertControllerSample;
 			};
@@ -426,6 +426,10 @@
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-framework",
+					Foundation,
+					"-framework",
+					UIKit,
+					"-framework",
 					XCTest,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.qualitycoding.$(PRODUCT_NAME:rfc1034identifier)";
@@ -446,6 +450,10 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"-ObjC",
+					"-framework",
+					Foundation,
+					"-framework",
+					UIKit,
 					"-framework",
 					XCTest,
 				);
