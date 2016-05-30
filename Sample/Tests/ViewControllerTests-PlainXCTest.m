@@ -41,7 +41,7 @@
     NSArray *touchUpActions = [sut.showAlertButton actionsForTarget:sut
                                                     forControlEvent:UIControlEventTouchUpInside];
 
-    XCTAssertEqual(touchUpActions.count, 1);
+    XCTAssertEqual(touchUpActions.count, 1U);
     XCTAssertEqualObjects(touchUpActions[0], @"showAlert:");
 }
 
@@ -52,7 +52,7 @@
     NSArray *touchUpActions = [sut.showActionSheetButton actionsForTarget:sut
                                                           forControlEvent:UIControlEventTouchUpInside];
 
-    XCTAssertEqual(touchUpActions.count, 1);
+    XCTAssertEqual(touchUpActions.count, 1U);
     XCTAssertEqualObjects(touchUpActions[0], @"showActionSheet:");
 }
 
@@ -62,7 +62,7 @@
 
     [sut showAlert:nil];
     
-    XCTAssertEqual(alertVerifier.presentedCount, 1);
+    XCTAssertEqual(alertVerifier.presentedCount, 1U);
 }
 
 - (void)testShowActionSheet_ShouldPresentModal
@@ -71,7 +71,7 @@
 
     [sut showActionSheet:nil];
 
-    XCTAssertEqual(alertVerifier.presentedCount, 1);
+    XCTAssertEqual(alertVerifier.presentedCount, 1U);
 }
 
 - (void)testShowAlert_ShouldPreferAlert
@@ -152,7 +152,7 @@
 
     [sut showAlert:nil];
 
-    XCTAssertEqual(alertVerifier.actionTitles.count, 4);
+    XCTAssertEqual(alertVerifier.actionTitles.count, 4U);
     XCTAssertEqualObjects(alertVerifier.actionTitles[0], @"Default");
     XCTAssertEqualObjects(alertVerifier.actionTitles[1], @"Cancel");
     XCTAssertEqualObjects(alertVerifier.actionTitles[2], @"Destroy");
@@ -165,7 +165,7 @@
 
     [sut showActionSheet:nil];
 
-    XCTAssertEqual(alertVerifier.actionTitles.count, 4);
+    XCTAssertEqual(alertVerifier.actionTitles.count, 4U);
     XCTAssertEqualObjects(alertVerifier.actionTitles[0], @"Default");
     XCTAssertEqualObjects(alertVerifier.actionTitles[1], @"Cancel");
     XCTAssertEqualObjects(alertVerifier.actionTitles[2], @"Destroy");
