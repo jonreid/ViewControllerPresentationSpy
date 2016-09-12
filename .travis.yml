@@ -1,5 +1,4 @@
 language: objective-c
-osx_image: xcode6.4
 
 before_install:
   - sudo easy_install cpp-coveralls
