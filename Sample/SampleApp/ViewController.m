@@ -9,7 +9,7 @@
                                                                              message:@"Message"
                                                                       preferredStyle:UIAlertControllerStyleAlert];
     [self setUpActionsForAlertController:alertController];
-    [self presentViewController:alertController animated:YES completion:nil];
+    [self presentViewController:alertController animated:YES completion:^{}];
 }
 
 - (IBAction)showActionSheet:(id)sender
@@ -27,7 +27,7 @@
         popover.permittedArrowDirections = UIPopoverArrowDirectionAny;
     }
 
-    [self presentViewController:alertController animated:YES completion:nil];
+    [self presentViewController:alertController animated:YES completion:^{}];
 }
 
 - (void)presentNonAlert
