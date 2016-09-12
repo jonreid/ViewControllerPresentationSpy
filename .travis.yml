@@ -5,8 +5,8 @@ before_install:
   - sudo easy_install cpp-coveralls
 
 script:
-  - xctool test -project Sample/MockUIAlertControllerSample.xcodeproj -scheme MockUIAlertControllerSample -sdk iphonesimulator8.4 -destination "platform=iOS Simulator,name=iPhone 5,OS=8.4"
-  - xctool test -project Sample/MockUIAlertControllerSample.xcodeproj -scheme MockUIAlertControllerSample -sdk iphonesimulator8.4 -destination "platform=iOS Simulator,name=iPad Air,OS=8.4"
+  - xctool test -project Sample/MockUIAlertControllerSample.xcodeproj -scheme MockUIAlertControllerSample -sdk iphonesimulator9.3 -destination "platform=iOS Simulator,name=iPhone 5,OS=9.3"
+  - xctool test -project Sample/MockUIAlertControllerSample.xcodeproj -scheme MockUIAlertControllerSample -sdk iphonesimulator9.3 -destination "platform=iOS Simulator,name=iPad Air,OS=9.3"
 
 after_success:
   - ./Cocoanetics-Ruby/coveralls.rb --exclude-folder Sample --exclude-headers
