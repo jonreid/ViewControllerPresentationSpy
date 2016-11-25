@@ -3,10 +3,10 @@
 
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 extern NSString *const QCOMockAlertControllerPresentedNotification;
 
-
-NS_ASSUME_NONNULL_BEGIN
 
 @interface UIAlertController (QCOMock)
 
