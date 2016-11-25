@@ -42,40 +42,20 @@
     XCTAssertNotNil(button);
 }
 
-- (void)testShowAlertButton_ShouldHaveAction
-{
-    NSArray *touchUpActions = [sut.showAlertButton actionsForTarget:sut
-                                                    forControlEvent:UIControlEventTouchUpInside];
-
-    XCTAssertEqual(touchUpActions.count, 1U);
-    XCTAssertEqualObjects(touchUpActions[0], @"showAlert:");
-}
-
-- (void)testShowActionSheetButton_ShouldHaveAction
-{
-    [sut view];
-
-    NSArray *touchUpActions = [sut.showActionSheetButton actionsForTarget:sut
-                                                          forControlEvent:UIControlEventTouchUpInside];
-
-    XCTAssertEqual(touchUpActions.count, 1U);
-    XCTAssertEqualObjects(touchUpActions[0], @"showActionSheet:");
-}
-
-- (void)testShowAlert_ShouldPresentModal
+- (void)testTappingShowAlertButton_ShouldPresentAlert
 {
     QCOMockAlertVerifier *alertVerifier = [[QCOMockAlertVerifier alloc] init];
 
-    [sut showAlert:nil];
+    [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
     
     XCTAssertEqual(alertVerifier.presentedCount, 1U);
 }
 
-- (void)testShowActionSheet_ShouldPresentModal
+- (void)testTappingShowActionSheetButton_ShouldPresentAlert
 {
     QCOMockAlertVerifier *alertVerifier = [[QCOMockAlertVerifier alloc] init];
 
-    [sut showActionSheet:nil];
+    [sut.showActionSheetButton sendActionsForControlEvents:UIControlEventTouchUpInside];
 
     XCTAssertEqual(alertVerifier.presentedCount, 1U);
 }
@@ -84,7 +64,7 @@
 {
     QCOMockAlertVerifier *alertVerifier = [[QCOMockAlertVerifier alloc] init];
 
-    [sut showAlert:nil];
+    [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
 
     XCTAssertEqual(alertVerifier.preferredStyle, UIAlertControllerStyleAlert);
 }
@@ -93,7 +73,7 @@
 {
     QCOMockAlertVerifier *alertVerifier = [[QCOMockAlertVerifier alloc] init];
 
-    [sut showActionSheet:nil];
+    [sut.showActionSheetButton sendActionsForControlEvents:UIControlEventTouchUpInside];
 
     XCTAssertEqual(alertVerifier.preferredStyle, UIAlertControllerStyleActionSheet);
 }
@@ -102,7 +82,7 @@
 {
     QCOMockAlertVerifier *alertVerifier = [[QCOMockAlertVerifier alloc] init];
 
-    [sut showAlert:nil];
+    [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
 
     XCTAssertTrue(alertVerifier.animated);
 }
@@ -111,7 +91,7 @@
 {
     QCOMockAlertVerifier *alertVerifier = [[QCOMockAlertVerifier alloc] init];
 
-    [sut showActionSheet:nil];
+    [sut.showActionSheetButton sendActionsForControlEvents:UIControlEventTouchUpInside];
 
     XCTAssertTrue(alertVerifier.animated);
 }
@@ -120,7 +100,7 @@
 {
     QCOMockAlertVerifier *alertVerifier = [[QCOMockAlertVerifier alloc] init];
 
-    [sut showAlert:nil];
+    [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
 
     XCTAssertEqualObjects(alertVerifier.title, @"Title");
 }
@@ -129,7 +109,7 @@
 {
     QCOMockAlertVerifier *alertVerifier = [[QCOMockAlertVerifier alloc] init];
 
-    [sut showActionSheet:nil];
+    [sut.showActionSheetButton sendActionsForControlEvents:UIControlEventTouchUpInside];
 
     XCTAssertEqualObjects(alertVerifier.title, @"Title");
 }
@@ -138,7 +118,7 @@
 {
     QCOMockAlertVerifier *alertVerifier = [[QCOMockAlertVerifier alloc] init];
 
-    [sut showAlert:nil];
+    [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
 
     XCTAssertEqualObjects(alertVerifier.message, @"Message");
 }
@@ -147,7 +127,7 @@
 {
     QCOMockAlertVerifier *alertVerifier = [[QCOMockAlertVerifier alloc] init];
 
-    [sut showActionSheet:nil];
+    [sut.showActionSheetButton sendActionsForControlEvents:UIControlEventTouchUpInside];
 
     XCTAssertEqualObjects(alertVerifier.message, @"Message");
 }
@@ -156,7 +136,7 @@
 {
     QCOMockAlertVerifier *alertVerifier = [[QCOMockAlertVerifier alloc] init];
 
-    [sut showAlert:nil];
+    [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
 
     XCTAssertEqual(alertVerifier.actionTitles.count, 4U);
     XCTAssertEqualObjects(alertVerifier.actionTitles[0], @"No Handler");
@@ -169,7 +149,7 @@
 {
     QCOMockAlertVerifier *alertVerifier = [[QCOMockAlertVerifier alloc] init];
 
-    [sut showActionSheet:nil];
+    [sut.showActionSheetButton sendActionsForControlEvents:UIControlEventTouchUpInside];
 
     XCTAssertEqual(alertVerifier.actionTitles.count, 4U);
     XCTAssertEqualObjects(alertVerifier.actionTitles[0], @"No Handler");
@@ -182,7 +162,7 @@
 {
     QCOMockAlertVerifier *alertVerifier = [[QCOMockAlertVerifier alloc] init];
 
-    [sut showAlert:nil];
+    [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
 
     XCTAssertEqual([alertVerifier styleForButtonWithTitle:@"Default"], UIAlertActionStyleDefault);
 }
@@ -191,7 +171,7 @@
 {
     QCOMockAlertVerifier *alertVerifier = [[QCOMockAlertVerifier alloc] init];
 
-    [sut showAlert:nil];
+    [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
 
     XCTAssertEqual([alertVerifier styleForButtonWithTitle:@"Cancel"], UIAlertActionStyleCancel);
 }
@@ -200,7 +180,7 @@
 {
     QCOMockAlertVerifier *alertVerifier = [[QCOMockAlertVerifier alloc] init];
 
-    [sut showAlert:nil];
+    [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
 
     XCTAssertEqual([alertVerifier styleForButtonWithTitle:@"Destroy"], UIAlertActionStyleDestructive);
 }
@@ -209,7 +189,7 @@
 {
     QCOMockAlertVerifier *alertVerifier = [[QCOMockAlertVerifier alloc] init];
 
-    [sut showAlert:nil];
+    [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
     [alertVerifier executeActionForButtonWithTitle:@"Default"];
 
     XCTAssertTrue(sut.alertDefaultActionExecuted);
@@ -219,7 +199,7 @@
 {
     QCOMockAlertVerifier *alertVerifier = [[QCOMockAlertVerifier alloc] init];
 
-    [sut showAlert:nil];
+    [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
     [alertVerifier executeActionForButtonWithTitle:@"Cancel"];
 
     XCTAssertTrue(sut.alertCancelActionExecuted);
@@ -229,7 +209,7 @@
 {
     QCOMockAlertVerifier *alertVerifier = [[QCOMockAlertVerifier alloc] init];
 
-    [sut showAlert:nil];
+    [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
     [alertVerifier executeActionForButtonWithTitle:@"Destroy"];
 
     XCTAssertTrue(sut.alertDestroyActionExecuted);
@@ -238,28 +218,27 @@
 - (void)testShowActionSheet_PopoverSourceViewShouldBeTappedButton
 {
     QCOMockAlertVerifier *alertVerifier = [[QCOMockAlertVerifier alloc] init];
-    UIButton *tappedButton = [[UIButton alloc] initWithFrame:CGRectMake(1, 2, 3, 4)];
     
-    [sut showActionSheet:tappedButton];
+    [sut.showActionSheetButton sendActionsForControlEvents:UIControlEventTouchUpInside];
     
-    XCTAssertEqual(alertVerifier.popover.sourceView, tappedButton);
+    XCTAssertEqual(alertVerifier.popover.sourceView, sut.showActionSheetButton);
 }
 
 - (void)testShowActionSheet_PopoverSourceRectShouldBeTappedButtonBounds
 {
     QCOMockAlertVerifier *alertVerifier = [[QCOMockAlertVerifier alloc] init];
-    UIButton *tappedButton = [[UIButton alloc] initWithFrame:CGRectMake(1, 2, 3, 4)];
+    
+    [sut.showActionSheetButton sendActionsForControlEvents:UIControlEventTouchUpInside];
 
-    [sut showActionSheet:tappedButton];
-
-    XCTAssertEqualObjects(NSStringFromCGRect(alertVerifier.popover.sourceRect), NSStringFromCGRect(tappedButton.bounds));
+    XCTAssertEqualObjects(NSStringFromCGRect(alertVerifier.popover.sourceRect),
+            NSStringFromCGRect(sut.showActionSheetButton.bounds));
 }
 
 - (void)testShowActionSheet_PopoverPermittedArrowDirectionsShouldBeAnyDirection
 {
     QCOMockAlertVerifier *alertVerifier = [[QCOMockAlertVerifier alloc] init];
 
-    [sut showActionSheet:nil];
+    [sut.showActionSheetButton sendActionsForControlEvents:UIControlEventTouchUpInside];
 
     XCTAssertEqual(alertVerifier.popover.permittedArrowDirections, UIPopoverArrowDirectionAny);
 }
