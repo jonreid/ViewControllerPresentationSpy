@@ -25,7 +25,8 @@ For more discussion, see my blog post [How to Test UIAlertControllers and Contro
 Add the following to your Podfile, changing "MyTests" to the name of your test target:
 
 ```ruby
-target :MyTests, :exclusive => true do
+target 'MyTests' do
+  inherit! :search_paths
   pod 'MockUIAlertController', '~> 1.0'
 end
 ```
