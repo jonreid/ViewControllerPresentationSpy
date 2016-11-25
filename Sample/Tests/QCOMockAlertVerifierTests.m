@@ -3,7 +3,7 @@
 #import "ViewController.h"
 
 #import <OCHamcrestIOS/OCHamcrestIOS.h>
-#import <XCTest/XCTest.h>
+@import XCTest;
 
 
 @interface QCOMockAlertVerifierTests : XCTestCase

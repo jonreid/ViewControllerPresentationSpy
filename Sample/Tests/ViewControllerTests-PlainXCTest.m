@@ -3,7 +3,7 @@
 
 // Test support
 #import <MockUIAlertController/QCOMockAlertVerifier.h>
-#import <XCTest/XCTest.h>
+@import XCTest;
 
 
 @interface ViewControllerTests_PlainXCTest : XCTestCase
