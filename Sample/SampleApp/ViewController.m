@@ -41,6 +41,9 @@
     self.alertCancelActionExecuted = NO;
     self.alertDestroyActionExecuted = NO;
 
+    UIAlertAction *actionWithoutHandler = [UIAlertAction actionWithTitle:@"No Handler"
+                                                                   style:UIAlertActionStyleDefault
+                                                                 handler:nil];
     UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"Default"
                                                             style:UIAlertActionStyleDefault
                                                           handler:^(UIAlertAction *action) {
@@ -56,13 +59,10 @@
                                                           handler:^(UIAlertAction *action) {
                                                               self.alertDestroyActionExecuted = YES;
                                                           }];
-    UIAlertAction *actionWithoutHandler = [UIAlertAction actionWithTitle:@"No Handler"
-                                                                   style:UIAlertActionStyleDefault
-                                                                 handler:nil];
+    [alertController addAction:actionWithoutHandler];
     [alertController addAction:defaultAction];
     [alertController addAction:cancelAction];
     [alertController addAction:destroyAction];
-    [alertController addAction:actionWithoutHandler];
 }
 
 @end
