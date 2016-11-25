@@ -27,7 +27,7 @@
  * @discussion Instantiating a QCOMockAlertVerifier swizzles UIAlertController. It remains swizzled
  * until the QCOMockAlertVerifier is deallocated.
  */
-- (instancetype)init;
+- (instancetype)init NS_DESIGNATED_INITIALIZER;
 
 /*!
  * @abstract Returns the UIAlertActionStyle for the button with the specified title.
