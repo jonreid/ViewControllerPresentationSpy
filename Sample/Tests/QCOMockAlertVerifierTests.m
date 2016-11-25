@@ -31,8 +31,8 @@
 - (void)testShowAlert_TryingToGetStyleForNonexistentButton_ShouldThrowInternalInconsistency
 {
     QCOMockAlertVerifier *alertVerifier = [[QCOMockAlertVerifier alloc] init];
-
-    [sut showAlert:nil];
+    
+    [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
     
     assertThat(^{ [alertVerifier styleForButtonWithTitle:@"NO SUCH BUTTON"]; },
             throwsException(hasProperty(@"name", NSInternalInconsistencyException)));
@@ -41,8 +41,8 @@
 - (void)testShowAlert_TryingToGetStyleForNonexistentButton_ShouldThrowExceptionWithReason
 {
     QCOMockAlertVerifier *alertVerifier = [[QCOMockAlertVerifier alloc] init];
-
-    [sut showAlert:nil];
+    
+    [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
 
     assertThat(^{ [alertVerifier styleForButtonWithTitle:@"NO SUCH BUTTON"]; },
             throwsException(hasProperty(@"reason", @"Button not found")));
@@ -51,8 +51,8 @@
 - (void)testShowAlert_TryingToExecuteActionForNonexistentButton_ShouldThrowInternalInconsistency
 {
     QCOMockAlertVerifier *alertVerifier = [[QCOMockAlertVerifier alloc] init];
-
-    [sut showAlert:nil];
+    
+    [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
 
     assertThat(^{ [alertVerifier executeActionForButtonWithTitle:@"NO SUCH BUTTON"]; },
             throwsException(hasProperty(@"name", NSInternalInconsistencyException)));
@@ -61,8 +61,8 @@
 - (void)testShowAlert_TryingToExecuteActionForNonexistentButton_ShouldThrowExceptionWithReason
 {
     QCOMockAlertVerifier *alertVerifier = [[QCOMockAlertVerifier alloc] init];
-
-    [sut showAlert:nil];
+    
+    [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
 
     assertThat(^{ [alertVerifier executeActionForButtonWithTitle:@"NO SUCH BUTTON"]; },
             throwsException(hasProperty(@"reason", @"Button not found")));
@@ -71,8 +71,8 @@
 - (void)testShowAlert_TryingToExecuteActionForButtonWithoutHandler_ShouldNotCrash
 {
     QCOMockAlertVerifier *alertVerifier = [[QCOMockAlertVerifier alloc] init];
-
-    [sut showAlert:nil];
+    
+    [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
 
     [alertVerifier executeActionForButtonWithTitle:@"No Handler"];
 }

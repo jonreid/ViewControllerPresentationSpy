@@ -9,8 +9,6 @@
 @property (nonatomic, assign) BOOL alertCancelActionExecuted;
 @property (nonatomic, assign) BOOL alertDestroyActionExecuted;
 
-- (IBAction)showAlert:(id)sender;
-- (IBAction)showActionSheet:(id)sender;
 - (void)presentNonAlert;
 
 @end
