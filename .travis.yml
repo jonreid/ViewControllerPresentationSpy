@@ -1,14 +1,14 @@
 language: objective-c
-osx_image: xcode6.4
+osx_image: xcode8.1
 
 before_install:
-  - brew update
-  - brew outdated xctool || brew upgrade xctool
   - sudo easy_install cpp-coveralls
+  - gem install xcpretty --no-rdoc --no-ri --no-document --quiet
 
 script:
-  - xctool test -project Sample/MockUIAlertControllerSample.xcodeproj -scheme MockUIAlertControllerSample -sdk iphonesimulator8.4 -destination "platform=iOS Simulator,name=iPhone 5,OS=8.4"
-  - xctool test -project Sample/MockUIAlertControllerSample.xcodeproj -scheme MockUIAlertControllerSample -sdk iphonesimulator8.4 -destination "platform=iOS Simulator,name=iPad Air,OS=8.4"
+  - set -o pipefail && xcodebuild test -project Sample/MockUIAlertControllerSample.xcodeproj -scheme MockUIAlertControllerSample -sdk iphonesimulator10.1 -destination "platform=iOS Simulator,name=iPhone 5,OS=10.1" | xcpretty
+  - set -o pipefail && xcodebuild test -project Sample/MockUIAlertControllerSample.xcodeproj -scheme MockUIAlertControllerSample -sdk iphonesimulator10.1 -destination "platform=iOS Simulator,name=iPad Air,OS=10.1" | xcpretty
+  - pod spec lint --quick
 
 after_success:
   - ./Cocoanetics-Ruby/coveralls.rb --exclude-folder Sample --exclude-headers
