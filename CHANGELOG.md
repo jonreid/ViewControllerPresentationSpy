@@ -3,7 +3,8 @@ NEXT RELEASE
 
 **Features:**
 
-- Annotate nullability.
+- Annotate nullability. (Bumped major version as they may introduce warnings in your code.)
+- Added Swift sample app.
 
 
 Version 1.1.1
