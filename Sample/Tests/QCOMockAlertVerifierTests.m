@@ -22,6 +22,12 @@
     [sut view];
 }
 
+- (void)tearDown
+{
+    sut = nil;
+    [super tearDown];
+}
+
 - (void)testShowAlert_TryingToGetStyleForNonexistentButton_ShouldThrowInternalInconsistency
 {
     QCOMockAlertVerifier *alertVerifier = [[QCOMockAlertVerifier alloc] init];

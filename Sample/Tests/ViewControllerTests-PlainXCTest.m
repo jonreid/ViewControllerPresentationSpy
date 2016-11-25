@@ -22,6 +22,12 @@
     [sut view];
 }
 
+- (void)tearDown
+{
+    sut = nil;
+    [super tearDown];
+}
+
 - (void)testShowAlertButton_ShouldBeConnected
 {
     UIButton *button = sut.showAlertButton;
