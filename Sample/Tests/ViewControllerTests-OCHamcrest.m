@@ -157,7 +157,7 @@
 
     [sut showAlert:nil];
 
-    assertThat(alertVerifier.actionTitles, containsIn(@[ @"Default", @"Cancel", @"Destroy", @"No Handler" ]));
+    assertThat(alertVerifier.actionTitles, containsIn(@[ @"No Handler", @"Default", @"Cancel", @"Destroy" ]));
 }
 
 - (void)testShowActionSheet_PresentedSheetShouldHaveActions
@@ -166,7 +166,7 @@
 
     [sut showActionSheet:nil];
 
-    assertThat(alertVerifier.actionTitles, containsIn(@[ @"Default", @"Cancel", @"Destroy", @"No Handler" ]));
+    assertThat(alertVerifier.actionTitles, containsIn(@[ @"No Handler", @"Default", @"Cancel", @"Destroy" ]));
 }
 
 - (void)testShowAlert_DefaultButtonShouldHaveDefaultStyle

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0E14BAC71C2C793E00314F3E /* MockUIAlertController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E14BABF1C2C621500314F3E /* MockUIAlertController.framework */; };
 		0E748F971B6543A000B29AED /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E748F961B6543A000B29AED /* main.m */; };
 		0E748F9A1B6543A000B29AED /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E748F991B6543A000B29AED /* AppDelegate.m */; };
 		0E748F9D1B6543A000B29AED /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E748F9C1B6543A000B29AED /* ViewController.m */; };
@@ -15,19 +14,13 @@
 		0E748FA21B6543A000B29AED /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E748FA11B6543A000B29AED /* Images.xcassets */; };
 		483E05421DE80ACF00B5E4E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 483E05401DE80ACF00B5E4E4 /* LaunchScreen.storyboard */; };
 		487B86421D86610B00D002E4 /* OCHamcrestIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 487B86401D86610B00D002E4 /* OCHamcrestIOS.framework */; };
+		4885FDCC1DE8A32200A9F923 /* MockUIAlertController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4885FDCB1DE8A32200A9F923 /* MockUIAlertController.framework */; };
 		609E9B6130BB35372D63FC0F /* QCOMockAlertVerifierTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E95F254C2B32C24D9C980 /* QCOMockAlertVerifierTests.m */; };
 		609E9B9655FA38A27FF87A2D /* ViewControllerTests-OCHamcrest.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E9314897852939CA75DFB /* ViewControllerTests-OCHamcrest.m */; };
 		609E9F1E2EC677BB9B797C36 /* ViewControllerTests-PlainXCTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E96C55D81BBE28BD81748 /* ViewControllerTests-PlainXCTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		0E14BABE1C2C621500314F3E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0E14BABA1C2C621500314F3E /* MockUIAlertController.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 0E14BAA81C2C619300314F3E;
-			remoteInfo = MockUIAlertController;
-		};
 		0E748FAB1B6543A000B29AED /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0E748F891B6543A000B29AED /* Project object */;
@@ -38,7 +31,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0E14BABA1C2C621500314F3E /* MockUIAlertController.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MockUIAlertController.xcodeproj; path = ../Source/MockUIAlertController.xcodeproj; sourceTree = "<group>"; };
 		0E14BAC51C2C783400314F3E /* XcodeWarnings.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = XcodeWarnings.xcconfig; path = ../../Source/XcodeWarnings.xcconfig; sourceTree = "<group>"; };
 		0E748F911B6543A000B29AED /* MockUIAlertControllerSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MockUIAlertControllerSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E748F951B6543A000B29AED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -55,6 +47,7 @@
 		483E05411DE80ACF00B5E4E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		487B863F1D86610B00D002E4 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		487B86401D86610B00D002E4 /* OCHamcrestIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OCHamcrestIOS.framework; sourceTree = "<group>"; };
+		4885FDCB1DE8A32200A9F923 /* MockUIAlertController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MockUIAlertController.framework; path = "../Source/build/Debug-iphoneos/MockUIAlertController.framework"; sourceTree = "<group>"; };
 		609E9314897852939CA75DFB /* ViewControllerTests-OCHamcrest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewControllerTests-OCHamcrest.m"; sourceTree = "<group>"; };
 		609E95F254C2B32C24D9C980 /* QCOMockAlertVerifierTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCOMockAlertVerifierTests.m; sourceTree = "<group>"; };
 		609E96C55D81BBE28BD81748 /* ViewControllerTests-PlainXCTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewControllerTests-PlainXCTest.m"; sourceTree = "<group>"; };
@@ -72,29 +65,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E14BAC71C2C793E00314F3E /* MockUIAlertController.framework in Frameworks */,
 				487B86421D86610B00D002E4 /* OCHamcrestIOS.framework in Frameworks */,
+				4885FDCC1DE8A32200A9F923 /* MockUIAlertController.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0E14BABB1C2C621500314F3E /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				0E14BABF1C2C621500314F3E /* MockUIAlertController.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		0E748F881B6543A000B29AED = {
 			isa = PBXGroup;
 			children = (
-				0E14BABA1C2C621500314F3E /* MockUIAlertController.xcodeproj */,
 				0E748F931B6543A000B29AED /* SampleApp */,
 				0E748FAD1B6543A000B29AED /* Tests */,
 				0E748F921B6543A000B29AED /* Products */,
+				4885FDCA1DE8A32200A9F923 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -160,6 +145,14 @@
 				487B86401D86610B00D002E4 /* OCHamcrestIOS.framework */,
 			);
 			path = "OCHamcrest-6.0.0";
+			sourceTree = "<group>";
+		};
+		4885FDCA1DE8A32200A9F923 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4885FDCB1DE8A32200A9F923 /* MockUIAlertController.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,12 +222,6 @@
 			mainGroup = 0E748F881B6543A000B29AED;
 			productRefGroup = 0E748F921B6543A000B29AED /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 0E14BABB1C2C621500314F3E /* Products */;
-					ProjectRef = 0E14BABA1C2C621500314F3E /* MockUIAlertController.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				0E748F901B6543A000B29AED /* MockUIAlertControllerSample */,
@@ -242,16 +229,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		0E14BABF1C2C621500314F3E /* MockUIAlertController.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = MockUIAlertController.framework;
-			remoteRef = 0E14BABE1C2C621500314F3E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		0E748F8F1B6543A000B29AED /* Resources */ = {
