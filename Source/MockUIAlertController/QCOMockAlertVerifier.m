@@ -7,10 +7,6 @@
 #import "UIAlertController+QCOMock.h"
 #import "UIViewController+QCOMock.h"
 
-@interface QCOMockAlertVerifier ()
-@property (nonatomic, copy) NSArray *actions;
-@end
-
 
 static void swizzleMocks(void)
 {
@@ -18,6 +14,10 @@ static void swizzleMocks(void)
     [UIAlertController qcoMock_swizzle];
     [UIViewController qcoMock_swizzle];
 }
+
+@interface QCOMockAlertVerifier ()
+@property (nonatomic, copy) NSArray<UIAlertAction *> *actions;
+@end
 
 @implementation QCOMockAlertVerifier
 

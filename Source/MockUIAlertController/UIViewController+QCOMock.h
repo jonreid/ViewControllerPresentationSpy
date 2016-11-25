@@ -6,8 +6,12 @@
 extern NSString *const QCOMockViewControllerAnimatedKey;
 
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface UIViewController (QCOMock)
 
 + (void)qcoMock_swizzle;
 
 @end
+
+NS_ASSUME_NONNULL_END

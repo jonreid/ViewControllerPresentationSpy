@@ -6,6 +6,8 @@
 #import <MockUIAlertController/QCOMockPopoverPresentationController.h> // Convenience import instead of @class
 
 
+NS_ASSUME_NONNULL_BEGIN
+
 /*!
  * @abstract Captures mocked UIAlertController arguments.
  * @discussion Instantiate a QCOMockAlertVerifier before the execution phase of the test. Then
@@ -15,12 +17,12 @@
 @interface QCOMockAlertVerifier : NSObject
 
 @property (nonatomic, assign) NSUInteger presentedCount;
-@property (nonatomic, strong) NSNumber *animated;
-@property (nonatomic, copy) NSString *title;
-@property (nonatomic, copy) NSString *message;
+@property (nullable, nonatomic, strong) NSNumber *animated;
+@property (nullable, nonatomic, copy) NSString *title;
+@property (nullable, nonatomic, copy) NSString *message;
 @property (nonatomic, assign) UIAlertControllerStyle preferredStyle;
-@property (nonatomic, readonly) NSArray *actionTitles;
-@property (nonatomic, strong) QCOMockPopoverPresentationController *popover;
+@property (nullable, nonatomic, readonly) NSArray *actionTitles;
+@property (nullable, nonatomic, strong) QCOMockPopoverPresentationController *popover;
 
 /*!
  * @abstract Initializes a newly allocated verifier.
@@ -42,3 +44,5 @@
 - (void)executeActionForButtonWithTitle:(NSString *)title;
 
 @end
+
+NS_ASSUME_NONNULL_END
