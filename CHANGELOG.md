@@ -1,3 +1,11 @@
+NEXT RELEASE
+------------
+
+**Features:**
+
+- Annotate nullability.
+
+
 Version 1.1.1
 -------------
 _11 Sep 2016_
