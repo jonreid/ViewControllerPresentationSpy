@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0720"
+   LastUpgradeVersion = "0810"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0E14BAA71C2C619300314F3E"
-               BuildableName = "MockUIAlertController.framework"
-               BlueprintName = "MockUIAlertController"
-               ReferencedContainer = "container:MockUIAlertController.xcodeproj">
+               BlueprintIdentifier = "483E051C1DE8064D00B5E4E4"
+               BuildableName = "MockUIAlertControllerSampleSwift.app"
+               BlueprintName = "MockUIAlertControllerSampleSwift"
+               ReferencedContainer = "container:MockUIAlertControllerSampleSwift.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -28,7 +28,26 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "483E05301DE8064D00B5E4E4"
+               BuildableName = "MockUIAlertControllerSampleSwiftTests.xctest"
+               BlueprintName = "MockUIAlertControllerSampleSwiftTests"
+               ReferencedContainer = "container:MockUIAlertControllerSampleSwift.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "483E051C1DE8064D00B5E4E4"
+            BuildableName = "MockUIAlertControllerSampleSwift.app"
+            BlueprintName = "MockUIAlertControllerSampleSwift"
+            ReferencedContainer = "container:MockUIAlertControllerSampleSwift.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -42,15 +61,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0E14BAA71C2C619300314F3E"
-            BuildableName = "MockUIAlertController.framework"
-            BlueprintName = "MockUIAlertController"
-            ReferencedContainer = "container:MockUIAlertController.xcodeproj">
+            BlueprintIdentifier = "483E051C1DE8064D00B5E4E4"
+            BuildableName = "MockUIAlertControllerSampleSwift.app"
+            BlueprintName = "MockUIAlertControllerSampleSwift"
+            ReferencedContainer = "container:MockUIAlertControllerSampleSwift.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -60,15 +80,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0E14BAA71C2C619300314F3E"
-            BuildableName = "MockUIAlertController.framework"
-            BlueprintName = "MockUIAlertController"
-            ReferencedContainer = "container:MockUIAlertController.xcodeproj">
+            BlueprintIdentifier = "483E051C1DE8064D00B5E4E4"
+            BuildableName = "MockUIAlertControllerSampleSwift.app"
+            BlueprintName = "MockUIAlertControllerSampleSwift"
+            ReferencedContainer = "container:MockUIAlertControllerSampleSwift.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
