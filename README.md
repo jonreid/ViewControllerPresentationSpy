@@ -18,32 +18,6 @@ No actual alerts are presented. This means:
 For more discussion, see my blog post [How to Test UIAlertControllers and Control Swizzling](http://qualitycoding.org/testing-uialertcontrollers/).
 
 
-## Adding it to your project
-
-### CocoaPods
-
-Add the following to your Podfile, changing "MyTests" to the name of your test target:
-
-```ruby
-target 'MyTests' do
-  inherit! :search_paths
-  pod 'MockUIAlertController', '~> 1.0'
-end
-```
-
-### Carthage
-
-Add the following to your Cartfile:
-
-```
-github "jonreid/MockUIAlertController" ~> 1.0
-```
-
-### Building It Yourself
-
-Make sure to take everything from Source/MockUIAlertController.
-
-
 ## Writing Tests
 
 ### What do I need to change in production code?
@@ -115,3 +89,29 @@ func testShowAlert_ExecutingActionForOKButton_ShouldDoSomething() {
 
 See the sample app. Run it on both phone & pad to see what it does, then read the ViewController
 tests.
+
+
+## Adding it to your project
+
+### CocoaPods
+
+Add the following to your Podfile, changing "MyTests" to the name of your test target:
+
+```ruby
+target 'MyTests' do
+  inherit! :search_paths
+  pod 'MockUIAlertController', '~> 1.0'
+end
+```
+
+### Carthage
+
+Add the following to your Cartfile:
+
+```
+github "jonreid/MockUIAlertController" ~> 1.0
+```
+
+### Building It Yourself
+
+Make sure to take everything from Source/MockUIAlertController.
