@@ -56,6 +56,8 @@ func testShowAlert_AlertShouldHaveTitle() {
 }
 ```
 
+To guard against tests which accidentally present real alerts, I recommend placing the alert verifier in the test fixture with `setUp`/`tearDown`.
+
 
 ## How can I invoke the block associated with a UIAlertAction?
 
@@ -87,8 +89,7 @@ func testShowAlert_ExecutingActionForOKButton_ShouldDoSomething() {
 
 ### Can I see some examples?
 
-See the sample app. Run it on both phone & pad to see what it does, then read the ViewController
-tests.
+See the sample apps. Run them on both phone & pad to see what they do, then read the ViewController tests.
 
 
 ## Adding it to your project
