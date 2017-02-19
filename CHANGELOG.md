@@ -1,7 +1,6 @@
-NEXT RELEASE
-------------
-
-**Features:**
+Version 2.0.0
+-------------
+_19 Feb 2017_
 
 - Annotate nullability. The QCOMockAlertVerifier initializer is now non-null, which changes Swift use.
 - Added Swift sample app.

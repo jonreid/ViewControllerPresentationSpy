@@ -101,7 +101,7 @@ Add the following to your Podfile, changing "MyTests" to the name of your test t
 ```ruby
 target 'MyTests' do
   inherit! :search_paths
-  pod 'MockUIAlertController', '~> 1.0'
+  pod 'MockUIAlertController', '~> 2.0'
 end
 ```
 
@@ -110,7 +110,7 @@ end
 Add the following to your Cartfile:
 
 ```
-github "jonreid/MockUIAlertController" ~> 1.0
+github "jonreid/MockUIAlertController" ~> 2.0
 ```
 
 ### Building It Yourself
