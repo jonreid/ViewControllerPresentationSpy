@@ -90,21 +90,21 @@ class ViewControllerTests: XCTestCase {
     func testShowAlert_PresentedAlertShouldHaveActions() {
         sut.showAlertButton.sendActions(for: .touchUpInside)
 
-        XCTAssertEqual(alertVerifier.actionTitles?.count, 4);
-        XCTAssertEqual(alertVerifier.actionTitles?[0] as? String, "No Handler");
-        XCTAssertEqual(alertVerifier.actionTitles?[1] as? String, "Default");
-        XCTAssertEqual(alertVerifier.actionTitles?[2] as? String, "Cancel");
-        XCTAssertEqual(alertVerifier.actionTitles?[3] as? String, "Destroy");
+        XCTAssertEqual(alertVerifier.actionTitles.count, 4);
+        XCTAssertEqual(alertVerifier.actionTitles[0] as? String, "No Handler");
+        XCTAssertEqual(alertVerifier.actionTitles[1] as? String, "Default");
+        XCTAssertEqual(alertVerifier.actionTitles[2] as? String, "Cancel");
+        XCTAssertEqual(alertVerifier.actionTitles[3] as? String, "Destroy");
     }
 
     func testShowActionSheet_PresentedActionSheetShouldHaveActions() {
         sut.showActionSheetButton.sendActions(for: .touchUpInside)
 
-        XCTAssertEqual(alertVerifier.actionTitles?.count, 4);
-        XCTAssertEqual(alertVerifier.actionTitles?[0] as? String, "No Handler");
-        XCTAssertEqual(alertVerifier.actionTitles?[1] as? String, "Default");
-        XCTAssertEqual(alertVerifier.actionTitles?[2] as? String, "Cancel");
-        XCTAssertEqual(alertVerifier.actionTitles?[3] as? String, "Destroy");
+        XCTAssertEqual(alertVerifier.actionTitles.count, 4);
+        XCTAssertEqual(alertVerifier.actionTitles[0] as? String, "No Handler");
+        XCTAssertEqual(alertVerifier.actionTitles[1] as? String, "Default");
+        XCTAssertEqual(alertVerifier.actionTitles[2] as? String, "Cancel");
+        XCTAssertEqual(alertVerifier.actionTitles[3] as? String, "Destroy");
     }
 
     func testShowAlert_DefaultButtonShouldHaveDefaultStyle() {

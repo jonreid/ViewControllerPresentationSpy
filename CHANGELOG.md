@@ -2,6 +2,7 @@ Version 2.0.1
 -------------
 _06 Mar 2017_
 
+- Fixed nullability mistake: actionTitles are non-null.
 - Add shared scheme to satisfy latest version of Carthage.
 
 
