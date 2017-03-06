@@ -1,3 +1,10 @@
+Version 2.0.1
+-------------
+_06 Mar 2017_
+
+- Add shared scheme to satisfy latest version of Carthage.
+
+
 Version 2.0.0
 -------------
 _19 Feb 2017_
