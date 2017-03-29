@@ -118,7 +118,7 @@
 		0E748FAD1B6543A000B29AED /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				4845235A1E5A4DC70033ED8D /* OCHamcrest-6.1.0 */,
+				4845235A1E5A4DC70033ED8D /* OCHamcrest-6.1.1 */,
 				0E748FAE1B6543A000B29AED /* Supporting Files */,
 				609E9314897852939CA75DFB /* ViewControllerTests-OCHamcrest.m */,
 				609E96C55D81BBE28BD81748 /* ViewControllerTests-PlainXCTest.m */,
@@ -136,13 +136,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		4845235A1E5A4DC70033ED8D /* OCHamcrest-6.1.0 */ = {
+		4845235A1E5A4DC70033ED8D /* OCHamcrest-6.1.1 */ = {
 			isa = PBXGroup;
 			children = (
 				4845235B1E5A4DC70033ED8D /* LICENSE.txt */,
 				4845235C1E5A4DC70033ED8D /* OCHamcrestIOS.framework */,
 			);
-			path = "OCHamcrest-6.1.0";
+			path = "OCHamcrest-6.1.1";
 			sourceTree = "<group>";
 		};
 		4885FDCA1DE8A32200A9F923 /* Frameworks */ = {
@@ -392,7 +392,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Tests/OCHamcrest-6.1.0",
+					"$(PROJECT_DIR)/Tests/OCHamcrest-6.1.1",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -421,7 +421,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Tests/OCHamcrest-6.1.0",
+					"$(PROJECT_DIR)/Tests/OCHamcrest-6.1.1",
 				);
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
