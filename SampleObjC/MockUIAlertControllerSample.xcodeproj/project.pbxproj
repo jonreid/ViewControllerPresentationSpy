@@ -13,8 +13,8 @@
 		0E748FA01B6543A000B29AED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E748F9E1B6543A000B29AED /* Main.storyboard */; };
 		0E748FA21B6543A000B29AED /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E748FA11B6543A000B29AED /* Images.xcassets */; };
 		483E05421DE80ACF00B5E4E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 483E05401DE80ACF00B5E4E4 /* LaunchScreen.storyboard */; };
-		4845235E1E5A4DC70033ED8D /* OCHamcrestIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4845235C1E5A4DC70033ED8D /* OCHamcrestIOS.framework */; };
 		4885FDCC1DE8A32200A9F923 /* MockUIAlertController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4885FDCB1DE8A32200A9F923 /* MockUIAlertController.framework */; };
+		4896EC221F3FDA9F00491560 /* OCHamcrestIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4896EC201F3FDA9F00491560 /* OCHamcrestIOS.framework */; };
 		609E9B6130BB35372D63FC0F /* QCOMockAlertVerifierTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E95F254C2B32C24D9C980 /* QCOMockAlertVerifierTests.m */; };
 		609E9B9655FA38A27FF87A2D /* ViewControllerTests-OCHamcrest.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E9314897852939CA75DFB /* ViewControllerTests-OCHamcrest.m */; };
 		609E9F1E2EC677BB9B797C36 /* ViewControllerTests-PlainXCTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E96C55D81BBE28BD81748 /* ViewControllerTests-PlainXCTest.m */; };
@@ -44,9 +44,9 @@
 		0E748FAA1B6543A000B29AED /* MockUIAlertControllerSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MockUIAlertControllerSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E748FAF1B6543A000B29AED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		483E05411DE80ACF00B5E4E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		4845235B1E5A4DC70033ED8D /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
-		4845235C1E5A4DC70033ED8D /* OCHamcrestIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OCHamcrestIOS.framework; sourceTree = "<group>"; };
 		4885FDCB1DE8A32200A9F923 /* MockUIAlertController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MockUIAlertController.framework; path = "../Source/build/Debug-iphoneos/MockUIAlertController.framework"; sourceTree = "<group>"; };
+		4896EC1F1F3FDA9F00491560 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		4896EC201F3FDA9F00491560 /* OCHamcrestIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OCHamcrestIOS.framework; sourceTree = "<group>"; };
 		609E9314897852939CA75DFB /* ViewControllerTests-OCHamcrest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewControllerTests-OCHamcrest.m"; sourceTree = "<group>"; };
 		609E95F254C2B32C24D9C980 /* QCOMockAlertVerifierTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCOMockAlertVerifierTests.m; sourceTree = "<group>"; };
 		609E96C55D81BBE28BD81748 /* ViewControllerTests-PlainXCTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewControllerTests-PlainXCTest.m"; sourceTree = "<group>"; };
@@ -64,7 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4845235E1E5A4DC70033ED8D /* OCHamcrestIOS.framework in Frameworks */,
+				4896EC221F3FDA9F00491560 /* OCHamcrestIOS.framework in Frameworks */,
 				4885FDCC1DE8A32200A9F923 /* MockUIAlertController.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -118,7 +118,7 @@
 		0E748FAD1B6543A000B29AED /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				4845235A1E5A4DC70033ED8D /* OCHamcrest-6.1.1 */,
+				4896EC1E1F3FDA9F00491560 /* OCHamcrest-7.0.1 */,
 				0E748FAE1B6543A000B29AED /* Supporting Files */,
 				609E9314897852939CA75DFB /* ViewControllerTests-OCHamcrest.m */,
 				609E96C55D81BBE28BD81748 /* ViewControllerTests-PlainXCTest.m */,
@@ -136,21 +136,21 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		4845235A1E5A4DC70033ED8D /* OCHamcrest-6.1.1 */ = {
-			isa = PBXGroup;
-			children = (
-				4845235B1E5A4DC70033ED8D /* LICENSE.txt */,
-				4845235C1E5A4DC70033ED8D /* OCHamcrestIOS.framework */,
-			);
-			path = "OCHamcrest-6.1.1";
-			sourceTree = "<group>";
-		};
 		4885FDCA1DE8A32200A9F923 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				4885FDCB1DE8A32200A9F923 /* MockUIAlertController.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4896EC1E1F3FDA9F00491560 /* OCHamcrest-7.0.1 */ = {
+			isa = PBXGroup;
+			children = (
+				4896EC1F1F3FDA9F00491560 /* LICENSE.txt */,
+				4896EC201F3FDA9F00491560 /* OCHamcrestIOS.framework */,
+			);
+			path = "OCHamcrest-7.0.1";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -393,6 +393,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Tests/OCHamcrest-6.1.1",
+					"$(PROJECT_DIR)/Tests/OCHamcrest-7.0.1",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -422,6 +423,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Tests/OCHamcrest-6.1.1",
+					"$(PROJECT_DIR)/Tests/OCHamcrest-7.0.1",
 				);
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
