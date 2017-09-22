@@ -6,8 +6,8 @@ before_install:
   - gem install xcpretty --no-rdoc --no-ri --no-document --quiet
 
 script:
-  - set -o pipefail && xcodebuild test -workspace SampleObjC/MockUIAlertControllerSample.xcworkspace -scheme MockUIAlertControllerSample -sdk iphonesimulator10.1 -destination "platform=iOS Simulator,name=iPhone 5,OS=10.1" | xcpretty
-  - set -o pipefail && xcodebuild test -workspace SampleObjC/MockUIAlertControllerSample.xcworkspace -scheme MockUIAlertControllerSample -sdk iphonesimulator10.1 -destination "platform=iOS Simulator,name=iPad Air,OS=10.1" | xcpretty
+  - set -o pipefail && xcodebuild test -workspace SampleObjC/MockUIAlertControllerSample.xcworkspace -scheme MockUIAlertControllerSample -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 5,OS=10.1" | xcpretty
+  - set -o pipefail && xcodebuild test -workspace SampleObjC/MockUIAlertControllerSample.xcworkspace -scheme MockUIAlertControllerSample -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPad Air,OS=10.1" | xcpretty
   - pod spec lint --quick
 
 after_success:
