@@ -94,6 +94,16 @@ See the sample apps. Run them on both phone & pad to see what they do, then read
 
 ## Adding it to your project
 
+### Swift use
+
+For Swift, add
+
+```obj-c
+#import <MockUIAlertController/QCOMockAlertVerifier.h>
+```
+
+to the bridging header of your test target.
+
 ### CocoaPods
 
 Add the following to your Podfile, changing "MyTests" to the name of your test target:
