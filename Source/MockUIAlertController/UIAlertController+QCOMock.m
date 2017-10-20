@@ -49,7 +49,10 @@ NSString *const QCOMockAlertControllerPresentedNotification = @"QCOMockAlertCont
 
 - (UIPopoverPresentationController *)qcoMock_popoverPresentationController
 {
-    return (id)self.qcoMock_mockPopover;
+    if ([self respondsToSelector:@selector(qcoMock_mockPopover)]) {
+        return (id)self.qcoMock_mockPopover;
+    }
+    return nil;
 }
 
 - (QCOMockPopoverPresentationController *)qcoMock_mockPopover
