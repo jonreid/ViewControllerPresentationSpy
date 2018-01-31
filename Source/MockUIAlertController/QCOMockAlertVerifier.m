@@ -45,7 +45,7 @@ static void swizzleMocks(void)
 {
     UIAlertController *alertController = notification.object;
     self.presentedCount += 1;
-    self.animated = notification.userInfo[QCOMockViewControllerAnimatedKey];
+    self.animated = [notification.userInfo[QCOMockViewControllerAnimatedKey] boolValue];
     self.title = alertController.title;
     self.message = alertController.message;
     self.preferredStyle = alertController.preferredStyle;

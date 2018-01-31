@@ -78,14 +78,14 @@
 {
     [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
 
-    assertThat(alertVerifier.animated, is(@YES));
+    assertThat(@(alertVerifier.animated), is(@YES));
 }
 
 - (void)testShowActionSheet_ShouldPresentWithAnimation
 {
     [sut.showActionSheetButton sendActionsForControlEvents:UIControlEventTouchUpInside];
 
-    assertThat(alertVerifier.animated, is(@YES));
+    assertThat(@(alertVerifier.animated), is(@YES));
 }
 
 - (void)testShowAlert_PresentedAlertShouldHaveTitle

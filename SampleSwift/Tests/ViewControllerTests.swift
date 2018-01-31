@@ -54,13 +54,13 @@ class ViewControllerTests: XCTestCase {
     func testShowAlert_ShouldPresentWithAnimation() {
         sut.showAlertButton.sendActions(for: .touchUpInside)
 
-        XCTAssertEqual(alertVerifier.animated, true);
+        XCTAssertTrue(alertVerifier.animated);
     }
 
     func testShowActionSheet_ShouldPresentWithAnimation() {
         sut.showActionSheetButton.sendActions(for: .touchUpInside)
 
-        XCTAssertEqual(alertVerifier.animated, true);
+        XCTAssertTrue(alertVerifier.animated);
     }
 
     func testShowAlert_PresentedAlertShouldHaveTitle() {
