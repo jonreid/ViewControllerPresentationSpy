@@ -1,5 +1,6 @@
-NEXT RELEASE
-------------
+Version 2.0.2
+-------------
+_30 Jan 2018_
 
 - Fixed crash when presenting UIDocumentMenuViewController while mocking UIAlertController. _Thanks to: Andrei Tulai_
 
