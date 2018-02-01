@@ -12,4 +12,4 @@ script:
   - pod spec lint --quick
 
 after_success:
-  - slather --verbose
+  - slather

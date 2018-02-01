@@ -5,3 +5,4 @@ build_directory: ./build
 binary_file: /Users/jmreid/Library/Developer/Xcode/DerivedData/MockUIAlertControllerSample-guopqxlknwoqrrcpydnkjwhjmorw/Build/Products/Debug-iphonesimulator/MockUIAlertControllerSample.app/PlugIns/MockUIAlertControllerSampleTests.xctest/MockUIAlertControllerSampleTests
 ignore:
   - SampleObjC/*
+verbose_mode: true
