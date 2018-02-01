@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		48105E731DE81450000C8EB7 /* MockUIAlertController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48105E721DE81450000C8EB7 /* MockUIAlertController.framework */; };
+		4817798420239535000E8592 /* NSObject+QCOMockAlerts.m in Sources */ = {isa = PBXBuildFile; fileRef = 481779792023952C000E8592 /* NSObject+QCOMockAlerts.m */; };
+		4817798520239538000E8592 /* QCOMockAlertVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 4817797B2023952C000E8592 /* QCOMockAlertVerifier.m */; };
+		481779862023953A000E8592 /* QCOMockPopoverPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4817797D2023952C000E8592 /* QCOMockPopoverPresentationController.m */; };
+		481779872023953D000E8592 /* UIAlertAction+QCOMock.m in Sources */ = {isa = PBXBuildFile; fileRef = 4817797F2023952C000E8592 /* UIAlertAction+QCOMock.m */; };
+		481779882023953F000E8592 /* UIAlertController+QCOMock.m in Sources */ = {isa = PBXBuildFile; fileRef = 481779812023952C000E8592 /* UIAlertController+QCOMock.m */; };
+		4817798920239543000E8592 /* UIViewController+QCOMock.m in Sources */ = {isa = PBXBuildFile; fileRef = 481779832023952C000E8592 /* UIViewController+QCOMock.m */; };
 		483E05211DE8064D00B5E4E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483E05201DE8064D00B5E4E4 /* AppDelegate.swift */; };
 		483E05231DE8064D00B5E4E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483E05221DE8064D00B5E4E4 /* ViewController.swift */; };
 		483E05261DE8064D00B5E4E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 483E05241DE8064D00B5E4E4 /* Main.storyboard */; };
@@ -29,6 +34,18 @@
 /* Begin PBXFileReference section */
 		48105E3A1DE810F2000C8EB7 /* MockUIAlertControllerSampleSwiftTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MockUIAlertControllerSampleSwiftTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		48105E721DE81450000C8EB7 /* MockUIAlertController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MockUIAlertController.framework; path = "../Source/build/Debug-iphoneos/MockUIAlertController.framework"; sourceTree = "<group>"; };
+		481779782023952C000E8592 /* NSObject+QCOMockAlerts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+QCOMockAlerts.h"; sourceTree = "<group>"; };
+		481779792023952C000E8592 /* NSObject+QCOMockAlerts.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+QCOMockAlerts.m"; sourceTree = "<group>"; };
+		4817797A2023952C000E8592 /* QCOMockAlertVerifier.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QCOMockAlertVerifier.h; sourceTree = "<group>"; };
+		4817797B2023952C000E8592 /* QCOMockAlertVerifier.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QCOMockAlertVerifier.m; sourceTree = "<group>"; };
+		4817797C2023952C000E8592 /* QCOMockPopoverPresentationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QCOMockPopoverPresentationController.h; sourceTree = "<group>"; };
+		4817797D2023952C000E8592 /* QCOMockPopoverPresentationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QCOMockPopoverPresentationController.m; sourceTree = "<group>"; };
+		4817797E2023952C000E8592 /* UIAlertAction+QCOMock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIAlertAction+QCOMock.h"; sourceTree = "<group>"; };
+		4817797F2023952C000E8592 /* UIAlertAction+QCOMock.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIAlertAction+QCOMock.m"; sourceTree = "<group>"; };
+		481779802023952C000E8592 /* UIAlertController+QCOMock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+QCOMock.h"; sourceTree = "<group>"; };
+		481779812023952C000E8592 /* UIAlertController+QCOMock.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+QCOMock.m"; sourceTree = "<group>"; };
+		481779822023952C000E8592 /* UIViewController+QCOMock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+QCOMock.h"; sourceTree = "<group>"; };
+		481779832023952C000E8592 /* UIViewController+QCOMock.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+QCOMock.m"; sourceTree = "<group>"; };
 		483E051D1DE8064D00B5E4E4 /* MockUIAlertControllerSampleSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MockUIAlertControllerSampleSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		483E05201DE8064D00B5E4E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		483E05221DE8064D00B5E4E4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,7 +71,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48105E731DE81450000C8EB7 /* MockUIAlertController.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +83,26 @@
 				48105E721DE81450000C8EB7 /* MockUIAlertController.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		481779772023952C000E8592 /* MockUIAlertController */ = {
+			isa = PBXGroup;
+			children = (
+				481779782023952C000E8592 /* NSObject+QCOMockAlerts.h */,
+				481779792023952C000E8592 /* NSObject+QCOMockAlerts.m */,
+				4817797A2023952C000E8592 /* QCOMockAlertVerifier.h */,
+				4817797B2023952C000E8592 /* QCOMockAlertVerifier.m */,
+				4817797C2023952C000E8592 /* QCOMockPopoverPresentationController.h */,
+				4817797D2023952C000E8592 /* QCOMockPopoverPresentationController.m */,
+				4817797E2023952C000E8592 /* UIAlertAction+QCOMock.h */,
+				4817797F2023952C000E8592 /* UIAlertAction+QCOMock.m */,
+				481779802023952C000E8592 /* UIAlertController+QCOMock.h */,
+				481779812023952C000E8592 /* UIAlertController+QCOMock.m */,
+				481779822023952C000E8592 /* UIViewController+QCOMock.h */,
+				481779832023952C000E8592 /* UIViewController+QCOMock.m */,
+			);
+			name = MockUIAlertController;
+			path = ../../Source/MockUIAlertController;
 			sourceTree = "<group>";
 		};
 		483E05141DE8064D00B5E4E4 = {
@@ -104,6 +140,7 @@
 		483E05341DE8064D00B5E4E4 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				481779772023952C000E8592 /* MockUIAlertController */,
 				483E05351DE8064D00B5E4E4 /* ViewControllerTests.swift */,
 				48105E3A1DE810F2000C8EB7 /* MockUIAlertControllerSampleSwiftTests-Bridging-Header.h */,
 				4885FDCD1DE8AD3300A9F923 /* XcodeWarnings.xcconfig */,
@@ -226,7 +263,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				481779872023953D000E8592 /* UIAlertAction+QCOMock.m in Sources */,
+				4817798420239535000E8592 /* NSObject+QCOMockAlerts.m in Sources */,
+				481779862023953A000E8592 /* QCOMockPopoverPresentationController.m in Sources */,
 				483E05361DE8064D00B5E4E4 /* ViewControllerTests.swift in Sources */,
+				481779882023953F000E8592 /* UIAlertController+QCOMock.m in Sources */,
+				4817798520239538000E8592 /* QCOMockAlertVerifier.m in Sources */,
+				4817798920239543000E8592 /* UIViewController+QCOMock.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +382,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../Source\"";
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.qualitycoding.MockUIAlertControllerSampleSwiftTests;
@@ -353,6 +397,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../Source\"";
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.qualitycoding.MockUIAlertControllerSampleSwiftTests;
