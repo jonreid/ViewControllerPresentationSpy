@@ -2,15 +2,14 @@ language: objective-c
 osx_image: xcode9
 
 before_install:
-  - sudo easy_install pip
-  - pip install --user cpp-coveralls
+  - gem install slather
 
 script:
   - set -o pipefail;
   - xcodebuild test -project SampleSwift/MockUIAlertControllerSampleSwift.xcodeproj -scheme MockUIAlertControllerSampleSwift -sdk iphonesimulator -destination "platform=iOS Simulator,OS=latest,name=iPhone 7" | xcpretty
   - xcodebuild test -project SampleObjC/MockUIAlertControllerSample.xcodeproj -scheme MockUIAlertControllerSample -sdk iphonesimulator -destination "platform=iOS Simulator,OS=latest,name=iPhone 7" | xcpretty
-  - xcodebuild test -project SampleObjC/MockUIAlertControllerSample.xcodeproj -scheme MockUIAlertControllerSample -sdk iphonesimulator -destination "platform=iOS Simulator,OS=latest,name=iPad Air" | xcpretty
+  - xcodebuild test -project SampleObjC/MockUIAlertControllerSample.xcodeproj -scheme MockUIAlertControllerSample -sdk iphonesimulator -destination "platform=iOS Simulator,OS=latest,name=iPad Air" OBJROOT="$PWD/build" SYMROOT="$PWD/build" | xcpretty
   - pod spec lint --quick
 
 after_success:
-  - ./Cocoanetics-Ruby/coveralls.rb --exclude-folder SampleObjC --exclude-headers
+  - slather
