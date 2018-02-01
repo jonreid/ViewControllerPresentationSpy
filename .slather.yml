@@ -1,9 +1,0 @@
-coverage_service: coveralls
-xcodeproj: ./SampleObjC/MockUIAlertControllerSample.xcodeproj
-workspace: ./SampleObjC/MockUIAlertControllerSample.xcworkspace
-scheme: MockUIAlertControllerSample
-configuration: Debug
-source_directory: Source
-output_directory: ./coverage
-ignore:
-  - SampleObjC/*
