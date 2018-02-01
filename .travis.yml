@@ -1,9 +1,8 @@
 language: objective-c
-osx_image: xcode8.3
+osx_image: xcode9.0
 
 before_install:
-  - sudo easy_install pip
-  - pip install --user cpp-coveralls
+  - gem install slather
   - gem install xcpretty --no-rdoc --no-ri --no-document --quiet
 
 script:
@@ -13,4 +12,4 @@ script:
   - pod spec lint --quick
 
 after_success:
-  - ./Cocoanetics-Ruby/coveralls.rb --exclude-folder SampleObjC --exclude-headers
+  - slather
