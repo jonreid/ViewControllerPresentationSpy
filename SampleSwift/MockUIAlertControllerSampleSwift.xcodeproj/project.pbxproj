@@ -193,13 +193,13 @@
 		483E05151DE8064D00B5E4E4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0810;
-				LastUpgradeCheck = 0810;
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Quality Coding";
 				TargetAttributes = {
 					483E051C1DE8064D00B5E4E4 = {
 						CreatedOnToolsVersion = 8.1;
-						LastSwiftMigration = "";
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 					483E05301DE8064D00B5E4E4 = {
