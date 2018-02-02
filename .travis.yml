@@ -2,14 +2,14 @@ language: objective-c
 osx_image: xcode9
 
 before_install:
- - gem install slather
+  - gem install slather
 
 script:
   - set -o pipefail;
- # - xcodebuild test -project SampleSwift/MockUIAlertControllerSampleSwift.xcodeproj -scheme MockUIAlertControllerSampleSwift -sdk iphonesimulator -destination "platform=iOS Simulator,OS=latest,name=iPhone 7" | xcpretty
- # - xcodebuild test -project SampleObjC/MockUIAlertControllerSample.xcodeproj -scheme MockUIAlertControllerSample -sdk iphonesimulator -destination "platform=iOS Simulator,OS=latest,name=iPhone 7" | xcpretty
+  - xcodebuild test -project SampleSwift/MockUIAlertControllerSampleSwift.xcodeproj -scheme MockUIAlertControllerSampleSwift -sdk iphonesimulator -destination "platform=iOS Simulator,OS=latest,name=iPhone 7" | xcpretty
+  - xcodebuild test -project SampleObjC/MockUIAlertControllerSample.xcodeproj -scheme MockUIAlertControllerSample -sdk iphonesimulator -destination "platform=iOS Simulator,OS=latest,name=iPhone 7" | xcpretty
   - xcodebuild test -project SampleObjC/MockUIAlertControllerSample.xcodeproj -scheme MockUIAlertControllerSample -sdk iphonesimulator -destination "platform=iOS Simulator,OS=latest,name=iPad Air" | xcpretty
- # - pod spec lint --quick
+  - pod spec lint --quick
 
 after_success:
- - slather
+  - slather
