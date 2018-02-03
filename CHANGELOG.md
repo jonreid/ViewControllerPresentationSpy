@@ -1,3 +1,8 @@
+NEXT RELEASE
+------------
+
+- Changed `animated` from NSNumber to BOOL.
+
 Version 2.0.2
 -------------
 _30 Jan 2018_
