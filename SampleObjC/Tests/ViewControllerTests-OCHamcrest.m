@@ -74,6 +74,20 @@
     assertThat(@(alertVerifier.preferredStyle), is(@(UIAlertControllerStyleActionSheet)));
 }
 
+- (void)testShowAlert_ShouldProvidePresentingViewController
+{
+    [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
+    
+    assertThat(alertVerifier.presentingViewController, is(sameInstance(sut)));
+}
+
+- (void)testShowActionSheet_ShouldProvidePresentingViewController
+{
+    [sut.showActionSheetButton sendActionsForControlEvents:UIControlEventTouchUpInside];
+    
+    assertThat(alertVerifier.presentingViewController, is(sameInstance(sut)));
+}
+
 - (void)testShowAlert_ShouldPresentWithAnimation
 {
     [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];

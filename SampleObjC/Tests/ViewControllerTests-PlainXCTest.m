@@ -73,6 +73,20 @@
     XCTAssertEqual(alertVerifier.preferredStyle, UIAlertControllerStyleActionSheet);
 }
 
+- (void)testShowActionSheet_ShouldProvidePresentingViewController
+{
+    [sut.showActionSheetButton sendActionsForControlEvents:UIControlEventTouchUpInside];
+    
+    XCTAssertEqual(alertVerifier.presentingViewController, sut);
+}
+
+- (void)testShowAlert_ShouldProvidePresentingViewController
+{
+    [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
+    
+    XCTAssertEqual(alertVerifier.presentingViewController, sut);
+}
+
 - (void)testShowAlert_ShouldPresentWithAnimation
 {
     [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];

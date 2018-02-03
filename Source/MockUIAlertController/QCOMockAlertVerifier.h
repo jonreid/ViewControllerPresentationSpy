@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface QCOMockAlertVerifier : NSObject
 
 @property (nonatomic, assign) NSUInteger presentedCount;
+@property (nonatomic, strong) UIViewController *presentingViewController;
 @property (nonatomic, assign) BOOL animated;
 @property (nullable, nonatomic, copy) NSString *title;
 @property (nullable, nonatomic, copy) NSString *message;

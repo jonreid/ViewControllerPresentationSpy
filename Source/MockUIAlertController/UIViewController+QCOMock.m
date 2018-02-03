@@ -6,6 +6,7 @@
 #import "NSObject+QCOMockAlerts.h"
 #import "UIAlertController+QCOMock.h"
 
+NSString *const QCOMockViewControllerPresentingViewControllerKey = @"QCOMockViewControllerPresentingViewControllerKey";
 NSString *const QCOMockViewControllerAnimatedKey = @"QCOMockViewControllerAnimatedKey";
 
 
@@ -28,7 +29,10 @@ NSString *const QCOMockViewControllerAnimatedKey = @"QCOMockViewControllerAnimat
     NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
     [nc postNotificationName:QCOMockAlertControllerPresentedNotification
                       object:viewControllerToPresent
-                    userInfo:@{ QCOMockViewControllerAnimatedKey : @(flag) }];
+                    userInfo:@{
+                            QCOMockViewControllerPresentingViewControllerKey : self,
+                            QCOMockViewControllerAnimatedKey : @(flag),
+                    }];
     if (completion)
         completion();
 }
