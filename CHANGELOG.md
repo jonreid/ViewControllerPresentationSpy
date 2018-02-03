@@ -1,8 +1,10 @@
-NEXT RELEASE
+Version 3.0.0
 ------------
+_02 Feb 2018_
 
 - Changed `animated` from NSNumber to BOOL.
 - Added `presentingViewController`.
+
 
 Version 2.0.2
 -------------
