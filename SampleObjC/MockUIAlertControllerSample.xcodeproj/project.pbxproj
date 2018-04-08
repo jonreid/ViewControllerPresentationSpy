@@ -12,6 +12,7 @@
 		0E748F9D1B6543A000B29AED /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E748F9C1B6543A000B29AED /* ViewController.m */; };
 		0E748FA01B6543A000B29AED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E748F9E1B6543A000B29AED /* Main.storyboard */; };
 		0E748FA21B6543A000B29AED /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E748FA11B6543A000B29AED /* Images.xcassets */; };
+		48007C6E2079A153007A4AB0 /* OCHamcrestIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4847A9B81F737F900067A3D6 /* OCHamcrestIOS.framework */; };
 		48177971202392FA000E8592 /* NSObject+QCOMockAlerts.m in Sources */ = {isa = PBXBuildFile; fileRef = 48177966202392E9000E8592 /* NSObject+QCOMockAlerts.m */; };
 		48177972202392FD000E8592 /* QCOMockAlertVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 48177968202392E9000E8592 /* QCOMockAlertVerifier.m */; };
 		4817797320239300000E8592 /* QCOMockPopoverPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4817796A202392E9000E8592 /* QCOMockPopoverPresentationController.m */; };
@@ -19,7 +20,6 @@
 		4817797520239306000E8592 /* UIAlertController+QCOMock.m in Sources */ = {isa = PBXBuildFile; fileRef = 4817796E202392E9000E8592 /* UIAlertController+QCOMock.m */; };
 		4817797620239309000E8592 /* UIViewController+QCOMock.m in Sources */ = {isa = PBXBuildFile; fileRef = 48177970202392E9000E8592 /* UIViewController+QCOMock.m */; };
 		483E05421DE80ACF00B5E4E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 483E05401DE80ACF00B5E4E4 /* LaunchScreen.storyboard */; };
-		4847A9B91F737FA10067A3D6 /* OCHamcrestIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4847A9B81F737F900067A3D6 /* OCHamcrestIOS.framework */; };
 		609E9B6130BB35372D63FC0F /* QCOMockAlertVerifierTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E95F254C2B32C24D9C980 /* QCOMockAlertVerifierTests.m */; };
 		609E9B9655FA38A27FF87A2D /* ViewControllerTests-OCHamcrest.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E9314897852939CA75DFB /* ViewControllerTests-OCHamcrest.m */; };
 		609E9F1E2EC677BB9B797C36 /* ViewControllerTests-PlainXCTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E96C55D81BBE28BD81748 /* ViewControllerTests-PlainXCTest.m */; };
@@ -81,7 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4847A9B91F737FA10067A3D6 /* OCHamcrestIOS.framework in Frameworks */,
+				48007C6E2079A153007A4AB0 /* OCHamcrestIOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,7 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				48177964202392E9000E8592 /* MockUIAlertController */,
-				4847A9B61F737F900067A3D6 /* OCHamcrest-7.0.2 */,
+				4847A9B61F737F900067A3D6 /* OCHamcrest-7.1.0 */,
 				0E748FAE1B6543A000B29AED /* Supporting Files */,
 				609E9314897852939CA75DFB /* ViewControllerTests-OCHamcrest.m */,
 				609E96C55D81BBE28BD81748 /* ViewControllerTests-PlainXCTest.m */,
@@ -173,13 +173,13 @@
 			path = ../../Source/MockUIAlertController;
 			sourceTree = "<group>";
 		};
-		4847A9B61F737F900067A3D6 /* OCHamcrest-7.0.2 */ = {
+		4847A9B61F737F900067A3D6 /* OCHamcrest-7.1.0 */ = {
 			isa = PBXGroup;
 			children = (
 				4847A9B71F737F900067A3D6 /* LICENSE.txt */,
 				4847A9B81F737F900067A3D6 /* OCHamcrestIOS.framework */,
 			);
-			path = "OCHamcrest-7.0.2";
+			path = "OCHamcrest-7.1.0";
 			sourceTree = "<group>";
 		};
 		4885FDCA1DE8A32200A9F923 /* Frameworks */ = {
@@ -435,7 +435,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Tests/OCHamcrest-7.0.2",
+					"$(PROJECT_DIR)/Tests/OCHamcrest-7.1.0",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -465,7 +465,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Tests/OCHamcrest-7.0.2",
+					"$(PROJECT_DIR)/Tests/OCHamcrest-7.1.0",
 				);
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../Source\"";
 				INFOPLIST_FILE = Tests/Info.plist;

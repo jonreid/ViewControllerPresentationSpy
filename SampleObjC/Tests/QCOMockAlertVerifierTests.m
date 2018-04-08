@@ -2,7 +2,7 @@
 
 #import "ViewController.h"
 
-#import <OCHamcrestIOS/OCHamcrestIOS.h>
+@import OCHamcrestIOS;
 @import XCTest;
 
 
