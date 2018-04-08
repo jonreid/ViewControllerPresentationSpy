@@ -3,7 +3,7 @@
 
 #import <UIKit/UIKit.h>
 
-#import <MockUIAlertController/QCOMockPopoverPresentationController.h> // Convenience import instead of @class
+#import "QCOMockPopoverPresentationController.h" // Convenience import instead of @class
 
 
 NS_ASSUME_NONNULL_BEGIN

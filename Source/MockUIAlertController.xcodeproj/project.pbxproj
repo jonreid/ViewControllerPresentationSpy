@@ -105,13 +105,13 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48007C9A2079A7E3007A4AB0 /* QCOMockPopoverPresentationController.h in Headers */,
+				48007C7E2079A76E007A4AB0 /* MockUIAlertController.h in Headers */,
+				48007C902079A7E3007A4AB0 /* QCOMockAlertVerifier.h in Headers */,
 				48007C962079A7E3007A4AB0 /* UIAlertAction+QCOMock.h in Headers */,
 				48007C9B2079A7E3007A4AB0 /* UIViewController+QCOMock.h in Headers */,
-				48007C7E2079A76E007A4AB0 /* MockUIAlertController.h in Headers */,
+				48007C9A2079A7E3007A4AB0 /* QCOMockPopoverPresentationController.h in Headers */,
 				48007C942079A7E3007A4AB0 /* NSObject+QCOMockAlerts.h in Headers */,
 				48007C912079A7E3007A4AB0 /* UIAlertController+QCOMock.h in Headers */,
-				48007C902079A7E3007A4AB0 /* QCOMockAlertVerifier.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,7 +125,6 @@
 				48007C742079A76E007A4AB0 /* Sources */,
 				48007C752079A76E007A4AB0 /* Frameworks */,
 				48007C762079A76E007A4AB0 /* Headers */,
-				48007C772079A76E007A4AB0 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -167,16 +166,6 @@
 		};
 /* End PBXProject section */
 
-/* Begin PBXResourcesBuildPhase section */
-		48007C772079A76E007A4AB0 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		48007C742079A76E007A4AB0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -208,6 +197,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -240,6 +230,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -256,7 +247,6 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Manual;
-				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -280,7 +270,6 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Manual;
-				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;

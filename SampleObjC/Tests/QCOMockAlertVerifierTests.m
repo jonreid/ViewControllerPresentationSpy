@@ -1,4 +1,4 @@
-#import <MockUIAlertController/QCOMockAlertVerifier.h>
+@import MockUIAlertController;
 
 #import "ViewController.h"
 

@@ -1,5 +1,5 @@
-import XCTest
 @testable import MockUIAlertControllerSampleSwift
+import XCTest
 
 class ViewControllerTests: XCTestCase {
     var alertVerifier: QCOMockAlertVerifier!
@@ -9,8 +9,8 @@ class ViewControllerTests: XCTestCase {
         super.setUp()
         alertVerifier = QCOMockAlertVerifier()
         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
-        sut = storyboard.instantiateInitialViewController() as! ViewController!
-        _ = sut.view
+        sut = storyboard.instantiateInitialViewController() as! ViewController
+        sut.loadViewIfNeeded()
     }
 
     override func tearDown() {

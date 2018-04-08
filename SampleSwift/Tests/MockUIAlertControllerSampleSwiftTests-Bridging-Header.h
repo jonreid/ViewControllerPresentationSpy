@@ -1,1 +1,1 @@
-#import "MockUIAlertController/QCOMockAlertVerifier.h"
+@import MockUIAlertController;

@@ -2,7 +2,7 @@
 #import "ViewController.h"
 
 // Test support
-#import <MockUIAlertController/QCOMockAlertVerifier.h>
+@import MockUIAlertController;
 @import OCHamcrestIOS;
 @import XCTest;
 
