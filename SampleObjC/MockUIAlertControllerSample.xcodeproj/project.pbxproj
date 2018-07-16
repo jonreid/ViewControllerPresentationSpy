@@ -438,7 +438,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Tests/OCHamcrest-7.1.0",
+					"$(PROJECT_DIR)/Tests/OCHamcrest-7.1.1",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -468,7 +468,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Tests/OCHamcrest-7.1.0",
+					"$(PROJECT_DIR)/Tests/OCHamcrest-7.1.1",
 				);
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../Source\"";
 				INFOPLIST_FILE = Tests/Info.plist;
