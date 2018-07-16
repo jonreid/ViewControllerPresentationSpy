@@ -134,7 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				48007C9E2079AC94007A4AB0 /* MockUIAlertController.xcodeproj */,
-				4847A9B61F737F900067A3D6 /* OCHamcrest-7.1.0 */,
+				4847A9B61F737F900067A3D6 /* OCHamcrest-7.1.1 */,
 				0E748FAE1B6543A000B29AED /* Supporting Files */,
 				609E9314897852939CA75DFB /* ViewControllerTests-OCHamcrest.m */,
 				609E96C55D81BBE28BD81748 /* ViewControllerTests-PlainXCTest.m */,
@@ -160,13 +160,13 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		4847A9B61F737F900067A3D6 /* OCHamcrest-7.1.0 */ = {
+		4847A9B61F737F900067A3D6 /* OCHamcrest-7.1.1 */ = {
 			isa = PBXGroup;
 			children = (
 				4847A9B71F737F900067A3D6 /* LICENSE.txt */,
 				4847A9B81F737F900067A3D6 /* OCHamcrestIOS.framework */,
 			);
-			path = "OCHamcrest-7.1.0";
+			path = "OCHamcrest-7.1.1";
 			sourceTree = "<group>";
 		};
 		4885FDCA1DE8A32200A9F923 /* Frameworks */ = {
