@@ -2,8 +2,10 @@
 
 [![Build Status](https://travis-ci.org/jonreid/MockUIAlertController.svg?branch=master)](https://travis-ci.org/jonreid/MockUIAlertController)
 [![Coverage Status](https://coveralls.io/repos/jonreid/MockUIAlertController/badge.svg?branch=master&service=github)](https://coveralls.io/github/jonreid/MockUIAlertController?branch=master)
-[![CocoaPods Version](https://cocoapod-badges.herokuapp.com/v/MockUIAlertController/badge.png)](https://cocoapods.org/pods/MockUIAlertController)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![CocoaPods Version](https://cocoapod-badges.herokuapp.com/v/MockUIAlertController/badge.png)](https://cocoapods.org/pods/MockUIAlertController)
+![Cocoapods Downloads](https://img.shields.io/cocoapods/dt/MockUIAlertController.svg)
+[![Twitter Follow](https://img.shields.io/twitter/follow/qcoding.svg?style=social)](https://twitter.com/qcoding)
 
 MockUIAlertController lets you mock iOS alerts and action sheets for unit tests. It works for Swift as well as Objective-C.
 
