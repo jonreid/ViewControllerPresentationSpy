@@ -9,7 +9,7 @@ class ViewControllerTests: XCTestCase {
         super.setUp()
         alertVerifier = QCOMockAlertVerifier()
         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
-        sut = storyboard.instantiateInitialViewController() as! ViewController
+        sut = (storyboard.instantiateInitialViewController() as! ViewController)
         sut.loadViewIfNeeded()
     }
 
