@@ -6,6 +6,10 @@ Next Version
 - Added `textFields`
 - Share scheme for Carthage builds. _Thanks to: Kevin Donnelly_
 
+**Deprecated:**
+
+- Deprecated `actionTitles` and `-styleForButtonWithTitle:`. Use `actions` instead.
+
 
 Version 3.0.0
 ------------
