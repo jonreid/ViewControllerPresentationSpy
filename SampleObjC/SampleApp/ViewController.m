@@ -63,6 +63,7 @@
     [alertController addAction:defaultAction];
     [alertController addAction:cancelAction];
     [alertController addAction:destroyAction];
+    alertController.preferredAction = defaultAction;
 }
 
 @end

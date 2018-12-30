@@ -47,6 +47,7 @@ static void swizzleMocks(void)
     self.message = alertController.message;
     self.preferredStyle = alertController.preferredStyle;
     self.actions = alertController.actions;
+    self.preferredAction = alertController.preferredAction;
     self.popover = (id)alertController.popoverPresentationController;
 }
 

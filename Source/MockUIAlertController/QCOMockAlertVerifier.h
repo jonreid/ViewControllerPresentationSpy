@@ -23,6 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, copy) NSString *message;
 @property (nonatomic, assign) UIAlertControllerStyle preferredStyle;
 @property (nonatomic, copy) NSArray<UIAlertAction *> *actions;
+@property (nullable, nonatomic, strong) UIAlertAction *preferredAction;
 @property (nonatomic, readonly) NSArray *actionTitles;
 @property (nullable, nonatomic, strong) QCOMockPopoverPresentationController *popover;
 

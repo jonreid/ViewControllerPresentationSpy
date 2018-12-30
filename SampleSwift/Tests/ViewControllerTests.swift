@@ -1,9 +1,9 @@
 @testable import MockUIAlertControllerSampleSwift
 import XCTest
 
-class ViewControllerTests: XCTestCase {
-    var alertVerifier: QCOMockAlertVerifier!
-    var sut: ViewController!
+final class ViewControllerTests: XCTestCase {
+    private var alertVerifier: QCOMockAlertVerifier!
+    private var sut: ViewController!
 
     override func setUp() {
         super.setUp()
@@ -69,6 +69,13 @@ class ViewControllerTests: XCTestCase {
         XCTAssertEqual(alertVerifier.actions[2].style, .cancel)
         XCTAssertEqual(alertVerifier.actions[3].title, "Destroy")
         XCTAssertEqual(alertVerifier.actions[3].style, .destructive)
+    }
+
+    func test_preferredActionForAlert() {
+        sut.showAlertButton.sendActions(for: .touchUpInside)
+
+        XCTAssertNotNil(alertVerifier.preferredAction)
+//        XCTAssertEqual(alertVerifier.preferredAction?.title, "Default")
     }
 
     func test_actionsForActionSheet() {

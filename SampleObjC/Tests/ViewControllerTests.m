@@ -91,6 +91,13 @@
     XCTAssertEqual(actions[3].style, UIAlertActionStyleDestructive);
 }
 
+- (void)test_preferredActionForAlert
+{
+    [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
+    
+    XCTAssertEqualObjects(alertVerifier.preferredAction.title, @"Default");
+}
+
 - (void)test_actionsForActionSheet
 {
     [sut.showActionSheetButton sendActionsForControlEvents:UIControlEventTouchUpInside];

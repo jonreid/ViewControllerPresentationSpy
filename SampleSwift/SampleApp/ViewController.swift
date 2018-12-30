@@ -1,7 +1,6 @@
 import UIKit
 
-class ViewController: UIViewController {
-
+final class ViewController: UIViewController {
     @IBOutlet weak var showAlertButton: UIButton!
     @IBOutlet weak var showActionSheetButton: UIButton!
     var alertDefaultActionExecuted = false
@@ -48,6 +47,7 @@ class ViewController: UIViewController {
         alertController.addAction(defaultAction)
         alertController.addAction(cancelAction)
         alertController.addAction(destroyAction)
+        alertController.preferredAction = defaultAction
     }
     
 }

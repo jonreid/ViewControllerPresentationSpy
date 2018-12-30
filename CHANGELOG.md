@@ -2,6 +2,7 @@ Next Version
 ------------
 
 - Added `actions` which greatly simplify Swift tests.
+- Added `preferredAction`
 - Share scheme for Carthage builds. _Thanks to: Kevin Donnelly_
 
 
@@ -10,7 +11,7 @@ Version 3.0.0
 _02 Feb 2018_
 
 - Changed `animated` from NSNumber to BOOL.
-- Added `presentingViewController`.
+- Added `presentingViewController`
 
 
 Version 2.0.2
