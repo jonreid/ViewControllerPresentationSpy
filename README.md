@@ -28,25 +28,15 @@ Nothing.
 
 ## How do I test an alert controller?
 
-1. `#import <MockUIAlertController/QCOMockAlertVerifier.h>` (or add it to your Swift test target's bridging header)
-2. Instantiate a `QCOMockAlertVerifier` before the execution phase of the test.
+1. `#import <MockUIAlertController/QCOMockAlertVerifier.h>` or add it to your Swift test target's bridging header.
+2. Instantiate a `QCOMockAlertVerifier` before the Act phase of the test.
 3. Invoke the code to create and present your alert or action sheet.
 
 Information about the alert or action sheet is then available through the
 [QCOMockAlertVerifier](https://github.com/jonreid/MockUIAlertController/blob/master/Source/MockUIAlertController/QCOMockAlertVerifier.h).
 
-For example, here's a test verifying the title. `sut` is the system under test
+For example, here's a test verifying the title. `sut` is the System Under Test
 in the test fixture.
-
-```obj-c
-- (void)testShowAlert_AlertShouldHaveTitle {
-    QCOMockAlertVerifier *alertVerifier = [[QCOMockAlertVerifier alloc] init];
-
-    [sut showAlert]; // Whatever triggers the alert
-
-    XCTAssertEqualObjects(alertVerifier.title, @"Title");
-}
-```
 
 ```swift
 func testShowAlert_AlertShouldHaveTitle() {
@@ -58,7 +48,17 @@ func testShowAlert_AlertShouldHaveTitle() {
 }
 ```
 
-To guard against tests which accidentally present real alerts, I recommend placing the alert verifier in the test fixture with `setUp`/`tearDown`.
+```obj-c
+- (void)testShowAlert_AlertShouldHaveTitle {
+    QCOMockAlertVerifier *alertVerifier = [[QCOMockAlertVerifier alloc] init];
+
+    [sut showAlert]; // Whatever triggers the alert
+
+    XCTAssertEqualObjects(alertVerifier.title, @"Title");
+}
+```
+
+To guard against tests which accidentally present real alerts, I recommend placing the alert verifier in the test fixture with `setUp()`/`tearDown()`.
 
 
 ## How can I invoke the block associated with a UIAlertAction?
@@ -67,23 +67,23 @@ Go through the steps above to present your alert or action sheet using `QCOMockA
 Then call `-executeActionForButtonWithTitle:` on your `QCOMockAlertVerifier` with the button title.
 For example:
 
-```obj-c
-- (void)testShowAlert_ExecutingActionForOKButton_ShouldDoSomething {
-    QCOMockAlertVerifier *alertVerifier = [[QCOMockAlertVerifier alloc] init];
-
-    [sut showAlert];
-    [alertVerifier executeActionForButtonWithTitle:@"OK"];
+```swift
+func testShowAlert_ExecutingActionForOKButton_ShouldDoSomething() {
+    let alertVerifier = QCOMockAlertVerifier()
+    sut.showAlert()
+    
+    alertVerifier.executeActionForButton(withTitle: "OK")
 
     // Now assert what you want
 }
 ```
 
-```swift
-func testShowAlert_ExecutingActionForOKButton_ShouldDoSomething() {
-    let alertVerifier = QCOMockAlertVerifier()
+```obj-c
+- (void)testShowAlert_ExecutingActionForOKButton_ShouldDoSomething {
+    QCOMockAlertVerifier *alertVerifier = [[QCOMockAlertVerifier alloc] init];
+    [sut showAlert];
 
-    sut.showAlert()
-    alertVerifier.executeActionForButton(withTitle: "OK")
+    [alertVerifier executeActionForButtonWithTitle:@"OK"];
 
     // Now assert what you want
 }
