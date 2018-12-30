@@ -1,3 +1,10 @@
+Next Version
+------------
+
+- Added `actions` which greatly simplify Swift tests.
+- Share scheme for Carthage builds. _Thanks to: Kevin Donnelly_
+
+
 Version 3.0.0
 ------------
 _02 Feb 2018_

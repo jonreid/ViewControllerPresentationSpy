@@ -15,10 +15,6 @@ static void swizzleMocks(void)
     [UIViewController qcoMock_swizzle];
 }
 
-@interface QCOMockAlertVerifier ()
-@property (nonatomic, copy) NSArray<UIAlertAction *> *actions;
-@end
-
 @implementation QCOMockAlertVerifier
 
 - (instancetype)init

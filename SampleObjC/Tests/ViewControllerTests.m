@@ -72,22 +72,53 @@
     XCTAssertEqual(alertVerifier.popover.permittedArrowDirections, UIPopoverArrowDirectionAny, @"permitted arrow directions");
 }
 
-- (void)test_presentedAlert_shouldHaveActions
+- (void)test_actionsForAlert
+{
+    [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
+    
+    NSArray<UIAlertAction *> *actions = alertVerifier.actions;
+    
+    XCTAssertEqual(actions.count, 4);
+    XCTAssertEqualObjects(actions[0].title, @"No Handler");
+    XCTAssertEqualObjects(actions[1].title, @"Default");
+    XCTAssertEqual(actions[1].style, UIAlertActionStyleDefault);
+    XCTAssertEqualObjects(actions[2].title, @"Cancel");
+    XCTAssertEqual(actions[2].style, UIAlertActionStyleCancel);
+    XCTAssertEqualObjects(actions[3].title, @"Destroy");
+    XCTAssertEqual(actions[3].style, UIAlertActionStyleDestructive);
+}
+
+- (void)test_actionsForActionSheet
+{
+    [sut.showActionSheetButton sendActionsForControlEvents:UIControlEventTouchUpInside];
+    
+    NSArray<UIAlertAction *> *actions = alertVerifier.actions;
+    
+    XCTAssertEqual(actions.count, 4);
+    XCTAssertEqualObjects(actions[1].title, @"Default");
+    XCTAssertEqual(actions[1].style, UIAlertActionStyleDefault);
+    XCTAssertEqualObjects(actions[2].title, @"Cancel");
+    XCTAssertEqual(actions[2].style, UIAlertActionStyleCancel);
+    XCTAssertEqualObjects(actions[3].title, @"Destroy");
+    XCTAssertEqual(actions[3].style, UIAlertActionStyleDestructive);
+}
+
+- (void)test_actionTitlesForAlert
 {
     [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
 
-    XCTAssertEqual(alertVerifier.actionTitles.count, 4U);
+    XCTAssertEqual(alertVerifier.actionTitles.count, 4);
     XCTAssertEqualObjects(alertVerifier.actionTitles[0], @"No Handler");
     XCTAssertEqualObjects(alertVerifier.actionTitles[1], @"Default");
     XCTAssertEqualObjects(alertVerifier.actionTitles[2], @"Cancel");
     XCTAssertEqualObjects(alertVerifier.actionTitles[3], @"Destroy");
 }
 
-- (void)test_presentedActionSheet_shouldHaveActions
+- (void)test_actionTitlesForActionSheet
 {
     [sut.showActionSheetButton sendActionsForControlEvents:UIControlEventTouchUpInside];
 
-    XCTAssertEqual(alertVerifier.actionTitles.count, 4U);
+    XCTAssertEqual(alertVerifier.actionTitles.count, 4);
     XCTAssertEqualObjects(alertVerifier.actionTitles[0], @"No Handler");
     XCTAssertEqualObjects(alertVerifier.actionTitles[1], @"Default");
     XCTAssertEqualObjects(alertVerifier.actionTitles[2], @"Cancel");
@@ -118,6 +149,7 @@
 - (void)test_executeActionForButtonWithTitle_withDefaultButton_shouldExecuteDefaultAction
 {
     [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
+    
     [alertVerifier executeActionForButtonWithTitle:@"Default"];
 
     XCTAssertTrue(sut.alertDefaultActionExecuted);
@@ -126,6 +158,7 @@
 - (void)test_executeActionForButtonWithTitle_withCancelButton_shouldExecuteCancelAction
 {
     [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
+    
     [alertVerifier executeActionForButtonWithTitle:@"Cancel"];
 
     XCTAssertTrue(sut.alertCancelActionExecuted);
@@ -134,6 +167,7 @@
 - (void)test_executeActionForButtonWithTitle_withDestroyButton_shouldExecuteDestroyAction
 {
     [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
+    
     [alertVerifier executeActionForButtonWithTitle:@"Destroy"];
 
     XCTAssertTrue(sut.alertDestroyActionExecuted);
