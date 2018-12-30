@@ -1,7 +1,5 @@
-// System under test
 #import "ViewController.h"
 
-// Test support
 @import MockUIAlertController;
 @import XCTest;
 
