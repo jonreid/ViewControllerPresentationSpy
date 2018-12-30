@@ -20,7 +20,7 @@
     alertVerifier = [[QCOMockAlertVerifier alloc] init];
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     sut = [storyboard instantiateViewControllerWithIdentifier:@"main"];
-    [sut view];
+    [sut loadViewIfNeeded];
 }
 
 - (void)tearDown
