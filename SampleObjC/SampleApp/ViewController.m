@@ -9,6 +9,9 @@
                                                                              message:@"Message"
                                                                       preferredStyle:UIAlertControllerStyleAlert];
     [self setUpActionsForAlertController:alertController];
+    [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+        textField.placeholder = @"Placeholder";
+    }];
     [self presentViewController:alertController animated:YES completion:^{}];
 }
 

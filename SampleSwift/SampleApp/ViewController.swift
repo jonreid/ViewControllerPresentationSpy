@@ -10,6 +10,9 @@ final class ViewController: UIViewController {
     @IBAction func showAlert(sender: AnyObject) {
         let alertController = UIAlertController(title: "Title", message: "Message", preferredStyle: .alert)
         setUpActions(for: alertController)
+        alertController.addTextField { textField in
+            textField.placeholder = "Placeholder"
+        }
         self.present(alertController, animated: true)
     }
 

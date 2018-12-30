@@ -26,6 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, strong) UIAlertAction *preferredAction;
 @property (nonatomic, readonly) NSArray *actionTitles;
 @property (nullable, nonatomic, strong) QCOMockPopoverPresentationController *popover;
+@property (nullable, nonatomic, copy) NSArray<UITextField *> *textFields;
 
 /*!
  * @abstract Initializes a newly allocated verifier.

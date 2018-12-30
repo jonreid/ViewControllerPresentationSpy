@@ -3,6 +3,7 @@ Next Version
 
 - Added `actions` which greatly simplify Swift tests.
 - Added `preferredAction`
+- Added `textFields`
 - Share scheme for Carthage builds. _Thanks to: Kevin Donnelly_
 
 

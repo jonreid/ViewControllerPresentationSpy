@@ -183,4 +183,19 @@
     XCTAssertTrue(sut.alertDestroyActionExecuted);
 }
 
+- (void)test_textFieldsForAlert
+{
+    [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
+
+    XCTAssertEqual(alertVerifier.textFields.count, 1);
+    XCTAssertEqualObjects(alertVerifier.textFields[0].placeholder, @"Placeholder");
+}
+
+- (void)test_textFields_shouldNotBeAddedToActionSheets
+{
+    [sut.showActionSheetButton sendActionsForControlEvents:UIControlEventTouchUpInside];
+
+    XCTAssertEqual(alertVerifier.textFields.count, 0);
+}
+
 @end

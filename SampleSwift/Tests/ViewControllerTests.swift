@@ -114,4 +114,17 @@ final class ViewControllerTests: XCTestCase {
 
         XCTAssertTrue(sut.alertDestroyActionExecuted)
     }
+
+    func test_textFieldsForAlert() {
+        sut.showAlertButton.sendActions(for: .touchUpInside)
+
+        XCTAssertEqual(alertVerifier.textFields?.count, 1)
+        XCTAssertEqual(alertVerifier.textFields?[0].placeholder, "Placeholder")
+    }
+
+    func test_textFields_shouldNotBeAddedToActionSheets() {
+        sut.showActionSheetButton.sendActions(for: .touchUpInside)
+
+        XCTAssertEqual(alertVerifier.textFields?.count, 0)
+    }
 }
