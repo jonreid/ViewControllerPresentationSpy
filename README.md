@@ -64,7 +64,7 @@ To guard against tests which accidentally present real alerts, I recommend placi
 ## How can I invoke the block associated with a UIAlertAction?
 
 Go through the steps above to present your alert or action sheet using `QCOMockAlertController`.
-Then call `-executeActionForButtonWithTitle:` on your `QCOMockAlertVerifier` with the button title.
+Then call `executeActionForButton(withTitle:)` on your `QCOMockAlertVerifier` with the button title.
 For example:
 
 ```swift
