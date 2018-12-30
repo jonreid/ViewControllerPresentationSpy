@@ -19,150 +19,103 @@ class ViewControllerTests: XCTestCase {
         super.tearDown()
     }
 
-    func testShowAlertButton_ShouldBeConnected() {
+    func test_outlets_shouldBeConnected() {
         XCTAssertNotNil(sut.showAlertButton)
-    }
-
-    func testShowActionSheetButton_ShouldBeConnected() {
         XCTAssertNotNil(sut.showActionSheetButton)
     }
 
-    func testTappingShowAlertButton_ShouldShowAlert() {
+    func test_tappingShowAlertButton_shouldShowAlert() {
         sut.showAlertButton.sendActions(for: .touchUpInside)
 
-        XCTAssertEqual(alertVerifier.presentedCount, 1);
+        XCTAssertEqual(alertVerifier.presentedCount, 1, "presented count")
+        XCTAssertEqual(alertVerifier.preferredStyle, UIAlertController.Style.alert, "preferred style")
+        XCTAssertTrue(alertVerifier.presentingViewController === sut,
+                "Expected presenting view controller to be \(String(describing: sut)), but was \(alertVerifier.presentingViewController)")
+        XCTAssertTrue(alertVerifier.animated, "animated")
+        XCTAssertEqual(alertVerifier.title, "Title", "title")
+        XCTAssertEqual(alertVerifier.message, "Message", "message")
     }
 
-    func testTappingShowActionSheetButton_ShouldShowAlert() {
+    func test_tappingShowActionSheetButton_shouldShowActionSheet() {
         sut.showActionSheetButton.sendActions(for: .touchUpInside)
 
-        XCTAssertEqual(alertVerifier.presentedCount, 1);
+        XCTAssertEqual(alertVerifier.presentedCount, 1, "presented count")
+        XCTAssertEqual(alertVerifier.preferredStyle, UIAlertController.Style.actionSheet, "preferred style")
+        XCTAssertTrue(alertVerifier.presentingViewController === sut,
+                "Expected presenting view controller to be \(String(describing: sut)), but was \(alertVerifier.presentingViewController)")
+        XCTAssertTrue(alertVerifier.animated, "animated")
+        XCTAssertEqual(alertVerifier.title, "Title", "title")
+        XCTAssertEqual(alertVerifier.message, "Message", "message")
     }
 
-    func testShowAlert_ShouldPreferAlert() {
+    func test_actionSheetPopover() {
+        sut.showActionSheetButton.sendActions(for: .touchUpInside)
+
+        let popover = alertVerifier.popover
+
+        XCTAssertEqual(popover?.sourceView, sut.showActionSheetButton, "source view")
+        XCTAssertEqual(NSCoder.string(for: (popover?.sourceRect)!),
+                NSCoder.string(for: sut.showActionSheetButton.bounds),
+                "source rect")
+        XCTAssertEqual(popover?.permittedArrowDirections, UIPopoverArrowDirection.any, "permitted arrow directions")
+    }
+
+    func test_presentedAlert_shouldHaveActions() {
         sut.showAlertButton.sendActions(for: .touchUpInside)
 
-        XCTAssertEqual(alertVerifier.preferredStyle, UIAlertController.Style.alert);
+        XCTAssertEqual(alertVerifier.actionTitles.count, 4)
+        XCTAssertEqual(alertVerifier.actionTitles[0] as? String, "No Handler")
+        XCTAssertEqual(alertVerifier.actionTitles[1] as? String, "Default")
+        XCTAssertEqual(alertVerifier.actionTitles[2] as? String, "Cancel")
+        XCTAssertEqual(alertVerifier.actionTitles[3] as? String, "Destroy")
     }
 
-    func testShowActionSheet_ShouldPreferActionSheet() {
+    func test_showingActionSheet_presentedActionSheetShouldHaveActions() {
         sut.showActionSheetButton.sendActions(for: .touchUpInside)
 
-        XCTAssertEqual(alertVerifier.preferredStyle, UIAlertController.Style.actionSheet);
+        XCTAssertEqual(alertVerifier.actionTitles.count, 4)
+        XCTAssertEqual(alertVerifier.actionTitles[0] as? String, "No Handler")
+        XCTAssertEqual(alertVerifier.actionTitles[1] as? String, "Default")
+        XCTAssertEqual(alertVerifier.actionTitles[2] as? String, "Cancel")
+        XCTAssertEqual(alertVerifier.actionTitles[3] as? String, "Destroy")
     }
 
-    func testShowAlert_ShouldPresentWithAnimation() {
-        sut.showAlertButton.sendActions(for: .touchUpInside)
-
-        XCTAssertTrue(alertVerifier.animated);
-    }
-
-    func testShowActionSheet_ShouldPresentWithAnimation() {
-        sut.showActionSheetButton.sendActions(for: .touchUpInside)
-
-        XCTAssertTrue(alertVerifier.animated);
-    }
-
-    func testShowAlert_PresentedAlertShouldHaveTitle() {
-        sut.showAlertButton.sendActions(for: .touchUpInside)
-
-        XCTAssertEqual(alertVerifier.title, "Title");
-    }
-
-    func testShowActionSheet_PresentedAlertShouldHaveTitle() {
-        sut.showActionSheetButton.sendActions(for: .touchUpInside)
-
-        XCTAssertEqual(alertVerifier.title, "Title");
-    }
-
-    func testShowAlert_PresentedAlertShouldHaveMessage() {
-        sut.showAlertButton.sendActions(for: .touchUpInside)
-
-        XCTAssertEqual(alertVerifier.message, "Message");
-    }
-
-    func testShowActionSheet_PresentedAlertShouldHaveMessage() {
-        sut.showActionSheetButton.sendActions(for: .touchUpInside)
-
-        XCTAssertEqual(alertVerifier.message, "Message");
-    }
-
-    func testShowAlert_PresentedAlertShouldHaveActions() {
-        sut.showAlertButton.sendActions(for: .touchUpInside)
-
-        XCTAssertEqual(alertVerifier.actionTitles.count, 4);
-        XCTAssertEqual(alertVerifier.actionTitles[0] as? String, "No Handler");
-        XCTAssertEqual(alertVerifier.actionTitles[1] as? String, "Default");
-        XCTAssertEqual(alertVerifier.actionTitles[2] as? String, "Cancel");
-        XCTAssertEqual(alertVerifier.actionTitles[3] as? String, "Destroy");
-    }
-
-    func testShowActionSheet_PresentedActionSheetShouldHaveActions() {
-        sut.showActionSheetButton.sendActions(for: .touchUpInside)
-
-        XCTAssertEqual(alertVerifier.actionTitles.count, 4);
-        XCTAssertEqual(alertVerifier.actionTitles[0] as? String, "No Handler");
-        XCTAssertEqual(alertVerifier.actionTitles[1] as? String, "Default");
-        XCTAssertEqual(alertVerifier.actionTitles[2] as? String, "Cancel");
-        XCTAssertEqual(alertVerifier.actionTitles[3] as? String, "Destroy");
-    }
-
-    func testShowAlert_DefaultButtonShouldHaveDefaultStyle() {
+    func test_styleForButton_withDefaultButton_shouldHaveDefaultStyle() {
         sut.showAlertButton.sendActions(for: .touchUpInside)
 
         XCTAssertEqual(alertVerifier.styleForButton(withTitle: "Default"), UIAlertAction.Style.default)
     }
 
-    func testShowAlert_CancelButtonShouldHaveCancelStyle() {
+    func test_styleForButton_withCancelButton_shouldHaveCancelStyle() {
         sut.showAlertButton.sendActions(for: .touchUpInside)
 
         XCTAssertEqual(alertVerifier.styleForButton(withTitle: "Cancel"), UIAlertAction.Style.cancel)
     }
 
-    func testShowAlert_DestroyButtonShouldHaveDestructiveStyle() {
+    func test_styleForButton_withDestroyButton_shouldHaveDestructiveStyle() {
         sut.showAlertButton.sendActions(for: .touchUpInside)
 
         XCTAssertEqual(alertVerifier.styleForButton(withTitle: "Destroy"), UIAlertAction.Style.destructive)
     }
 
-    func testShowAlert_ExecutingActionForDefaultButton_ShouldDoSomethingMeaningful() {
+    func test_executeActionForButton_withDefaultButton_shouldExecuteDefaultAction() {
         sut.showAlertButton.sendActions(for: .touchUpInside)
         alertVerifier.executeActionForButton(withTitle: "Default")
 
-        XCTAssertTrue(sut.alertDefaultActionExecuted);
+        XCTAssertTrue(sut.alertDefaultActionExecuted)
     }
 
-    func testShowAlert_ExecutingActionForCancelButton_ShouldDoSomethingMeaningful() {
+    func test_executeActionForButton_withCancelButton_shouldExecuteCancelAction() {
         sut.showAlertButton.sendActions(for: .touchUpInside)
         alertVerifier.executeActionForButton(withTitle: "Cancel")
 
-        XCTAssertTrue(sut.alertCancelActionExecuted);
+        XCTAssertTrue(sut.alertCancelActionExecuted)
     }
 
-    func testShowAlert_ExecutingActionForDestroyButton_ShouldDoSomethingMeaningful() {
+    func test_executeActionForButton_withDestroyButton_shouldExecuteDestroyAction() {
         sut.showAlertButton.sendActions(for: .touchUpInside)
         alertVerifier.executeActionForButton(withTitle: "Destroy")
 
-        XCTAssertTrue(sut.alertDestroyActionExecuted);
+        XCTAssertTrue(sut.alertDestroyActionExecuted)
     }
-
-    func testShowActionSheet_PopoverSourceViewShouldBeTappedButton() {
-        sut.showActionSheetButton.sendActions(for: .touchUpInside)
-
-        XCTAssertEqual(alertVerifier.popover?.sourceView, sut.showActionSheetButton);
-    }
-
-    func testShowActionSheet_PopoverSourceRectShouldBeTappedButtonBounds() {
-        sut.showActionSheetButton.sendActions(for: .touchUpInside)
-
-        XCTAssertEqual(NSCoder.string(for: (alertVerifier.popover?.sourceRect)!),
-                       NSCoder.string(for: sut.showActionSheetButton.bounds));
-    }
-
-    func testShowActionSheet_PopoverPermittedArrowDirectionsShouldBeAnyDirection() {
-        sut.showActionSheetButton.sendActions(for: .touchUpInside)
-
-        XCTAssertEqual(alertVerifier.popover?.permittedArrowDirections, UIPopoverArrowDirection.any);
-    }
-
 }

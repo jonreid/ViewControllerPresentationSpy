@@ -2,7 +2,6 @@
 
 #import "ViewController.h"
 
-@import OCHamcrestIOS;
 @import XCTest;
 
 
@@ -11,12 +10,14 @@
 
 @implementation QCOMockAlertVerifierTests
 {
+    QCOMockAlertVerifier *alertVerifier;
     ViewController *sut;
 }
 
 - (void)setUp
 {
     [super setUp];
+    alertVerifier = [[QCOMockAlertVerifier alloc] init];
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     sut = [storyboard instantiateViewControllerWithIdentifier:@"main"];
     [sut view];
@@ -24,66 +25,49 @@
 
 - (void)tearDown
 {
+    alertVerifier = nil;
     sut = nil;
     [super tearDown];
 }
 
-- (void)testShowAlert_TryingToGetStyleForNonexistentButton_ShouldThrowInternalInconsistency
+- (void)test_tryingToGetStyleForNonexistentButton_shouldThrowException
 {
-    QCOMockAlertVerifier *alertVerifier = [[QCOMockAlertVerifier alloc] init];
-    
-    [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
-    
-    assertThat(^{ [alertVerifier styleForButtonWithTitle:@"NO SUCH BUTTON"]; },
-            throwsException(hasProperty(@"name", NSInternalInconsistencyException)));
-}
-
-- (void)testShowAlert_TryingToGetStyleForNonexistentButton_ShouldThrowExceptionWithReason
-{
-    QCOMockAlertVerifier *alertVerifier = [[QCOMockAlertVerifier alloc] init];
-    
     [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
 
-    assertThat(^{ [alertVerifier styleForButtonWithTitle:@"NO SUCH BUTTON"]; },
-            throwsException(hasProperty(@"reason", @"Button not found")));
+    @try {
+        [alertVerifier styleForButtonWithTitle:@"NO SUCH BUTTON"];
+        XCTFail(@"Expected exception to be thrown");
+    } @catch (NSException *exception) {
+        XCTAssertEqual(exception.name, NSInternalInconsistencyException, @"name");
+        XCTAssertEqualObjects(exception.reason, @"Button not found", @"reason");
+    }
 }
 
-- (void)testShowAlert_TryingToExecuteActionForNonexistentButton_ShouldThrowInternalInconsistency
+- (void)test_tryingToExecuteActionForNonexistentButton_shouldThrowException
 {
-    QCOMockAlertVerifier *alertVerifier = [[QCOMockAlertVerifier alloc] init];
-    
     [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
 
-    assertThat(^{ [alertVerifier executeActionForButtonWithTitle:@"NO SUCH BUTTON"]; },
-            throwsException(hasProperty(@"name", NSInternalInconsistencyException)));
+    @try {
+        [alertVerifier executeActionForButtonWithTitle:@"NO SUCH BUTTON"];
+        XCTFail(@"Expected exception to be thrown");
+    } @catch (NSException *exception) {
+        XCTAssertEqual(exception.name, NSInternalInconsistencyException, @"name");
+        XCTAssertEqualObjects(exception.reason, @"Button not found", @"reason");
+    }
 }
 
-- (void)testShowAlert_TryingToExecuteActionForNonexistentButton_ShouldThrowExceptionWithReason
+- (void)test_tryingToExecuteActionForButtonWithoutHandler_shouldNotCrash
 {
-    QCOMockAlertVerifier *alertVerifier = [[QCOMockAlertVerifier alloc] init];
-    
-    [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
-
-    assertThat(^{ [alertVerifier executeActionForButtonWithTitle:@"NO SUCH BUTTON"]; },
-            throwsException(hasProperty(@"reason", @"Button not found")));
-}
-
-- (void)testShowAlert_TryingToExecuteActionForButtonWithoutHandler_ShouldNotCrash
-{
-    QCOMockAlertVerifier *alertVerifier = [[QCOMockAlertVerifier alloc] init];
-    
     [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
 
     [alertVerifier executeActionForButtonWithTitle:@"No Handler"];
 }
 
-- (void)testPresentingViewControllerThatIsNotAnAlert_ShouldNotTriggerVerifier
+- (void)test_presentingViewControllerThatIsNotAnAlert_shouldNotTriggerVerifier
 {
-    QCOMockAlertVerifier *alertVerifier = [[QCOMockAlertVerifier alloc] init];
-
     [sut presentNonAlert];
 
-    assertThat(@(alertVerifier.presentedCount), is(@0));
+    XCTAssertEqual(alertVerifier.presentedCount, 0);
 }
 
 @end

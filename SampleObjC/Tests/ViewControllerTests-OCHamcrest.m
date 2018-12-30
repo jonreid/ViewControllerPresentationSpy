@@ -32,161 +32,94 @@
     [super tearDown];
 }
 
-- (void)testShowAlertButton_ShouldBeConnected
+- (void)test_outlets_shouldBeConnected
 {
-    UIButton *button = sut.showAlertButton;
-
-    assertThat(button, is(notNilValue()));
+    assertThat(sut.showAlertButton, isNot(nilValue()));
+    assertThat(sut.showActionSheetButton, isNot(nilValue()));
 }
 
-- (void)testShowActionSheetButton_ShouldBeConnected
-{
-    UIButton *button = sut.showActionSheetButton;
-
-    assertThat(button, is(notNilValue()));
-}
-
-- (void)testTappingShowAlertButton_ShouldPresentAlert
+- (void)test_tappingShowAlertButton_shouldPresentAlert
 {
     [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
     
     assertThat(@(alertVerifier.presentedCount), is(equalTo(@1)));
 }
 
-- (void)testTappingShowActionSheetButton_ShouldPresentAlert
+- (void)test_tappingShowActionSheetButton_shouldPresentAlert
 {
     [sut.showActionSheetButton sendActionsForControlEvents:UIControlEventTouchUpInside];
 
     assertThat(@(alertVerifier.presentedCount), is(equalTo(@1)));
 }
 
-- (void)testShowAlert_ShouldPreferAlert
+- (void)test_preferredStyleForAlert_shouldBeAlert
 {
     [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
 
     assertThat(@(alertVerifier.preferredStyle), is(@(UIAlertControllerStyleAlert)));
 }
 
-- (void)testShowActionSheet_ShouldPreferActionSheet
+- (void)test_preferredStyleForActionSheet_shouldBeActionSheet
 {
     [sut.showActionSheetButton sendActionsForControlEvents:UIControlEventTouchUpInside];
 
     assertThat(@(alertVerifier.preferredStyle), is(@(UIAlertControllerStyleActionSheet)));
 }
 
-- (void)testShowAlert_ShouldProvidePresentingViewController
+- (void)test_presentingViewControllerForAlert_shouldBeSystemUnderTest
 {
     [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
     
     assertThat(alertVerifier.presentingViewController, is(sameInstance(sut)));
 }
 
-- (void)testShowActionSheet_ShouldProvidePresentingViewController
+- (void)test_presentingViewControllerForActionSheet_shouldBeSystemUnderTest
 {
     [sut.showActionSheetButton sendActionsForControlEvents:UIControlEventTouchUpInside];
     
     assertThat(alertVerifier.presentingViewController, is(sameInstance(sut)));
 }
 
-- (void)testShowAlert_ShouldPresentWithAnimation
+- (void)test_showingAlert_shouldPresentWithAnimation
 {
     [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
 
     assertThat(@(alertVerifier.animated), is(@YES));
 }
 
-- (void)testShowActionSheet_ShouldPresentWithAnimation
+- (void)test_showingActionSheet_shouldPresentWithAnimation
 {
     [sut.showActionSheetButton sendActionsForControlEvents:UIControlEventTouchUpInside];
 
     assertThat(@(alertVerifier.animated), is(@YES));
 }
 
-- (void)testShowAlert_PresentedAlertShouldHaveTitle
+- (void)test_titleForAlert
 {
     [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
 
     assertThat(alertVerifier.title, is(@"Title"));
 }
 
-- (void)testShowActionSheet_PresentedSheetShouldHaveTitle
+- (void)test_titleForActionSheet
 {
     [sut.showActionSheetButton sendActionsForControlEvents:UIControlEventTouchUpInside];
 
     assertThat(alertVerifier.title, is(@"Title"));
 }
 
-- (void)testShowAlert_PresentedAlertShouldHaveMessage
+- (void)test_messageForAlert
 {
     [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
 
     assertThat(alertVerifier.message, is(@"Message"));
 }
 
-- (void)testShowActionSheet_PresentedSheetShouldHaveMessage
+- (void)test_messageForActionSheet
 {
     [sut.showActionSheetButton sendActionsForControlEvents:UIControlEventTouchUpInside];
 
     assertThat(alertVerifier.message, is(@"Message"));
-}
-
-- (void)testShowAlert_PresentedAlertShouldHaveActions
-{
-    [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
-
-    assertThat(alertVerifier.actionTitles, containsIn(@[ @"No Handler", @"Default", @"Cancel", @"Destroy" ]));
-}
-
-- (void)testShowActionSheet_PresentedSheetShouldHaveActions
-{
-    [sut.showActionSheetButton sendActionsForControlEvents:UIControlEventTouchUpInside];
-
-    assertThat(alertVerifier.actionTitles, containsIn(@[ @"No Handler", @"Default", @"Cancel", @"Destroy" ]));
-}
-
-- (void)testShowAlert_DefaultButtonShouldHaveDefaultStyle
-{
-    [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
-
-    assertThat(@([alertVerifier styleForButtonWithTitle:@"Default"]), is(@(UIAlertActionStyleDefault)));
-}
-
-- (void)testShowAlert_CancelButtonShouldHaveCancelStyle
-{
-    [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
-
-    assertThat(@([alertVerifier styleForButtonWithTitle:@"Cancel"]), is(@(UIAlertActionStyleCancel)));
-}
-
-- (void)testShowAlert_DestroyButtonShouldHaveDestructiveStyle
-{
-    [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
-
-    assertThat(@([alertVerifier styleForButtonWithTitle:@"Destroy"]), is(@(UIAlertActionStyleDestructive)));
-}
-
-- (void)testShowAlert_ExecutingActionForDefaultButton_ShouldDoSomethingMeaningful
-{
-    [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
-    [alertVerifier executeActionForButtonWithTitle:@"Default"];
-
-    XCTAssertTrue(sut.alertDefaultActionExecuted);
-}
-
-- (void)testShowAlert_ExecutingActionForCancelButton_ShouldDoSomethingMeaningful
-{
-    [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
-    [alertVerifier executeActionForButtonWithTitle:@"Cancel"];
-
-    XCTAssertTrue(sut.alertCancelActionExecuted);
-}
-
-- (void)testShowAlert_ExecutingActionForDestroyButton_ShouldDoSomethingMeaningful
-{
-    [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
-    [alertVerifier executeActionForButtonWithTitle:@"Destroy"];
-
-    XCTAssertTrue(sut.alertDestroyActionExecuted);
 }
 
 - (void)testShowActionSheet_PopoverSourceViewShouldBeTappedButton
@@ -199,7 +132,7 @@
 - (void)testShowActionSheet_PopoverSourceRectShouldBeTappedButtonBounds
 {
     [sut.showActionSheetButton sendActionsForControlEvents:UIControlEventTouchUpInside];
-
+    
     assertThat(NSStringFromCGRect(alertVerifier.popover.sourceRect),
             is(NSStringFromCGRect(sut.showActionSheetButton.bounds)));
 }
@@ -207,8 +140,67 @@
 - (void)testShowActionSheet_PopoverPermittedArrowDirectionsShouldBeAnyDirection
 {
     [sut.showActionSheetButton sendActionsForControlEvents:UIControlEventTouchUpInside];
-
+    
     assertThat(@(alertVerifier.popover.permittedArrowDirections), is(@(UIPopoverArrowDirectionAny)));
+}
+
+- (void)test_presentedAlert_shouldHaveActions
+{
+    [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
+
+    assertThat(alertVerifier.actionTitles, containsIn(@[ @"No Handler", @"Default", @"Cancel", @"Destroy" ]));
+}
+
+- (void)test_presentedActionSheet_shouldHaveActions
+{
+    [sut.showActionSheetButton sendActionsForControlEvents:UIControlEventTouchUpInside];
+
+    assertThat(alertVerifier.actionTitles, containsIn(@[ @"No Handler", @"Default", @"Cancel", @"Destroy" ]));
+}
+
+- (void)test_styleForButtonWithTitle_withDefaultButton_shouldHaveDefaultStyle
+{
+    [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
+
+    assertThat(@([alertVerifier styleForButtonWithTitle:@"Default"]), is(@(UIAlertActionStyleDefault)));
+}
+
+- (void)test_styleForButtonWithTitle_withCancelButton_shouldHaveCancelStyle
+{
+    [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
+
+    assertThat(@([alertVerifier styleForButtonWithTitle:@"Cancel"]), is(@(UIAlertActionStyleCancel)));
+}
+
+- (void)test_styleForButtonWithTitle_withDestroyButton_shouldHaveDestructiveStyle
+{
+    [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
+
+    assertThat(@([alertVerifier styleForButtonWithTitle:@"Destroy"]), is(@(UIAlertActionStyleDestructive)));
+}
+
+- (void)test_executeActionForButtonWithTitle_withDefaultButton_shouldExecuteDefaultAction
+{
+    [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
+    [alertVerifier executeActionForButtonWithTitle:@"Default"];
+
+    XCTAssertTrue(sut.alertDefaultActionExecuted);
+}
+
+- (void)test_executeActionForButtonWithTitle_withCancelButton_shouldExecuteCancelAction
+{
+    [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
+    [alertVerifier executeActionForButtonWithTitle:@"Cancel"];
+
+    XCTAssertTrue(sut.alertCancelActionExecuted);
+}
+
+- (void)test_executeActionForButtonWithTitle_withDestroyButton_shouldExecuteDestroyAction
+{
+    [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
+    [alertVerifier executeActionForButtonWithTitle:@"Destroy"];
+
+    XCTAssertTrue(sut.alertDestroyActionExecuted);
 }
 
 @end

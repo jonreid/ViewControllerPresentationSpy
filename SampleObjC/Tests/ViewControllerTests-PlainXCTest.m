@@ -31,105 +31,48 @@
     [super tearDown];
 }
 
-- (void)testShowAlertButton_ShouldBeConnected
+- (void)test_outlets_shouldBeConnected
 {
-    UIButton *button = sut.showAlertButton;
-
-    XCTAssertNotNil(button);
+    XCTAssertNotNil(sut.showAlertButton);
+    XCTAssertNotNil(sut.showActionSheetButton);
 }
 
-- (void)testShowActionSheetButton_ShouldBeConnected
-{
-    UIButton *button = sut.showActionSheetButton;
-
-    XCTAssertNotNil(button);
-}
-
-- (void)testTappingShowAlertButton_ShouldPresentAlert
+- (void)test_tappingShowAlertButton_shouldPresentAlert
 {
     [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
     
-    XCTAssertEqual(alertVerifier.presentedCount, 1U);
+    XCTAssertEqual(alertVerifier.presentedCount, 1, @"presented count");
+    XCTAssertEqual(alertVerifier.preferredStyle, UIAlertControllerStyleAlert, @"preferred style");
+    XCTAssertEqual(alertVerifier.presentingViewController, sut, @"presenting view controller");
+    XCTAssertTrue(alertVerifier.animated, @"animated");
+    XCTAssertEqualObjects(alertVerifier.title, @"Title", @"title");
+    XCTAssertEqualObjects(alertVerifier.message, @"Message", @"message");
 }
 
-- (void)testTappingShowActionSheetButton_ShouldPresentAlert
+- (void)test_tappingShowActionSheetButton_shouldPresentActionSheet
 {
     [sut.showActionSheetButton sendActionsForControlEvents:UIControlEventTouchUpInside];
 
-    XCTAssertEqual(alertVerifier.presentedCount, 1U);
+    XCTAssertEqual(alertVerifier.presentedCount, 1, @"presented count");
+    XCTAssertEqual(alertVerifier.preferredStyle, UIAlertControllerStyleActionSheet, @"preferred style");
+    XCTAssertEqual(alertVerifier.presentingViewController, sut, @"presenting view controller");
+    XCTAssertTrue(alertVerifier.animated, @"animated");
+    XCTAssertEqualObjects(alertVerifier.title, @"Title", @"title");
+    XCTAssertEqualObjects(alertVerifier.message, @"Message", @"message");
 }
 
-- (void)testShowAlert_ShouldPreferAlert
-{
-    [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
-
-    XCTAssertEqual(alertVerifier.preferredStyle, UIAlertControllerStyleAlert);
-}
-
-- (void)testShowActionSheet_ShouldPreferActionSheet
-{
-    [sut.showActionSheetButton sendActionsForControlEvents:UIControlEventTouchUpInside];
-
-    XCTAssertEqual(alertVerifier.preferredStyle, UIAlertControllerStyleActionSheet);
-}
-
-- (void)testShowActionSheet_ShouldProvidePresentingViewController
+- (void)test_actionSheetPopover
 {
     [sut.showActionSheetButton sendActionsForControlEvents:UIControlEventTouchUpInside];
     
-    XCTAssertEqual(alertVerifier.presentingViewController, sut);
+    XCTAssertEqual(alertVerifier.popover.sourceView, sut.showActionSheetButton, @"source view");
+    XCTAssertEqualObjects(NSStringFromCGRect(alertVerifier.popover.sourceRect),
+            NSStringFromCGRect(sut.showActionSheetButton.bounds),
+            @"source rect");
+    XCTAssertEqual(alertVerifier.popover.permittedArrowDirections, UIPopoverArrowDirectionAny, @"permitted arrow directions");
 }
 
-- (void)testShowAlert_ShouldProvidePresentingViewController
-{
-    [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
-    
-    XCTAssertEqual(alertVerifier.presentingViewController, sut);
-}
-
-- (void)testShowAlert_ShouldPresentWithAnimation
-{
-    [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
-
-    XCTAssertTrue(alertVerifier.animated);
-}
-
-- (void)testShowActionSheet_ShouldPresentWithAnimation
-{
-    [sut.showActionSheetButton sendActionsForControlEvents:UIControlEventTouchUpInside];
-
-    XCTAssertTrue(alertVerifier.animated);
-}
-
-- (void)testShowAlert_PresentedAlertShouldHaveTitle
-{
-    [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
-
-    XCTAssertEqualObjects(alertVerifier.title, @"Title");
-}
-
-- (void)testShowActionSheet_PresentedSheetShouldHaveTitle
-{
-    [sut.showActionSheetButton sendActionsForControlEvents:UIControlEventTouchUpInside];
-
-    XCTAssertEqualObjects(alertVerifier.title, @"Title");
-}
-
-- (void)testShowAlert_PresentedAlertShouldHaveMessage
-{
-    [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
-
-    XCTAssertEqualObjects(alertVerifier.message, @"Message");
-}
-
-- (void)testShowActionSheet_PresentedSheetShouldHaveMessage
-{
-    [sut.showActionSheetButton sendActionsForControlEvents:UIControlEventTouchUpInside];
-
-    XCTAssertEqualObjects(alertVerifier.message, @"Message");
-}
-
-- (void)testShowAlert_PresentedAlertShouldHaveActions
+- (void)test_presentedAlert_shouldHaveActions
 {
     [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
 
@@ -140,7 +83,7 @@
     XCTAssertEqualObjects(alertVerifier.actionTitles[3], @"Destroy");
 }
 
-- (void)testShowActionSheet_PresentedSheetShouldHaveActions
+- (void)test_presentedActionSheet_shouldHaveActions
 {
     [sut.showActionSheetButton sendActionsForControlEvents:UIControlEventTouchUpInside];
 
@@ -151,28 +94,28 @@
     XCTAssertEqualObjects(alertVerifier.actionTitles[3], @"Destroy");
 }
 
-- (void)testShowAlert_DefaultButtonShouldHaveDefaultStyle
+- (void)test_styleForButtonWithTitle_withDefaultButton_shouldHaveDefaultStyle
 {
     [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
 
     XCTAssertEqual([alertVerifier styleForButtonWithTitle:@"Default"], UIAlertActionStyleDefault);
 }
 
-- (void)testShowAlert_CancelButtonShouldHaveCancelStyle
+- (void)test_styleForButtonWithTitle_withCancelButton_shouldHaveCancelStyle
 {
     [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
 
     XCTAssertEqual([alertVerifier styleForButtonWithTitle:@"Cancel"], UIAlertActionStyleCancel);
 }
 
-- (void)testShowAlert_DestroyButtonShouldHaveDestructiveStyle
+- (void)test_styleForButtonWithTitle_withDestroyButton_shouldHaveDestructiveStyle
 {
     [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
 
     XCTAssertEqual([alertVerifier styleForButtonWithTitle:@"Destroy"], UIAlertActionStyleDestructive);
 }
 
-- (void)testShowAlert_ExecutingActionForDefaultButton_ShouldDoSomethingMeaningful
+- (void)test_executeActionForButtonWithTitle_withDefaultButton_shouldExecuteDefaultAction
 {
     [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
     [alertVerifier executeActionForButtonWithTitle:@"Default"];
@@ -180,7 +123,7 @@
     XCTAssertTrue(sut.alertDefaultActionExecuted);
 }
 
-- (void)testShowAlert_ExecutingActionForCancelButton_ShouldDoSomethingMeaningful
+- (void)test_executeActionForButtonWithTitle_withCancelButton_shouldExecuteCancelAction
 {
     [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
     [alertVerifier executeActionForButtonWithTitle:@"Cancel"];
@@ -188,34 +131,12 @@
     XCTAssertTrue(sut.alertCancelActionExecuted);
 }
 
-- (void)testShowAlert_ExecutingActionForDestroyButton_ShouldDoSomethingMeaningful
+- (void)test_executeActionForButtonWithTitle_withDestroyButton_shouldExecuteDestroyAction
 {
     [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
     [alertVerifier executeActionForButtonWithTitle:@"Destroy"];
 
     XCTAssertTrue(sut.alertDestroyActionExecuted);
-}
-
-- (void)testShowActionSheet_PopoverSourceViewShouldBeTappedButton
-{
-    [sut.showActionSheetButton sendActionsForControlEvents:UIControlEventTouchUpInside];
-    
-    XCTAssertEqual(alertVerifier.popover.sourceView, sut.showActionSheetButton);
-}
-
-- (void)testShowActionSheet_PopoverSourceRectShouldBeTappedButtonBounds
-{
-    [sut.showActionSheetButton sendActionsForControlEvents:UIControlEventTouchUpInside];
-
-    XCTAssertEqualObjects(NSStringFromCGRect(alertVerifier.popover.sourceRect),
-            NSStringFromCGRect(sut.showActionSheetButton.bounds));
-}
-
-- (void)testShowActionSheet_PopoverPermittedArrowDirectionsShouldBeAnyDirection
-{
-    [sut.showActionSheetButton sendActionsForControlEvents:UIControlEventTouchUpInside];
-
-    XCTAssertEqual(alertVerifier.popover.permittedArrowDirections, UIPopoverArrowDirectionAny);
 }
 
 @end
