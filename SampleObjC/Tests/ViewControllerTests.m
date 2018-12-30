@@ -61,15 +61,18 @@
     XCTAssertEqualObjects(alertVerifier.message, @"Message", @"message");
 }
 
-- (void)test_actionSheetPopover
+- (void)test_popoverForActionSheet
 {
     [sut.showActionSheetButton sendActionsForControlEvents:UIControlEventTouchUpInside];
     
-    XCTAssertEqual(alertVerifier.popover.sourceView, sut.showActionSheetButton, @"source view");
-    XCTAssertEqualObjects(NSStringFromCGRect(alertVerifier.popover.sourceRect),
+    QCOMockPopoverPresentationController *popover = alertVerifier.popover;
+    
+    XCTAssertEqual(popover.sourceView, sut.showActionSheetButton, @"source view");
+    XCTAssertEqualObjects(
+            NSStringFromCGRect(popover.sourceRect),
             NSStringFromCGRect(sut.showActionSheetButton.bounds),
             @"source rect");
-    XCTAssertEqual(alertVerifier.popover.permittedArrowDirections, UIPopoverArrowDirectionAny, @"permitted arrow directions");
+    XCTAssertEqual(popover.permittedArrowDirections, UIPopoverArrowDirectionAny, @"permitted arrow directions");
 }
 
 - (void)test_actionsForAlert

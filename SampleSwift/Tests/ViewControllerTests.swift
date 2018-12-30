@@ -48,16 +48,14 @@ class ViewControllerTests: XCTestCase {
         XCTAssertEqual(alertVerifier.message, "Message", "message")
     }
 
-    func test_actionSheetPopover() {
+    func test_popoverForActionSheet() {
         sut.showActionSheetButton.sendActions(for: .touchUpInside)
 
-        let popover = alertVerifier.popover
+        let popover = alertVerifier.popover!
 
-        XCTAssertEqual(popover?.sourceView, sut.showActionSheetButton, "source view")
-        XCTAssertEqual(NSCoder.string(for: (popover?.sourceRect)!),
-                NSCoder.string(for: sut.showActionSheetButton.bounds),
-                "source rect")
-        XCTAssertEqual(popover?.permittedArrowDirections, UIPopoverArrowDirection.any, "permitted arrow directions")
+        XCTAssertEqual(popover.sourceView, sut.showActionSheetButton, "source view")
+        XCTAssertEqual("\(popover.sourceRect)", "\(sut.showActionSheetButton.bounds)", "source rect")
+        XCTAssertEqual(popover.permittedArrowDirections, UIPopoverArrowDirection.any, "permitted arrow directions")
     }
 
     func test_actionsForAlert() {
