@@ -1,6 +1,0 @@
-framework module OCHamcrestIOS {
-  umbrella header "OCHamcrestIOS.h"
-
-  export *
-  module * { export * }
-}

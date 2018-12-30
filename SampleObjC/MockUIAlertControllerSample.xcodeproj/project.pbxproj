@@ -12,12 +12,10 @@
 		0E748F9D1B6543A000B29AED /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E748F9C1B6543A000B29AED /* ViewController.m */; };
 		0E748FA01B6543A000B29AED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E748F9E1B6543A000B29AED /* Main.storyboard */; };
 		0E748FA21B6543A000B29AED /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E748FA11B6543A000B29AED /* Images.xcassets */; };
-		48007C6E2079A153007A4AB0 /* OCHamcrestIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4847A9B81F737F900067A3D6 /* OCHamcrestIOS.framework */; };
 		48007CA62079ACCF007A4AB0 /* MockUIAlertController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48007CA32079AC94007A4AB0 /* MockUIAlertController.framework */; };
 		483E05421DE80ACF00B5E4E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 483E05401DE80ACF00B5E4E4 /* LaunchScreen.storyboard */; };
 		609E9B6130BB35372D63FC0F /* QCOMockAlertVerifierTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E95F254C2B32C24D9C980 /* QCOMockAlertVerifierTests.m */; };
-		609E9B9655FA38A27FF87A2D /* ViewControllerTests-OCHamcrest.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E9314897852939CA75DFB /* ViewControllerTests-OCHamcrest.m */; };
-		609E9F1E2EC677BB9B797C36 /* ViewControllerTests-PlainXCTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E96C55D81BBE28BD81748 /* ViewControllerTests-PlainXCTest.m */; };
+		609E9F1E2EC677BB9B797C36 /* ViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E96C55D81BBE28BD81748 /* ViewControllerTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,12 +57,9 @@
 		0E748FAF1B6543A000B29AED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48007C9E2079AC94007A4AB0 /* MockUIAlertController.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MockUIAlertController.xcodeproj; path = ../../Source/MockUIAlertController.xcodeproj; sourceTree = "<group>"; };
 		483E05411DE80ACF00B5E4E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		4847A9B71F737F900067A3D6 /* LICENSE.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
-		4847A9B81F737F900067A3D6 /* OCHamcrestIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OCHamcrestIOS.framework; sourceTree = "<group>"; };
 		4885FDCB1DE8A32200A9F923 /* MockUIAlertController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MockUIAlertController.framework; path = "../Source/build/Debug-iphoneos/MockUIAlertController.framework"; sourceTree = "<group>"; };
-		609E9314897852939CA75DFB /* ViewControllerTests-OCHamcrest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewControllerTests-OCHamcrest.m"; sourceTree = "<group>"; };
 		609E95F254C2B32C24D9C980 /* QCOMockAlertVerifierTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCOMockAlertVerifierTests.m; sourceTree = "<group>"; };
-		609E96C55D81BBE28BD81748 /* ViewControllerTests-PlainXCTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewControllerTests-PlainXCTest.m"; sourceTree = "<group>"; };
+		609E96C55D81BBE28BD81748 /* ViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +75,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				48007CA62079ACCF007A4AB0 /* MockUIAlertController.framework in Frameworks */,
-				48007C6E2079A153007A4AB0 /* OCHamcrestIOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,10 +128,8 @@
 			isa = PBXGroup;
 			children = (
 				48007C9E2079AC94007A4AB0 /* MockUIAlertController.xcodeproj */,
-				4847A9B61F737F900067A3D6 /* OCHamcrest-7.1.1 */,
 				0E748FAE1B6543A000B29AED /* Supporting Files */,
-				609E9314897852939CA75DFB /* ViewControllerTests-OCHamcrest.m */,
-				609E96C55D81BBE28BD81748 /* ViewControllerTests-PlainXCTest.m */,
+				609E96C55D81BBE28BD81748 /* ViewControllerTests.m */,
 				609E95F254C2B32C24D9C980 /* QCOMockAlertVerifierTests.m */,
 			);
 			path = Tests;
@@ -158,15 +150,6 @@
 				48007CA32079AC94007A4AB0 /* MockUIAlertController.framework */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		4847A9B61F737F900067A3D6 /* OCHamcrest-7.1.1 */ = {
-			isa = PBXGroup;
-			children = (
-				4847A9B71F737F900067A3D6 /* LICENSE.txt */,
-				4847A9B81F737F900067A3D6 /* OCHamcrestIOS.framework */,
-			);
-			path = "OCHamcrest-7.1.1";
 			sourceTree = "<group>";
 		};
 		4885FDCA1DE8A32200A9F923 /* Frameworks */ = {
@@ -304,9 +287,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				609E9B9655FA38A27FF87A2D /* ViewControllerTests-OCHamcrest.m in Sources */,
 				609E9B6130BB35372D63FC0F /* QCOMockAlertVerifierTests.m in Sources */,
-				609E9F1E2EC677BB9B797C36 /* ViewControllerTests-PlainXCTest.m in Sources */,
+				609E9F1E2EC677BB9B797C36 /* ViewControllerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,10 +418,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Tests/OCHamcrest-7.1.1",
-				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -466,10 +444,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Tests/OCHamcrest-7.1.1",
-				);
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../Source\"";
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
