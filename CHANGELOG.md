@@ -1,5 +1,6 @@
-Next Version
-------------
+Version 3.1.0
+-------------
+_01 Jan 2019_
 
 - Added `actions` which greatly simplify Swift tests.
 - Added `preferredAction`
