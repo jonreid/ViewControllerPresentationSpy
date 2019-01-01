@@ -2,7 +2,7 @@ Version 3.1.0
 -------------
 _01 Jan 2019_
 
-- Added `actions` which greatly simplify Swift tests.
+- Added `actions` which greatly simplify Swift tests. Instead of `alertVerifier.actionsTitles[0] as? String`, use `alertVerifier.actions[0].title`
 - Added `preferredAction`
 - Added `textFields`
 - Share scheme for Carthage builds. _Thanks to: Kevin Donnelly_
