@@ -101,7 +101,7 @@ See the sample apps. Run them on both phone & pad to see what they do, then read
 For Swift, add
 
 ```obj-c
-#import <MockUIAlertController/QCOMockAlertVerifier.h>
+#import "MockUIAlertController/QCOMockAlertVerifier.h"
 ```
 
 to the bridging header of your test target.
