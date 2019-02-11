@@ -54,7 +54,7 @@ func test_showAlert_alertShouldHaveTitle() {
 
     [sut showAlert]; // Whatever triggers the alert
 
-    XCTAssertEqualObjects(alertVerifier.presentedCount, 1, @"presented count");
+    XCTAssertEqual(alertVerifier.presentedCount, 1, @"presented count");
     XCTAssertEqualObjects(alertVerifier.title, @"Hello!", @"title");
 }
 ```
