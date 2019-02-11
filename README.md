@@ -27,7 +27,7 @@ Nothing.
 
 ### How do I test an alert controller?
 
-1. `#import <MockUIAlertController/QCOMockAlertVerifier.h>` or add it to your Swift test target's bridging header.
+1. `@import MockUIAlertController.h;` or add it to your Swift test target's bridging header.
 2. Instantiate a `QCOMockAlertVerifier` before the Act phase of the test.
 3. Invoke the code to create and present your alert or action sheet.
 
@@ -57,8 +57,21 @@ func test_showAlert_alertShouldHaveTitle() {
 }
 ```
 
-To guard against tests which accidentally present real alerts, I recommend placing the alert verifier in the test fixture with `setUp()`/`tearDown()`.
+To guard against tests which accidentally present real alerts, I recommend placing the alert verifier in the test fixture with `setUp()`/`tearDown()`:
 
+```swift
+private var alertVerifier: QCOMockAlertVerifier!
+
+override func setUp() {
+    super.setUp()
+    alertVerifier = QCOMockAlertVerifier()
+}
+
+override func setUp() {
+    alertVerifier = nil
+    super.tearDown()
+}
+```
 
 ### How can I invoke the block associated with a UIAlertAction?
 
