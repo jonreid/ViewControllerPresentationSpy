@@ -105,7 +105,7 @@ func test_executingActionForOKButton_shouldDoSomething() {
 
 ### How can I test an alert that's presented using DispatchQueue.main?
 
-Create an expectation in your test case. Then fulfill it in the alert verifier's completion block.
+Create an expectation in your test case. Fulfill it in the alert verifier's completion block. Add a short wait at the start of the Assert phase.
 
 ```swift
 func test_showAlertOnMainDispatchQueue_shouldDoSomething() {
