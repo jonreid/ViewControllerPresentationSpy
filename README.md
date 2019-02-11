@@ -38,7 +38,7 @@ For example, here's a test verifying the title. `sut` is the System Under Test
 in the test fixture.
 
 ```swift
-func testShowAlert_AlertShouldHaveTitle() {
+func test_showAlert_alertShouldHaveTitle() {
     let alertVerifier = QCOMockAlertVerifier()
 
     sut.showAlert() // Whatever triggers the alert
@@ -48,7 +48,7 @@ func testShowAlert_AlertShouldHaveTitle() {
 ```
 
 ```obj-c
-- (void)testShowAlert_AlertShouldHaveTitle {
+- (void)test_showAlert_alertShouldHaveTitle {
     QCOMockAlertVerifier *alertVerifier = [[QCOMockAlertVerifier alloc] init];
 
     [sut showAlert]; // Whatever triggers the alert
@@ -67,7 +67,7 @@ Then call `executeActionForButton(withTitle:)` on your `QCOMockAlertVerifier` wi
 For example:
 
 ```swift
-func testShowAlert_ExecutingActionForOKButton_ShouldDoSomething() {
+func test_executingActionForOKButton_shouldDoSomething() {
     let alertVerifier = QCOMockAlertVerifier()
     sut.showAlert()
     
@@ -78,7 +78,7 @@ func testShowAlert_ExecutingActionForOKButton_ShouldDoSomething() {
 ```
 
 ```obj-c
-- (void)testShowAlert_ExecutingActionForOKButton_ShouldDoSomething {
+- (void)test_executingActionForOKButton_shouldDoSomething {
     QCOMockAlertVerifier *alertVerifier = [[QCOMockAlertVerifier alloc] init];
     [sut showAlert];
 
@@ -88,9 +88,26 @@ func testShowAlert_ExecutingActionForOKButton_ShouldDoSomething() {
 }
 ```
 
+### How can I test an alert that's presented using DispatchQueue.main?
+
+Create an expectation in your test case. Then fulfill it in the alert verifier's completion block.
+
+```swift
+func test_showAlertOnMainDispatchQueue_shouldDoSomething() {
+    let alertVerifier = QCOMockAlertVerifier()
+    let expectation = self.expectation(description: "alert presented")
+    alertVerifier.closure = { expectation.fulfill() }
+    
+    sut.showAlert()
+    
+    waitForExpectations(timeout: 0.001)
+    // Now assert what you want
+}
+```
+
 ### Can I see some examples?
 
-See the sample apps. Run them on both phone & pad to see what they do, then read the ViewController tests.
+There are sample apps in both Swift and Objective-C. Run them on both phone & pad to see what they do, then read the ViewController tests.
 
 
 ## Adding it to your project
