@@ -3,6 +3,7 @@ Version 3.2.0
 _10 Feb 2019_
 
 - Added `completion` closure invoked when alert is presented. If you present an alert from `DispatchQueue.main.async`, you can use this to fulfill an XCTestExpectation for async testing.
+- Improved README instructions on bridging header for Swift.
 
 
 Version 3.1.0
