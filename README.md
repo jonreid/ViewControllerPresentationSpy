@@ -34,7 +34,7 @@ Nothing.
 Information about the alert or action sheet is then available through the
 [QCOMockAlertVerifier](https://github.com/jonreid/MockUIAlertController/blob/master/Source/MockUIAlertController/QCOMockAlertVerifier.h).
 
-For example, here's a test verifying the title. `sut` is the System Under Test
+For example, here's a test verifying the title (and that the alert is presented exactly once). `sut` is the System Under Test
 in the test fixture.
 
 ```swift
@@ -43,7 +43,8 @@ func test_showAlert_alertShouldHaveTitle() {
 
     sut.showAlert() // Whatever triggers the alert
 
-    XCTAssertEqual(alertVerifier.title, "Title")
+    XCTAssertEqual(alertVerifier.presentedCount, 1, "presented count")
+    XCTAssertEqual(alertVerifier.title, "Hello!", "title")
 }
 ```
 
@@ -53,7 +54,8 @@ func test_showAlert_alertShouldHaveTitle() {
 
     [sut showAlert]; // Whatever triggers the alert
 
-    XCTAssertEqualObjects(alertVerifier.title, @"Title");
+    XCTAssertEqualObjects(alertVerifier.presentedCount, 1, @"presented count");
+    XCTAssertEqualObjects(alertVerifier.title, @"Hello!", @"title");
 }
 ```
 
