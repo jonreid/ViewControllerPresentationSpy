@@ -74,8 +74,7 @@ final class ViewControllerTests: XCTestCase {
     func test_preferredActionForAlert() {
         sut.showAlertButton.sendActions(for: .touchUpInside)
 
-        XCTAssertNotNil(alertVerifier.preferredAction)
-//        XCTAssertEqual(alertVerifier.preferredAction?.title, "Default")
+        XCTAssertEqual(alertVerifier.preferredAction?.title, "Default")
     }
 
     func test_actionsForActionSheet() {

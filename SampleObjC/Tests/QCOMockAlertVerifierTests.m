@@ -10,32 +10,37 @@
 
 @implementation QCOMockAlertVerifierTests
 {
-    QCOMockAlertVerifier *alertVerifier;
-    ViewController *sut;
+    QCOMockAlertVerifier *sut;
+    ViewController *vc;
 }
 
 - (void)setUp
 {
     [super setUp];
-    alertVerifier = [[QCOMockAlertVerifier alloc] init];
+    sut = [[QCOMockAlertVerifier alloc] init];
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    sut = [storyboard instantiateViewControllerWithIdentifier:@"main"];
-    [sut loadViewIfNeeded];
+    vc = [storyboard instantiateViewControllerWithIdentifier:@"main"];
+    [vc loadViewIfNeeded];
 }
 
 - (void)tearDown
 {
-    alertVerifier = nil;
     sut = nil;
+    vc = nil;
     [super tearDown];
 }
 
-- (void)test_tryingToGetStyleForNonexistentButton_shouldThrowException
+- (void)showAlert
 {
-    [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
+    [vc.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
+}
 
+- (void)test_styleForButtonWithTitle_withNonexistentTitle_shouldThrowException
+{
+    [self showAlert];
+    
     @try {
-        [alertVerifier styleForButtonWithTitle:@"NO SUCH BUTTON"];
+        [sut styleForButtonWithTitle:@"NO SUCH BUTTON"];
         XCTFail(@"Expected exception to be thrown");
     } @catch (NSException *exception) {
         XCTAssertEqual(exception.name, NSInternalInconsistencyException, @"name");
@@ -43,12 +48,12 @@
     }
 }
 
-- (void)test_tryingToExecuteActionForNonexistentButton_shouldThrowException
+- (void)test_executeActionForButtonWithTitle_withNonexistentTitle_shouldThrowException
 {
-    [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
+    [self showAlert];
 
     @try {
-        [alertVerifier executeActionForButtonWithTitle:@"NO SUCH BUTTON"];
+        [sut executeActionForButtonWithTitle:@"NO SUCH BUTTON"];
         XCTFail(@"Expected exception to be thrown");
     } @catch (NSException *exception) {
         XCTAssertEqual(exception.name, NSInternalInconsistencyException, @"name");
@@ -56,18 +61,40 @@
     }
 }
 
-- (void)test_tryingToExecuteActionForButtonWithoutHandler_shouldNotCrash
+- (void)test_executeActionForButtonWithTitle_withoutHandler_shouldNotCrash
 {
-    [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
+    [self showAlert];
 
-    [alertVerifier executeActionForButtonWithTitle:@"No Handler"];
+    [sut executeActionForButtonWithTitle:@"No Handler"];
 }
 
-- (void)test_presentingViewControllerThatIsNotAnAlert_shouldNotTriggerVerifier
+- (void)test_presentingNonAlertViewController_shouldNotTriggerVerifier
 {
-    [sut presentNonAlert];
+    [vc presentNonAlert];
 
-    XCTAssertEqual(alertVerifier.presentedCount, 0);
+    XCTAssertEqual(sut.presentedCount, 0);
+}
+
+- (void)test_showingAlert_shouldExecuteCompletionBlock
+{
+    __block int completionCallCount = 0;
+    sut.completion = ^{
+        completionCallCount += 1;
+    };
+    
+    [self showAlert];
+    
+    XCTAssertEqual(completionCallCount, 1);
+}
+
+- (void)test_notShowingAlert_shouldNotExecuteCompletionBlock
+{
+    __block int completionCallCount = 0;
+    sut.completion = ^{
+        completionCallCount += 1;
+    };
+    
+    XCTAssertEqual(completionCallCount, 0);
 }
 
 @end

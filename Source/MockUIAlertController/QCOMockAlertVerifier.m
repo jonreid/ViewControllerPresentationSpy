@@ -50,6 +50,8 @@ static void swizzleMocks(void)
     self.preferredAction = alertController.preferredAction;
     self.popover = (id)alertController.popoverPresentationController;
     self.textFields = alertController.textFields;
+    if (self.completion)
+        self.completion();
 }
 
 - (NSArray *)actionTitles

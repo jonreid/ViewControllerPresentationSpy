@@ -27,6 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly) NSArray *actionTitles DEPRECATED_MSG_ATTRIBUTE("Use actions");
 @property (nullable, nonatomic, strong) QCOMockPopoverPresentationController *popover;
 @property (nullable, nonatomic, copy) NSArray<UITextField *> *textFields;
+@property (nullable, nonatomic, copy) void (^completion)(void);
 
 /*!
  * @abstract Initializes a newly allocated verifier.
