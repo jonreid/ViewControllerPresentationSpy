@@ -135,7 +135,7 @@ For Swift, add
 @import MockUIAlertController;
 ```
 
-to the bridging header of your test target. If you don't have it as a separate module, then `#import "MockUIAlertController.h"`
+to the bridging header of your test target. If you don't have it as a separate module, then `#import "MockUIAlertController/MockUIAlertController.h"`
 
 ### CocoaPods
 
