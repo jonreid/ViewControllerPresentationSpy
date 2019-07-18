@@ -16,6 +16,7 @@
 		483E05421DE80ACF00B5E4E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 483E05401DE80ACF00B5E4E4 /* LaunchScreen.storyboard */; };
 		609E9B6130BB35372D63FC0F /* QCOMockAlertVerifierTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E95F254C2B32C24D9C980 /* QCOMockAlertVerifierTests.m */; };
 		609E9F1E2EC677BB9B797C36 /* ViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E96C55D81BBE28BD81748 /* ViewControllerTests.m */; };
+		BB170BE1D1582E79335462E0 /* CodeNextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB170E0975163F7C4AFB7973 /* CodeNextViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,8 @@
 		4885FDCB1DE8A32200A9F923 /* MockUIAlertController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MockUIAlertController.framework; path = "../Source/build/Debug-iphoneos/MockUIAlertController.framework"; sourceTree = "<group>"; };
 		609E95F254C2B32C24D9C980 /* QCOMockAlertVerifierTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCOMockAlertVerifierTests.m; sourceTree = "<group>"; };
 		609E96C55D81BBE28BD81748 /* ViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerTests.m; sourceTree = "<group>"; };
+		BB170D49D0E4E646298833B3 /* CodeNextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CodeNextViewController.h; sourceTree = "<group>"; };
+		BB170E0975163F7C4AFB7973 /* CodeNextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CodeNextViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +110,8 @@
 				0E748F991B6543A000B29AED /* AppDelegate.m */,
 				0E748F9B1B6543A000B29AED /* ViewController.h */,
 				0E748F9C1B6543A000B29AED /* ViewController.m */,
+				BB170D49D0E4E646298833B3 /* CodeNextViewController.h */,
+				BB170E0975163F7C4AFB7973 /* CodeNextViewController.m */,
 				0E748F9E1B6543A000B29AED /* Main.storyboard */,
 				0E748FA11B6543A000B29AED /* Images.xcassets */,
 				483E05401DE80ACF00B5E4E4 /* LaunchScreen.storyboard */,
@@ -210,6 +215,7 @@
 				TargetAttributes = {
 					0E748F901B6543A000B29AED = {
 						CreatedOnToolsVersion = 6.4;
+						LastSwiftMigration = 1020;
 					};
 					0E748FA91B6543A000B29AED = {
 						CreatedOnToolsVersion = 6.4;
@@ -280,6 +286,7 @@
 				0E748F9D1B6543A000B29AED /* ViewController.m in Sources */,
 				0E748F9A1B6543A000B29AED /* AppDelegate.m in Sources */,
 				0E748F971B6543A000B29AED /* main.m in Sources */,
+				BB170BE1D1582E79335462E0 /* CodeNextViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,6 +389,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = SampleApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -393,6 +401,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.qualitycoding.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = MockUIAlertControllerSample;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -400,6 +410,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = SampleApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -411,12 +422,14 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.qualitycoding.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = MockUIAlertControllerSample;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
 		0E748FB81B6543A000B29AED /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -443,6 +456,7 @@
 		0E748FB91B6543A000B29AED /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../Source\"";
 				INFOPLIST_FILE = Tests/Info.plist;

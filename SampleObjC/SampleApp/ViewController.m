@@ -1,9 +1,10 @@
 #import "ViewController.h"
+#import "CodeNextViewController.h"
 
 
 @implementation ViewController
 
-- (IBAction)showAlert:(id)sender
+- (IBAction)showAlert
 {
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Title"
                                                                              message:@"Message"
@@ -30,7 +31,13 @@
         popover.permittedArrowDirections = UIPopoverArrowDirectionAny;
     }
 
-    [self presentViewController:alertController animated:YES completion:^{}];
+    [self presentViewController:alertController animated:YES completion:NULL];
+}
+
+- (IBAction)showModal
+{
+    UIViewController *nextVC = [[CodeNextViewController alloc] initWithBackgroundColor:UIColor.purpleColor];
+    [self presentViewController:nextVC animated:YES completion:NULL];
 }
 
 - (void)presentNonAlert
