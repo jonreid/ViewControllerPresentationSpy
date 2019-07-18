@@ -1,7 +1,7 @@
 import UIKit
 
 final class CodeNextViewController: UIViewController {
-    private let backgroundColor: UIColor
+    let backgroundColor: UIColor
 
     init(backgroundColor: UIColor) {
         self.backgroundColor = backgroundColor
