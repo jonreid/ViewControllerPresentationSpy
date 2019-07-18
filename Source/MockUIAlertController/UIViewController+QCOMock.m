@@ -12,15 +12,15 @@ NSString *const QCOMockViewControllerAnimatedKey = @"QCOMockViewControllerAnimat
 
 @implementation UIViewController (QCOMock)
 
-+ (void)qcoMock_swizzle
++ (void)qcoMock_swizzleCaptureAlert
 {
     [self qcoMockAlerts_replaceInstanceMethod:@selector(presentViewController:animated:completion:)
-                                   withMethod:@selector(qcoMock_presentViewController:animated:completion:)];
+                                   withMethod:@selector(qcoMock_presentViewControllerCapturingAlert:animated:completion:)];
 }
 
-- (void)qcoMock_presentViewController:(UIViewController *)viewControllerToPresent
-                             animated:(BOOL)flag
-                           completion:(void (^)(void))completion
+- (void)qcoMock_presentViewControllerCapturingAlert:(UIViewController *)viewControllerToPresent
+                                           animated:(BOOL)flag
+                                         completion:(void (^)(void))completion
 {
     if (![viewControllerToPresent isKindOfClass:[UIAlertController class]])
         return;

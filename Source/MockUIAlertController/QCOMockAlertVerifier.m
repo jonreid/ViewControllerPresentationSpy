@@ -12,7 +12,7 @@ static void swizzleMocks(void)
 {
     [UIAlertAction qcoMock_swizzle];
     [UIAlertController qcoMock_swizzle];
-    [UIViewController qcoMock_swizzle];
+    [UIViewController qcoMock_swizzleCaptureAlert];
 }
 
 @implementation QCOMockAlertVerifier

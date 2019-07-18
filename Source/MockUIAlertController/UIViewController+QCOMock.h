@@ -11,7 +11,7 @@ extern NSString *const QCOMockViewControllerAnimatedKey;
 
 @interface UIViewController (QCOMock)
 
-+ (void)qcoMock_swizzle;
++ (void)qcoMock_swizzleCaptureAlert;
 
 @end
 
