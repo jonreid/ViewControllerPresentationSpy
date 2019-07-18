@@ -1,13 +1,14 @@
 import UIKit
 
 final class ViewController: UIViewController {
-    @IBOutlet weak var showAlertButton: UIButton!
-    @IBOutlet weak var showActionSheetButton: UIButton!
+    @IBOutlet private(set) var showAlertButton: UIButton!
+    @IBOutlet private(set) var showActionSheetButton: UIButton!
+    @IBOutlet private(set) var showModalButton: UIButton!
     var alertDefaultActionExecuted = false
     var alertCancelActionExecuted = false
     var alertDestroyActionExecuted = false
 
-    @IBAction func showAlert(sender: AnyObject) {
+    @IBAction private func showAlert() {
         let alertController = UIAlertController(title: "Title", message: "Message", preferredStyle: .alert)
         setUpActions(for: alertController)
         alertController.addTextField { textField in
@@ -29,6 +30,12 @@ final class ViewController: UIViewController {
 
         self.present(alertController, animated: true)
     }
+
+    @IBAction private func showModal() {
+        let nextVC = CodeNextViewController(backgroundColor: .purple)
+        self.present(nextVC, animated: true)
+    }
+
 
     private func setUpActions(for alertController: UIAlertController) {
         alertDefaultActionExecuted = false

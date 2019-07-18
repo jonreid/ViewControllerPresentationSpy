@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,32 +21,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SaD-9V-JA5">
-                                <rect key="frame" x="161" y="280" width="75" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SaD-9V-JA5">
+                                <rect key="frame" x="150" y="268.5" width="75" height="30"/>
                                 <state key="normal" title="Show Alert"/>
                                 <connections>
-                                    <action selector="showAlertWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TX3-Vq-1jS"/>
+                                    <action selector="showAlert" destination="BYZ-38-t0r" eventType="touchUpInside" id="TPF-Tt-iZV"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fJs-gQ-owX">
-                                <rect key="frame" x="122" y="339" width="130" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fJs-gQ-owX">
+                                <rect key="frame" x="122.5" y="318.5" width="130" height="30"/>
                                 <state key="normal" title="Show Action Sheet"/>
                                 <connections>
-                                    <action selector="showActionSheetWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xwA-C1-b4l"/>
+                                    <action selector="showActionSheetWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OMm-bj-SNa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0dk-ib-7FI">
+                                <rect key="frame" x="130.5" y="368.5" width="114" height="30"/>
+                                <state key="normal" title="Non-Alert Modal"/>
+                                <connections>
+                                    <action selector="showModal" destination="BYZ-38-t0r" eventType="touchUpInside" id="k36-Of-xff"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="fJs-gQ-owX" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="7yO-7Q-Yi9"/>
-                            <constraint firstItem="fJs-gQ-owX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Apt-D2-jfE"/>
-                            <constraint firstItem="SaD-9V-JA5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kFk-KT-B7q"/>
-                            <constraint firstItem="fJs-gQ-owX" firstAttribute="top" secondItem="SaD-9V-JA5" secondAttribute="bottom" constant="18" id="vjR-eI-pR7"/>
+                            <constraint firstItem="fJs-gQ-owX" firstAttribute="top" secondItem="SaD-9V-JA5" secondAttribute="bottom" constant="20" id="7c6-x7-I2z"/>
+                            <constraint firstItem="0dk-ib-7FI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XdN-dX-aL3"/>
+                            <constraint firstItem="fJs-gQ-owX" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ajr-or-ZNA"/>
+                            <constraint firstItem="SaD-9V-JA5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="itv-UJ-GIe"/>
+                            <constraint firstItem="fJs-gQ-owX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kYY-xS-2Rk"/>
+                            <constraint firstItem="0dk-ib-7FI" firstAttribute="top" secondItem="fJs-gQ-owX" secondAttribute="bottom" constant="20" id="x7C-fN-ALd"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="showActionSheetButton" destination="fJs-gQ-owX" id="agk-3Q-VMO"/>
                         <outlet property="showAlertButton" destination="SaD-9V-JA5" id="Jem-Mr-Ty0"/>
+                        <outlet property="showModalButton" destination="0dk-ib-7FI" id="XEg-u0-qTs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

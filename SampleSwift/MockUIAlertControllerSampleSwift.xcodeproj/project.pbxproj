@@ -14,6 +14,7 @@
 		483E05281DE8064D00B5E4E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 483E05271DE8064D00B5E4E4 /* Assets.xcassets */; };
 		483E052B1DE8064D00B5E4E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 483E05291DE8064D00B5E4E4 /* LaunchScreen.storyboard */; };
 		483E05361DE8064D00B5E4E4 /* ViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483E05351DE8064D00B5E4E4 /* ViewControllerTests.swift */; };
+		BB170DCA39689C21DAC49039 /* CodeNextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB17059942E490E7CB29AF72 /* CodeNextViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		483E05351DE8064D00B5E4E4 /* ViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTests.swift; sourceTree = "<group>"; };
 		483E05371DE8064D00B5E4E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4885FDCD1DE8AD3300A9F923 /* XcodeWarnings.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = XcodeWarnings.xcconfig; path = ../../Source/XcodeWarnings.xcconfig; sourceTree = "<group>"; };
+		BB17059942E490E7CB29AF72 /* CodeNextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeNextViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 				483E05271DE8064D00B5E4E4 /* Assets.xcassets */,
 				483E05291DE8064D00B5E4E4 /* LaunchScreen.storyboard */,
 				483E052C1DE8064D00B5E4E4 /* Info.plist */,
+				BB17059942E490E7CB29AF72 /* CodeNextViewController.swift */,
 			);
 			path = SampleApp;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			files = (
 				483E05231DE8064D00B5E4E4 /* ViewController.swift in Sources */,
 				483E05211DE8064D00B5E4E4 /* AppDelegate.swift in Sources */,
+				BB170DCA39689C21DAC49039 /* CodeNextViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
