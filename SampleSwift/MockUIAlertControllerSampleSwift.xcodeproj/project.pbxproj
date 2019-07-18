@@ -57,7 +57,7 @@
 		483E05311DE8064D00B5E4E4 /* MockUIAlertControllerSampleSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MockUIAlertControllerSampleSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		483E05351DE8064D00B5E4E4 /* ViewControllerAlertTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerAlertTests.swift; sourceTree = "<group>"; };
 		483E05371DE8064D00B5E4E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4885FDCD1DE8AD3300A9F923 /* XcodeWarnings.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = XcodeWarnings.xcconfig; path = ../../Source/XcodeWarnings.xcconfig; sourceTree = "<group>"; };
+		4885FDCD1DE8AD3300A9F923 /* XcodeWarnings.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = XcodeWarnings.xcconfig; sourceTree = "<group>"; };
 		BB17059942E490E7CB29AF72 /* CodeNextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeNextViewController.swift; sourceTree = "<group>"; };
 		BB170641301DFD266F710CFF /* ViewControllerPresentationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerPresentationTests.swift; sourceTree = "<group>"; };
 		BB170ED7810BEA2800855367 /* StoryboardNextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardNextViewController.swift; sourceTree = "<group>"; };
@@ -135,14 +135,22 @@
 		483E05341DE8064D00B5E4E4 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				48007CA72079B1A2007A4AB0 /* MockUIAlertController.xcodeproj */,
 				483E05351DE8064D00B5E4E4 /* ViewControllerAlertTests.swift */,
 				BB170641301DFD266F710CFF /* ViewControllerPresentationTests.swift */,
 				48105E3A1DE810F2000C8EB7 /* MockUIAlertControllerSampleSwiftTests-Bridging-Header.h */,
-				4885FDCD1DE8AD3300A9F923 /* XcodeWarnings.xcconfig */,
-				483E05371DE8064D00B5E4E4 /* Info.plist */,
+				48007CA72079B1A2007A4AB0 /* MockUIAlertController.xcodeproj */,
+				48A6B5E422E040D200356685 /* Supporting Files */,
 			);
 			path = Tests;
+			sourceTree = "<group>";
+		};
+		48A6B5E422E040D200356685 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				483E05371DE8064D00B5E4E4 /* Info.plist */,
+				4885FDCD1DE8AD3300A9F923 /* XcodeWarnings.xcconfig */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
