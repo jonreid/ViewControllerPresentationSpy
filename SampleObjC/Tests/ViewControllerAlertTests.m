@@ -4,10 +4,10 @@
 @import XCTest;
 
 
-@interface ViewControllerTests : XCTestCase
+@interface ViewControllerAlertTests : XCTestCase
 @end
 
-@implementation ViewControllerTests
+@implementation ViewControllerAlertTests
 {
     QCOMockAlertVerifier *alertVerifier;
     ViewController *sut;
