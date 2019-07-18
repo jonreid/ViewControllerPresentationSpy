@@ -7,4 +7,5 @@ FOUNDATION_EXPORT double MockUIAlertControllerVersionNumber;
 FOUNDATION_EXPORT const unsigned char MockUIAlertControllerVersionString[];
 
 #import "QCOMockAlertVerifier.h"
+#import "QCOMockPresentationVerifier.h"
 #import "QCOMockPopoverPresentationController.h"

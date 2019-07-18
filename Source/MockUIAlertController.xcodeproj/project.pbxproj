@@ -20,7 +20,7 @@
 		48007C992079A7E3007A4AB0 /* UIAlertAction+QCOMock.m in Sources */ = {isa = PBXBuildFile; fileRef = 48007C8D2079A7E2007A4AB0 /* UIAlertAction+QCOMock.m */; };
 		48007C9A2079A7E3007A4AB0 /* QCOMockPopoverPresentationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 48007C8E2079A7E3007A4AB0 /* QCOMockPopoverPresentationController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		48007C9B2079A7E3007A4AB0 /* UIViewController+QCOMock.h in Headers */ = {isa = PBXBuildFile; fileRef = 48007C8F2079A7E3007A4AB0 /* UIViewController+QCOMock.h */; };
-		BB170E6CEBAF3168166B40B6 /* QCOMockPresentationVerifier.h in Headers */ = {isa = PBXBuildFile; fileRef = BB170A5F3402862D7AD0DEA6 /* QCOMockPresentationVerifier.h */; };
+		BB170E6CEBAF3168166B40B6 /* QCOMockPresentationVerifier.h in Headers */ = {isa = PBXBuildFile; fileRef = BB170A5F3402862D7AD0DEA6 /* QCOMockPresentationVerifier.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BB170E93560E370864D3150D /* QCOMockPresentationVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = BB170F19D9000ECAA626B5EF /* QCOMockPresentationVerifier.m */; };
 /* End PBXBuildFile section */
 
