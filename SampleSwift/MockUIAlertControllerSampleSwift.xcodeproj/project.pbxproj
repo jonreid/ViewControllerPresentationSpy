@@ -13,7 +13,7 @@
 		483E05261DE8064D00B5E4E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 483E05241DE8064D00B5E4E4 /* Main.storyboard */; };
 		483E05281DE8064D00B5E4E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 483E05271DE8064D00B5E4E4 /* Assets.xcassets */; };
 		483E052B1DE8064D00B5E4E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 483E05291DE8064D00B5E4E4 /* LaunchScreen.storyboard */; };
-		483E05361DE8064D00B5E4E4 /* ViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483E05351DE8064D00B5E4E4 /* ViewControllerTests.swift */; };
+		483E05361DE8064D00B5E4E4 /* ViewControllerAlertTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483E05351DE8064D00B5E4E4 /* ViewControllerAlertTests.swift */; };
 		BB170DCA39689C21DAC49039 /* CodeNextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB17059942E490E7CB29AF72 /* CodeNextViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,7 +53,7 @@
 		483E052A1DE8064D00B5E4E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		483E052C1DE8064D00B5E4E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		483E05311DE8064D00B5E4E4 /* MockUIAlertControllerSampleSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MockUIAlertControllerSampleSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		483E05351DE8064D00B5E4E4 /* ViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTests.swift; sourceTree = "<group>"; };
+		483E05351DE8064D00B5E4E4 /* ViewControllerAlertTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerAlertTests.swift; sourceTree = "<group>"; };
 		483E05371DE8064D00B5E4E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4885FDCD1DE8AD3300A9F923 /* XcodeWarnings.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = XcodeWarnings.xcconfig; path = ../../Source/XcodeWarnings.xcconfig; sourceTree = "<group>"; };
 		BB17059942E490E7CB29AF72 /* CodeNextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeNextViewController.swift; sourceTree = "<group>"; };
@@ -131,7 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				48007CA72079B1A2007A4AB0 /* MockUIAlertController.xcodeproj */,
-				483E05351DE8064D00B5E4E4 /* ViewControllerTests.swift */,
+				483E05351DE8064D00B5E4E4 /* ViewControllerAlertTests.swift */,
 				48105E3A1DE810F2000C8EB7 /* MockUIAlertControllerSampleSwiftTests-Bridging-Header.h */,
 				4885FDCD1DE8AD3300A9F923 /* XcodeWarnings.xcconfig */,
 				483E05371DE8064D00B5E4E4 /* Info.plist */,
@@ -271,7 +271,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				483E05361DE8064D00B5E4E4 /* ViewControllerTests.swift in Sources */,
+				483E05361DE8064D00B5E4E4 /* ViewControllerAlertTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

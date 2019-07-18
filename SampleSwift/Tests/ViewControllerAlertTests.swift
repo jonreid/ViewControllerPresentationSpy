@@ -1,7 +1,7 @@
 @testable import MockUIAlertControllerSampleSwift
 import XCTest
 
-final class ViewControllerTests: XCTestCase {
+final class ViewControllerAlertTests: XCTestCase {
     private var alertVerifier: QCOMockAlertVerifier!
     private var sut: ViewController!
 
