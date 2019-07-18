@@ -1,6 +1,7 @@
 #import "ViewController.h"
-#import "CodeNextViewController.h"
 
+#import "CodeNextViewController.h"
+#import "StoryboardNextViewController.h"
 
 @implementation ViewController
 
@@ -39,6 +40,17 @@
     UIViewController *nextVC = [[CodeNextViewController alloc] initWithBackgroundColor:UIColor.purpleColor];
     [self presentViewController:nextVC animated:YES completion:NULL];
 }
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(nullable id)sender
+{
+    [super prepareForSegue:segue sender:sender];
+    if ([segue.identifier isEqualToString:@"modal"])
+    {
+        StoryboardNextViewController *nextVC = segue.destinationViewController;
+        nextVC.backgroundColor = UIColor.greenColor;
+    }
+}
+
 
 - (void)presentNonAlert
 {
