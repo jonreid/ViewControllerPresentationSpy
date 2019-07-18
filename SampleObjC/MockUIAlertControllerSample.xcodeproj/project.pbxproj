@@ -16,6 +16,7 @@
 		483E05421DE80ACF00B5E4E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 483E05401DE80ACF00B5E4E4 /* LaunchScreen.storyboard */; };
 		609E9B6130BB35372D63FC0F /* QCOMockAlertVerifierTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E95F254C2B32C24D9C980 /* QCOMockAlertVerifierTests.m */; };
 		609E9F1E2EC677BB9B797C36 /* ViewControllerAlertTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E96C55D81BBE28BD81748 /* ViewControllerAlertTests.m */; };
+		BB1700CDA7D976FD6DEFFF9F /* ViewControllerPresentationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1701F5D7FE936FC3672B61 /* ViewControllerPresentationTests.m */; };
 		BB170BE1D1582E79335462E0 /* CodeNextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB170E0975163F7C4AFB7973 /* CodeNextViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +62,7 @@
 		4885FDCB1DE8A32200A9F923 /* MockUIAlertController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MockUIAlertController.framework; path = "../Source/build/Debug-iphoneos/MockUIAlertController.framework"; sourceTree = "<group>"; };
 		609E95F254C2B32C24D9C980 /* QCOMockAlertVerifierTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCOMockAlertVerifierTests.m; sourceTree = "<group>"; };
 		609E96C55D81BBE28BD81748 /* ViewControllerAlertTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerAlertTests.m; sourceTree = "<group>"; };
+		BB1701F5D7FE936FC3672B61 /* ViewControllerPresentationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerPresentationTests.m; sourceTree = "<group>"; };
 		BB170D49D0E4E646298833B3 /* CodeNextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CodeNextViewController.h; sourceTree = "<group>"; };
 		BB170E0975163F7C4AFB7973 /* CodeNextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CodeNextViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -135,6 +137,7 @@
 				48007C9E2079AC94007A4AB0 /* MockUIAlertController.xcodeproj */,
 				0E748FAE1B6543A000B29AED /* Supporting Files */,
 				609E96C55D81BBE28BD81748 /* ViewControllerAlertTests.m */,
+				BB1701F5D7FE936FC3672B61 /* ViewControllerPresentationTests.m */,
 				609E95F254C2B32C24D9C980 /* QCOMockAlertVerifierTests.m */,
 			);
 			path = Tests;
@@ -296,6 +299,7 @@
 			files = (
 				609E9B6130BB35372D63FC0F /* QCOMockAlertVerifierTests.m in Sources */,
 				609E9F1E2EC677BB9B797C36 /* ViewControllerAlertTests.m in Sources */,
+				BB1700CDA7D976FD6DEFFF9F /* ViewControllerPresentationTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

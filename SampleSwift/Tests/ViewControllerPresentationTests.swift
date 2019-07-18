@@ -23,7 +23,7 @@ final class ViewControllerPresentationTests: XCTestCase {
         XCTAssertNotNil(sut.showModalButton)
     }
 
-    func test_tappingShowModalButton_shouldShowAlert() {
+    func test_tappingShowModalButton_shouldPresentNextViewController() {
         sut.showModalButton.sendActions(for: .touchUpInside)
 
         XCTAssertEqual(presentationVerifier.presentedCount, 1, "presented count")
