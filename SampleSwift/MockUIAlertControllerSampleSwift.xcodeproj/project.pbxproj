@@ -16,6 +16,7 @@
 		483E05361DE8064D00B5E4E4 /* ViewControllerAlertTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483E05351DE8064D00B5E4E4 /* ViewControllerAlertTests.swift */; };
 		BB17009B68161DEF4B893859 /* ViewControllerPresentationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB170641301DFD266F710CFF /* ViewControllerPresentationTests.swift */; };
 		BB170DCA39689C21DAC49039 /* CodeNextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB17059942E490E7CB29AF72 /* CodeNextViewController.swift */; };
+		BB170E252AEE5E0EAF396717 /* StoryboardNextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB170ED7810BEA2800855367 /* StoryboardNextViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		4885FDCD1DE8AD3300A9F923 /* XcodeWarnings.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = XcodeWarnings.xcconfig; path = ../../Source/XcodeWarnings.xcconfig; sourceTree = "<group>"; };
 		BB17059942E490E7CB29AF72 /* CodeNextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeNextViewController.swift; sourceTree = "<group>"; };
 		BB170641301DFD266F710CFF /* ViewControllerPresentationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerPresentationTests.swift; sourceTree = "<group>"; };
+		BB170ED7810BEA2800855367 /* StoryboardNextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardNextViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,13 +120,14 @@
 		483E051F1DE8064D00B5E4E4 /* SampleApp */ = {
 			isa = PBXGroup;
 			children = (
-				483E05201DE8064D00B5E4E4 /* AppDelegate.swift */,
 				483E05221DE8064D00B5E4E4 /* ViewController.swift */,
+				BB17059942E490E7CB29AF72 /* CodeNextViewController.swift */,
+				BB170ED7810BEA2800855367 /* StoryboardNextViewController.swift */,
 				483E05241DE8064D00B5E4E4 /* Main.storyboard */,
+				483E05201DE8064D00B5E4E4 /* AppDelegate.swift */,
 				483E05271DE8064D00B5E4E4 /* Assets.xcassets */,
 				483E05291DE8064D00B5E4E4 /* LaunchScreen.storyboard */,
 				483E052C1DE8064D00B5E4E4 /* Info.plist */,
-				BB17059942E490E7CB29AF72 /* CodeNextViewController.swift */,
 			);
 			path = SampleApp;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				483E05231DE8064D00B5E4E4 /* ViewController.swift in Sources */,
 				483E05211DE8064D00B5E4E4 /* AppDelegate.swift in Sources */,
 				BB170DCA39689C21DAC49039 /* CodeNextViewController.swift in Sources */,
+				BB170E252AEE5E0EAF396717 /* StoryboardNextViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -4,9 +4,23 @@ final class ViewController: UIViewController {
     @IBOutlet private(set) var showAlertButton: UIButton!
     @IBOutlet private(set) var showActionSheetButton: UIButton!
     @IBOutlet private(set) var showModalButton: UIButton!
+    @IBOutlet private(set) var segueModalButton: UIButton!
+
     var alertDefaultActionExecuted = false
     var alertCancelActionExecuted = false
     var alertDestroyActionExecuted = false
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        switch segue.identifier {
+        case "modal"?:
+            guard let nextVC = segue.destination as? StoryboardNextViewController
+                    else { return }
+            nextVC.backgroundColor = .green
+        default:
+            return
+        }
+    }
 
     @IBAction private func showAlert() {
         let alertController = UIAlertController(title: "Title", message: "Message", preferredStyle: .alert)
@@ -17,7 +31,7 @@ final class ViewController: UIViewController {
         self.present(alertController, animated: true)
     }
 
-    @IBAction func showActionSheet(sender: AnyObject) {
+    @IBAction private func showActionSheet(sender: AnyObject) {
         let alertController = UIAlertController(title: "Title", message: "Message", preferredStyle: .actionSheet)
         setUpActions(for: alertController)
 
