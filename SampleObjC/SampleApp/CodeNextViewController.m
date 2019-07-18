@@ -1,6 +1,5 @@
 #import "CodeNextViewController.h"
 
-
 @implementation CodeNextViewController
 
 - (instancetype)initWithBackgroundColor:(UIColor *)backgroundColor

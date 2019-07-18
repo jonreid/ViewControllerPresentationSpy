@@ -4,7 +4,6 @@
 @import MockUIAlertController;
 @import XCTest;
 
-
 @interface ViewControllerPresentationTests : XCTestCase
 @end
 

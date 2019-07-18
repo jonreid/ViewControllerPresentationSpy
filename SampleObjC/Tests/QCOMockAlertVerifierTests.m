@@ -4,7 +4,6 @@
 
 @import XCTest;
 
-
 @interface QCOMockAlertVerifierTests : XCTestCase
 @end
 
