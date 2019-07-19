@@ -3,7 +3,6 @@
 
 #import <UIKit/UIKit.h>
 
-
 NS_ASSUME_NONNULL_BEGIN
 
 /*!
@@ -11,22 +10,26 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @interface QCOMockPopoverPresentationController : NSObject
 
-@property (nullable, nonatomic, assign) id <UIPopoverPresentationControllerDelegate> delegate;
+@property (nullable, nonatomic, weak) id <UIPopoverPresentationControllerDelegate> delegate;
 
 @property (nonatomic, assign) UIPopoverArrowDirection permittedArrowDirections;
 
-@property (nullable, nonatomic, retain) UIView *sourceView;
+@property (nullable, nonatomic, strong) UIView *sourceView;
 @property (nonatomic, assign) CGRect sourceRect;
 
-@property (nullable, nonatomic, retain) UIBarButtonItem *barButtonItem;
+// By default, a popover is not allowed to overlap its source view rect.
+// When this is set to YES, popovers with more content than available space are allowed to overlap the source view rect in order to accommodate the content.
+@property (nonatomic, assign) BOOL canOverlapSourceViewRect NS_AVAILABLE_IOS(9_0);
+
+@property (nullable, nonatomic, strong) UIBarButtonItem *barButtonItem;
 
 // Returns the direction the arrow is pointing on a presented popover. Before presentation, this returns UIPopoverArrowDirectionUnknown.
-@property (nonatomic, assign) UIPopoverArrowDirection arrowDirection;
+@property (nonatomic, readwrite) UIPopoverArrowDirection arrowDirection;
 
 // By default, a popover disallows interaction with any view outside of the popover while the popover is presented.
 // This property allows the specification of an array of UIView instances which the user is allowed to interact with
 // while the popover is up.
-@property (nullable, nonatomic, copy) NSArray *passthroughViews;
+@property (nullable, nonatomic, copy) NSArray<UIView *> *passthroughViews;
 
 // Set popover background color. Set to nil to use default background color. Default is nil.
 @property (nullable, nonatomic, copy) UIColor *backgroundColor;
