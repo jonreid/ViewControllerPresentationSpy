@@ -13,6 +13,7 @@
 		0E748FA01B6543A000B29AED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E748F9E1B6543A000B29AED /* Main.storyboard */; };
 		0E748FA21B6543A000B29AED /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E748FA11B6543A000B29AED /* Images.xcassets */; };
 		48007CA62079ACCF007A4AB0 /* MockUIAlertController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48007CA32079AC94007A4AB0 /* MockUIAlertController.framework */; };
+		4804BCA622E16949000130AD /* XcodeWarnings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 4804BCA522E16949000130AD /* XcodeWarnings.xcconfig */; };
 		483E05421DE80ACF00B5E4E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 483E05401DE80ACF00B5E4E4 /* LaunchScreen.storyboard */; };
 		48A6B5E222E03E4D00356685 /* StoryboardNextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A6B5E122E03E4D00356685 /* StoryboardNextViewController.m */; };
 		609E9B6130BB35372D63FC0F /* QCOMockAlertVerifierTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E95F254C2B32C24D9C980 /* QCOMockAlertVerifierTests.m */; };
@@ -46,7 +47,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0E14BAC51C2C783400314F3E /* XcodeWarnings.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = XcodeWarnings.xcconfig; path = ../../Source/XcodeWarnings.xcconfig; sourceTree = "<group>"; };
 		0E748F911B6543A000B29AED /* MockUIAlertControllerSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MockUIAlertControllerSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E748F951B6543A000B29AED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E748F961B6543A000B29AED /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -59,6 +59,7 @@
 		0E748FAA1B6543A000B29AED /* MockUIAlertControllerSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MockUIAlertControllerSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E748FAF1B6543A000B29AED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48007C9E2079AC94007A4AB0 /* MockUIAlertController.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MockUIAlertController.xcodeproj; path = ../../Source/MockUIAlertController.xcodeproj; sourceTree = "<group>"; };
+		4804BCA522E16949000130AD /* XcodeWarnings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = XcodeWarnings.xcconfig; path = ../../Source/XcodeWarnings.xcconfig; sourceTree = "<group>"; };
 		483E05411DE80ACF00B5E4E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4885FDCB1DE8A32200A9F923 /* MockUIAlertController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MockUIAlertController.framework; path = "../Source/build/Debug-iphoneos/MockUIAlertController.framework"; sourceTree = "<group>"; };
 		48A6B5E022E03E4D00356685 /* StoryboardNextViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StoryboardNextViewController.h; sourceTree = "<group>"; };
@@ -143,18 +144,10 @@
 				BB1701F5D7FE936FC3672B61 /* ViewControllerPresentationTests.m */,
 				609E95F254C2B32C24D9C980 /* QCOMockAlertVerifierTests.m */,
 				48007C9E2079AC94007A4AB0 /* MockUIAlertController.xcodeproj */,
-				0E748FAE1B6543A000B29AED /* Supporting Files */,
+				0E748FAF1B6543A000B29AED /* Info.plist */,
+				4804BCA522E16949000130AD /* XcodeWarnings.xcconfig */,
 			);
 			path = Tests;
-			sourceTree = "<group>";
-		};
-		0E748FAE1B6543A000B29AED /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				0E748FAF1B6543A000B29AED /* Info.plist */,
-				0E14BAC51C2C783400314F3E /* XcodeWarnings.xcconfig */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		48007C9F2079AC94007A4AB0 /* Products */ = {
@@ -272,6 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				483E05421DE80ACF00B5E4E4 /* LaunchScreen.storyboard in Resources */,
+				4804BCA622E16949000130AD /* XcodeWarnings.xcconfig in Resources */,
 				0E748FA01B6543A000B29AED /* Main.storyboard in Resources */,
 				0E748FA21B6543A000B29AED /* Images.xcassets in Resources */,
 			);
@@ -346,7 +340,7 @@
 /* Begin XCBuildConfiguration section */
 		0E748FB21B6543A000B29AED /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0E14BAC51C2C783400314F3E /* XcodeWarnings.xcconfig */;
+			baseConfigurationReference = 4804BCA522E16949000130AD /* XcodeWarnings.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_MODULES = YES;
@@ -375,7 +369,7 @@
 		};
 		0E748FB31B6543A000B29AED /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0E14BAC51C2C783400314F3E /* XcodeWarnings.xcconfig */;
+			baseConfigurationReference = 4804BCA522E16949000130AD /* XcodeWarnings.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_MODULES = YES;
