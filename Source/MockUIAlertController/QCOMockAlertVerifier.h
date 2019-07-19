@@ -5,7 +5,6 @@
 
 #import "QCOMockPopoverPresentationController.h" // Convenience import instead of @class
 
-
 NS_ASSUME_NONNULL_BEGIN
 
 /*!

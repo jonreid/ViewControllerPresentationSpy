@@ -10,7 +10,6 @@ NSString *const QCOMockViewControllerPresentingViewControllerKey = @"QCOMockView
 NSString *const QCOMockViewControllerAnimatedKey = @"QCOMockViewControllerAnimatedKey";
 NSString *const QCOMockViewControllerPresentedNotification = @"QCOMockViewControllerPresentedNotification";
 
-
 @implementation UIViewController (QCOMock)
 
 + (void)qcoMock_swizzleCaptureAlert

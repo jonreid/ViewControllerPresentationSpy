@@ -3,6 +3,5 @@
 
 #import "QCOMockPopoverPresentationController.h"
 
-
 @implementation QCOMockPopoverPresentationController
 @end

@@ -7,7 +7,6 @@
 #import "UIAlertController+QCOMock.h"
 #import "UIViewController+QCOMock.h"
 
-
 static void swizzleMocks(void)
 {
     [UIAlertAction qcoMock_swizzle];

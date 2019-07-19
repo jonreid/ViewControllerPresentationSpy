@@ -6,7 +6,6 @@
 #import "NSObject+QCOMockAlerts.h"
 #import <objc/runtime.h>
 
-
 @implementation UIAlertAction (QCOMock)
 
 + (void)qcoMock_swizzle

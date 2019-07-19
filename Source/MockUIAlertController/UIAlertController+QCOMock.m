@@ -14,7 +14,6 @@ NSString *const QCOMockAlertControllerPresentedNotification = @"QCOMockAlertCont
 @property (nonatomic, readwrite) UIAlertControllerStyle preferredStyle;
 @end
 
-
 @implementation UIAlertController (QCOMock)
 
 + (void)qcoMock_swizzle

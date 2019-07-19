@@ -5,7 +5,6 @@
 
 #import "UIViewController+QCOMock.h"
 
-
 static void swizzleMocks(void)
 {
     [UIViewController qcoMock_swizzleCaptureViewController];

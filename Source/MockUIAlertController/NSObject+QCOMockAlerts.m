@@ -5,7 +5,6 @@
 
 #import <objc/runtime.h>
 
-
 @implementation NSObject (QCOMockAlerts)
 
 + (void)qcoMockAlerts_replaceClassMethod:(SEL)originalSelector withMethod:(SEL)swizzledSelector

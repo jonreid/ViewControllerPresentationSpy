@@ -7,11 +7,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 extern NSString *const QCOMockAlertControllerPresentedNotification;
 
-
 @interface UIAlertController (QCOMock)
-
 + (void)qcoMock_swizzle;
-
 @end
 
 NS_ASSUME_NONNULL_END
