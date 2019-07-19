@@ -9,7 +9,7 @@ final class ViewControllerPresentationTests: XCTestCase {
         super.setUp()
         presentationVerifier = QCOMockPresentationVerifier()
         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
-        sut = storyboard.instantiateInitialViewController() as? ViewController
+        sut = storyboard.instantiateViewController(withIdentifier: String(describing: ViewController.self)) as? ViewController
         sut.loadViewIfNeeded()
     }
 
