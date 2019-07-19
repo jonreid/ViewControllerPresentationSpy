@@ -20,32 +20,12 @@ final class ViewControllerPresentationTests: XCTestCase {
     }
 
     func test_outlets_shouldBeConnected() {
-        XCTAssertNotNil(sut.showModalButton)
-        XCTAssertNotNil(sut.segueModalButton)
+        XCTAssertNotNil(sut.codePresentModalButton)
+        XCTAssertNotNil(sut.seguePresentModalButton)
     }
 
-    func test_tappingShowModalButton_shouldPresentNextViewControllerWithPurpleBackground() {
-        sut.showModalButton.sendActions(for: .touchUpInside)
-
-        XCTAssertEqual(presentationVerifier.presentedCount, 1, "presented count")
-        XCTAssertTrue(presentationVerifier.animated, "animated")
-        XCTAssertTrue(presentationVerifier.presentingViewController === sut,
-                """
-                Expected presenting view controller to be \(String(describing: sut)), \
-                but was \(presentationVerifier.presentingViewController)
-                """)
-        guard let nextVC = presentationVerifier.presentedViewController as? CodeNextViewController else {
-            XCTFail("""
-                    Expected presented view controller to be \(String(describing: CodeNextViewController.self)), \
-                    but was \(presentationVerifier.presentedViewController)
-                    """)
-            return
-        }
-        XCTAssertEqual(nextVC.backgroundColor, UIColor.purple, "Background color passed in")
-    }
-
-    func test_tappingSegueModalButton_shouldPresentNextViewControllerWithGreenBackground() {
-        sut.segueModalButton.sendActions(for: .touchUpInside)
+    func test_tappingSeguePresentModalButton_shouldPresentNextViewControllerWithGreenBackground() {
+        sut.seguePresentModalButton.sendActions(for: .touchUpInside)
 
         XCTAssertEqual(presentationVerifier.presentedCount, 1, "presented count")
         XCTAssertTrue(presentationVerifier.animated, "animated")
@@ -62,5 +42,25 @@ final class ViewControllerPresentationTests: XCTestCase {
             return
         }
         XCTAssertEqual(nextVC.backgroundColor, UIColor.green, "Background color passed in")
+    }
+
+    func test_tappingCodeModalButton_shouldPresentNextViewControllerWithPurpleBackground() {
+        sut.codePresentModalButton.sendActions(for: .touchUpInside)
+
+        XCTAssertEqual(presentationVerifier.presentedCount, 1, "presented count")
+        XCTAssertTrue(presentationVerifier.animated, "animated")
+        XCTAssertTrue(presentationVerifier.presentingViewController === sut,
+                """
+                Expected presenting view controller to be \(String(describing: sut)), \
+                but was \(presentationVerifier.presentingViewController)
+                """)
+        guard let nextVC = presentationVerifier.presentedViewController as? CodeNextViewController else {
+            XCTFail("""
+                    Expected presented view controller to be \(String(describing: CodeNextViewController.self)), \
+                    but was \(presentationVerifier.presentedViewController)
+                    """)
+            return
+        }
+        XCTAssertEqual(nextVC.backgroundColor, UIColor.purple, "Background color passed in")
     }
 }

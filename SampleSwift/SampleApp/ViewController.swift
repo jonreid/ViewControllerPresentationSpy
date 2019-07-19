@@ -3,8 +3,8 @@ import UIKit
 final class ViewController: UIViewController {
     @IBOutlet private(set) var showAlertButton: UIButton!
     @IBOutlet private(set) var showActionSheetButton: UIButton!
-    @IBOutlet private(set) var showModalButton: UIButton!
-    @IBOutlet private(set) var segueModalButton: UIButton!
+    @IBOutlet private(set) var seguePresentModalButton: UIButton!
+    @IBOutlet private(set) var codePresentModalButton: UIButton!
 
     var alertDefaultActionExecuted = false
     var alertCancelActionExecuted = false

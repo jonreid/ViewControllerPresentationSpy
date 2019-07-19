@@ -35,38 +35,38 @@
                                     <action selector="showActionSheetWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OMm-bj-SNa"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0dk-ib-7FI">
-                                <rect key="frame" x="130.5" y="368.5" width="114" height="30"/>
-                                <state key="normal" title="Non-Alert Modal"/>
-                                <connections>
-                                    <action selector="showModal" destination="BYZ-38-t0r" eventType="touchUpInside" id="k36-Of-xff"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H3D-WF-3Hh">
-                                <rect key="frame" x="142.5" y="418.5" width="90" height="30"/>
+                                <rect key="frame" x="142.5" y="388.5" width="90" height="30"/>
                                 <state key="normal" title="Segue Modal"/>
                                 <connections>
                                     <segue destination="KbI-a0-wdB" kind="presentation" identifier="modal" id="8C3-B1-Hp0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0dk-ib-7FI">
+                                <rect key="frame" x="146" y="438.5" width="83" height="30"/>
+                                <state key="normal" title="Code Modal"/>
+                                <connections>
+                                    <action selector="showModal" destination="BYZ-38-t0r" eventType="touchUpInside" id="k36-Of-xff"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="fJs-gQ-owX" firstAttribute="top" secondItem="SaD-9V-JA5" secondAttribute="bottom" constant="20" id="7c6-x7-I2z"/>
-                            <constraint firstItem="H3D-WF-3Hh" firstAttribute="top" secondItem="0dk-ib-7FI" secondAttribute="bottom" constant="20" id="PUQ-c0-dAD"/>
+                            <constraint firstItem="0dk-ib-7FI" firstAttribute="top" secondItem="H3D-WF-3Hh" secondAttribute="bottom" constant="20" id="ATK-Yu-dIo"/>
                             <constraint firstItem="H3D-WF-3Hh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UgU-Xg-yJy"/>
                             <constraint firstItem="0dk-ib-7FI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XdN-dX-aL3"/>
                             <constraint firstItem="fJs-gQ-owX" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ajr-or-ZNA"/>
+                            <constraint firstItem="H3D-WF-3Hh" firstAttribute="top" secondItem="fJs-gQ-owX" secondAttribute="bottom" constant="40" id="gsG-Hr-MrJ"/>
                             <constraint firstItem="SaD-9V-JA5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="itv-UJ-GIe"/>
                             <constraint firstItem="fJs-gQ-owX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kYY-xS-2Rk"/>
-                            <constraint firstItem="0dk-ib-7FI" firstAttribute="top" secondItem="fJs-gQ-owX" secondAttribute="bottom" constant="20" id="x7C-fN-ALd"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="segueModalButton" destination="H3D-WF-3Hh" id="aWO-fX-f55"/>
+                        <outlet property="codePresentModalButton" destination="0dk-ib-7FI" id="XEg-u0-qTs"/>
+                        <outlet property="seguePresentModalButton" destination="H3D-WF-3Hh" id="aWO-fX-f55"/>
                         <outlet property="showActionSheetButton" destination="fJs-gQ-owX" id="agk-3Q-VMO"/>
                         <outlet property="showAlertButton" destination="SaD-9V-JA5" id="Jem-Mr-Ty0"/>
-                        <outlet property="showModalButton" destination="0dk-ib-7FI" id="XEg-u0-qTs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -88,7 +88,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dcZ-ot-CUP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="862" y="27"/>
+            <point key="canvasLocation" x="962" y="133"/>
         </scene>
     </scenes>
 </document>
