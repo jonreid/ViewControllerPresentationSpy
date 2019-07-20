@@ -1,4 +1,4 @@
-@testable import MockUIAlertControllerSampleSwift
+@testable import SwiftSampleViewControllerPresentationSpy
 import XCTest
 
 final class ViewControllerPresentationTests: XCTestCase {
