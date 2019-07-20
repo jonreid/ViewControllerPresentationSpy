@@ -69,10 +69,15 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(nullable id)sender
 {
     [super prepareForSegue:segue sender:sender];
-    if ([segue.identifier isEqualToString:@"modal"])
+    if ([segue.identifier isEqualToString:@"presentModal"])
     {
         StoryboardNextViewController *nextVC = segue.destinationViewController;
         nextVC.backgroundColor = UIColor.greenColor;
+    }
+    else if ([segue.identifier isEqualToString:@"show"])
+    {
+        StoryboardNextViewController *nextVC = segue.destinationViewController;
+        nextVC.backgroundColor = UIColor.redColor;
     }
 }
 

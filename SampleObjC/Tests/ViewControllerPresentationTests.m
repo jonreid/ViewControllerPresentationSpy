@@ -27,6 +27,7 @@
 
 - (void)tearDown
 {
+    [NSRunLoop.currentRunLoop runUntilDate:NSDate.date]; // Free objects after segue show
     presentationVerifier = nil;
     sut = nil;
     [super tearDown];
@@ -35,6 +36,7 @@
 - (void)test_outlets_shouldBeConnected
 {
     XCTAssertNotNil(sut.seguePresentModalButton);
+    XCTAssertNotNil(sut.segueShowButton);
     XCTAssertNotNil(sut.codeModalButton);
 }
 
@@ -52,6 +54,26 @@
     }
     StoryboardNextViewController *nextVC = (StoryboardNextViewController *)presentationVerifier.presentedViewController;
     XCTAssertEqual(nextVC.backgroundColor, UIColor.greenColor, @"Background color passed in");
+}
+
+- (void)test_tappingSegueShowButton_shouldShowNextViewControllerWithRedBackground
+{
+    UIWindow *window = [[UIWindow alloc] init];
+    window.rootViewController = sut;
+    window.hidden = NO;
+
+    [sut.segueShowButton sendActionsForControlEvents:UIControlEventTouchUpInside];
+    
+    XCTAssertEqual(presentationVerifier.presentedCount, 1, @"presented count");
+    XCTAssertEqual(presentationVerifier.presentingViewController, sut, @"presenting view controller");
+    XCTAssertTrue(presentationVerifier.animated, @"animated");
+    if (![presentationVerifier.presentedViewController isKindOfClass:[StoryboardNextViewController class]]) {
+        XCTFail(@"Expected presented view controller to be %@, but was %@",
+                [StoryboardNextViewController class], presentationVerifier.presentedViewController);
+        return;
+    }
+    StoryboardNextViewController *nextVC = (StoryboardNextViewController *)presentationVerifier.presentedViewController;
+    XCTAssertEqual(nextVC.backgroundColor, UIColor.redColor, @"Background color passed in");
 }
 
 - (void)test_tappingCodeModalButton_shouldPresentNextViewControllerWithPurpleBackground
