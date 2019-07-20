@@ -35,34 +35,12 @@
     [self presentViewController:alertController animated:YES completion:NULL];
 }
 
-- (IBAction)showModal
-{
-    UIViewController *nextVC = [[CodeNextViewController alloc] initWithBackgroundColor:UIColor.purpleColor];
-    [self presentViewController:nextVC animated:YES completion:NULL];
-}
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(nullable id)sender
-{
-    [super prepareForSegue:segue sender:sender];
-    if ([segue.identifier isEqualToString:@"modal"])
-    {
-        StoryboardNextViewController *nextVC = segue.destinationViewController;
-        nextVC.backgroundColor = UIColor.greenColor;
-    }
-}
-
-
-- (void)presentNonAlert
-{
-    [self presentViewController:[[UIViewController alloc] init] animated:NO completion:nil];
-}
-
 - (void)setUpActionsForAlertController:(UIAlertController *)alertController
 {
     self.alertDefaultActionExecuted = NO;
     self.alertCancelActionExecuted = NO;
     self.alertDestroyActionExecuted = NO;
-
+    
     UIAlertAction *actionWithoutHandler = [UIAlertAction actionWithTitle:@"No Handler"
                                                                    style:UIAlertActionStyleDefault
                                                                  handler:nil];
@@ -86,6 +64,27 @@
     [alertController addAction:cancelAction];
     [alertController addAction:destroyAction];
     alertController.preferredAction = defaultAction;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(nullable id)sender
+{
+    [super prepareForSegue:segue sender:sender];
+    if ([segue.identifier isEqualToString:@"modal"])
+    {
+        StoryboardNextViewController *nextVC = segue.destinationViewController;
+        nextVC.backgroundColor = UIColor.greenColor;
+    }
+}
+
+- (IBAction)showModal
+{
+    UIViewController *nextVC = [[CodeNextViewController alloc] initWithBackgroundColor:UIColor.purpleColor];
+    [self presentViewController:nextVC animated:YES completion:NULL];
+}
+
+- (void)presentNonAlert
+{
+    [self presentViewController:[[UIViewController alloc] init] animated:NO completion:nil];
 }
 
 @end

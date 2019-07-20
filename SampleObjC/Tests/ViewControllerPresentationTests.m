@@ -34,29 +34,13 @@
 
 - (void)test_outlets_shouldBeConnected
 {
-    XCTAssertNotNil(sut.showModalButton);
-    XCTAssertNotNil(sut.segueModalButton);
+    XCTAssertNotNil(sut.seguePresentModalButton);
+    XCTAssertNotNil(sut.codeModalButton);
 }
 
-- (void)test_tappingShowModalButton_shouldPresentNextViewControllerWithPurpleBackground
+- (void)test_tappingSeguePresentModalButton_shouldPresentNextViewControllerWithGreenBackground
 {
-    [sut.showModalButton sendActionsForControlEvents:UIControlEventTouchUpInside];
-    
-    XCTAssertEqual(presentationVerifier.presentedCount, 1, @"presented count");
-    XCTAssertEqual(presentationVerifier.presentingViewController, sut, @"presenting view controller");
-    XCTAssertTrue(presentationVerifier.animated, @"animated");
-    if (![presentationVerifier.presentedViewController isKindOfClass:[CodeNextViewController class]]) {
-        XCTFail(@"Expected presented view controller to be %@, but was %@",
-                [ViewController class], presentationVerifier.presentedViewController);
-        return;
-    }
-    CodeNextViewController *nextVC = (CodeNextViewController *)presentationVerifier.presentedViewController;
-    XCTAssertEqual(nextVC.backgroundColor, UIColor.purpleColor, @"Background color passed in");
-}
-
-- (void)test_tappingSegueModalButton_shouldPresentNextViewControllerWithGreenBackground
-{
-    [sut.segueModalButton sendActionsForControlEvents:UIControlEventTouchUpInside];
+    [sut.seguePresentModalButton sendActionsForControlEvents:UIControlEventTouchUpInside];
     
     XCTAssertEqual(presentationVerifier.presentedCount, 1, @"presented count");
     XCTAssertEqual(presentationVerifier.presentingViewController, sut, @"presenting view controller");
@@ -68,6 +52,22 @@
     }
     StoryboardNextViewController *nextVC = (StoryboardNextViewController *)presentationVerifier.presentedViewController;
     XCTAssertEqual(nextVC.backgroundColor, UIColor.greenColor, @"Background color passed in");
+}
+
+- (void)test_tappingCodeModalButton_shouldPresentNextViewControllerWithPurpleBackground
+{
+    [sut.codeModalButton sendActionsForControlEvents:UIControlEventTouchUpInside];
+    
+    XCTAssertEqual(presentationVerifier.presentedCount, 1, @"presented count");
+    XCTAssertEqual(presentationVerifier.presentingViewController, sut, @"presenting view controller");
+    XCTAssertTrue(presentationVerifier.animated, @"animated");
+    if (![presentationVerifier.presentedViewController isKindOfClass:[CodeNextViewController class]]) {
+        XCTFail(@"Expected presented view controller to be %@, but was %@",
+                [ViewController class], presentationVerifier.presentedViewController);
+        return;
+    }
+    CodeNextViewController *nextVC = (CodeNextViewController *)presentationVerifier.presentedViewController;
+    XCTAssertEqual(nextVC.backgroundColor, UIColor.purpleColor, @"Background color passed in");
 }
 
 @end

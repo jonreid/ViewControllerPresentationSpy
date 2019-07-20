@@ -6,8 +6,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) IBOutlet UIButton *showAlertButton;
 @property (nonatomic, strong) IBOutlet UIButton *showActionSheetButton;
-@property (nonatomic, strong) IBOutlet UIButton *showModalButton;
-@property (nonatomic, strong) IBOutlet UIButton *segueModalButton;
+@property (nonatomic, strong) IBOutlet UIButton *seguePresentModalButton;
+@property (nonatomic, strong) IBOutlet UIButton *codeModalButton;
 
 @property (nonatomic, assign) BOOL alertDefaultActionExecuted;
 @property (nonatomic, assign) BOOL alertCancelActionExecuted;

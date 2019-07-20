@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v4x-NS-Ot4">
-                                <rect key="frame" x="122.5" y="175" width="75" height="30"/>
+                                <rect key="frame" x="122.5" y="95" width="75" height="30"/>
                                 <state key="normal" title="Show Alert">
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -31,7 +31,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W0M-xH-y3m">
-                                <rect key="frame" x="95" y="225" width="130" height="30"/>
+                                <rect key="frame" x="95" y="145" width="130" height="30"/>
                                 <state key="normal" title="Show Action Sheet">
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -49,7 +49,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ROa-d4-dJ7">
-                                <rect key="frame" x="115" y="325" width="90" height="30"/>
+                                <rect key="frame" x="115" y="225" width="90" height="30"/>
                                 <state key="normal" title="Segue Modal"/>
                                 <connections>
                                     <segue destination="2Wl-4a-hxd" kind="presentation" identifier="modal" id="Sfw-JH-ll4"/>
@@ -60,19 +60,19 @@
                         <constraints>
                             <constraint firstItem="W0M-xH-y3m" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2JY-J7-dpy"/>
                             <constraint firstItem="ROa-d4-dJ7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8iK-BK-ccf"/>
-                            <constraint firstItem="ROa-d4-dJ7" firstAttribute="top" secondItem="TuV-QX-6ij" secondAttribute="bottom" constant="20" id="F4a-Pr-JZw"/>
                             <constraint firstItem="v4x-NS-Ot4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="H7i-yc-c9Z"/>
-                            <constraint firstItem="TuV-QX-6ij" firstAttribute="top" secondItem="W0M-xH-y3m" secondAttribute="bottom" constant="20" id="HHa-xA-27d"/>
                             <constraint firstItem="W0M-xH-y3m" firstAttribute="top" secondItem="v4x-NS-Ot4" secondAttribute="bottom" constant="20" id="Oac-nz-PZB"/>
-                            <constraint firstItem="W0M-xH-y3m" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="g9d-Sl-y6E"/>
+                            <constraint firstItem="TuV-QX-6ij" firstAttribute="top" secondItem="ROa-d4-dJ7" secondAttribute="bottom" constant="20" id="WdT-PG-5s6"/>
+                            <constraint firstItem="ROa-d4-dJ7" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="gsb-kS-DTp"/>
                             <constraint firstItem="TuV-QX-6ij" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="irV-8C-gJA"/>
+                            <constraint firstItem="ROa-d4-dJ7" firstAttribute="top" secondItem="W0M-xH-y3m" secondAttribute="bottom" constant="50" id="vEi-Cp-HxQ"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="segueModalButton" destination="ROa-d4-dJ7" id="GwZ-vA-cHc"/>
+                        <outlet property="codeModalButton" destination="TuV-QX-6ij" id="o1g-Ge-0q8"/>
+                        <outlet property="seguePresentModalButton" destination="ROa-d4-dJ7" id="GwZ-vA-cHc"/>
                         <outlet property="showActionSheetButton" destination="W0M-xH-y3m" id="mLA-y7-sLN"/>
                         <outlet property="showAlertButton" destination="v4x-NS-Ot4" id="WaY-hg-RJ7"/>
-                        <outlet property="showModalButton" destination="TuV-QX-6ij" id="o1g-Ge-0q8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
