@@ -18,7 +18,7 @@
     [super setUp];
     sut = [[QCOMockAlertVerifier alloc] init];
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    vc = [storyboard instantiateViewControllerWithIdentifier:@"main"];
+    vc = [storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([ViewController class])];
     [vc loadViewIfNeeded];
 }
 

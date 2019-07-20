@@ -21,7 +21,7 @@
     [super setUp];
     presentationVerifier = [[QCOMockPresentationVerifier alloc] init];
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    sut = [storyboard instantiateViewControllerWithIdentifier:@"main"];
+    sut = [storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([ViewController class])];
     [sut loadViewIfNeeded];
 }
 
