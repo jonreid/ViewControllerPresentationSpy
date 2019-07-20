@@ -1,4 +1,4 @@
-@import MockUIAlertController;
+@import ViewControllerPresentationSpy;
 
 #import "ViewController.h"
 

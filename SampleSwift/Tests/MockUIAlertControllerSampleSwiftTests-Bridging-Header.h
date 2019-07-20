@@ -1,1 +1,1 @@
-@import MockUIAlertController;
+@import ViewControllerPresentationSpy;

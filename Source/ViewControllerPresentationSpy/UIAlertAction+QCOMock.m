@@ -1,4 +1,4 @@
-//  MockUIAlertController by Jon Reid, https://qualitycoding.org/
+//  ViewControllerPresentationSpy by Jon Reid, https://qualitycoding.org/
 //  Copyright 2019 Jonathan M. Reid. See LICENSE.txt
 
 #import "UIAlertAction+QCOMock.h"

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		48007C7E2079A76E007A4AB0 /* MockUIAlertController.h in Headers */ = {isa = PBXBuildFile; fileRef = 48007C7C2079A76E007A4AB0 /* MockUIAlertController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		48007C7E2079A76E007A4AB0 /* ViewControllerPresentationSpy.h in Headers */ = {isa = PBXBuildFile; fileRef = 48007C7C2079A76E007A4AB0 /* ViewControllerPresentationSpy.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		48007C902079A7E3007A4AB0 /* QCOMockAlertVerifier.h in Headers */ = {isa = PBXBuildFile; fileRef = 48007C842079A7E2007A4AB0 /* QCOMockAlertVerifier.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		48007C912079A7E3007A4AB0 /* UIAlertController+QCOMock.h in Headers */ = {isa = PBXBuildFile; fileRef = 48007C852079A7E2007A4AB0 /* UIAlertController+QCOMock.h */; };
 		48007C922079A7E3007A4AB0 /* UIAlertController+QCOMock.m in Sources */ = {isa = PBXBuildFile; fileRef = 48007C862079A7E2007A4AB0 /* UIAlertController+QCOMock.m */; };
@@ -25,8 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		48007C792079A76E007A4AB0 /* MockUIAlertController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MockUIAlertController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		48007C7C2079A76E007A4AB0 /* MockUIAlertController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MockUIAlertController.h; sourceTree = "<group>"; };
+		48007C792079A76E007A4AB0 /* ViewControllerPresentationSpy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ViewControllerPresentationSpy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		48007C7C2079A76E007A4AB0 /* ViewControllerPresentationSpy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewControllerPresentationSpy.h; sourceTree = "<group>"; };
 		48007C7D2079A76E007A4AB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48007C842079A7E2007A4AB0 /* QCOMockAlertVerifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCOMockAlertVerifier.h; sourceTree = "<group>"; };
 		48007C852079A7E2007A4AB0 /* UIAlertController+QCOMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+QCOMock.h"; sourceTree = "<group>"; };
@@ -59,7 +59,7 @@
 		48007C6F2079A76E007A4AB0 = {
 			isa = PBXGroup;
 			children = (
-				48007C7B2079A76E007A4AB0 /* MockUIAlertController */,
+				48007C7B2079A76E007A4AB0 /* ViewControllerPresentationSpy */,
 				48007C9C2079A8AF007A4AB0 /* Supporting Files */,
 				48007C7A2079A76E007A4AB0 /* Products */,
 			);
@@ -68,15 +68,15 @@
 		48007C7A2079A76E007A4AB0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				48007C792079A76E007A4AB0 /* MockUIAlertController.framework */,
+				48007C792079A76E007A4AB0 /* ViewControllerPresentationSpy.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		48007C7B2079A76E007A4AB0 /* MockUIAlertController */ = {
+		48007C7B2079A76E007A4AB0 /* ViewControllerPresentationSpy */ = {
 			isa = PBXGroup;
 			children = (
-				48007C7C2079A76E007A4AB0 /* MockUIAlertController.h */,
+				48007C7C2079A76E007A4AB0 /* ViewControllerPresentationSpy.h */,
 				48007C882079A7E2007A4AB0 /* NSObject+QCOMockAlerts.h */,
 				48007C8B2079A7E2007A4AB0 /* NSObject+QCOMockAlerts.m */,
 				48007C842079A7E2007A4AB0 /* QCOMockAlertVerifier.h */,
@@ -92,7 +92,7 @@
 				48007C8F2079A7E3007A4AB0 /* UIViewController+QCOMock.h */,
 				48007C872079A7E2007A4AB0 /* UIViewController+QCOMock.m */,
 			);
-			path = MockUIAlertController;
+			path = ViewControllerPresentationSpy;
 			sourceTree = "<group>";
 		};
 		48007C9C2079A8AF007A4AB0 /* Supporting Files */ = {
@@ -111,7 +111,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48007C7E2079A76E007A4AB0 /* MockUIAlertController.h in Headers */,
+				48007C7E2079A76E007A4AB0 /* ViewControllerPresentationSpy.h in Headers */,
 				48007C902079A7E3007A4AB0 /* QCOMockAlertVerifier.h in Headers */,
 				48007C962079A7E3007A4AB0 /* UIAlertAction+QCOMock.h in Headers */,
 				48007C9B2079A7E3007A4AB0 /* UIViewController+QCOMock.h in Headers */,
@@ -125,9 +125,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		48007C782079A76E007A4AB0 /* MockUIAlertController */ = {
+		48007C782079A76E007A4AB0 /* ViewControllerPresentationSpy */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 48007C812079A76E007A4AB0 /* Build configuration list for PBXNativeTarget "MockUIAlertController" */;
+			buildConfigurationList = 48007C812079A76E007A4AB0 /* Build configuration list for PBXNativeTarget "ViewControllerPresentationSpy" */;
 			buildPhases = (
 				48007C742079A76E007A4AB0 /* Sources */,
 				48007C752079A76E007A4AB0 /* Frameworks */,
@@ -137,9 +137,9 @@
 			);
 			dependencies = (
 			);
-			name = MockUIAlertController;
+			name = ViewControllerPresentationSpy;
 			productName = MockUIAlertController;
-			productReference = 48007C792079A76E007A4AB0 /* MockUIAlertController.framework */;
+			productReference = 48007C792079A76E007A4AB0 /* ViewControllerPresentationSpy.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -156,7 +156,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 48007C732079A76E007A4AB0 /* Build configuration list for PBXProject "MockUIAlertController" */;
+			buildConfigurationList = 48007C732079A76E007A4AB0 /* Build configuration list for PBXProject "ViewControllerPresentationSpy" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -169,7 +169,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				48007C782079A76E007A4AB0 /* MockUIAlertController */,
+				48007C782079A76E007A4AB0 /* ViewControllerPresentationSpy */,
 			);
 		};
 /* End PBXProject section */
@@ -267,7 +267,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.qualitycoding.MockUIAlertController;
+				PRODUCT_BUNDLE_IDENTIFIER = org.qualitycoding.ViewControllerPresentationSpy;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -290,7 +290,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.qualitycoding.MockUIAlertController;
+				PRODUCT_BUNDLE_IDENTIFIER = org.qualitycoding.ViewControllerPresentationSpy;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -300,7 +300,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		48007C732079A76E007A4AB0 /* Build configuration list for PBXProject "MockUIAlertController" */ = {
+		48007C732079A76E007A4AB0 /* Build configuration list for PBXProject "ViewControllerPresentationSpy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				48007C7F2079A76E007A4AB0 /* Debug */,
@@ -309,7 +309,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		48007C812079A76E007A4AB0 /* Build configuration list for PBXNativeTarget "MockUIAlertController" */ = {
+		48007C812079A76E007A4AB0 /* Build configuration list for PBXNativeTarget "ViewControllerPresentationSpy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				48007C822079A76E007A4AB0 /* Debug */,

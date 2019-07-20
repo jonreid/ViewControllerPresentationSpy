@@ -3,7 +3,7 @@
 #import "StoryboardNextViewController.h"
 #import "ViewController.h"
 
-@import MockUIAlertController;
+@import ViewControllerPresentationSpy;
 @import XCTest;
 
 @interface ViewControllerPresentationTests : XCTestCase

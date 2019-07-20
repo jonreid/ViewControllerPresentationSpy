@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "48007C782079A76E007A4AB0"
-               BuildableName = "MockUIAlertController.framework"
-               BlueprintName = "MockUIAlertController"
-               ReferencedContainer = "container:MockUIAlertController.xcodeproj">
+               BuildableName = "ViewControllerPresentationSpy.framework"
+               BlueprintName = "ViewControllerPresentationSpy"
+               ReferencedContainer = "container:ViewControllerPresentationSpy.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -46,9 +46,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "48007C782079A76E007A4AB0"
-            BuildableName = "MockUIAlertController.framework"
-            BlueprintName = "MockUIAlertController"
-            ReferencedContainer = "container:MockUIAlertController.xcodeproj">
+            BuildableName = "ViewControllerPresentationSpy.framework"
+            BlueprintName = "ViewControllerPresentationSpy"
+            ReferencedContainer = "container:ViewControllerPresentationSpy.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -64,9 +64,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "48007C782079A76E007A4AB0"
-            BuildableName = "MockUIAlertController.framework"
-            BlueprintName = "MockUIAlertController"
-            ReferencedContainer = "container:MockUIAlertController.xcodeproj">
+            BuildableName = "ViewControllerPresentationSpy.framework"
+            BlueprintName = "ViewControllerPresentationSpy"
+            ReferencedContainer = "container:ViewControllerPresentationSpy.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>
