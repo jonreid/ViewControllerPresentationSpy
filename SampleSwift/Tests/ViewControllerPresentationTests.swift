@@ -14,14 +14,16 @@ final class ViewControllerPresentationTests: XCTestCase {
     }
 
     override func tearDown() {
+        RunLoop.current.run(until: Date()) // Free objects after segue show
         presentationVerifier = nil
         sut = nil
         super.tearDown()
     }
 
     func test_outlets_shouldBeConnected() {
-        XCTAssertNotNil(sut.codePresentModalButton)
         XCTAssertNotNil(sut.seguePresentModalButton)
+        XCTAssertNotNil(sut.segueShowButton)
+        XCTAssertNotNil(sut.codePresentModalButton)
     }
 
     func test_tappingSeguePresentModalButton_shouldPresentNextViewControllerWithGreenBackground() {
@@ -42,6 +44,30 @@ final class ViewControllerPresentationTests: XCTestCase {
             return
         }
         XCTAssertEqual(nextVC.backgroundColor, UIColor.green, "Background color passed in")
+    }
+
+    func test_tappingSegueShowButton_shouldShowNextViewControllerWithGreenBackground() {
+        let window = UIWindow()
+        window.rootViewController = sut
+        window.isHidden = false
+        
+        sut.segueShowButton.sendActions(for: .touchUpInside)
+
+        XCTAssertEqual(presentationVerifier.presentedCount, 1, "presented count")
+        XCTAssertTrue(presentationVerifier.animated, "animated")
+        XCTAssertTrue(presentationVerifier.presentingViewController === sut,
+                """
+                Expected presenting view controller to be \(String(describing: sut)), \
+                but was \(presentationVerifier.presentingViewController)
+                """)
+        guard let nextVC = presentationVerifier.presentedViewController as? StoryboardNextViewController else {
+            XCTFail("""
+                    Expected presented view controller to be \(String(describing: StoryboardNextViewController.self)), \
+                    but was \(presentationVerifier.presentedViewController)
+                    """)
+            return
+        }
+        XCTAssertEqual(nextVC.backgroundColor, UIColor.red, "Background color passed in")
     }
 
     func test_tappingCodeModalButton_shouldPresentNextViewControllerWithPurpleBackground() {
