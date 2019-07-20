@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "0E748F901B6543A000B29AED"
                BuildableName = "MockUIAlertControllerSample.app"
-               BlueprintName = "MockUIAlertControllerSample"
-               ReferencedContainer = "container:MockUIAlertControllerSample.xcodeproj">
+               BlueprintName = "ObjCSampleViewControllerPresentationSpy"
+               ReferencedContainer = "container:ObjCSampleViewControllerPresentationSpy.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,8 +35,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "0E748FA91B6543A000B29AED"
                BuildableName = "MockUIAlertControllerSampleTests.xctest"
-               BlueprintName = "MockUIAlertControllerSampleTests"
-               ReferencedContainer = "container:MockUIAlertControllerSample.xcodeproj">
+               BlueprintName = "ObjCSampleViewControllerPresentationSpyTests"
+               ReferencedContainer = "container:ObjCSampleViewControllerPresentationSpy.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -45,8 +45,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0E748F901B6543A000B29AED"
             BuildableName = "MockUIAlertControllerSample.app"
-            BlueprintName = "MockUIAlertControllerSample"
-            ReferencedContainer = "container:MockUIAlertControllerSample.xcodeproj">
+            BlueprintName = "ObjCSampleViewControllerPresentationSpy"
+            ReferencedContainer = "container:ObjCSampleViewControllerPresentationSpy.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -68,8 +68,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0E748F901B6543A000B29AED"
             BuildableName = "MockUIAlertControllerSample.app"
-            BlueprintName = "MockUIAlertControllerSample"
-            ReferencedContainer = "container:MockUIAlertControllerSample.xcodeproj">
+            BlueprintName = "ObjCSampleViewControllerPresentationSpy"
+            ReferencedContainer = "container:ObjCSampleViewControllerPresentationSpy.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -87,8 +87,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0E748F901B6543A000B29AED"
             BuildableName = "MockUIAlertControllerSample.app"
-            BlueprintName = "MockUIAlertControllerSample"
-            ReferencedContainer = "container:MockUIAlertControllerSample.xcodeproj">
+            BlueprintName = "ObjCSampleViewControllerPresentationSpy"
+            ReferencedContainer = "container:ObjCSampleViewControllerPresentationSpy.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

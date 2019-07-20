@@ -40,7 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0E748F911B6543A000B29AED /* MockUIAlertControllerSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MockUIAlertControllerSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E748F911B6543A000B29AED /* ObjCSampleViewControllerPresentationSpy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ObjCSampleViewControllerPresentationSpy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E748F951B6543A000B29AED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E748F961B6543A000B29AED /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0E748F981B6543A000B29AED /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -49,7 +49,7 @@
 		0E748F9C1B6543A000B29AED /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		0E748F9F1B6543A000B29AED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0E748FA11B6543A000B29AED /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		0E748FAA1B6543A000B29AED /* MockUIAlertControllerSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MockUIAlertControllerSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E748FAA1B6543A000B29AED /* ObjCSampleViewControllerPresentationSpyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ObjCSampleViewControllerPresentationSpyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E748FAF1B6543A000B29AED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4804BCA522E16949000130AD /* XcodeWarnings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = XcodeWarnings.xcconfig; path = ../../Source/XcodeWarnings.xcconfig; sourceTree = "<group>"; };
 		483E05411DE80ACF00B5E4E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -95,8 +95,8 @@
 		0E748F921B6543A000B29AED /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0E748F911B6543A000B29AED /* MockUIAlertControllerSample.app */,
-				0E748FAA1B6543A000B29AED /* MockUIAlertControllerSampleTests.xctest */,
+				0E748F911B6543A000B29AED /* ObjCSampleViewControllerPresentationSpy.app */,
+				0E748FAA1B6543A000B29AED /* ObjCSampleViewControllerPresentationSpyTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -160,9 +160,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0E748F901B6543A000B29AED /* MockUIAlertControllerSample */ = {
+		0E748F901B6543A000B29AED /* ObjCSampleViewControllerPresentationSpy */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0E748FB41B6543A000B29AED /* Build configuration list for PBXNativeTarget "MockUIAlertControllerSample" */;
+			buildConfigurationList = 0E748FB41B6543A000B29AED /* Build configuration list for PBXNativeTarget "ObjCSampleViewControllerPresentationSpy" */;
 			buildPhases = (
 				0E748F8D1B6543A000B29AED /* Sources */,
 				0E748F8E1B6543A000B29AED /* Frameworks */,
@@ -172,14 +172,14 @@
 			);
 			dependencies = (
 			);
-			name = MockUIAlertControllerSample;
+			name = ObjCSampleViewControllerPresentationSpy;
 			productName = MockAlertsExample;
-			productReference = 0E748F911B6543A000B29AED /* MockUIAlertControllerSample.app */;
+			productReference = 0E748F911B6543A000B29AED /* ObjCSampleViewControllerPresentationSpy.app */;
 			productType = "com.apple.product-type.application";
 		};
-		0E748FA91B6543A000B29AED /* MockUIAlertControllerSampleTests */ = {
+		0E748FA91B6543A000B29AED /* ObjCSampleViewControllerPresentationSpyTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0E748FB71B6543A000B29AED /* Build configuration list for PBXNativeTarget "MockUIAlertControllerSampleTests" */;
+			buildConfigurationList = 0E748FB71B6543A000B29AED /* Build configuration list for PBXNativeTarget "ObjCSampleViewControllerPresentationSpyTests" */;
 			buildPhases = (
 				0E748FA61B6543A000B29AED /* Sources */,
 				0E748FA71B6543A000B29AED /* Frameworks */,
@@ -190,9 +190,9 @@
 			dependencies = (
 				0E748FAC1B6543A000B29AED /* PBXTargetDependency */,
 			);
-			name = MockUIAlertControllerSampleTests;
+			name = ObjCSampleViewControllerPresentationSpyTests;
 			productName = MockAlertsExampleTests;
-			productReference = 0E748FAA1B6543A000B29AED /* MockUIAlertControllerSampleTests.xctest */;
+			productReference = 0E748FAA1B6543A000B29AED /* ObjCSampleViewControllerPresentationSpyTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -214,7 +214,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 0E748F8C1B6543A000B29AED /* Build configuration list for PBXProject "MockUIAlertControllerSample" */;
+			buildConfigurationList = 0E748F8C1B6543A000B29AED /* Build configuration list for PBXProject "ObjCSampleViewControllerPresentationSpy" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -233,8 +233,8 @@
 			);
 			projectRoot = "";
 			targets = (
-				0E748F901B6543A000B29AED /* MockUIAlertControllerSample */,
-				0E748FA91B6543A000B29AED /* MockUIAlertControllerSampleTests */,
+				0E748F901B6543A000B29AED /* ObjCSampleViewControllerPresentationSpy */,
+				0E748FA91B6543A000B29AED /* ObjCSampleViewControllerPresentationSpyTests */,
 			);
 		};
 /* End PBXProject section */
@@ -298,7 +298,7 @@
 /* Begin PBXTargetDependency section */
 		0E748FAC1B6543A000B29AED /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0E748F901B6543A000B29AED /* MockUIAlertControllerSample */;
+			target = 0E748F901B6543A000B29AED /* ObjCSampleViewControllerPresentationSpy */;
 			targetProxy = 0E748FAB1B6543A000B29AED /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -389,7 +389,7 @@
 					UIKit,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.qualitycoding.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = MockUIAlertControllerSample;
+				PRODUCT_NAME = ObjCSampleViewControllerPresentationSpy;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
@@ -410,7 +410,7 @@
 					UIKit,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.qualitycoding.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = MockUIAlertControllerSample;
+				PRODUCT_NAME = ObjCSampleViewControllerPresentationSpy;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -437,8 +437,8 @@
 					XCTest,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.qualitycoding.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = MockUIAlertControllerSampleTests;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MockUIAlertControllerSample.app/MockUIAlertControllerSample";
+				PRODUCT_NAME = ObjCSampleViewControllerPresentationSpyTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ObjCSampleViewControllerPresentationSpy.app/ObjCSampleViewControllerPresentationSpy";
 			};
 			name = Debug;
 		};
@@ -460,15 +460,15 @@
 					XCTest,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.qualitycoding.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = MockUIAlertControllerSampleTests;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MockUIAlertControllerSample.app/MockUIAlertControllerSample";
+				PRODUCT_NAME = ObjCSampleViewControllerPresentationSpyTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ObjCSampleViewControllerPresentationSpy.app/ObjCSampleViewControllerPresentationSpy";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0E748F8C1B6543A000B29AED /* Build configuration list for PBXProject "MockUIAlertControllerSample" */ = {
+		0E748F8C1B6543A000B29AED /* Build configuration list for PBXProject "ObjCSampleViewControllerPresentationSpy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0E748FB21B6543A000B29AED /* Debug */,
@@ -477,7 +477,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0E748FB41B6543A000B29AED /* Build configuration list for PBXNativeTarget "MockUIAlertControllerSample" */ = {
+		0E748FB41B6543A000B29AED /* Build configuration list for PBXNativeTarget "ObjCSampleViewControllerPresentationSpy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0E748FB51B6543A000B29AED /* Debug */,
@@ -486,7 +486,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0E748FB71B6543A000B29AED /* Build configuration list for PBXNativeTarget "MockUIAlertControllerSampleTests" */ = {
+		0E748FB71B6543A000B29AED /* Build configuration list for PBXNativeTarget "ObjCSampleViewControllerPresentationSpyTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0E748FB81B6543A000B29AED /* Debug */,
