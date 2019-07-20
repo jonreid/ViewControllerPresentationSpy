@@ -1,12 +1,12 @@
-# MockUIAlertController
+# ViewControllerPresentationSpy
 
-[![Build Status](https://travis-ci.org/jonreid/MockUIAlertController.svg?branch=master)](https://travis-ci.org/jonreid/MockUIAlertController)
-[![Coverage Status](https://coveralls.io/repos/jonreid/MockUIAlertController/badge.svg?branch=master&service=github)](https://coveralls.io/github/jonreid/MockUIAlertController?branch=master)
+[![Build Status](https://travis-ci.org/jonreid/ViewControllerPresentationSpy.svg?branch=master)](https://travis-ci.org/jonreid/ViewControllerPresentationSpy)
+[![Coverage Status](https://coveralls.io/repos/jonreid/ViewControllerPresentationSpy/badge.svg?branch=master&service=github)](https://coveralls.io/github/jonreid/ViewControllerPresentationSpy?branch=master)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
-[![CocoaPods Version](https://cocoapod-badges.herokuapp.com/v/MockUIAlertController/badge.png)](https://cocoapods.org/pods/MockUIAlertController)
+[![CocoaPods Version](https://cocoapod-badges.herokuapp.com/v/ViewControllerPresentationSpy/badge.png)](https://cocoapods.org/pods/ViewControllerPresentationSpy)
 [![Twitter Follow](https://img.shields.io/twitter/follow/qcoding.svg?style=social)](https://twitter.com/qcoding)
 
-MockUIAlertController lets you mock iOS alerts and action sheets for unit tests. It works for Swift as well as Objective-C.
+ViewControllerPresentationSpy lets you mock iOS alerts and action sheets for unit tests. It works for Swift as well as Objective-C.
 
 (For old UIAlertView or UIActionSheet mocking, use
 [MockUIAlertViewActionSheet](https://github.com/jonreid/MockUIAlertViewActionSheet).)
@@ -27,12 +27,12 @@ Nothing.
 
 ### How do I test an alert controller?
 
-1. `@import MockUIAlertController.h;` or add it to your Swift test target's bridging header.
+1. `@import ViewControllerPresentationSpy;` or add it to your Swift test target's bridging header.
 2. Instantiate a `QCOMockAlertVerifier` before the Act phase of the test.
 3. Invoke the code to create and present your alert or action sheet.
 
 Information about the alert or action sheet is then available through the
-[QCOMockAlertVerifier](https://github.com/jonreid/MockUIAlertController/blob/master/Source/MockUIAlertController/QCOMockAlertVerifier.h).
+[QCOMockAlertVerifier](https://github.com/jonreid/ViewControllerPresentationSpy/blob/master/Source/ViewControllerPresentationSpy/QCOMockAlertVerifier.h).
 
 For example, here's a test verifying the title (and that the alert is presented exactly once). `sut` is the System Under Test
 in the test fixture.
@@ -132,10 +132,10 @@ There are sample apps in both Swift and Objective-C. Run them on both phone & pa
 For Swift, add
 
 ```obj-c
-@import MockUIAlertController;
+@import ViewControllerPresentationSpy;
 ```
 
-to the bridging header of your test target. If you don't have it as a separate module, then `#import "MockUIAlertController/MockUIAlertController.h"`
+to the bridging header of your test target. If you don't have it as a separate module, then `#import "ViewControllerPresentationSpy/ViewControllerPresentationSpy.h"`
 
 ### CocoaPods
 
@@ -144,7 +144,7 @@ Add the following to your Podfile, changing "MyTests" to the name of your test t
 ```ruby
 target 'MyTests' do
   inherit! :search_paths
-  pod 'MockUIAlertController', '~> 3.0'
+  pod 'ViewControllerPresentationSpy', '~> 3.0'
 end
 ```
 
@@ -153,9 +153,9 @@ end
 Add the following to your Cartfile:
 
 ```
-github "jonreid/MockUIAlertController" ~> 3.0
+github "jonreid/ViewControllerPresentationSpy" ~> 3.0
 ```
 
 ### Building It Yourself
 
-Make sure to take everything from Source/MockUIAlertController.
+Make sure to take everything from Source/ViewControllerPresentationSpy.

@@ -6,9 +6,9 @@ before_install:
 
 script:
   - set -o pipefail;
-  - xcodebuild test -project SampleSwift/MockUIAlertControllerSampleSwift.xcodeproj -scheme MockUIAlertControllerSampleSwift -sdk iphonesimulator -destination "platform=iOS Simulator,OS=latest,name=iPhone 7" | xcpretty
-  - xcodebuild test -project SampleObjC/MockUIAlertControllerSample.xcodeproj -scheme MockUIAlertControllerSample -sdk iphonesimulator -destination "platform=iOS Simulator,OS=latest,name=iPhone 7" | xcpretty
-  - xcodebuild test -project SampleObjC/MockUIAlertControllerSample.xcodeproj -scheme MockUIAlertControllerSample -sdk iphonesimulator -destination "platform=iOS Simulator,OS=latest,name=iPad Air" | xcpretty
+  - xcodebuild test -project SwiftSample/SwiftSampleViewControllerPresentationSpy.xcodeproj -scheme SwiftSampleViewControllerPresentationSpy -sdk iphonesimulator -destination "platform=iOS Simulator,OS=latest,name=iPhone 7" | xcpretty
+  - xcodebuild test -project ObjCSample/ObjCSampleViewControllerPresentationSpy.xcodeproj -scheme ObjCSampleViewControllerPresentationSpy -sdk iphonesimulator -destination "platform=iOS Simulator,OS=latest,name=iPhone 7" | xcpretty
+  - xcodebuild test -project ObjCSample/ObjCSampleViewControllerPresentationSpy.xcodeproj -scheme ObjCSampleViewControllerPresentationSpy -sdk iphonesimulator -destination "platform=iOS Simulator,OS=latest,name=iPad Air" | xcpretty
   - pod spec lint --quick
 
 after_success:

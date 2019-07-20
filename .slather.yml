@@ -1,6 +1,6 @@
 coverage_service: coveralls
-xcodeproj: ./SampleObjC/MockUIAlertControllerSample.xcodeproj
-scheme: MockUIAlertControllerSample
-binary_file: /Users/travis/Library/Developer/Xcode/DerivedData/MockUIAlertControllerSample-fzpnwcxasbqkdqfgenrbrufzymgx/Build/Products/Debug-iphonesimulator/MockUIAlertControllerSample.app/PlugIns/MockUIAlertControllerSampleTests.xctest/MockUIAlertControllerSampleTests
+xcodeproj: ./ObjCSample/ObjCSampleViewControllerPresentationSpy.xcodeproj
+scheme: ObjCSampleViewControllerPresentationSpy
+binary_file: /Users/travis/Library/Developer/Xcode/DerivedData/ObjCSampleViewControllerPresentationSpy-cgeilrztsdcdkccperihpqhahpvs/Build/Products/Debug-iphonesimulator/ObjCSampleViewControllerPresentationSpy.app/PlugIns/ObjCSampleViewControllerPresentationSpyTests.xctest/ObjCSampleViewControllerPresentationSpyTests
 ignore:
-  - SampleObjC/*
+  - ObjCSample/*
