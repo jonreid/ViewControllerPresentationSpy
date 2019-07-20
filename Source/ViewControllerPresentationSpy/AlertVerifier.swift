@@ -9,12 +9,19 @@ import UIKit
  * invoke the code to create and present your alert. Information about the alert is then available
  * through the AlertVerifier.
  */
-@objc(QCOMockAlertVerifier2)
+@objc(QCOMockAlertVerifier)
 public class AlertVerifier: NSObject {
     @objc public var presentedCount = 0
     @objc public var presentedViewController: UIViewController?
     @objc public var presentingViewController: UIViewController?
     @objc public var animated: Bool = false
+    @objc public var title: String?
+    @objc public var message: String?
+    @objc public var preferredStyle: UIAlertController.Style = .alert
+    @objc public var actions: [UIAlertAction] = []
+    @objc public var preferredAction: UIAlertAction?
+    @objc public var popover: UIPopoverPresentationController?
+    @objc public var textFields: [UITextField]?
     @objc public var completion: (() -> Void)?
 
     /*!
@@ -26,8 +33,8 @@ public class AlertVerifier: NSObject {
         super.init()
         NotificationCenter.default.addObserver(
                 self,
-                selector: #selector(viewControllerWasPresented(_:)),
-                name: NSNotification.Name.QCOMockViewControllerPresented,
+                selector: #selector(alertControllerWasPresented(_:)),
+                name: NSNotification.Name.QCOMockAlertControllerPresented,
                 object: nil
         )
         AlertVerifier.swizzleMocks()
@@ -39,16 +46,51 @@ public class AlertVerifier: NSObject {
     }
 
     private static func swizzleMocks() {
+        UIAlertAction.qcoMock_swizzle()
+        UIAlertController.qcoMock_swizzle()
         UIViewController.qcoMock_swizzleCaptureAlert()
     }
 
-    @objc private func viewControllerWasPresented(_ notification: Notification) {
+    @objc private func alertControllerWasPresented(_ notification: Notification) {
         presentedCount += 1
         presentedViewController = notification.object as? UIViewController
         presentingViewController = notification.userInfo?[QCOMockViewControllerPresentingViewControllerKey] as? UIViewController
         animated = (notification.userInfo?[QCOMockViewControllerAnimatedKey] as? NSNumber)?.boolValue ?? false
+        let alertController = notification.object as? UIAlertController
+        title = alertController?.title
+        message = alertController?.message
+        preferredStyle = alertController?.preferredStyle ?? .alert
+        preferredAction = alertController?.preferredAction
+        actions = alertController?.actions ?? []
+        popover = alertController?.popoverPresentationController
+        textFields = alertController?.textFields
         if let completion = completion {
             completion()
         }
     }
+
+    /*!
+     * @abstract Executes the action for the button with the specified title.
+     * @discussion Throws an exception (or returns an error in ObjC) if no button with that title is found.
+     */
+    @objc(executeActionForButtonWithTitle:andReturnError:)
+    public func executeActionForButton(withTitle title: String) throws {
+        let action = try actionWithTitle(title)
+        if let handler = action.qcoMock_handler() {
+            handler(action)
+        }
+    }
+    
+    private func actionWithTitle(_ title: String) throws -> UIAlertAction {
+        for action in actions {
+            if action.title == title {
+                return action
+            }
+        }
+        throw AlertVerifierErrors.buttonNotFound
+    }
+}
+
+@objc enum AlertVerifierErrors: Int, Error {
+    case buttonNotFound
 }

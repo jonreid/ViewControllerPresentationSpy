@@ -34,24 +34,26 @@
     [vc.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
 }
 
-- (void)test_executeActionForButtonWithTitle_withNonexistentTitle_shouldThrowException
+- (void)test_executeActionForButtonWithTitle_withNonexistentTitle_shouldReturnError
 {
     [self showAlert];
 
-    @try {
-        [sut executeActionForButtonWithTitle:@"NO SUCH BUTTON"];
-        XCTFail(@"Expected exception to be thrown");
-    } @catch (NSException *exception) {
-        XCTAssertEqual(exception.name, NSInternalInconsistencyException, @"name");
-        XCTAssertEqualObjects(exception.reason, @"Button not found", @"reason");
-    }
+    NSError *error = nil;
+    [sut executeActionForButtonWithTitle:@"NO SUCH BUTTON" andReturnError:&error];
+
+    XCTAssertNotNil(error);
+    XCTAssertEqual(error.code, 0); // buttonNotFound
+    XCTAssertEqualObjects(error.domain, @"ViewControllerPresentationSpy.AlertVerifierErrors");
 }
 
 - (void)test_executeActionForButtonWithTitle_withoutHandler_shouldNotCrash
 {
     [self showAlert];
 
-    [sut executeActionForButtonWithTitle:@"No Handler"];
+    NSError *error = nil;
+    [sut executeActionForButtonWithTitle:@"No Handler" andReturnError:&error];
+
+    XCTAssertNil(error);
 }
 
 - (void)test_presentingNonAlertViewController_shouldNotTriggerVerifier

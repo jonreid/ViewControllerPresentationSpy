@@ -16,14 +16,14 @@
 
 + (instancetype)qcoMock_actionWithTitle:(NSString *)title
                                   style:(UIAlertActionStyle)style
-                                handler:(void (^)(UIAlertAction *action))handler
+                                handler:(void (^ __nullable)(UIAlertAction *action))handler
 {
     UIAlertAction *action = [self qcoMock_actionWithTitle:title style:style handler:handler];
     objc_setAssociatedObject(action, @selector(qcoMock_handler), handler, OBJC_ASSOCIATION_COPY_NONATOMIC);
     return action;
 }
 
-- (void (^)(UIAlertAction *action))qcoMock_handler
+- (void (^ __nullable)(UIAlertAction *action))qcoMock_handler
 {
     return objc_getAssociatedObject(self, @selector(qcoMock_handler));
 }

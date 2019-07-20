@@ -62,7 +62,7 @@
 {
     [sut.showActionSheetButton sendActionsForControlEvents:UIControlEventTouchUpInside];
     
-    QCOMockPopoverPresentationController *popover = alertVerifier.popover;
+    UIPopoverPresentationController *popover = alertVerifier.popover;
     
     XCTAssertEqual(popover.sourceView, sut.showActionSheetButton, @"source view");
     XCTAssertEqualObjects(
@@ -113,18 +113,22 @@
 - (void)test_executeActionForButtonWithTitle_withDefaultButton_shouldExecuteDefaultAction
 {
     [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
-    
-    [alertVerifier executeActionForButtonWithTitle:@"Default"];
 
+    NSError *error = nil;
+    [alertVerifier executeActionForButtonWithTitle:@"Default" andReturnError:&error];
+
+    XCTAssertNil(error);
     XCTAssertTrue(sut.alertDefaultActionExecuted);
 }
 
 - (void)test_executeActionForButtonWithTitle_withCancelButton_shouldExecuteCancelAction
 {
     [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
-    
-    [alertVerifier executeActionForButtonWithTitle:@"Cancel"];
 
+    NSError *error = nil;
+    [alertVerifier executeActionForButtonWithTitle:@"Cancel" andReturnError:&error];
+
+    XCTAssertNil(error);
     XCTAssertTrue(sut.alertCancelActionExecuted);
 }
 
@@ -132,8 +136,10 @@
 {
     [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
     
-    [alertVerifier executeActionForButtonWithTitle:@"Destroy"];
+    NSError *error = nil;
+    [alertVerifier executeActionForButtonWithTitle:@"Destroy" andReturnError:&error];
 
+    XCTAssertNil(error);
     XCTAssertTrue(sut.alertDestroyActionExecuted);
 }
 

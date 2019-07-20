@@ -2,12 +2,12 @@
 import XCTest
 
 final class ViewControllerAlertTests: XCTestCase {
-    private var alertVerifier: QCOMockAlertVerifier!
+    private var alertVerifier: AlertVerifier!
     private var sut: ViewController!
 
     override func setUp() {
         super.setUp()
-        alertVerifier = QCOMockAlertVerifier()
+        alertVerifier = AlertVerifier()
         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
         sut = storyboard.instantiateViewController(withIdentifier: String(describing: ViewController.self)) as? ViewController
         sut.loadViewIfNeeded()
@@ -90,26 +90,26 @@ final class ViewControllerAlertTests: XCTestCase {
         XCTAssertEqual(alertVerifier.actions[3].style, .destructive)
     }
     
-    func test_executeActionForButton_withDefaultButton_shouldExecuteDefaultAction() {
+    func test_executeActionForButton_withDefaultButton_shouldExecuteDefaultAction() throws {
         sut.showAlertButton.sendActions(for: .touchUpInside)
         
-        alertVerifier.executeActionForButton(withTitle: "Default")
+        try alertVerifier.executeActionForButton(withTitle: "Default")
 
         XCTAssertTrue(sut.alertDefaultActionExecuted)
     }
 
-    func test_executeActionForButton_withCancelButton_shouldExecuteCancelAction() {
+    func test_executeActionForButton_withCancelButton_shouldExecuteCancelAction() throws {
         sut.showAlertButton.sendActions(for: .touchUpInside)
         
-        alertVerifier.executeActionForButton(withTitle: "Cancel")
+        try alertVerifier.executeActionForButton(withTitle: "Cancel")
 
         XCTAssertTrue(sut.alertCancelActionExecuted)
     }
 
-    func test_executeActionForButton_withDestroyButton_shouldExecuteDestroyAction() {
+    func test_executeActionForButton_withDestroyButton_shouldExecuteDestroyAction() throws {
         sut.showAlertButton.sendActions(for: .touchUpInside)
         
-        alertVerifier.executeActionForButton(withTitle: "Destroy")
+        try alertVerifier.executeActionForButton(withTitle: "Destroy")
 
         XCTAssertTrue(sut.alertDestroyActionExecuted)
     }
