@@ -2,12 +2,12 @@
 import XCTest
 
 final class ViewControllerPresentationTests: XCTestCase {
-    private var presentationVerifier: QCOMockPresentationVerifier!
+    private var presentationVerifier: PresentationVerifier!
     private var sut: ViewController!
 
     override func setUp() {
         super.setUp()
-        presentationVerifier = QCOMockPresentationVerifier()
+        presentationVerifier = PresentationVerifier()
         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
         sut = storyboard.instantiateViewController(withIdentifier: String(describing: ViewController.self)) as? ViewController
         sut.loadViewIfNeeded()

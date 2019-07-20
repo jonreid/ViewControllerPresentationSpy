@@ -19,9 +19,8 @@
 		48007C982079A7E3007A4AB0 /* QCOMockPopoverPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48007C8C2079A7E2007A4AB0 /* QCOMockPopoverPresentationController.m */; };
 		48007C992079A7E3007A4AB0 /* UIAlertAction+QCOMock.m in Sources */ = {isa = PBXBuildFile; fileRef = 48007C8D2079A7E2007A4AB0 /* UIAlertAction+QCOMock.m */; };
 		48007C9A2079A7E3007A4AB0 /* QCOMockPopoverPresentationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 48007C8E2079A7E3007A4AB0 /* QCOMockPopoverPresentationController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		48007C9B2079A7E3007A4AB0 /* UIViewController+QCOMock.h in Headers */ = {isa = PBXBuildFile; fileRef = 48007C8F2079A7E3007A4AB0 /* UIViewController+QCOMock.h */; };
-		BB170E6CEBAF3168166B40B6 /* QCOMockPresentationVerifier.h in Headers */ = {isa = PBXBuildFile; fileRef = BB170A5F3402862D7AD0DEA6 /* QCOMockPresentationVerifier.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BB170E93560E370864D3150D /* QCOMockPresentationVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = BB170F19D9000ECAA626B5EF /* QCOMockPresentationVerifier.m */; };
+		48007C9B2079A7E3007A4AB0 /* UIViewController+QCOMock.h in Headers */ = {isa = PBXBuildFile; fileRef = 48007C8F2079A7E3007A4AB0 /* UIViewController+QCOMock.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BB1707A21243C9FA6F558CAC /* PresentationVerifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1701BF26D1A6EC6D6736E3 /* PresentationVerifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,8 +40,7 @@
 		48007C8E2079A7E3007A4AB0 /* QCOMockPopoverPresentationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCOMockPopoverPresentationController.h; sourceTree = "<group>"; };
 		48007C8F2079A7E3007A4AB0 /* UIViewController+QCOMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+QCOMock.h"; sourceTree = "<group>"; };
 		48007C9D2079A8D4007A4AB0 /* XcodeWarnings.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = XcodeWarnings.xcconfig; sourceTree = "<group>"; };
-		BB170A5F3402862D7AD0DEA6 /* QCOMockPresentationVerifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCOMockPresentationVerifier.h; sourceTree = "<group>"; };
-		BB170F19D9000ECAA626B5EF /* QCOMockPresentationVerifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCOMockPresentationVerifier.m; sourceTree = "<group>"; };
+		BB1701BF26D1A6EC6D6736E3 /* PresentationVerifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationVerifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,14 +81,13 @@
 				48007C892079A7E2007A4AB0 /* QCOMockAlertVerifier.m */,
 				48007C8E2079A7E3007A4AB0 /* QCOMockPopoverPresentationController.h */,
 				48007C8C2079A7E2007A4AB0 /* QCOMockPopoverPresentationController.m */,
-				BB170A5F3402862D7AD0DEA6 /* QCOMockPresentationVerifier.h */,
-				BB170F19D9000ECAA626B5EF /* QCOMockPresentationVerifier.m */,
 				48007C8A2079A7E2007A4AB0 /* UIAlertAction+QCOMock.h */,
 				48007C8D2079A7E2007A4AB0 /* UIAlertAction+QCOMock.m */,
 				48007C852079A7E2007A4AB0 /* UIAlertController+QCOMock.h */,
 				48007C862079A7E2007A4AB0 /* UIAlertController+QCOMock.m */,
 				48007C8F2079A7E3007A4AB0 /* UIViewController+QCOMock.h */,
 				48007C872079A7E2007A4AB0 /* UIViewController+QCOMock.m */,
+				BB1701BF26D1A6EC6D6736E3 /* PresentationVerifier.swift */,
 			);
 			path = ViewControllerPresentationSpy;
 			sourceTree = "<group>";
@@ -118,7 +115,6 @@
 				48007C9A2079A7E3007A4AB0 /* QCOMockPopoverPresentationController.h in Headers */,
 				48007C942079A7E3007A4AB0 /* NSObject+QCOMockAlerts.h in Headers */,
 				48007C912079A7E3007A4AB0 /* UIAlertController+QCOMock.h in Headers */,
-				BB170E6CEBAF3168166B40B6 /* QCOMockPresentationVerifier.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,7 +181,7 @@
 				48007C972079A7E3007A4AB0 /* NSObject+QCOMockAlerts.m in Sources */,
 				48007C992079A7E3007A4AB0 /* UIAlertAction+QCOMock.m in Sources */,
 				48007C952079A7E3007A4AB0 /* QCOMockAlertVerifier.m in Sources */,
-				BB170E93560E370864D3150D /* QCOMockPresentationVerifier.m in Sources */,
+				BB1707A21243C9FA6F558CAC /* PresentationVerifier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,6 +215,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -245,6 +242,7 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
