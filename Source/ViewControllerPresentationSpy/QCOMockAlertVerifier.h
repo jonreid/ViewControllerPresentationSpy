@@ -23,7 +23,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) UIAlertControllerStyle preferredStyle;
 @property (nonatomic, copy) NSArray<UIAlertAction *> *actions;
 @property (nullable, nonatomic, strong) UIAlertAction *preferredAction;
-@property (nonatomic, readonly) NSArray *actionTitles DEPRECATED_MSG_ATTRIBUTE("Use actions");
 @property (nullable, nonatomic, strong) QCOMockPopoverPresentationController *popover;
 @property (nullable, nonatomic, copy) NSArray<UITextField *> *textFields;
 @property (nullable, nonatomic, copy) void (^completion)(void);
@@ -34,12 +33,6 @@ NS_ASSUME_NONNULL_BEGIN
  * until the QCOMockAlertVerifier is deallocated.
  */
 - (instancetype)init NS_DESIGNATED_INITIALIZER;
-
-/*!
- * @abstract Returns the UIAlertActionStyle for the button with the specified title.
- * @discussion Throws an exception if no button with that title is found.
- */
-- (UIAlertActionStyle)styleForButtonWithTitle:(NSString *)title DEPRECATED_MSG_ATTRIBUTE("Use actions");
 
 /*!
  * @abstract Executes the action for the button with the specified title.

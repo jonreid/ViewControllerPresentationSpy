@@ -110,49 +110,6 @@
     XCTAssertEqual(actions[3].style, UIAlertActionStyleDestructive);
 }
 
-- (void)test_actionTitlesForAlert
-{
-    [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
-
-    XCTAssertEqual(alertVerifier.actionTitles.count, 4);
-    XCTAssertEqualObjects(alertVerifier.actionTitles[0], @"No Handler");
-    XCTAssertEqualObjects(alertVerifier.actionTitles[1], @"Default");
-    XCTAssertEqualObjects(alertVerifier.actionTitles[2], @"Cancel");
-    XCTAssertEqualObjects(alertVerifier.actionTitles[3], @"Destroy");
-}
-
-- (void)test_actionTitlesForActionSheet
-{
-    [sut.showActionSheetButton sendActionsForControlEvents:UIControlEventTouchUpInside];
-
-    XCTAssertEqual(alertVerifier.actionTitles.count, 4);
-    XCTAssertEqualObjects(alertVerifier.actionTitles[0], @"No Handler");
-    XCTAssertEqualObjects(alertVerifier.actionTitles[1], @"Default");
-    XCTAssertEqualObjects(alertVerifier.actionTitles[2], @"Cancel");
-    XCTAssertEqualObjects(alertVerifier.actionTitles[3], @"Destroy");
-}
-
-- (void)test_styleForButtonWithTitle_withDefaultButton_shouldHaveDefaultStyle
-{
-    [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
-
-    XCTAssertEqual([alertVerifier styleForButtonWithTitle:@"Default"], UIAlertActionStyleDefault);
-}
-
-- (void)test_styleForButtonWithTitle_withCancelButton_shouldHaveCancelStyle
-{
-    [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
-
-    XCTAssertEqual([alertVerifier styleForButtonWithTitle:@"Cancel"], UIAlertActionStyleCancel);
-}
-
-- (void)test_styleForButtonWithTitle_withDestroyButton_shouldHaveDestructiveStyle
-{
-    [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
-
-    XCTAssertEqual([alertVerifier styleForButtonWithTitle:@"Destroy"], UIAlertActionStyleDestructive);
-}
-
 - (void)test_executeActionForButtonWithTitle_withDefaultButton_shouldExecuteDefaultAction
 {
     [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];

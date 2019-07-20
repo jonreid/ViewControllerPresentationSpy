@@ -53,20 +53,6 @@ static void swizzleMocks(void)
         self.completion();
 }
 
-- (NSArray *)actionTitles
-{
-    NSMutableArray *array = [[NSMutableArray alloc] init];
-    for (UIAlertAction *action in self.actions)
-        [array addObject: action.title ? action.title : [NSNull null]];
-    return [array copy];
-}
-
-- (UIAlertActionStyle)styleForButtonWithTitle:(NSString *)title
-{
-    UIAlertAction *action = [self actionWithTitle:title];
-    return action.style;
-}
-
 - (void)executeActionForButtonWithTitle:(NSString *)title
 {
     UIAlertAction *action = [self actionWithTitle:title];

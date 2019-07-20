@@ -34,19 +34,6 @@
     [vc.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
 }
 
-- (void)test_styleForButtonWithTitle_withNonexistentTitle_shouldThrowException
-{
-    [self showAlert];
-    
-    @try {
-        [sut styleForButtonWithTitle:@"NO SUCH BUTTON"];
-        XCTFail(@"Expected exception to be thrown");
-    } @catch (NSException *exception) {
-        XCTAssertEqual(exception.name, NSInternalInconsistencyException, @"name");
-        XCTAssertEqualObjects(exception.reason, @"Button not found", @"reason");
-    }
-}
-
 - (void)test_executeActionForButtonWithTitle_withNonexistentTitle_shouldThrowException
 {
     [self showAlert];
