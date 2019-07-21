@@ -134,10 +134,10 @@
 			children = (
 				609E96C55D81BBE28BD81748 /* ViewControllerAlertTests.m */,
 				BB1701F5D7FE936FC3672B61 /* ViewControllerPresentationTests.m */,
-				609E95F254C2B32C24D9C980 /* QCOMockAlertVerifierTests.m */,
 				48EECF3D22E3B61100A940C5 /* ViewControllerPresentationSpy.xcodeproj */,
 				0E748FAF1B6543A000B29AED /* Info.plist */,
 				4804BCA522E16949000130AD /* XcodeWarnings.xcconfig */,
+				609E95F254C2B32C24D9C980 /* QCOMockAlertVerifierTests.m */,
 			);
 			path = Tests;
 			sourceTree = "<group>";

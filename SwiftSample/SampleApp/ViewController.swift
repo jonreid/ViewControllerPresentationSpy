@@ -10,21 +10,7 @@ final class ViewController: UIViewController {
     var alertDefaultActionExecuted = false
     var alertCancelActionExecuted = false
     var alertDestroyActionExecuted = false
-
-    deinit {
-        print(">> ViewController.deinit")
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        print(">> ViewController.viewWillAppear")
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        print(">> ViewController.viewDidAppear")
-    }
-
+    
     @IBAction private func showAlert() {
         let alertController = UIAlertController(title: "Title", message: "Message", preferredStyle: .alert)
         setUpActions(for: alertController)
