@@ -79,7 +79,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Vi4-4N-nYP"/>
                     <connections>
-                        <outlet property="codeModalButton" destination="TuV-QX-6ij" id="o1g-Ge-0q8"/>
+                        <outlet property="codePresentModalButton" destination="TuV-QX-6ij" id="o1g-Ge-0q8"/>
                         <outlet property="seguePresentModalButton" destination="ROa-d4-dJ7" id="GwZ-vA-cHc"/>
                         <outlet property="segueShowButton" destination="HrI-P4-Cef" id="Lpf-Bd-AZj"/>
                         <outlet property="showActionSheetButton" destination="W0M-xH-y3m" id="mLA-y7-sLN"/>

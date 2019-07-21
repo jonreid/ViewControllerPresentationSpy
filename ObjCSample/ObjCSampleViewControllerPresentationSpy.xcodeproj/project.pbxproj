@@ -19,6 +19,7 @@
 		609E9B6130BB35372D63FC0F /* AlertVerifierTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E95F254C2B32C24D9C980 /* AlertVerifierTests.m */; };
 		609E9F1E2EC677BB9B797C36 /* ViewControllerAlertTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E96C55D81BBE28BD81748 /* ViewControllerAlertTests.m */; };
 		BB1700CDA7D976FD6DEFFF9F /* ViewControllerPresentationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1701F5D7FE936FC3672B61 /* ViewControllerPresentationTests.m */; };
+		BB1706F395003FB985714D2A /* PresentationVerifierTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BB170BCC325BC08FC93AB6BA /* PresentationVerifierTests.m */; };
 		BB170BE1D1582E79335462E0 /* CodeNextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB170E0975163F7C4AFB7973 /* CodeNextViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +60,7 @@
 		609E95F254C2B32C24D9C980 /* AlertVerifierTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertVerifierTests.m; sourceTree = "<group>"; };
 		609E96C55D81BBE28BD81748 /* ViewControllerAlertTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerAlertTests.m; sourceTree = "<group>"; };
 		BB1701F5D7FE936FC3672B61 /* ViewControllerPresentationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerPresentationTests.m; sourceTree = "<group>"; };
+		BB170BCC325BC08FC93AB6BA /* PresentationVerifierTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresentationVerifierTests.m; sourceTree = "<group>"; };
 		BB170D49D0E4E646298833B3 /* CodeNextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CodeNextViewController.h; sourceTree = "<group>"; };
 		BB170E0975163F7C4AFB7973 /* CodeNextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CodeNextViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -138,6 +140,7 @@
 				0E748FAF1B6543A000B29AED /* Info.plist */,
 				4804BCA522E16949000130AD /* XcodeWarnings.xcconfig */,
 				609E95F254C2B32C24D9C980 /* AlertVerifierTests.m */,
+				BB170BCC325BC08FC93AB6BA /* PresentationVerifierTests.m */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 				609E9B6130BB35372D63FC0F /* AlertVerifierTests.m in Sources */,
 				609E9F1E2EC677BB9B797C36 /* ViewControllerAlertTests.m in Sources */,
 				BB1700CDA7D976FD6DEFFF9F /* ViewControllerPresentationTests.m in Sources */,
+				BB1706F395003FB985714D2A /* PresentationVerifierTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

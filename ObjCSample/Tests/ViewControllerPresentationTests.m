@@ -37,7 +37,7 @@
 {
     XCTAssertNotNil(sut.seguePresentModalButton);
     XCTAssertNotNil(sut.segueShowButton);
-    XCTAssertNotNil(sut.codeModalButton);
+    XCTAssertNotNil(sut.codePresentModalButton);
 }
 
 - (void)test_tappingSeguePresentModalButton_shouldPresentNextViewControllerWithGreenBackground
@@ -78,7 +78,7 @@
 
 - (void)test_tappingCodeModalButton_shouldPresentNextViewControllerWithPurpleBackground
 {
-    [sut.codeModalButton sendActionsForControlEvents:UIControlEventTouchUpInside];
+    [sut.codePresentModalButton sendActionsForControlEvents:UIControlEventTouchUpInside];
     
     XCTAssertEqual(presentationVerifier.presentedCount, 1, @"presented count");
     XCTAssertEqual(presentationVerifier.presentingViewController, sut, @"presenting view controller");
