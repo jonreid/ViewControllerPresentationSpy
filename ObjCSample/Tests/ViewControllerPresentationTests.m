@@ -47,7 +47,8 @@
     XCTAssertEqual(presentationVerifier.presentedCount, 1, @"presented count");
     XCTAssertEqual(presentationVerifier.presentingViewController, sut, @"presenting view controller");
     XCTAssertTrue(presentationVerifier.animated, @"animated");
-    if (![presentationVerifier.presentedViewController isKindOfClass:[StoryboardNextViewController class]]) {
+    if (![presentationVerifier.presentedViewController isKindOfClass:[StoryboardNextViewController class]])
+    {
         XCTFail(@"Expected presented view controller to be %@, but was %@",
                 [StoryboardNextViewController class], presentationVerifier.presentedViewController);
         return;
@@ -67,7 +68,8 @@
     XCTAssertEqual(presentationVerifier.presentedCount, 1, @"presented count");
     XCTAssertEqual(presentationVerifier.presentingViewController, sut, @"presenting view controller");
     XCTAssertTrue(presentationVerifier.animated, @"animated");
-    if (![presentationVerifier.presentedViewController isKindOfClass:[StoryboardNextViewController class]]) {
+    if (![presentationVerifier.presentedViewController isKindOfClass:[StoryboardNextViewController class]])
+    {
         XCTFail(@"Expected presented view controller to be %@, but was %@",
                 [StoryboardNextViewController class], presentationVerifier.presentedViewController);
         return;
@@ -83,7 +85,8 @@
     XCTAssertEqual(presentationVerifier.presentedCount, 1, @"presented count");
     XCTAssertEqual(presentationVerifier.presentingViewController, sut, @"presenting view controller");
     XCTAssertTrue(presentationVerifier.animated, @"animated");
-    if (![presentationVerifier.presentedViewController isKindOfClass:[CodeNextViewController class]]) {
+    if (![presentationVerifier.presentedViewController isKindOfClass:[CodeNextViewController class]])
+    {
         XCTFail(@"Expected presented view controller to be %@, but was %@",
                 [ViewController class], presentationVerifier.presentedViewController);
         return;
