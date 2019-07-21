@@ -1,6 +1,0 @@
-coverage_service: coveralls
-xcodeproj: ./ObjCSample/ObjCSampleViewControllerPresentationSpy.xcodeproj
-scheme: ObjCSampleViewControllerPresentationSpy
-binary_file: /Users/travis/Library/Developer/Xcode/DerivedData/ObjCSampleViewControllerPresentationSpy-cgeilrztsdcdkccperihpqhahpvs/Build/Products/Debug-iphonesimulator/ObjCSampleViewControllerPresentationSpy.app/PlugIns/ObjCSampleViewControllerPresentationSpyTests.xctest/ObjCSampleViewControllerPresentationSpyTests
-ignore:
-  - ObjCSample/*
