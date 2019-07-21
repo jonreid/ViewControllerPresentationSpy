@@ -29,6 +29,36 @@ Nothing.
 Information about the presentation is then available through the
 [PresententationVerifier](https://github.com/jonreid/ViewControllerPresentationSpy/blob/master/Source/ViewControllerPresentationSpy/PresentationVerifier.swift).
 
+```swift
+func test_presentingVC_() {
+    let presentationVerifier = PresentationVerifier()
+
+    sut.showVC() // Whatever presents the view controller
+
+    XCTAssertEqual(presentationVerifier.presentedCount, 1, "presented count")
+    let nextVC = presentationVerifier.presentedViewController as? MyViewController
+    XCTAssertEqual(nextVC?.specialSetting, "Hello!")
+}
+```
+
+```obj-c
+- (void)test_showAlert_alertShouldHaveTitle {
+    QCO PresentationVerifier * presentationVerifier = [[QCO PresentationVerifier alloc] init];
+
+    [sut showAlert]; // Whatever triggers the alert
+
+    XCTAssertEqual(presentationVerifier.presentedCount, 1, @"presented count");
+    if (![presentationVerifier.presentedViewController isKindOfClass:[MyViewController class]])
+    {
+        XCTFail(@"Expected MyViewController, but was %@", presentationVerifier.presentedViewController);
+        return;
+    }
+    MyViewController *nextVC = presentationVerifier.presentedViewController;
+    XCTAssertEqualObjects(nextVC.specialSetting, @"Hello!");
+}
+```
+
+
 ### How do I test a segue?
 
 It depends. First, follow the steps above for testing a presented view controller. Trigger the segue from test code. For example, we can trigger a segue attached to a button by calling `sendActions(for: .touchUpInside)` on the button.
