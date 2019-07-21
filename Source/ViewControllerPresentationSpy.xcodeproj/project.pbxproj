@@ -72,6 +72,8 @@
 		48007C7B2079A76E007A4AB0 /* ViewControllerPresentationSpy */ = {
 			isa = PBXGroup;
 			children = (
+				BB1701BF26D1A6EC6D6736E3 /* PresentationVerifier.swift */,
+				BB170F803977DDBC293D88B0 /* AlertVerifier.swift */,
 				48007C7C2079A76E007A4AB0 /* ViewControllerPresentationSpy.h */,
 				48007C882079A7E2007A4AB0 /* NSObject+QCOMockAlerts.h */,
 				48007C8B2079A7E2007A4AB0 /* NSObject+QCOMockAlerts.m */,
@@ -83,8 +85,6 @@
 				48007C862079A7E2007A4AB0 /* UIAlertController+QCOMock.m */,
 				48007C8F2079A7E3007A4AB0 /* UIViewController+QCOMock.h */,
 				48007C872079A7E2007A4AB0 /* UIViewController+QCOMock.m */,
-				BB170F803977DDBC293D88B0 /* AlertVerifier.swift */,
-				BB1701BF26D1A6EC6D6736E3 /* PresentationVerifier.swift */,
 			);
 			path = ViewControllerPresentationSpy;
 			sourceTree = "<group>";
