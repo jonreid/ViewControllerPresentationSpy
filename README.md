@@ -29,23 +29,28 @@ Nothing.
 Information about the presentation is then available through the
 [PresententationVerifier](https://github.com/jonreid/ViewControllerPresentationSpy/blob/master/Source/ViewControllerPresentationSpy/PresentationVerifier.swift).
 
+For example, here's a test verifying that one view controller was presented, that its type is correct, and that it has a particular property. `sut` is the System Under Test in the test fixture.
+
 ```swift
-func test_presentingVC_() {
+func test_presentedVC_shouldHaveSpecialSettingHello() {
     let presentationVerifier = PresentationVerifier()
 
     sut.showVC() // Whatever presents the view controller
 
     XCTAssertEqual(presentationVerifier.presentedCount, 1, "presented count")
-    let nextVC = presentationVerifier.presentedViewController as? MyViewController
-    XCTAssertEqual(nextVC?.specialSetting, "Hello!")
+    guard let nextVC = presentationVerifier.presentedViewController as? MyViewController else {
+        XCTFail("Expected MyViewController, but was \(presentationVerifier.presentedViewController)")
+        return
+    }
+    XCTAssertEqual(nextVC.specialSetting, "Hello!")
 }
 ```
 
 ```obj-c
-- (void)test_showAlert_alertShouldHaveTitle {
+- (void) test_presentedVC_shouldHaveSpecialSettingHello {
     QCO PresentationVerifier * presentationVerifier = [[QCO PresentationVerifier alloc] init];
 
-    [sut showAlert]; // Whatever triggers the alert
+    [sut showVC]; // Whatever presents the view controller
 
     XCTAssertEqual(presentationVerifier.presentedCount, 1, @"presented count");
     if (![presentationVerifier.presentedViewController isKindOfClass:[MyViewController class]])
@@ -58,20 +63,19 @@ func test_presentingVC_() {
 }
 ```
 
-
 ### How do I test a segue?
 
 It depends. First, follow the steps above for testing a presented view controller. Trigger the segue from test code. For example, we can trigger a segue attached to a button by calling `sendActions(for: .touchUpInside)` on the button.
 
 **Segue Type: Present Modally**
 
-That's all you need to do.
+That's all you need to do. _But you need to be aware of a memory issue:_
 
-_Warning:_ Neither the presenting view controller nor the presented view controller will be deallocated during test execution. This can cause problems during test runs if either listens to the NotificationCenter. You'll need to add special methods to stop observing the notification center.
+Neither the presenting view controller nor the presented view controller will be deallocated during test execution. This can cause problems during test runs if either affects global statue, such as listening to the NotificationCenter. You may need to add special methods outside of `deinit` that allow tests to clean them up.
 
 **Segue Type: Show**
 
-A Show segue (which does push navigation) takes a little more work.
+A "Show" segue (which does push navigation) takes a little more work.
 
 First, install the presenting view controller as the root view controller of a UIWindow. Make this window visible.
 
@@ -81,7 +85,7 @@ First, install the presenting view controller as the root view controller of a U
     window.isHidden = false
 ```
 
-Then in the `tearDown()` method of the test suite, execute
+To clean up memory at the end, add this to the beginning of the `tearDown()` method of the test suite to pump the run loop:
 
 ```
 RunLoop.current.run(until: Date())
@@ -199,4 +203,4 @@ github "jonreid/ViewControllerPresentationSpy" ~> 4.0
 
 ### Building It Yourself
 
-Make sure to take everything from Source/ViewControllerPresentationSpy.
+Make sure to copy everything from `Source/ViewControllerPresentationSpy`.
