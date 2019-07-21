@@ -34,12 +34,12 @@ final class ViewControllerPresentationTests: XCTestCase {
         XCTAssertTrue(presentationVerifier.presentingViewController === sut,
                 """
                 Expected presenting view controller to be \(String(describing: sut)), \
-                but was \(presentationVerifier.presentingViewController)
+                but was \(String(describing: presentationVerifier.presentingViewController))
                 """)
         guard let nextVC = presentationVerifier.presentedViewController as? StoryboardNextViewController else {
             XCTFail("""
                     Expected presented view controller to be \(String(describing: StoryboardNextViewController.self)), \
-                    but was \(presentationVerifier.presentedViewController)
+                    but was \(String(describing: presentationVerifier.presentedViewController))
                     """)
             return
         }
@@ -58,12 +58,12 @@ final class ViewControllerPresentationTests: XCTestCase {
         XCTAssertTrue(presentationVerifier.presentingViewController === sut,
                 """
                 Expected presenting view controller to be \(String(describing: sut)), \
-                but was \(presentationVerifier.presentingViewController)
+                but was \(String(describing: presentationVerifier.presentingViewController))
                 """)
         guard let nextVC = presentationVerifier.presentedViewController as? StoryboardNextViewController else {
             XCTFail("""
                     Expected presented view controller to be \(String(describing: StoryboardNextViewController.self)), \
-                    but was \(presentationVerifier.presentedViewController)
+                    but was \(String(describing: presentationVerifier.presentedViewController))
                     """)
             return
         }
@@ -78,12 +78,12 @@ final class ViewControllerPresentationTests: XCTestCase {
         XCTAssertTrue(presentationVerifier.presentingViewController === sut,
                 """
                 Expected presenting view controller to be \(String(describing: sut)), \
-                but was \(presentationVerifier.presentingViewController)
+                but was \(String(describing: presentationVerifier.presentingViewController))
                 """)
         guard let nextVC = presentationVerifier.presentedViewController as? CodeNextViewController else {
             XCTFail("""
                     Expected presented view controller to be \(String(describing: CodeNextViewController.self)), \
-                    but was \(presentationVerifier.presentedViewController)
+                    but was \(String(describing: presentationVerifier.presentedViewController))
                     """)
             return
         }

@@ -30,7 +30,7 @@ final class ViewControllerAlertTests: XCTestCase {
         XCTAssertEqual(alertVerifier.presentedCount, 1, "presented count")
         XCTAssertEqual(alertVerifier.preferredStyle, UIAlertController.Style.alert, "preferred style")
         XCTAssertTrue(alertVerifier.presentingViewController === sut,
-                "Expected presenting view controller to be \(String(describing: sut)), but was \(alertVerifier.presentingViewController)")
+                      "Expected presenting view controller to be \(String(describing: sut)), but was \(String(describing: alertVerifier.presentingViewController))")
         XCTAssertTrue(alertVerifier.animated, "animated")
         XCTAssertEqual(alertVerifier.title, "Title", "title")
         XCTAssertEqual(alertVerifier.message, "Message", "message")
@@ -42,7 +42,7 @@ final class ViewControllerAlertTests: XCTestCase {
         XCTAssertEqual(alertVerifier.presentedCount, 1, "presented count")
         XCTAssertEqual(alertVerifier.preferredStyle, UIAlertController.Style.actionSheet, "preferred style")
         XCTAssertTrue(alertVerifier.presentingViewController === sut,
-                "Expected presenting view controller to be \(String(describing: sut)), but was \(alertVerifier.presentingViewController)")
+                      "Expected presenting view controller to be \(String(describing: sut)), but was \(String(describing: alertVerifier.presentingViewController))")
         XCTAssertTrue(alertVerifier.animated, "animated")
         XCTAssertEqual(alertVerifier.title, "Title", "title")
         XCTAssertEqual(alertVerifier.message, "Message", "message")
