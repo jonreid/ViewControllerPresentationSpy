@@ -83,7 +83,7 @@ func test_showAlert_alertShouldHaveTitle() {
 
 ```obj-c
 - (void)test_showAlert_alertShouldHaveTitle {
-    QCOMockAlertVerifier *alertVerifier = [[QCOMockAlertVerifier alloc] init];
+    QCOAlertVerifier *alertVerifier = [[QCOAlertVerifier alloc] init];
 
     [sut showAlert]; // Whatever triggers the alert
 
@@ -111,7 +111,7 @@ func test_executingActionForOKButton_shouldDoSomething() throws {
 
 ```obj-c
 - (void)test_executingActionForOKButton_shouldDoSomething {
-    QCOMockAlertVerifier *alertVerifier = [[QCOMockAlertVerifier alloc] init];
+    QCOAlertVerifier *alertVerifier = [[QCOAlertVerifier alloc] init];
     [sut showAlert];
 
     NSError *error = nil;

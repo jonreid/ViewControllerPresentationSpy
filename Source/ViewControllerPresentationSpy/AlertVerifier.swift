@@ -9,7 +9,7 @@ import UIKit
  * invoke the code to create and present your alert. Information about the alert is then available
  * through the AlertVerifier.
  */
-@objc(QCOMockAlertVerifier)
+@objc(QCOAlertVerifier)
 public class AlertVerifier: NSObject {
     @objc public var presentedCount = 0
     @objc public var presentedViewController: UIViewController?

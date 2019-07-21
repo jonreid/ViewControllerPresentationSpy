@@ -4,19 +4,19 @@
 
 @import XCTest;
 
-@interface QCOMockAlertVerifierTests : XCTestCase
+@interface AlertVerifierTests : XCTestCase
 @end
 
-@implementation QCOMockAlertVerifierTests
+@implementation AlertVerifierTests
 {
-    QCOMockAlertVerifier *sut;
+    QCOAlertVerifier *sut;
     ViewController *vc;
 }
 
 - (void)setUp
 {
     [super setUp];
-    sut = [[QCOMockAlertVerifier alloc] init];
+    sut = [[QCOAlertVerifier alloc] init];
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     vc = [storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([ViewController class])];
     [vc loadViewIfNeeded];

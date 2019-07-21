@@ -12,14 +12,14 @@
 @implementation ViewControllerPresentationTests
 
 {
-    QCOMockPresentationVerifier *presentationVerifier;
+    QCOPresentationVerifier *presentationVerifier;
     ViewController *sut;
 }
 
 - (void)setUp
 {
     [super setUp];
-    presentationVerifier = [[QCOMockPresentationVerifier alloc] init];
+    presentationVerifier = [[QCOPresentationVerifier alloc] init];
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     sut = [storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([ViewController class])];
     [sut loadViewIfNeeded];

@@ -8,14 +8,14 @@
 
 @implementation ViewControllerAlertTests
 {
-    QCOMockAlertVerifier *alertVerifier;
+    QCOAlertVerifier *alertVerifier;
     ViewController *sut;
 }
 
 - (void)setUp
 {
     [super setUp];
-    alertVerifier = [[QCOMockAlertVerifier alloc] init];
+    alertVerifier = [[QCOAlertVerifier alloc] init];
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     sut = [storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([ViewController class])];
     [sut loadViewIfNeeded];

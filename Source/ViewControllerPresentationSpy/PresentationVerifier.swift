@@ -9,7 +9,7 @@ import UIKit
  * invoke the code to create and present your view controller. Information about the view controller
  * is then available through the PresentationVerifier.
  */
-@objc(QCOMockPresentationVerifier)
+@objc(QCOPresentationVerifier)
 public class PresentationVerifier: NSObject {
     @objc public var presentedCount = 0
     @objc public var presentedViewController: UIViewController?
