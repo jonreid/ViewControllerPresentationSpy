@@ -7,7 +7,6 @@ FOUNDATION_EXPORT double ViewControllerPresentationSpyVersionNumber;
 FOUNDATION_EXPORT const unsigned char ViewControllerPresentationSpyVersionString[];
 
 #import "QCOMockPopoverPresentationController.h"
-
 #import "UIAlertAction+QCOMock.h"
 #import "UIAlertController+QCOMock.h"
 #import "UIViewController+QCOMock.h"

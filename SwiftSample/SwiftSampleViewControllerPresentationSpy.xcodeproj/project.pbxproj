@@ -39,7 +39,6 @@
 /* Begin PBXFileReference section */
 		48007CA72079B1A2007A4AB0 /* ViewControllerPresentationSpy.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ViewControllerPresentationSpy.xcodeproj; path = ../../Source/ViewControllerPresentationSpy.xcodeproj; sourceTree = "<group>"; };
 		4804BCA822E169A9000130AD /* XcodeWarnings.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = XcodeWarnings.xcconfig; path = ../../Source/XcodeWarnings.xcconfig; sourceTree = "<group>"; };
-		48105E3A1DE810F2000C8EB7 /* SwiftSampleViewControllerPresentationSpyTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftSampleViewControllerPresentationSpyTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		483E051D1DE8064D00B5E4E4 /* SwiftSampleViewControllerPresentationSpy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftSampleViewControllerPresentationSpy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		483E05201DE8064D00B5E4E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		483E05221DE8064D00B5E4E4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -130,7 +129,6 @@
 			children = (
 				483E05351DE8064D00B5E4E4 /* ViewControllerAlertTests.swift */,
 				BB170641301DFD266F710CFF /* ViewControllerPresentationTests.swift */,
-				48105E3A1DE810F2000C8EB7 /* SwiftSampleViewControllerPresentationSpyTests-Bridging-Header.h */,
 				48007CA72079B1A2007A4AB0 /* ViewControllerPresentationSpy.xcodeproj */,
 				483E05371DE8064D00B5E4E4 /* Info.plist */,
 				4804BCA822E169A9000130AD /* XcodeWarnings.xcconfig */,
@@ -393,7 +391,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.qualitycoding.MockUIAlertControllerSampleSwiftTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "./Tests/SwiftSampleViewControllerPresentationSpyTests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftSampleViewControllerPresentationSpy.app/SwiftSampleViewControllerPresentationSpy";
 			};
@@ -409,7 +406,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.qualitycoding.MockUIAlertControllerSampleSwiftTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "./Tests/SwiftSampleViewControllerPresentationSpyTests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftSampleViewControllerPresentationSpy.app/SwiftSampleViewControllerPresentationSpy";
 			};

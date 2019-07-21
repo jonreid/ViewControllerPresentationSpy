@@ -1,4 +1,5 @@
 @testable import SwiftSampleViewControllerPresentationSpy
+import ViewControllerPresentationSpy
 import XCTest
 
 final class ViewControllerAlertTests: XCTestCase {
