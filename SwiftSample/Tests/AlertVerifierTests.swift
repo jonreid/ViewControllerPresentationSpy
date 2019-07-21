@@ -27,13 +27,13 @@ final class AlertVerifierTests: XCTestCase {
     func test_executeActionForButtonWithTitle_withNonexistentTitle_shouldThrowException() {
         showAlert()
         
-        XCTAssertThrowsError(try sut.executeActionForButton(withTitle: "NO SUCH BUTTON"))
+        XCTAssertThrowsError(try sut.executeAction(forButton: "NO SUCH BUTTON"))
     }
 
     func test_executeActionForButtonWithTitle_withoutHandler_shouldNotCrash() throws {
         showAlert()
         
-        try sut.executeActionForButton(withTitle: "No Handler")
+        try sut.executeAction(forButton: "No Handler")
     }
 
     func test_showingAlert_shouldExecuteCompletionBlock() {

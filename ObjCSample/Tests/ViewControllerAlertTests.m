@@ -115,7 +115,7 @@
     [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
 
     NSError *error = nil;
-    [alertVerifier executeActionForButtonWithTitle:@"Default" andReturnError:&error];
+    [alertVerifier executeActionForButton:@"Default" andReturnError:&error];
 
     XCTAssertNil(error);
     XCTAssertTrue(sut.alertDefaultActionExecuted);
@@ -126,7 +126,7 @@
     [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
 
     NSError *error = nil;
-    [alertVerifier executeActionForButtonWithTitle:@"Cancel" andReturnError:&error];
+    [alertVerifier executeActionForButton:@"Cancel" andReturnError:&error];
 
     XCTAssertNil(error);
     XCTAssertTrue(sut.alertCancelActionExecuted);
@@ -137,7 +137,7 @@
     [sut.showAlertButton sendActionsForControlEvents:UIControlEventTouchUpInside];
     
     NSError *error = nil;
-    [alertVerifier executeActionForButtonWithTitle:@"Destroy" andReturnError:&error];
+    [alertVerifier executeActionForButton:@"Destroy" andReturnError:&error];
 
     XCTAssertNil(error);
     XCTAssertTrue(sut.alertDestroyActionExecuted);

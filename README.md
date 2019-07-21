@@ -92,10 +92,10 @@ func test_showAlert_alertShouldHaveTitle() {
 }
 ```
 
-### How can I invoke the block associated with a UIAlertAction?
+### How can I invoke the closure associated with a UIAlertAction?
 
 Go through the steps above to present your alert or action sheet.
-Then call `executeActionForButton(withTitle:)` on your `AlertVerifier` with the button title.
+Then call `executeAction(forButton:)` on your `AlertVerifier` with the button title.
 For example:
 
 ```swift
@@ -103,7 +103,7 @@ func test_executingActionForOKButton_shouldDoSomething() throws {
     let alertVerifier = AlertVerifier()
     sut.showAlert()
     
-    try alertVerifier.executeActionForButton(withTitle: "OK")
+    try alertVerifier.executeAction(forButton: "OK")
 
     // Now assert what you want
 }
@@ -115,12 +115,14 @@ func test_executingActionForOKButton_shouldDoSomething() throws {
     [sut showAlert];
 
     NSError *error = nil;
-    [alertVerifier executeActionForButtonWithTitle:@"OK" returningError:];
+    [alertVerifier executeActionForButton:@"OK" returningError:&error];
 
     XCTAssertNil(error);
     // Now add your own assertions
 }
 ```
+
+Because this method can throw an exception, declare the Swift test method as `throws` and call the method with `try`. For Objective-C, pass in an NSError and check that it's not nil.
 
 ### How can I test an alert that's presented using DispatchQueue.main?
 
@@ -130,7 +132,7 @@ Create an expectation in your test case. Fulfill it in the alert verifier's comp
 func test_showAlertOnMainDispatchQueue_shouldDoSomething() {
     let alertVerifier = AlertVerifier()
     let expectation = self.expectation(description: "alert presented")
-    alertVerifier.closure = { expectation.fulfill() }
+    alertVerifier.completion = { expectation.fulfill() }
     
     sut.showAlert()
     
@@ -141,7 +143,7 @@ func test_showAlertOnMainDispatchQueue_shouldDoSomething() {
 
 ### Can I see some examples?
 
-There are sample apps in both Swift and Objective-C. Run them on both phone & pad to see what they do, then read the ViewController tests.
+There are sample apps in both Swift and Objective-C. Run them on both phone & pad to see what they do, then read the ViewControllerAlertTests and ViewControllerPresentationTests.
 
 
 ## Adding it to your project

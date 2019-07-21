@@ -39,7 +39,7 @@
     [self showAlert];
 
     NSError *error = nil;
-    [sut executeActionForButtonWithTitle:@"NO SUCH BUTTON" andReturnError:&error];
+    [sut executeActionForButton:@"NO SUCH BUTTON" andReturnError:&error];
 
     XCTAssertNotNil(error);
     XCTAssertEqual(error.code, 0); // buttonNotFound
@@ -51,7 +51,7 @@
     [self showAlert];
 
     NSError *error = nil;
-    [sut executeActionForButtonWithTitle:@"No Handler" andReturnError:&error];
+    [sut executeActionForButton:@"No Handler" andReturnError:&error];
 
     XCTAssertNil(error);
 }

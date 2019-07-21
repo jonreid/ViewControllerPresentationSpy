@@ -94,7 +94,7 @@ final class ViewControllerAlertTests: XCTestCase {
     func test_executeActionForButton_withDefaultButton_shouldExecuteDefaultAction() throws {
         sut.showAlertButton.sendActions(for: .touchUpInside)
         
-        try alertVerifier.executeActionForButton(withTitle: "Default")
+        try alertVerifier.executeAction(forButton: "Default")
 
         XCTAssertTrue(sut.alertDefaultActionExecuted)
     }
@@ -102,7 +102,7 @@ final class ViewControllerAlertTests: XCTestCase {
     func test_executeActionForButton_withCancelButton_shouldExecuteCancelAction() throws {
         sut.showAlertButton.sendActions(for: .touchUpInside)
         
-        try alertVerifier.executeActionForButton(withTitle: "Cancel")
+        try alertVerifier.executeAction(forButton: "Cancel")
 
         XCTAssertTrue(sut.alertCancelActionExecuted)
     }
@@ -110,7 +110,7 @@ final class ViewControllerAlertTests: XCTestCase {
     func test_executeActionForButton_withDestroyButton_shouldExecuteDestroyAction() throws {
         sut.showAlertButton.sendActions(for: .touchUpInside)
         
-        try alertVerifier.executeActionForButton(withTitle: "Destroy")
+        try alertVerifier.executeAction(forButton: "Destroy")
 
         XCTAssertTrue(sut.alertDestroyActionExecuted)
     }

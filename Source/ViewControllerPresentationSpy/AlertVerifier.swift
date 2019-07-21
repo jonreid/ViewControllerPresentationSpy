@@ -73,8 +73,8 @@ public class AlertVerifier: NSObject {
      * @abstract Executes the action for the button with the specified title.
      * @discussion Throws an exception (or returns an error in ObjC) if no button with that title is found.
      */
-    @objc(executeActionForButtonWithTitle:andReturnError:)
-    public func executeActionForButton(withTitle title: String) throws {
+    @objc(executeActionForButton:andReturnError:)
+    public func executeAction(forButton title: String) throws {
         let action = try actionWithTitle(title)
         if let handler = action.qcoMock_handler() {
             handler(action)
