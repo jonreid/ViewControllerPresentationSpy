@@ -158,9 +158,9 @@ func test_executingActionForOKButton_shouldDoSomething() throws {
 
 Because this method can throw an exception, declare the Swift test method as `throws` and call the method with `try`. For Objective-C, pass in an NSError and check that it's not nil.
 
-### How can I test an alert that's presented using DispatchQueue.main?
+### How can I test something that's presented using DispatchQueue.main?
 
-Create an expectation in your test case. Fulfill it in the alert verifier's completion block. Add a short wait at the start of the Assert phase.
+Create an expectation in your test case. Fulfill it in the verifier's completion block. Add a short wait at the start of the Assert phase.
 
 ```swift
 func test_showAlertOnMainDispatchQueue_shouldDoSomething() {
@@ -169,6 +169,19 @@ func test_showAlertOnMainDispatchQueue_shouldDoSomething() {
     alertVerifier.completion = { expectation.fulfill() }
     
     sut.showAlert()
+    
+    waitForExpectations(timeout: 0.001)
+    // Now assert what you want
+}
+```
+
+```swift
+func test_presentViewControllerOnMainDispatchQueue_shouldDoSomething() {
+    let presentationVerifier = PresentationVerifier()
+    let expectation = self.expectation(description: "view controller presented")
+    presentationVerifier.completion = { expectation.fulfill() }
+    
+    sut.showVC()
     
     waitForExpectations(timeout: 0.001)
     // Now assert what you want
