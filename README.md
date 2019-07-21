@@ -27,7 +27,7 @@ Nothing.
 2. Invoke the code to create and present your view controller.
 
 Information about the presentation is then available through the
-[PresententationVerifier](https://github.com/jonreid/ViewControllerPresentationSpy/blob/master/Source/ViewControllerPresentationSpy/PresententationVerifier.swift).
+[PresententationVerifier](https://github.com/jonreid/ViewControllerPresentationSpy/blob/master/Source/ViewControllerPresentationSpy/PresentationVerifier.swift).
 
 ### How do I test a segue?
 
