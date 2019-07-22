@@ -1,3 +1,15 @@
+Version 4.0.0
+-------------
+_Work In Progress_
+
+- Rewrote alert verifier in Swift. No more bridging header!
+- Simplified name of alert verifier to AlertVerifier (Swift) or QCOAlertVerifier (Objective-C).
+- Use simpler naming for invoking button action, and made it a Swift throwing function. This changes the Objective-C implementation to return an NSError via an "in-out" parameter.
+- Removed `actionTitles` and `-styleForButtonWithTitle:`, deprecated in Version 3.1.0.
+- Added PresentationVerifier to capture any presented view controller. It's able to capture segues.
+- Renamed the whole thing from MockUIAlertController to ViewControllerPresentationSpy.
+
+
 Version 3.2.0
 -------------
 _10 Feb 2019_
