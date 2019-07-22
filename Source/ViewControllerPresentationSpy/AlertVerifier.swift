@@ -5,9 +5,9 @@ import UIKit
 
 /*!
  * @abstract Captures presented UIAlertControllers.
- * @discussion Instantiate an AlertVerifier before the execution phase of the test. Then
- * invoke the code to create and present your alert. Information about the alert is then available
- * through the AlertVerifier.
+ * @discussion Instantiate an AlertVerifier before the execution phase of the test. Then invoke the
+ * code to create and present your alert. Information about the alert is then available through the
+ * AlertVerifier.
  */
 @objc(QCOAlertVerifier)
 public class AlertVerifier: NSObject {
@@ -25,8 +25,8 @@ public class AlertVerifier: NSObject {
 
     /*!
      * @abstract Initializes a newly allocated verifier.
-     * @discussion Instantiating an AlertVerifier swizzles UIViewController and UIAlertController. They remain swizzled
-     * until the AlertVerifier is deallocated.
+     * @discussion Instantiating an AlertVerifier swizzles UIViewController and UIAlertController.
+     * They remain swizzled until the AlertVerifier is deallocated.
      */
     @objc public override init() {
         super.init()
@@ -69,7 +69,8 @@ public class AlertVerifier: NSObject {
 
     /*!
      * @abstract Executes the action for the button with the specified title.
-     * @discussion Throws an exception (or returns an error in ObjC) if no button with that title is found.
+     * @discussion Throws an exception (or returns an error in ObjC) if no button with that title is
+     * found.
      */
     @objc(executeActionForButton:andReturnError:)
     public func executeAction(forButton title: String) throws {

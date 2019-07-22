@@ -19,8 +19,8 @@ public class PresentationVerifier: NSObject {
 
     /*!
      * @abstract Initializes a newly allocated verifier.
-     * @discussion Instantiating a PresentationVerifier swizzles UIViewController. It remains swizzled
-     * until the PresentationVerifier is deallocated.
+     * @discussion Instantiating a PresentationVerifier swizzles UIViewController. It remains
+     * swizzled until the PresentationVerifier is deallocated.
      */
     @objc public override init() {
         super.init()
