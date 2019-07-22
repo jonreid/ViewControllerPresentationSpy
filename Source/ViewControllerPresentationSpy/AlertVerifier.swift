@@ -12,7 +12,6 @@ import UIKit
 @objc(QCOAlertVerifier)
 public class AlertVerifier: NSObject {
     @objc public var presentedCount = 0
-    @objc public var presentedViewController: UIViewController?
     @objc public var presentingViewController: UIViewController?
     @objc public var animated: Bool = false
     @objc public var title: String?
@@ -53,7 +52,6 @@ public class AlertVerifier: NSObject {
 
     @objc private func alertControllerWasPresented(_ notification: Notification) {
         presentedCount += 1
-        presentedViewController = notification.object as? UIViewController
         presentingViewController = notification.userInfo?[QCOMockViewControllerPresentingViewControllerKey] as? UIViewController
         animated = (notification.userInfo?[QCOMockViewControllerAnimatedKey] as? NSNumber)?.boolValue ?? false
         let alertController = notification.object as? UIAlertController
