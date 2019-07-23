@@ -18,6 +18,7 @@
 		48007C992079A7E3007A4AB0 /* UIAlertAction+QCOMock.m in Sources */ = {isa = PBXBuildFile; fileRef = 48007C8D2079A7E2007A4AB0 /* UIAlertAction+QCOMock.m */; };
 		48007C9A2079A7E3007A4AB0 /* QCOMockPopoverPresentationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 48007C8E2079A7E3007A4AB0 /* QCOMockPopoverPresentationController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		48007C9B2079A7E3007A4AB0 /* UIViewController+QCOMock.h in Headers */ = {isa = PBXBuildFile; fileRef = 48007C8F2079A7E3007A4AB0 /* UIViewController+QCOMock.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BB1707360BE35588D3F40492 /* ClosureContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1706C2B7CE68DD81C1E383 /* ClosureContainer.swift */; };
 		BB1707A21243C9FA6F558CAC /* PresentationVerifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1701BF26D1A6EC6D6736E3 /* PresentationVerifier.swift */; };
 		BB1709AE226B61ABE035BEA5 /* AlertVerifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB170F803977DDBC293D88B0 /* AlertVerifier.swift */; };
 /* End PBXBuildFile section */
@@ -38,6 +39,7 @@
 		48007C8F2079A7E3007A4AB0 /* UIViewController+QCOMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+QCOMock.h"; sourceTree = "<group>"; };
 		48007C9D2079A8D4007A4AB0 /* XcodeWarnings.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = XcodeWarnings.xcconfig; sourceTree = "<group>"; };
 		BB1701BF26D1A6EC6D6736E3 /* PresentationVerifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationVerifier.swift; sourceTree = "<group>"; };
+		BB1706C2B7CE68DD81C1E383 /* ClosureContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClosureContainer.swift; sourceTree = "<group>"; };
 		BB170F803977DDBC293D88B0 /* AlertVerifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertVerifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -85,6 +87,7 @@
 				48007C862079A7E2007A4AB0 /* UIAlertController+QCOMock.m */,
 				48007C8F2079A7E3007A4AB0 /* UIViewController+QCOMock.h */,
 				48007C872079A7E2007A4AB0 /* UIViewController+QCOMock.m */,
+				BB1706C2B7CE68DD81C1E383 /* ClosureContainer.swift */,
 			);
 			path = ViewControllerPresentationSpy;
 			sourceTree = "<group>";
@@ -178,6 +181,7 @@
 				48007C992079A7E3007A4AB0 /* UIAlertAction+QCOMock.m in Sources */,
 				BB1707A21243C9FA6F558CAC /* PresentationVerifier.swift in Sources */,
 				BB1709AE226B61ABE035BEA5 /* AlertVerifier.swift in Sources */,
+				BB1707360BE35588D3F40492 /* ClosureContainer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -5,9 +5,11 @@
 
 #import "NSObject+QCOMockAlerts.h"
 #import "UIAlertController+QCOMock.h"
+#import <ViewControllerPresentationSpy/ViewControllerPresentationSpy-Swift.h>
 
 NSString *const QCOMockViewControllerPresentingViewControllerKey = @"QCOMockViewControllerPresentingViewControllerKey";
 NSString *const QCOMockViewControllerAnimatedKey = @"QCOMockViewControllerAnimatedKey";
+NSString *const QCOMockViewControllerCompletionKey = @"QCOMockViewControllerCompletionKey";
 NSString *const QCOMockViewControllerPresentedNotification = @"QCOMockViewControllerPresentedNotification";
 
 @implementation UIViewController (QCOMock)
@@ -30,17 +32,18 @@ NSString *const QCOMockViewControllerPresentedNotification = @"QCOMockViewContro
 {
     if (![viewControllerToPresent isKindOfClass:[UIAlertController class]])
         return;
-
+    
     [viewControllerToPresent loadViewIfNeeded];
     NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+    
+    QCOClosureContainer *closureContainer = [[QCOClosureContainer alloc] initWithClosure:completion];
     [nc postNotificationName:QCOMockAlertControllerPresentedNotification
                       object:viewControllerToPresent
                     userInfo:@{
-                            QCOMockViewControllerPresentingViewControllerKey : self,
-                            QCOMockViewControllerAnimatedKey : @(flag),
+                            QCOMockViewControllerPresentingViewControllerKey: self,
+                            QCOMockViewControllerAnimatedKey: @(flag),
+                            QCOMockViewControllerCompletionKey: closureContainer,
                     }];
-    if (completion)
-        completion();
 }
 
 - (void)qcoMock_presentViewControllerCapturingIt:(UIViewController *)viewControllerToPresent
@@ -52,8 +55,8 @@ NSString *const QCOMockViewControllerPresentedNotification = @"QCOMockViewContro
     [nc postNotificationName:QCOMockViewControllerPresentedNotification
                       object:viewControllerToPresent
                     userInfo:@{
-                            QCOMockViewControllerPresentingViewControllerKey : self,
-                            QCOMockViewControllerAnimatedKey : @(flag),
+                            QCOMockViewControllerPresentingViewControllerKey: self,
+                            QCOMockViewControllerAnimatedKey: @(flag),
                     }];
     if (completion)
         completion();

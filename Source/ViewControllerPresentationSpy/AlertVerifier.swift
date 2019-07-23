@@ -21,6 +21,7 @@ public class AlertVerifier: NSObject {
     @objc public var preferredAction: UIAlertAction?
     @objc public var popover: UIPopoverPresentationController?
     @objc public var textFields: [UITextField]?
+    @objc public var capturedCompletion: (() -> Void)?
     @objc public var completion: (() -> Void)?
 
     /*!
@@ -54,6 +55,8 @@ public class AlertVerifier: NSObject {
         presentedCount += 1
         presentingViewController = notification.userInfo?[QCOMockViewControllerPresentingViewControllerKey] as? UIViewController
         animated = (notification.userInfo?[QCOMockViewControllerAnimatedKey] as? NSNumber)?.boolValue ?? false
+        let closureContainer = notification.userInfo?[QCOMockViewControllerCompletionKey] as? ClosureContainer
+        capturedCompletion = closureContainer?.closure
         let alertController = notification.object as? UIAlertController
         title = alertController?.title
         message = alertController?.message

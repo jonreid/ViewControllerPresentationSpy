@@ -10,14 +10,15 @@ final class ViewController: UIViewController {
     var alertDefaultActionCount = 0
     var alertCancelActionCount = 0
     var alertDestroyActionCount = 0
-    
+    var alertPresentedCompletion: (() -> Void)? = nil
+
     @IBAction private func showAlert() {
         let alertController = UIAlertController(title: "Title", message: "Message", preferredStyle: .alert)
         setUpActions(for: alertController)
         alertController.addTextField { textField in
             textField.placeholder = "Placeholder"
         }
-        self.present(alertController, animated: true)
+        self.present(alertController, animated: true, completion: alertPresentedCompletion)
     }
 
     @IBAction private func showActionSheet(sender: AnyObject) {

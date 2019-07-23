@@ -63,16 +63,25 @@
     XCTAssertEqual(sut.presentedCount, 0);
 }
 
-- (void)test_showingAlert_shouldExecuteCompletionBlock
+- (void)test_showingAlert_withCompletion_shouldCaptureCompletionBlock
 {
     __block int completionCallCount = 0;
-    sut.completion = ^{
+    vc.alertPresentedCompletion = ^{
         completionCallCount += 1;
     };
     
     [self showAlert];
     
+    XCTAssertEqual(completionCallCount, 0, @"precondition");
+    sut.capturedCompletion();
     XCTAssertEqual(completionCallCount, 1);
+}
+
+- (void)test_showingAlert_withoutCompletion_shouldNotCaptureCompletionBlock
+{
+    [self showAlert];
+    
+    XCTAssertNil(sut.capturedCompletion);
 }
 
 - (void)test_notShowingAlert_shouldNotExecuteCompletionBlock

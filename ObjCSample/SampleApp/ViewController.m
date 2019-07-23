@@ -14,7 +14,7 @@
     [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField) {
         textField.placeholder = @"Placeholder";
     }];
-    [self presentViewController:alertController animated:YES completion:^{}];
+    [self presentViewController:alertController animated:YES completion:self.alertPresentedCompletion];
 }
 
 - (IBAction)showActionSheet:(id)sender

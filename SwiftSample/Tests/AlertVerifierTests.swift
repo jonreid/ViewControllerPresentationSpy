@@ -36,6 +36,24 @@ final class AlertVerifierTests: XCTestCase {
         try sut.executeAction(forButton: "No Handler")
     }
 
+    func test_showingAlert_withCompletion_shouldCaptureCompletionBlock() {
+        var completionCallCount = 0
+        vc.alertPresentedCompletion = {
+            completionCallCount += 1
+        }
+        showAlert()
+        
+        XCTAssertEqual(completionCallCount, 0, "precondition")
+        sut.capturedCompletion?()
+        XCTAssertEqual(completionCallCount, 1)
+    }
+
+    func test_showingAlert_withoutCompletion_shouldNotCaptureCompletionBlock() {
+        showAlert()
+        
+        XCTAssertNil(sut.capturedCompletion)
+    }
+
     func test_showingAlert_shouldExecuteCompletionBlock() {
         var completionCallCount = 0
         sut.completion = {
