@@ -10,9 +10,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) IBOutlet UIButton *segueShowButton;
 @property (nonatomic, strong) IBOutlet UIButton *codePresentModalButton;
 
-@property (nonatomic, assign) BOOL alertDefaultActionExecuted;
-@property (nonatomic, assign) BOOL alertCancelActionExecuted;
-@property (nonatomic, assign) BOOL alertDestroyActionExecuted;
+@property (nonatomic, assign) NSUInteger alertDefaultActionCount;
+@property (nonatomic, assign) NSUInteger alertCancelActionCount;
+@property (nonatomic, assign) NSUInteger alertDestroyActionCount;
 
 - (void)presentNonAlert;
 

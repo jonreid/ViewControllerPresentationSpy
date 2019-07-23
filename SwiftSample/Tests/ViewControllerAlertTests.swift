@@ -96,7 +96,7 @@ final class ViewControllerAlertTests: XCTestCase {
         
         try alertVerifier.executeAction(forButton: "Default")
 
-        XCTAssertTrue(sut.alertDefaultActionExecuted)
+        XCTAssertEqual(sut.alertDefaultActionCount, 1)
     }
 
     func test_executeActionForButton_withCancelButton_shouldExecuteCancelAction() throws {
@@ -104,7 +104,7 @@ final class ViewControllerAlertTests: XCTestCase {
         
         try alertVerifier.executeAction(forButton: "Cancel")
 
-        XCTAssertTrue(sut.alertCancelActionExecuted)
+        XCTAssertEqual(sut.alertCancelActionCount, 1)
     }
 
     func test_executeActionForButton_withDestroyButton_shouldExecuteDestroyAction() throws {
@@ -112,7 +112,7 @@ final class ViewControllerAlertTests: XCTestCase {
         
         try alertVerifier.executeAction(forButton: "Destroy")
 
-        XCTAssertTrue(sut.alertDestroyActionExecuted)
+        XCTAssertEqual(sut.alertDestroyActionCount, 1)
     }
 
     func test_textFieldsForAlert() {

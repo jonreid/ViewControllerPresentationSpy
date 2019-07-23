@@ -37,9 +37,9 @@
 
 - (void)setUpActionsForAlertController:(UIAlertController *)alertController
 {
-    self.alertDefaultActionExecuted = NO;
-    self.alertCancelActionExecuted = NO;
-    self.alertDestroyActionExecuted = NO;
+    self.alertDefaultActionCount = 0;
+    self.alertCancelActionCount = 0;
+    self.alertDestroyActionCount = 0;
     
     UIAlertAction *actionWithoutHandler = [UIAlertAction actionWithTitle:@"No Handler"
                                                                    style:UIAlertActionStyleDefault
@@ -47,17 +47,17 @@
     UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"Default"
                                                             style:UIAlertActionStyleDefault
                                                           handler:^(UIAlertAction *action) {
-                                                              self.alertDefaultActionExecuted = YES;
+                                                              ++self.alertDefaultActionCount;
                                                           }];
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel"
                                                            style:UIAlertActionStyleCancel
                                                          handler:^(UIAlertAction *action) {
-                                                             self.alertCancelActionExecuted = YES;
+                                                             ++self.alertCancelActionCount;
                                                          }];
     UIAlertAction *destroyAction = [UIAlertAction actionWithTitle:@"Destroy"
                                                             style:UIAlertActionStyleDestructive
                                                           handler:^(UIAlertAction *action) {
-                                                              self.alertDestroyActionExecuted = YES;
+                                                              ++self.alertDestroyActionCount;
                                                           }];
     [alertController addAction:actionWithoutHandler];
     [alertController addAction:defaultAction];

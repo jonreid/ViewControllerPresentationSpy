@@ -7,9 +7,9 @@ final class ViewController: UIViewController {
     @IBOutlet private(set) var segueShowButton: UIButton!
     @IBOutlet private(set) var codePresentModalButton: UIButton!
 
-    var alertDefaultActionExecuted = false
-    var alertCancelActionExecuted = false
-    var alertDestroyActionExecuted = false
+    var alertDefaultActionCount = 0
+    var alertCancelActionCount = 0
+    var alertDestroyActionCount = 0
     
     @IBAction private func showAlert() {
         let alertController = UIAlertController(title: "Title", message: "Message", preferredStyle: .alert)
@@ -35,19 +35,19 @@ final class ViewController: UIViewController {
     }
 
     private func setUpActions(for alertController: UIAlertController) {
-        alertDefaultActionExecuted = false
-        alertCancelActionExecuted = false
-        alertDestroyActionExecuted = false
+        alertDefaultActionCount = 0
+        alertCancelActionCount = 0
+        alertDestroyActionCount = 0
 
         let actionWithoutHandler = UIAlertAction.init(title: "No Handler", style: .default)
         let defaultAction = UIAlertAction.init(title: "Default", style: .default) { _ in
-            self.alertDefaultActionExecuted = true
+            self.alertDefaultActionCount += 1
         }
         let cancelAction = UIAlertAction.init(title: "Cancel", style: .cancel) { _ in
-            self.alertCancelActionExecuted = true
+            self.alertCancelActionCount += 1
         }
         let destroyAction = UIAlertAction.init(title: "Destroy", style: .destructive) { _ in
-            self.alertDestroyActionExecuted = true
+            self.alertDestroyActionCount += 1
         }
 
         alertController.addAction(actionWithoutHandler)

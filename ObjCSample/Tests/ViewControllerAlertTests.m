@@ -118,7 +118,7 @@
     [alertVerifier executeActionForButton:@"Default" andReturnError:&error];
 
     XCTAssertNil(error);
-    XCTAssertTrue(sut.alertDefaultActionExecuted);
+    XCTAssertEqual(sut.alertDefaultActionCount, 1);
 }
 
 - (void)test_executeActionForButtonWithTitle_withCancelButton_shouldExecuteCancelAction
@@ -129,7 +129,7 @@
     [alertVerifier executeActionForButton:@"Cancel" andReturnError:&error];
 
     XCTAssertNil(error);
-    XCTAssertTrue(sut.alertCancelActionExecuted);
+    XCTAssertEqual(sut.alertCancelActionCount, 1);
 }
 
 - (void)test_executeActionForButtonWithTitle_withDestroyButton_shouldExecuteDestroyAction
@@ -140,7 +140,7 @@
     [alertVerifier executeActionForButton:@"Destroy" andReturnError:&error];
 
     XCTAssertNil(error);
-    XCTAssertTrue(sut.alertDestroyActionExecuted);
+    XCTAssertEqual(sut.alertDestroyActionCount, 1);
 }
 
 - (void)test_textFieldsForAlert
