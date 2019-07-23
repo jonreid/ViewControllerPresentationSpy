@@ -11,6 +11,7 @@ final class ViewController: UIViewController {
     var alertCancelActionCount = 0
     var alertDestroyActionCount = 0
     var alertPresentedCompletion: (() -> Void)? = nil
+    var viewControllerPresentedCompletion: (() -> Void)? = nil
 
     @IBAction private func showAlert() {
         let alertController = UIAlertController(title: "Title", message: "Message", preferredStyle: .alert)
@@ -72,9 +73,8 @@ final class ViewController: UIViewController {
         }
     }
 
-
     @IBAction private func showModal() {
         let nextVC = CodeNextViewController(backgroundColor: .purple)
-        self.present(nextVC, animated: true)
+        self.present(nextVC, animated: true, completion: viewControllerPresentedCompletion)
     }
 }

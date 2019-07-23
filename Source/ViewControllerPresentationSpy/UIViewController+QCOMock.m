@@ -52,14 +52,14 @@ NSString *const QCOMockViewControllerPresentedNotification = @"QCOMockViewContro
 {
     [viewControllerToPresent loadViewIfNeeded];
     NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+    QCOClosureContainer *closureContainer = [[QCOClosureContainer alloc] initWithClosure:completion];
     [nc postNotificationName:QCOMockViewControllerPresentedNotification
                       object:viewControllerToPresent
                     userInfo:@{
                             QCOMockViewControllerPresentingViewControllerKey: self,
                             QCOMockViewControllerAnimatedKey: @(flag),
+                            QCOMockViewControllerCompletionKey: closureContainer,
                     }];
-    if (completion)
-        completion();
 }
 
 @end

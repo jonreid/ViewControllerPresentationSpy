@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSUInteger alertCancelActionCount;
 @property (nonatomic, assign) NSUInteger alertDestroyActionCount;
 @property (nonatomic, copy, nullable) void (^alertPresentedCompletion)(void);
+@property (nonatomic, copy, nullable) void (^viewControllerPresentedCompletion)(void);
 
 - (void)presentNonAlert;
 

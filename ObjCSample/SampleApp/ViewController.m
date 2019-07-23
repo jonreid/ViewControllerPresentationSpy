@@ -84,7 +84,7 @@
 - (IBAction)showModal
 {
     UIViewController *nextVC = [[CodeNextViewController alloc] initWithBackgroundColor:UIColor.purpleColor];
-    [self presentViewController:nextVC animated:YES completion:NULL];
+    [self presentViewController:nextVC animated:YES completion:self.viewControllerPresentedCompletion];
 }
 
 - (void)presentNonAlert

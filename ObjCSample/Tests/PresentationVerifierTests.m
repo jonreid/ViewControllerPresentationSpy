@@ -35,6 +35,27 @@
     [vc.codePresentModalButton sendActionsForControlEvents:UIControlEventTouchUpInside];
 }
 
+- (void)test_presentingVC_withCompletion_shouldCaptureCompletionBlock
+{
+    __block int completionCallCount = 0;
+    vc.viewControllerPresentedCompletion = ^{
+        completionCallCount += 1;
+    };
+    
+    [self presentViewController];
+    
+    XCTAssertEqual(completionCallCount, 0, @"precondition");
+    sut.capturedCompletion();
+    XCTAssertEqual(completionCallCount, 1);
+}
+
+- (void)test_presentingVC_withoutCompletion_shouldNotCaptureCompletionBlock
+{
+    [self presentViewController];
+    
+    XCTAssertNil(sut.capturedCompletion);
+}
+
 - (void)test_presentingVC_shouldExecuteCompletionBlock
 {
     __block int completionCallCount = 0;

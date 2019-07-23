@@ -15,6 +15,7 @@ public class PresentationVerifier: NSObject {
     @objc public var presentedViewController: UIViewController?
     @objc public var presentingViewController: UIViewController?
     @objc public var animated: Bool = false
+    @objc public var capturedCompletion: (() -> Void)?
     @objc public var completion: (() -> Void)?
 
     /*!
@@ -47,6 +48,8 @@ public class PresentationVerifier: NSObject {
         presentedViewController = notification.object as? UIViewController
         presentingViewController = notification.userInfo?[QCOMockViewControllerPresentingViewControllerKey] as? UIViewController
         animated = (notification.userInfo?[QCOMockViewControllerAnimatedKey] as? NSNumber)?.boolValue ?? false
+        let closureContainer = notification.userInfo?[QCOMockViewControllerCompletionKey] as? ClosureContainer
+        capturedCompletion = closureContainer?.closure
         if let completion = completion {
             completion()
         }
