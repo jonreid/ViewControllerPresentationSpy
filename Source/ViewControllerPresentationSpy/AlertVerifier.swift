@@ -22,7 +22,7 @@ public class AlertVerifier: NSObject {
     @objc public var popover: UIPopoverPresentationController?
     @objc public var textFields: [UITextField]?
     @objc public var capturedCompletion: (() -> Void)?
-    @objc public var completion: (() -> Void)?
+    @objc public var testCompletion: (() -> Void)?
 
     /*!
      * @abstract Initializes a newly allocated verifier.
@@ -65,7 +65,7 @@ public class AlertVerifier: NSObject {
         actions = alertController?.actions ?? []
         popover = alertController?.popoverPresentationController
         textFields = alertController?.textFields
-        if let completion = completion {
+        if let completion = testCompletion {
             completion()
         }
     }

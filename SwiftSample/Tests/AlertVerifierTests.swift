@@ -54,9 +54,9 @@ final class AlertVerifierTests: XCTestCase {
         XCTAssertNil(sut.capturedCompletion)
     }
 
-    func test_showingAlert_shouldExecuteCompletionBlock() {
+    func test_showingAlert_shouldExecuteTestCompletionBlock() {
         var completionCallCount = 0
-        sut.completion = {
+        sut.testCompletion = {
             completionCallCount += 1
         }
         
@@ -65,9 +65,9 @@ final class AlertVerifierTests: XCTestCase {
         XCTAssertEqual(completionCallCount, 1)
     }
 
-    func test_notShowingAlert_shouldNotExecuteCompletionBlock() {
+    func test_notShowingAlert_shouldNotExecuteTestCompletionBlock() {
         var completionCallCount = 0
-        sut.completion = {
+        sut.testCompletion = {
             completionCallCount += 1
         }
         

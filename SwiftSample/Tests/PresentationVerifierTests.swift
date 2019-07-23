@@ -42,9 +42,9 @@ final class PresentationVerifierTests: XCTestCase {
         XCTAssertNil(sut.capturedCompletion)
     }
 
-    func test_presentingVC_shouldExecuteCompletionBlock() {
+    func test_presentingVC_shouldExecuteTestCompletionBlock() {
         var completionCallCount = 0
-        sut.completion = {
+        sut.testCompletion = {
             completionCallCount += 1
         }
 
@@ -53,9 +53,9 @@ final class PresentationVerifierTests: XCTestCase {
         XCTAssertEqual(completionCallCount, 1)
     }
 
-    func test_notPresentingVC_shouldNotExecuteCompletionBlock() {
+    func test_notPresentingVC_shouldNotExecuteTestCompletionBlock() {
         var completionCallCount = 0
-        sut.completion = {
+        sut.testCompletion = {
             completionCallCount += 1
         }
 

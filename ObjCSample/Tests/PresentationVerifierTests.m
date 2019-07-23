@@ -59,7 +59,7 @@
 - (void)test_presentingVC_shouldExecuteCompletionBlock
 {
     __block int completionCallCount = 0;
-    sut.completion = ^{
+    sut.testCompletion = ^{
         completionCallCount += 1;
     };
     
@@ -71,7 +71,7 @@
 - (void)test_notPresentingVC_shouldNotExecuteCompletionBlock
 {
     __block int completionCallCount = 0;
-    sut.completion = ^{
+    sut.testCompletion = ^{
         completionCallCount += 1;
     };
     
