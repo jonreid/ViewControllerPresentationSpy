@@ -5,7 +5,8 @@ _Work In Progress_
 - Rewrote alert verifier in Swift. No more bridging header!
 - Simplified name of alert verifier to AlertVerifier (Swift) or QCOAlertVerifier (Objective-C).
 - Use simpler naming for invoking button action, and made it a Swift throwing function. This changes the Objective-C implementation to return an NSError via an "in-out" parameter.
-- Completion handler passed to `present(_:animated:completion:)` is no longer executed right away. Instead, it's captured in `capturedCompletion`. This way tests can execute it after executing a button action.
+- Renamed test code completion handler to `testCompletion`.
+- The production code completion handler passed to `present(_:animated:completion:)` is no longer executed right away. Instead, it's captured in `capturedCompletion`. This way tests can execute it after executing a button action.
 - Removed `actionTitles` and `-styleForButtonWithTitle:`, deprecated in Version 3.1.0.
 - Added PresentationVerifier to capture any presented view controller. It's able to capture segues.
 - Renamed the whole thing from MockUIAlertController to ViewControllerPresentationSpy.

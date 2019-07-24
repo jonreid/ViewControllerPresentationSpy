@@ -3,25 +3,33 @@
 
 import UIKit
 
-/*!
- * @abstract Captures presented view controllers.
- * @discussion Instantiate a PresentationVerifier before the execution phase of the test. Then
- * invoke the code to create and present your view controller. Information about the view controller
- * is then available through the PresentationVerifier.
+/**
+    Captures presented view controllers.
+ 
+    Instantiate a PresentationVerifier before the execution phase of the test. Then invoke the code
+    to create and present your view controller. Information about the view controller is then
+    available through the PresentationVerifier.
  */
 @objc(QCOPresentationVerifier)
 public class PresentationVerifier: NSObject {
+    /// Number of times present(_:animated:completion:) was called.
     @objc public var presentedCount = 0
+    
     @objc public var presentedViewController: UIViewController?
     @objc public var presentingViewController: UIViewController?
     @objc public var animated: Bool = false
+    
+    /// Production code completion handler passed to present(_:animated:completion:).
     @objc public var capturedCompletion: (() -> Void)?
+    
+    /// Test code can provide its own completion handler to fulfill XCTestExpectations.
     @objc public var testCompletion: (() -> Void)?
 
-    /*!
-     * @abstract Initializes a newly allocated verifier.
-     * @discussion Instantiating a PresentationVerifier swizzles UIViewController. It remains
-     * swizzled until the PresentationVerifier is deallocated.
+    /**
+        Initializes a newly allocated verifier.
+     
+        Instantiating a PresentationVerifier swizzles UIViewController. It remains swizzled until
+        the PresentationVerifier is deallocated.
      */
     @objc public override init() {
         super.init()

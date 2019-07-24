@@ -158,6 +158,10 @@ func test_executingActionForOKButton_shouldDoSomething() throws {
 
 Because this method can throw an exception, declare the Swift test method as `throws` and call the method with `try`. For Objective-C, pass in an NSError and check that it's not nil.
 
+### How can I invoke the closure passed to present(_:animated:completion:)?
+
+The production code completion handler is captured in the verifier's `capturedCompletion` property.
+
 ### How can I test something that's presented using DispatchQueue.main?
 
 Create an expectation in your test case. Fulfill it in the verifier's `testCompletion` block. Add a short wait at the start of the Assert phase.
