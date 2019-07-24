@@ -5,12 +5,13 @@
 [![CocoaPods Version](https://cocoapod-badges.herokuapp.com/v/ViewControllerPresentationSpy/badge.png)](https://cocoapods.org/pods/ViewControllerPresentationSpy)
 [![Twitter Follow](https://img.shields.io/twitter/follow/qcoding.svg?style=social)](https://twitter.com/qcoding)
 
-ViewControllerPresentationSpy intercepts presented view controllers, including alerts and actions sheets. It's compatible with both Swift and Objective-C.
+ViewControllerPresentationSpy intercepts presented view controllers, including alerts and actions sheets.
 
-No actual view controllers alerts are presented. This means:
+Segues can be captured. For alerts, no actual alerts are presented. This means:
 
 * The workflow doesn't pause for an alert action to be selected.
 * Tests are blazing fast.
+* You can test things with unit tests instead of UI tests.
 
 For more discussion, see my blog post [How to Test UIAlertControllers and Control Swizzling](http://qualitycoding.org/testing-uialertcontrollers/).
 
