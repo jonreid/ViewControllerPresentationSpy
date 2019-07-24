@@ -164,7 +164,7 @@ The production code completion handler is captured in the verifier's `capturedCo
 
 ### How can I test something that's presented using DispatchQueue.main?
 
-Create an expectation in your test case. Fulfill it in the verifier's `testCompletion` block. Add a short wait at the start of the Assert phase.
+Create an expectation in your test case. Fulfill it in the verifier's `testCompletion` closure. Add a short wait at the start of the Assert phase.
 
 ```swift
 func test_showAlertOnMainDispatchQueue_shouldDoSomething() {
