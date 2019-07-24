@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
     
   s.ios.deployment_target = '10.2'
   s.source   = { :git => 'https://github.com/jonreid/ViewControllerPresentationSpy.git', :tag => 'v4.0.0' }
-  s.source_files = 'Source/ViewControllerPresentationSpy/*.{h,m}'
+  s.source_files = 'Source/ViewControllerPresentationSpy/*.{h,m,swift}'
   s.public_header_files = 'Source/ViewControllerPresentationSpy/QCOMockPopoverPresentationController.h', 'Source/ViewControllerPresentationSpy/UIAlertAction+QCOMock.h', 'Source/ViewControllerPresentationSpy/UIAlertController+QCOMock.h', 'Source/ViewControllerPresentationSpy/UIViewController+QCOMock.h'
   s.requires_arc = true
   s.swift_version = "5.0"
