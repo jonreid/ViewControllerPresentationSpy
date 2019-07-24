@@ -21,4 +21,5 @@ Pod::Spec.new do |s|
   s.source_files = 'Source/ViewControllerPresentationSpy/*.{h,m}'
   s.public_header_files = 'Source/ViewControllerPresentationSpy/QCOMockPopoverPresentationController.h', 'Source/ViewControllerPresentationSpy/UIAlertAction+QCOMock.h', 'Source/ViewControllerPresentationSpy/UIAlertController+QCOMock.h', 'Source/ViewControllerPresentationSpy/UIViewController+QCOMock.h'
   s.requires_arc = true
+  s.swift_version = "5.0"
 end
