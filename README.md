@@ -219,6 +219,9 @@ Add the following to your Cartfile:
 github "jonreid/ViewControllerPresentationSpy" ~> 4.0
 ```
 
-### Building It Yourself
+### Prebuilt Framework
 
-Make sure to copy everything from `Source/ViewControllerPresentationSpy`.
+Prebuilt binaries are available on [GitHub](https://github.com/jonreid/ViewControllerPresentationSpy/releases).
+
+- Drag ViewControllerPresentationSpy.framework into your project, specifying "Copy items into destination group's folder".
+- Add a "Copy Files" build phase to copy ViewControllerPresentationSpy.framework to your Products Directory.
