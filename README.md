@@ -49,7 +49,7 @@ func test_presentedVC_shouldHaveSpecialSettingHello() {
 
 ```obj-c
 - (void) test_presentedVC_shouldHaveSpecialSettingHello {
-    QCO PresentationVerifier * presentationVerifier = [[QCO PresentationVerifier alloc] init];
+    QCOPresentationVerifier *presentationVerifier = [[QCOPresentationVerifier alloc] init];
 
     [sut showVC]; // Whatever presents the view controller
 
