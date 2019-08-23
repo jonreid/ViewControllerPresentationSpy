@@ -12,7 +12,6 @@
 		0E748F9D1B6543A000B29AED /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E748F9C1B6543A000B29AED /* ViewController.m */; };
 		0E748FA01B6543A000B29AED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E748F9E1B6543A000B29AED /* Main.storyboard */; };
 		0E748FA21B6543A000B29AED /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E748FA11B6543A000B29AED /* Images.xcassets */; };
-		4804BCA622E16949000130AD /* XcodeWarnings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 4804BCA522E16949000130AD /* XcodeWarnings.xcconfig */; };
 		483E05421DE80ACF00B5E4E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 483E05401DE80ACF00B5E4E4 /* LaunchScreen.storyboard */; };
 		48A6B5E222E03E4D00356685 /* StoryboardNextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A6B5E122E03E4D00356685 /* StoryboardNextViewController.m */; };
 		48EECF4A22E3B77E00A940C5 /* ViewControllerPresentationSpy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48EECF4222E3B61100A940C5 /* ViewControllerPresentationSpy.framework */; };
@@ -204,7 +203,7 @@
 		0E748F891B6543A000B29AED /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1020;
+				LastUpgradeCheck = 1030;
 				ORGANIZATIONNAME = "Jon Reid";
 				TargetAttributes = {
 					0E748F901B6543A000B29AED = {
@@ -258,7 +257,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				483E05421DE80ACF00B5E4E4 /* LaunchScreen.storyboard in Resources */,
-				4804BCA622E16949000130AD /* XcodeWarnings.xcconfig in Resources */,
 				0E748FA01B6543A000B29AED /* Main.storyboard in Resources */,
 				0E748FA21B6543A000B29AED /* Images.xcassets in Resources */,
 			);
