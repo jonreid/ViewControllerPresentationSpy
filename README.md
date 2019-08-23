@@ -32,7 +32,6 @@ Nothing.
 Information about the presentation is then available through the
 [PresententationVerifier](https://github.com/jonreid/ViewControllerPresentationSpy/blob/master/Source/ViewControllerPresentationSpy/PresentationVerifier.swift).
 
-
 For example, here's a test verifying:
 
  - That one view controller was presented, with animation.
@@ -122,14 +121,23 @@ Information about the alert or action sheet is then available through the
 For example, here's a test verifying the title (and that the alert is presented exactly once).
 `sut` is the System Under Test in the test fixture.
 
+For example, here's a test verifying:
+
+ - That one alert was presented, with animation.
+ - That the presenting view controller was the System Under Test.
+ - The alert title.
+ - The alert message.
+ - The preferred style of UIAlertController.Style.alert.
+ 
+`sut` is the System Under Test in the test fixture. The Swift version uses a handy `verify` method.
+
 ```swift
 func test_showAlert_alertShouldHaveTitle() {
     let alertVerifier = AlertVerifier()
 
     sut.showAlert() // Whatever triggers the alert
 
-    XCTAssertEqual(alertVerifier.presentedCount, 1, "presented count")
-    XCTAssertEqual(alertVerifier.title, "Hello!", "title")
+    alertVerifier.verify(title: "Hello!", message: "How are you?", animated: true, presentingViewController: sut)
 }
 ```
 
@@ -141,6 +149,10 @@ func test_showAlert_alertShouldHaveTitle() {
 
     XCTAssertEqual(alertVerifier.presentedCount, 1, @"presented count");
     XCTAssertEqualObjects(alertVerifier.title, @"Hello!", @"title");
+    XCTAssertEqualObjects(alertVerifier.message, @"How are you?", @"message");
+    XCTAssertEqual(alertVerifier.animated, YES, @"animated");
+    XCTAssertEqual(alertVerifier.preferredStyle, UIAlertController.Style.alert, @"preferred style");
+    XCTAssertEqual(alertVerifier.presentingViewController, sut, @"presenting view controller");
 }
 ```
 

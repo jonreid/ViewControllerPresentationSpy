@@ -9,7 +9,7 @@ final class ViewControllerAlertTests: XCTestCase {
     override func setUp() {
         super.setUp()
         alertVerifier = AlertVerifier()
-        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)1
         sut = storyboard.instantiateViewController(withIdentifier: String(describing: ViewController.self)) as? ViewController
         sut.loadViewIfNeeded()
     }
@@ -27,26 +27,14 @@ final class ViewControllerAlertTests: XCTestCase {
 
     func test_tappingShowAlertButton_shouldShowAlert() {
         sut.showAlertButton.sendActions(for: .touchUpInside)
-
-        XCTAssertEqual(alertVerifier.presentedCount, 1, "presented count")
-        XCTAssertEqual(alertVerifier.preferredStyle, UIAlertController.Style.alert, "preferred style")
-        XCTAssertTrue(alertVerifier.presentingViewController === sut,
-                      "Expected presenting view controller to be \(String(describing: sut)), but was \(String(describing: alertVerifier.presentingViewController))")
-        XCTAssertTrue(alertVerifier.animated, "animated")
-        XCTAssertEqual(alertVerifier.title, "Title", "title")
-        XCTAssertEqual(alertVerifier.message, "Message", "message")
+        
+        alertVerifier.verify(title: "Title", message: "Message", animated: true)
     }
 
     func test_tappingShowActionSheetButton_shouldShowActionSheet() {
         sut.showActionSheetButton.sendActions(for: .touchUpInside)
 
-        XCTAssertEqual(alertVerifier.presentedCount, 1, "presented count")
-        XCTAssertEqual(alertVerifier.preferredStyle, UIAlertController.Style.actionSheet, "preferred style")
-        XCTAssertTrue(alertVerifier.presentingViewController === sut,
-                      "Expected presenting view controller to be \(String(describing: sut)), but was \(String(describing: alertVerifier.presentingViewController))")
-        XCTAssertTrue(alertVerifier.animated, "animated")
-        XCTAssertEqual(alertVerifier.title, "Title", "title")
-        XCTAssertEqual(alertVerifier.message, "Message", "message")
+        alertVerifier.verify(title: "Title", message: "Message", animated: true, preferredStyle: .actionSheet)
     }
 
     func test_popoverForActionSheet() {

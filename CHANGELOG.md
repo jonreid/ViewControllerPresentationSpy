@@ -1,7 +1,21 @@
 NEXT RELEASE
 ------------
 
-- Added `verify` method to Swift version of `PresentationVerifier`.
+Added `verify` methods to the Swift versions of each verifier.
+
+- The `PresentationVerifier` method checks:
+  * That the presented count is 1.
+  * The animated flag.
+  * The presenting view controller, if provided.
+  * The type of the presented view controller.
+  * Returns the view controller cast to the expected type (or `nil` if it didn't match).
+- The `AlertVerifier` method checks:
+  * That the presented count is 1.
+  * The title.
+  * The message.
+  * The animated flag.
+  * The preferred style (`.alert` or `.actionSheet`).
+  * The presenting view controller, if provided.
 
 
 Version 4.0.0
