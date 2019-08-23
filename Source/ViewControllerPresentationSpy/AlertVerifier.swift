@@ -15,7 +15,7 @@ import UIKit
 public class AlertVerifier: NSObject {
     /// Number of times present(_:animated:completion:) was called.
     @objc public var presentedCount = 0
-    
+
     @objc public var presentingViewController: UIViewController?
     @objc public var animated: Bool = false
     @objc public var title: String?
@@ -91,7 +91,7 @@ public class AlertVerifier: NSObject {
             handler(action)
         }
     }
-    
+
     private func actionWithTitle(_ title: String) throws -> UIAlertAction {
         for action in actions {
             if action.title == title {
@@ -120,8 +120,25 @@ extension AlertVerifier {
         XCTAssertEqual(self.title, title, "title")
         XCTAssertEqual(self.message, message, "message")
         verifyAnimated(actual: self.animated, expected: animated, file: file, line: line)
+        verifyActions(expected: actions, file: file, line: line)
         verifyPreferredStyle(expected: preferredStyle, file: file, line: line)
         verifyPresentingViewController(actual: self.presentingViewController, expected: presentingViewController, file: file, line: line)
+    }
+
+    private func verifyActions(expected: [AlertVerifier.Action], file: StaticString, line: UInt) {
+        let actual: [AlertVerifier.Action] = self.actions.map { action in
+            switch action.style {
+            case .default:
+                return .default(action.title)
+            case .cancel:
+                return .cancel(action.title)
+            case .destructive:
+                return .destructive(action.title)
+            @unknown default:
+                fatalError("Unknown UIAlertAction.Style")
+            }
+        }
+        XCTAssertEqual(actual, expected, file: file, line: line)
     }
 
     private func verifyPreferredStyle(expected: UIAlertController.Style,
@@ -135,7 +152,7 @@ extension AlertVerifier {
             case .alert:
                 XCTFail("Expected preferred style .alert, but was .actionSheet", file: file, line: line)
             @unknown default:
-                print("Preferred style not recognized. Please contact maintainer.")
+                fatalError("Unknown UIAlertController.Style for preferred style")
             }
         }
     }
@@ -143,9 +160,9 @@ extension AlertVerifier {
 
 extension AlertVerifier {
     public enum Action: Equatable {
-        case `default`(String)
-        case cancel(String)
-        case destructive(String)
+        case `default`(String?)
+        case cancel(String?)
+        case destructive(String?)
     }
 }
 
