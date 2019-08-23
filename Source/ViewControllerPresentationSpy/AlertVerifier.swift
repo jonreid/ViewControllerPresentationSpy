@@ -166,6 +166,21 @@ extension AlertVerifier {
     }
 }
 
+extension AlertVerifier.Action: CustomStringConvertible {
+    public var description: String {
+        switch self {
+        case let .default(title):
+            return ".default(\(String(describing: title))"
+        case let .cancel(title):
+            return ".cancel(\(String(describing: title))"
+        case let .destructive(title):
+            return ".destructive(\(String(describing: title))"
+        @unknown default:
+            fatalError("Unknown UIAlertAction.Style")
+        }
+    }
+}
+
 @objc enum AlertVerifierErrors: Int, Error {
     case buttonNotFound
 }
