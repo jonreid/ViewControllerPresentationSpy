@@ -47,13 +47,15 @@ func test_presentedVC_shouldHaveSpecialSettingHello() {
 
     sut.showVC() // Whatever presents the view controller
 
-    let nextVC: MyViewController? = presentationVerifier.verify(animated: true, presentingViewController: sut)
+    let nextVC: MyViewController? = presentationVerifier.verify(animated: true,
+                                                                presentingViewController: sut)
     XCTAssertEqual(nextVC?.specialSetting, "Hello!")
 }
 ```
 
 ```obj-c
-- (void) test_presentedVC_shouldHaveSpecialSettingHello {
+- (void) test_presentedVC_shouldHaveSpecialSettingHello
+{
     QCOPresentationVerifier *presentationVerifier = [[QCOPresentationVerifier alloc] init];
 
     [sut showVC]; // Whatever presents the view controller
@@ -148,7 +150,8 @@ func test_showAlert_alertShouldHaveTitle() {
 ```
 
 ```obj-c
-- (void)test_showAlert_alertShouldHaveTitle {
+- (void)test_showAlert_alertShouldHaveTitle
+{
     QCOAlertVerifier *alertVerifier = [[QCOAlertVerifier alloc] init];
 
     [sut showAlert]; // Whatever triggers the alert
@@ -159,13 +162,11 @@ func test_showAlert_alertShouldHaveTitle() {
     XCTAssertEqual(alertVerifier.animated, YES, @"animated");
     XCTAssertEqual(alertVerifier.preferredStyle, UIAlertController.Style.alert, @"preferred style");
     XCTAssertEqual(alertVerifier.presentingViewController, sut, @"presenting view controller");
-    
-    NSArray<UIAlertAction *> *actions = alertVerifier.actions;
-    XCTAssertEqual(actions.count, 2, @"actions count);
-    XCTAssertEqualObjects(actions[0].title, @"OK", @"first action");
-    XCTAssertEqual(actions[0].style, UIAlertActionStyleDefault, @"first action");
-    XCTAssertEqualObjects(actions[1].title, @"Cancel", @"second action");
-    XCTAssertEqual(actions[1].style, UIAlertActionStyleCancel, @"second action");
+    XCTAssertEqual(alertVerifier.actions.count, 2, @"actions count);
+    XCTAssertEqualObjects(alertVerifier.actions[0].title, @"OK", @"first action");
+    XCTAssertEqual(alertVerifier.actions[0].style, UIAlertActionStyleDefault, @"first action");
+    XCTAssertEqualObjects(alertVerifier.actions[1].title, @"Cancel", @"second action");
+    XCTAssertEqual(alertVerifier.actions[1].style, UIAlertActionStyleCancel, @"second action");
 }
 ```
 
@@ -186,7 +187,8 @@ func test_executingActionForOKButton_shouldDoSomething() throws {
 ```
 
 ```obj-c
-- (void)test_executingActionForOKButton_shouldDoSomething {
+- (void)test_executingActionForOKButton_shouldDoSomething
+{
     QCOAlertVerifier *alertVerifier = [[QCOAlertVerifier alloc] init];
     [sut showAlert];
 
