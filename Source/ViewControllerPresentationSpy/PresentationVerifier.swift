@@ -69,7 +69,9 @@ extension PresentationVerifier {
     @discardableResult public func verify<VC: UIViewController>(
             animated: Bool,
             presentingViewController: UIViewController? = nil,
-            file: StaticString = #file, line: UInt = #line) -> VC? {
+            file: StaticString = #file,
+            line: UInt = #line
+    ) -> VC? {
         if presentedCount == 0 {
             XCTFail("present not called", file: file, line: line)
             return nil
@@ -91,7 +93,8 @@ extension PresentationVerifier {
                     file: file, line: line)
         }
         guard let nextVC = presentedViewController as? VC else {
-            XCTFail("Expected presented view controller to be \(VC.self)), but was \(String(describing: presentedViewController))")
+            XCTFail("Expected presented view controller to be \(VC.self)), " +
+                    "but was \(String(describing: presentedViewController))")
             return nil
         }
         return nextVC
