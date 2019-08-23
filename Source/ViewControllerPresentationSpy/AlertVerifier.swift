@@ -110,7 +110,7 @@ extension AlertVerifier {
             title: String?,
             message: String?,
             animated: Bool,
-            actions: [AlertVerifier.Action],
+            actions: [Action],
             preferredStyle: UIAlertController.Style = .alert,
             presentingViewController: UIViewController? = nil,
             file: StaticString = #file,
@@ -122,11 +122,32 @@ extension AlertVerifier {
         verifyAnimated(actual: self.animated, expected: animated, file: file, line: line)
         verifyActions(expected: actions, file: file, line: line)
         verifyPreferredStyle(expected: preferredStyle, file: file, line: line)
-        verifyPresentingViewController(actual: self.presentingViewController, expected: presentingViewController, file: file, line: line)
+        verifyPresentingViewController(actual: self.presentingViewController,
+                expected: presentingViewController, file: file, line: line)
     }
 
-    private func verifyActions(expected: [AlertVerifier.Action], file: StaticString, line: UInt) {
-        let actual: [AlertVerifier.Action] = self.actions.map { action in
+    private func verifyActions(expected: [Action], file: StaticString, line: UInt) {
+        let actual = actionsAsSwiftType()
+        let minCount = min(actual.count, expected.count)
+        for i in 0 ..< minCount {
+            if actual[i] != expected[i] {
+                XCTFail("Action \(i): Expected \(expected[i]), but was \(actual[i])",
+                        file: file, line: line)
+            }
+        }
+        if actual.count < expected.count {
+            let missing = expected[actual.count ..< expected.count].map{ $0.description }
+            XCTFail("Did not meet count of \(expected.count) actions, missing \(missing.joined(separator: ", "))",
+                    file: file, line: line)
+        } else if actual.count > expected.count {
+            let extra = actual[expected.count ..< actual.count].map{ $0.description }
+            XCTFail("Exceeded count of \(expected.count) actions, with unexpected \(extra.joined(separator: ", "))",
+                    file: file, line: line)
+        }
+    }
+
+    func actionsAsSwiftType() -> [Action] {
+        return self.actions.map { action in
             switch action.style {
             case .default:
                 return .default(action.title)
@@ -138,7 +159,6 @@ extension AlertVerifier {
                 fatalError("Unknown UIAlertAction.Style")
             }
         }
-        XCTAssertEqual(actual, expected, file: file, line: line)
     }
 
     private func verifyPreferredStyle(expected: UIAlertController.Style,

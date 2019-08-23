@@ -127,7 +127,8 @@ For example, here's a test verifying:
  - That the presenting view controller was the System Under Test.
  - The alert title.
  - The alert message.
- - The preferred style of UIAlertController.Style.alert.
+ - The preferred style of UIAlertController.Style.
+ - The titles and styles of each action.
  
 `sut` is the System Under Test in the test fixture. The Swift version uses a handy `verify` method.
 
@@ -137,7 +138,16 @@ func test_showAlert_alertShouldHaveTitle() {
 
     sut.showAlert() // Whatever triggers the alert
 
-    alertVerifier.verify(title: "Hello!", message: "How are you?", animated: true, presentingViewController: sut)
+    alertVerifier.verify(
+        title: "Hello!",
+        message: "How are you?",
+        animated: true,
+        presentingViewController: sut,
+        actions: [
+            .default("OK"),
+            .cancel("Cancel"),
+        ]
+    )
 }
 ```
 
@@ -153,6 +163,13 @@ func test_showAlert_alertShouldHaveTitle() {
     XCTAssertEqual(alertVerifier.animated, YES, @"animated");
     XCTAssertEqual(alertVerifier.preferredStyle, UIAlertController.Style.alert, @"preferred style");
     XCTAssertEqual(alertVerifier.presentingViewController, sut, @"presenting view controller");
+    
+    NSArray<UIAlertAction *> *actions = alertVerifier.actions;
+    XCTAssertEqual(actions.count, 2, @"actions count);
+    XCTAssertEqualObjects(actions[0].title, @"OK", @"first action");
+    XCTAssertEqual(actions[0].style, UIAlertActionStyleDefault, @"first action");
+    XCTAssertEqualObjects(actions[1].title, @"Cancel", @"second action");
+    XCTAssertEqual(actions[1].style, UIAlertActionStyleCancel, @"second action");
 }
 ```
 

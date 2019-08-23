@@ -16,6 +16,7 @@ Added `verify` methods to the Swift versions of each verifier.
   * The animated flag.
   * The preferred style (`.alert` or `.actionSheet`).
   * The presenting view controller, if provided.
+  * The titles and styles of each action.
 
 
 Version 4.0.0
