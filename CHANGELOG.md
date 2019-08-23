@@ -1,5 +1,6 @@
-NEXT RELEASE
-------------
+Version 4.1.0
+-------------
+_23 Aug 2019_
 
 Added `verify` methods to the Swift versions of each verifier.
 
