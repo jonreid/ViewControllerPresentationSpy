@@ -1,3 +1,9 @@
+NEXT RELEASE
+------------
+
+- Added `verify` method to Swift version of `PresentationVerifier`.
+
+
 Version 4.0.0
 -------------
 _24 Jul 2019_

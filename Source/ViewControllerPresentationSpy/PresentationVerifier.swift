@@ -1,6 +1,7 @@
 //  ViewControllerPresentationSpy by Jon Reid, https://qualitycoding.org/
 //  Copyright 2019 Jonathan M. Reid. See LICENSE.txt
 
+import XCTest
 import UIKit
 
 /**
@@ -61,5 +62,38 @@ public class PresentationVerifier: NSObject {
         if let completion = testCompletion {
             completion()
         }
+    }
+}
+
+extension PresentationVerifier {
+    @discardableResult public func verify<VC: UIViewController>(
+            animated: Bool,
+            presentingViewController: UIViewController? = nil,
+            file: StaticString = #file, line: UInt = #line) -> VC? {
+        if presentedCount == 0 {
+            XCTFail("present not called", file: file, line: line)
+            return nil
+        }
+        if presentedCount > 1 {
+            XCTFail("present called \(presentedCount) times", file: file, line: line)
+        }
+        if animated != self.animated {
+            if animated {
+                XCTFail("Expected animated present, but was not animated", file: file, line: line)
+            } else {
+                XCTFail("Expected non-animated present, but was animated", file: file, line: line)
+            }
+        }
+        if let presentingViewController = presentingViewController {
+            XCTAssertTrue(presentingViewController === self.presentingViewController,
+                    "Expected presenting view controller to be \(presentingViewController)), " +
+                            "but was \(String(describing: self.presentingViewController))",
+                    file: file, line: line)
+        }
+        guard let nextVC = presentedViewController as? VC else {
+            XCTFail("Expected presented view controller to be \(VC.self)), but was \(String(describing: presentedViewController))")
+            return nil
+        }
+        return nextVC
     }
 }

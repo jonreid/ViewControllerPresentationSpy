@@ -5,7 +5,8 @@
 [![CocoaPods Version](https://cocoapod-badges.herokuapp.com/v/ViewControllerPresentationSpy/badge.png)](https://cocoapods.org/pods/ViewControllerPresentationSpy)
 [![Twitter Follow](https://img.shields.io/twitter/follow/qcoding.svg?style=social)](https://twitter.com/qcoding)
 
-ViewControllerPresentationSpy intercepts presented view controllers, including alerts and actions sheets.
+ViewControllerPresentationSpy intercepts presented view controllers, including alerts and actions
+sheets.
 
 Segues can be captured. For alerts, no actual alerts are presented. This means:
 
@@ -13,7 +14,8 @@ Segues can be captured. For alerts, no actual alerts are presented. This means:
 * Tests are blazing fast.
 * You can test things with unit tests instead of UI tests.
 
-For more discussion, see my blog post [How to Test UIAlertControllers and Control Swizzling](http://qualitycoding.org/testing-uialertcontrollers/).
+For more discussion, see my blog post
+[How to Test UIAlertControllers and Control Swizzling](http://qualitycoding.org/testing-uialertcontrollers/).
 
 
 ## Writing Tests
@@ -30,7 +32,15 @@ Nothing.
 Information about the presentation is then available through the
 [PresententationVerifier](https://github.com/jonreid/ViewControllerPresentationSpy/blob/master/Source/ViewControllerPresentationSpy/PresentationVerifier.swift).
 
-For example, here's a test verifying that one view controller was presented, that its type is correct, and that it has a particular property. `sut` is the System Under Test in the test fixture.
+
+For example, here's a test verifying:
+
+ - That one view controller was presented, with animation.
+ - That the presenting view controller was the System Under Test.
+ - That the type of the presented view controller is correct.
+ - That the presented view controller has a particular property.
+ 
+`sut` is the System Under Test in the test fixture. The Swift version uses a handy `verify` method.
 
 ```swift
 func test_presentedVC_shouldHaveSpecialSettingHello() {
@@ -38,12 +48,9 @@ func test_presentedVC_shouldHaveSpecialSettingHello() {
 
     sut.showVC() // Whatever presents the view controller
 
-    XCTAssertEqual(presentationVerifier.presentedCount, 1, "presented count")
-    guard let nextVC = presentationVerifier.presentedViewController as? MyViewController else {
-        XCTFail("Expected MyViewController, but was \(presentationVerifier.presentedViewController)")
-        return
-    }
-    XCTAssertEqual(nextVC.specialSetting, "Hello!")
+    let nextVC: MyViewController? = presentationVerifier.verify(animated: true,
+                                       presentingViewController: sut)
+    XCTAssertEqual(nextVC?.specialSetting, "Hello!")
 }
 ```
 
@@ -54,6 +61,8 @@ func test_presentedVC_shouldHaveSpecialSettingHello() {
     [sut showVC]; // Whatever presents the view controller
 
     XCTAssertEqual(presentationVerifier.presentedCount, 1, @"presented count");
+    XCTAssertTrue(presentationVerifier.animated, @"animated");
+    XCTAssertEqual(presentationVerifier.presentingViewController, sut, @"presenting view controller");
     if (![presentationVerifier.presentedViewController isKindOfClass:[MyViewController class]])
     {
         XCTFail(@"Expected MyViewController, but was %@", presentationVerifier.presentedViewController);
@@ -66,19 +75,25 @@ func test_presentedVC_shouldHaveSpecialSettingHello() {
 
 ### How do I test a segue?
 
-It depends. First, follow the steps above for testing a presented view controller. Trigger the segue from test code. For example, we can trigger a segue attached to a button by calling `sendActions(for: .touchUpInside)` on the button.
+It depends. First, follow the steps above for testing a presented view controller. Trigger the
+segue from test code. For example, we can trigger a segue attached to a button by calling
+`sendActions(for: .touchUpInside)` on the button.
 
 **Segue Type: Present Modally**
 
 That's all you need to do. _But you need to be aware of a memory issue:_
 
-Neither the presenting view controller nor the presented view controller will be deallocated during test execution. This can cause problems during test runs if either affects global statue, such as listening to the NotificationCenter. You may need to add special methods outside of `deinit` that allow tests to clean them up.
+Neither the presenting view controller nor the presented view controller will be deallocated
+during test execution. This can cause problems during test runs if either affects global state,
+such as listening to the NotificationCenter. You may need to add special methods outside of
+`deinit` that allow tests to clean them up. 
 
 **Segue Type: Show**
 
 A "Show" segue (which does push navigation) takes a little more work.
 
-First, install the presenting view controller as the root view controller of a UIWindow. Make this window visible.
+First, install the presenting view controller as the root view controller of a UIWindow. Make
+this window visible.
 
 ```
     let window = UIWindow()
@@ -86,13 +101,15 @@ First, install the presenting view controller as the root view controller of a U
     window.isHidden = false
 ```
 
-To clean up memory at the end, add this to the beginning of the `tearDown()` method of the test suite to pump the run loop:
+To clean up memory at the end, add this to the beginning of the `tearDown()` method of the test
+suite to pump the run loop:
 
 ```
 RunLoop.current.run(until: Date())
 ```
 
-This ensures that both the presenting view controller and the presented view controller are deallocated at the end of the test case.
+This ensures that both the presenting view controller and the presented view controller are
+deallocated at the end of the test case.
 
 ### How do I test an alert controller?
 
@@ -102,8 +119,8 @@ This ensures that both the presenting view controller and the presented view con
 Information about the alert or action sheet is then available through the
 [AlertVerifier](https://github.com/jonreid/ViewControllerPresentationSpy/blob/master/Source/ViewControllerPresentationSpy/AlertVerifier.swift).
 
-For example, here's a test verifying the title (and that the alert is presented exactly once). `sut` is the System Under Test
-in the test fixture.
+For example, here's a test verifying the title (and that the alert is presented exactly once).
+`sut` is the System Under Test in the test fixture.
 
 ```swift
 func test_showAlert_alertShouldHaveTitle() {
@@ -129,9 +146,8 @@ func test_showAlert_alertShouldHaveTitle() {
 
 ### How can I invoke the closure associated with a UIAlertAction?
 
-Go through the steps above to present your alert or action sheet.
-Then call `executeAction(forButton:)` on your `AlertVerifier` with the button title.
-For example:
+Go through the steps above to present your alert or action sheet. Then call
+`executeAction (forButton:)` on your `AlertVerifier` with the button title. For example:
 
 ```swift
 func test_executingActionForOKButton_shouldDoSomething() throws {
@@ -157,7 +173,8 @@ func test_executingActionForOKButton_shouldDoSomething() throws {
 }
 ```
 
-Because this method can throw an exception, declare the Swift test method as `throws` and call the method with `try`. For Objective-C, pass in an NSError and check that it's not nil.
+Because this method can throw an exception, declare the Swift test method as `throws` and call
+the method with `try`. For Objective-C, pass in an NSError and check that it's not nil.
 
 ### How can I invoke the closure passed to present(_:animated:completion:)?
 
@@ -165,7 +182,8 @@ The production code completion handler is captured in the verifier's `capturedCo
 
 ### How can I test something that's presented using DispatchQueue.main?
 
-Create an expectation in your test case. Fulfill it in the verifier's `testCompletion` closure. Add a short wait at the start of the Assert phase.
+Create an expectation in your test case. Fulfill it in the verifier's `testCompletion` closure.
+Add a short wait at the start of the Assert phase.
 
 ```swift
 func test_showAlertOnMainDispatchQueue_shouldDoSomething() {
@@ -195,7 +213,8 @@ func test_presentViewControllerOnMainDispatchQueue_shouldDoSomething() {
 
 ### Can I see some examples?
 
-There are sample apps in both Swift and Objective-C. Run them on both phone & pad to see what they do, then read the ViewControllerAlertTests and ViewControllerPresentationTests.
+There are sample apps in both Swift and Objective-C. Run them on both phone & pad to see what
+they do, then read the ViewControllerAlertTests and ViewControllerPresentationTests.
 
 
 ## Adding it to your project
@@ -221,7 +240,10 @@ github "jonreid/ViewControllerPresentationSpy" ~> 4.0
 
 ### Prebuilt Framework
 
-Prebuilt binaries are available on [GitHub](https://github.com/jonreid/ViewControllerPresentationSpy/releases).
+Prebuilt binaries are available on
+[GitHub](https://github.com/jonreid/ViewControllerPresentationSpy/releases).
 
-- Drag ViewControllerPresentationSpy.framework into your project, specifying "Copy items into destination group's folder".
-- Add a "Copy Files" build phase to copy ViewControllerPresentationSpy.framework to your Products Directory.
+- Drag ViewControllerPresentationSpy.framework into your project, specifying "Copy items into
+  destination group's folder".
+- Add a "Copy Files" build phase to copy ViewControllerPresentationSpy.framework to your Products
+  Directory.

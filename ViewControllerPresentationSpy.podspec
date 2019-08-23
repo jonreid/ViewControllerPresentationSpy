@@ -22,4 +22,8 @@ Pod::Spec.new do |s|
   s.public_header_files = 'Source/ViewControllerPresentationSpy/QCOMockPopoverPresentationController.h', 'Source/ViewControllerPresentationSpy/UIAlertAction+QCOMock.h', 'Source/ViewControllerPresentationSpy/UIAlertController+QCOMock.h', 'Source/ViewControllerPresentationSpy/UIViewController+QCOMock.h'
   s.requires_arc = true
   s.swift_version = "5.0"
+  s.weak_framework = "XCTest"
+  s.pod_target_xcconfig = {
+    'FRAMEWORK_SEARCH_PATHS' => '$(inherited) "$(PLATFORM_DIR)/Developer/Library/Frameworks"',
+  }
 end
