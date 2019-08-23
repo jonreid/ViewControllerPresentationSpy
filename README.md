@@ -47,8 +47,7 @@ func test_presentedVC_shouldHaveSpecialSettingHello() {
 
     sut.showVC() // Whatever presents the view controller
 
-    let nextVC: MyViewController? = presentationVerifier.verify(animated: true,
-                                       presentingViewController: sut)
+    let nextVC: MyViewController? = presentationVerifier.verify(animated: true, presentingViewController: sut)
     XCTAssertEqual(nextVC?.specialSetting, "Hello!")
 }
 ```
