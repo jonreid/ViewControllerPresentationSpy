@@ -9,7 +9,7 @@ final class ViewControllerAlertTests: XCTestCase {
     override func setUp() {
         super.setUp()
         alertVerifier = AlertVerifier()
-        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)1
+        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
         sut = storyboard.instantiateViewController(withIdentifier: String(describing: ViewController.self)) as? ViewController
         sut.loadViewIfNeeded()
     }
@@ -27,14 +27,34 @@ final class ViewControllerAlertTests: XCTestCase {
 
     func test_tappingShowAlertButton_shouldShowAlert() {
         sut.showAlertButton.sendActions(for: .touchUpInside)
-        
-        alertVerifier.verify(title: "Title", message: "Message", animated: true)
+
+        alertVerifier.verify(
+                title: "Title",
+                message: "Message",
+                animated: true,
+                actions: [
+                    .default("No Handler"),
+                    .default("Default"),
+                    .cancel("Cancel"),
+                    .destructive("Destroy"),
+                ]
+        )
     }
 
     func test_tappingShowActionSheetButton_shouldShowActionSheet() {
         sut.showActionSheetButton.sendActions(for: .touchUpInside)
 
-        alertVerifier.verify(title: "Title", message: "Message", animated: true, preferredStyle: .actionSheet)
+        alertVerifier.verify(
+                title: "Title",
+                message: "Message",
+                animated: true,
+                actions: [
+                    .default("No Handler"),
+                    .default("Default"),
+                    .cancel("Cancel"),
+                    .destructive("Destroy"),
+                ],
+                preferredStyle: .actionSheet)
     }
 
     func test_popoverForActionSheet() {

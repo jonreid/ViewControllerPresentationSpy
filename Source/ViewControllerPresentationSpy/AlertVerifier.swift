@@ -107,6 +107,7 @@ extension AlertVerifier {
             title: String?,
             message: String?,
             animated: Bool,
+            actions: [AlertVerifier.Action],
             preferredStyle: UIAlertController.Style = .alert,
             presentingViewController: UIViewController? = nil,
             file: StaticString = #file,
@@ -144,6 +145,14 @@ extension AlertVerifier {
                             "but was \(String(describing: self.presentingViewController))",
                     file: file, line: line)
         }
+    }
+}
+
+extension AlertVerifier {
+    public enum Action: Equatable {
+        case `default`(String)
+        case cancel(String)
+        case destructive(String)
     }
 }
 
