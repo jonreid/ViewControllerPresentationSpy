@@ -118,9 +118,6 @@ deallocated at the end of the test case.
 Information about the alert or action sheet is then available through the
 [AlertVerifier](https://github.com/jonreid/ViewControllerPresentationSpy/blob/master/Source/ViewControllerPresentationSpy/AlertVerifier.swift).
 
-For example, here's a test verifying the title (and that the alert is presented exactly once).
-`sut` is the System Under Test in the test fixture.
-
 For example, here's a test verifying:
 
  - That one alert was presented, with animation.
