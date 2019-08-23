@@ -195,8 +195,6 @@ extension AlertVerifier.Action: CustomStringConvertible {
             return ".cancel(\(String(describing: title))"
         case let .destructive(title):
             return ".destructive(\(String(describing: title))"
-        @unknown default:
-            fatalError("Unknown UIAlertAction.Style")
         }
     }
 }
