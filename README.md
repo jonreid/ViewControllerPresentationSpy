@@ -96,9 +96,9 @@ First, install the presenting view controller as the root view controller of a U
 this window visible.
 
 ```
-    let window = UIWindow()
-    window.rootViewController = sut
-    window.isHidden = false
+let window = UIWindow()
+window.rootViewController = sut
+window.isHidden = false
 ```
 
 To clean up memory at the end, add this to the beginning of the `tearDown()` method of the test
