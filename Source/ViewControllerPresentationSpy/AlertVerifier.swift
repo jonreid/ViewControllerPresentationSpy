@@ -103,6 +103,9 @@ public class AlertVerifier: NSObject {
 }
 
 extension AlertVerifier {
+    /**
+        Verifies presentation of one alert.
+    */
     public func verify(
             title: String?,
             message: String?,
@@ -111,39 +114,29 @@ extension AlertVerifier {
             preferredStyle: UIAlertController.Style = .alert,
             presentingViewController: UIViewController? = nil,
             file: StaticString = #file,
-            line: UInt = #line
-    ) {
-        if presentedCount == 0 {
-            XCTFail("present not called", file: file, line: line)
-            return
-        }
-        if presentedCount > 1 {
-            XCTFail("present called \(presentedCount) times", file: file, line: line)
-        }
+            line: UInt = #line) {
+        let abort = verifyPresentedCount(actual: self.presentedCount, file: file, line: line)
+        if abort { return }
         XCTAssertEqual(self.title, title, "title")
         XCTAssertEqual(self.message, message, "message")
-        if animated != self.animated {
-            if animated {
-                XCTFail("Expected animated present, but was not animated", file: file, line: line)
-            } else {
-                XCTFail("Expected non-animated present, but was animated", file: file, line: line)
-            }
-        }
-        if preferredStyle != self.preferredStyle {
-            switch preferredStyle {
+        verifyAnimated(actual: self.animated, expected: animated, file: file, line: line)
+        verifyPreferredStyle(expected: preferredStyle, file: file, line: line)
+        verifyPresentingViewController(actual: self.presentingViewController, expected: presentingViewController, file: file, line: line)
+    }
+
+    private func verifyPreferredStyle(expected: UIAlertController.Style,
+                                      file: StaticString,
+                                      line: UInt) {
+        let actual = self.preferredStyle
+        if actual != expected {
+            switch expected {
             case .actionSheet:
                 XCTFail("Expected preferred style .actionSheet, but was .alert", file: file, line: line)
             case .alert:
                 XCTFail("Expected preferred style .alert, but was .actionSheet", file: file, line: line)
             @unknown default:
-                print("preferred style not recognized, please contact maintainer")
+                print("Preferred style not recognized. Please contact maintainer.")
             }
-        }
-        if let presentingViewController = presentingViewController {
-            XCTAssertTrue(presentingViewController === self.presentingViewController,
-                    "Expected presenting view controller to be \(presentingViewController)), " +
-                            "but was \(String(describing: self.presentingViewController))",
-                    file: file, line: line)
         }
     }
 }

@@ -21,6 +21,7 @@
 		BB1707360BE35588D3F40492 /* ClosureContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1706C2B7CE68DD81C1E383 /* ClosureContainer.swift */; };
 		BB1707A21243C9FA6F558CAC /* PresentationVerifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1701BF26D1A6EC6D6736E3 /* PresentationVerifier.swift */; };
 		BB1709AE226B61ABE035BEA5 /* AlertVerifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB170F803977DDBC293D88B0 /* AlertVerifier.swift */; };
+		BB170F50DED2DEF45DAD3DB2 /* VerifyHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1701C77B1F2B9326CD33DA /* VerifyHelpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		48007C8F2079A7E3007A4AB0 /* UIViewController+QCOMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+QCOMock.h"; sourceTree = "<group>"; };
 		48007C9D2079A8D4007A4AB0 /* XcodeWarnings.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = XcodeWarnings.xcconfig; sourceTree = "<group>"; };
 		BB1701BF26D1A6EC6D6736E3 /* PresentationVerifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationVerifier.swift; sourceTree = "<group>"; };
+		BB1701C77B1F2B9326CD33DA /* VerifyHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyHelpers.swift; sourceTree = "<group>"; };
 		BB1706C2B7CE68DD81C1E383 /* ClosureContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClosureContainer.swift; sourceTree = "<group>"; };
 		BB170F803977DDBC293D88B0 /* AlertVerifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertVerifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -76,6 +78,7 @@
 			children = (
 				BB1701BF26D1A6EC6D6736E3 /* PresentationVerifier.swift */,
 				BB170F803977DDBC293D88B0 /* AlertVerifier.swift */,
+				BB1701C77B1F2B9326CD33DA /* VerifyHelpers.swift */,
 				48007C7C2079A76E007A4AB0 /* ViewControllerPresentationSpy.h */,
 				48007C882079A7E2007A4AB0 /* NSObject+QCOMockAlerts.h */,
 				48007C8B2079A7E2007A4AB0 /* NSObject+QCOMockAlerts.m */,
@@ -182,6 +185,7 @@
 				BB1707A21243C9FA6F558CAC /* PresentationVerifier.swift in Sources */,
 				BB1709AE226B61ABE035BEA5 /* AlertVerifier.swift in Sources */,
 				BB1707360BE35588D3F40492 /* ClosureContainer.swift in Sources */,
+				BB170F50DED2DEF45DAD3DB2 /* VerifyHelpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -66,36 +66,23 @@ public class PresentationVerifier: NSObject {
 }
 
 extension PresentationVerifier {
+    /**
+        Verifies presentation of one view controller.
+    */
     @discardableResult public func verify<VC: UIViewController>(
             animated: Bool,
             presentingViewController: UIViewController? = nil,
             file: StaticString = #file,
             line: UInt = #line
     ) -> VC? {
-        if presentedCount == 0 {
-            XCTFail("present not called", file: file, line: line)
-            return nil
-        }
-        if presentedCount > 1 {
-            XCTFail("present called \(presentedCount) times", file: file, line: line)
-        }
-        if animated != self.animated {
-            if animated {
-                XCTFail("Expected animated present, but was not animated", file: file, line: line)
-            } else {
-                XCTFail("Expected non-animated present, but was animated", file: file, line: line)
-            }
-        }
-        if let presentingViewController = presentingViewController {
-            XCTAssertTrue(presentingViewController === self.presentingViewController,
-                    "Expected presenting view controller to be \(presentingViewController)), " +
-                            "but was \(String(describing: self.presentingViewController))",
-                    file: file, line: line)
-        }
-        guard let nextVC = presentedViewController as? VC else {
+        let abort = verifyPresentedCount(actual: self.presentedCount, file: file, line: line)
+        if abort { return nil }
+        verifyAnimated(actual: self.animated, expected: animated, file: file, line: line)
+        verifyPresentingViewController(actual: self.presentingViewController, expected: presentingViewController, file: file, line: line)
+        let nextVC = presentedViewController as? VC
+        if nextVC == nil {
             XCTFail("Expected presented view controller to be \(VC.self)), " +
-                    "but was \(String(describing: presentedViewController))")
-            return nil
+                    "but was \(String(describing: presentedViewController))", file: file, line: line)
         }
         return nextVC
     }
