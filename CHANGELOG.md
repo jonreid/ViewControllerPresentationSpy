@@ -1,3 +1,10 @@
+Version 4.1.1
+-------------
+_24 Aug 2019_
+
+- Fix alert `verify` to pass call site file/line for title and message errors.
+
+
 Version 4.1.0
 -------------
 _23 Aug 2019_
