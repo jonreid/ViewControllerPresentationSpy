@@ -202,8 +202,8 @@ suite to pump the run loop:
 RunLoop.current.run(until: Date())
 ```
 
-This ensures that both the presenting view controller and the presented view controller are
-deallocated at the end of the test case.
+This ensures that the window is deallocated at the end of the test case. That way, both the view
+controllers will also cease to exist.
 
 ### How do I test dismissing a modal?
 
