@@ -1,4 +1,4 @@
-@testable import ViewControllerPresentationSpy
+import ViewControllerPresentationSpy
 @testable import SwiftSampleViewControllerPresentationSpy
 import XCTest
 
