@@ -16,6 +16,7 @@
 		48EECF4722E3B73B00A940C5 /* ViewControllerPresentationSpy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 480A9BAD22E3B4F000513296 /* ViewControllerPresentationSpy.framework */; };
 		BB17009B68161DEF4B893859 /* ViewControllerPresentationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB170641301DFD266F710CFF /* ViewControllerPresentationTests.swift */; };
 		BB1702F538CDAC8D7AD2DD6B /* PresentationVerifierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB170F190A3F87881ED05594 /* PresentationVerifierTests.swift */; };
+		BB170882C39E82580AE429AB /* DismissalVerifierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB17083802A53CACC6764A2E /* DismissalVerifierTests.swift */; };
 		BB170DCA39689C21DAC49039 /* CodeNextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB17059942E490E7CB29AF72 /* CodeNextViewController.swift */; };
 		BB170E252AEE5E0EAF396717 /* StoryboardNextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB170ED7810BEA2800855367 /* StoryboardNextViewController.swift */; };
 		BB170E974A1EAE6E715F3539 /* AlertVerifierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB170A0F6EDD04B901018053 /* AlertVerifierTests.swift */; };
@@ -54,6 +55,7 @@
 		48EECF3922E3B44900A940C5 /* ViewControllerPresentationSpy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ViewControllerPresentationSpy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB17059942E490E7CB29AF72 /* CodeNextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeNextViewController.swift; sourceTree = "<group>"; };
 		BB170641301DFD266F710CFF /* ViewControllerPresentationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerPresentationTests.swift; sourceTree = "<group>"; };
+		BB17083802A53CACC6764A2E /* DismissalVerifierTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DismissalVerifierTests.swift; sourceTree = "<group>"; };
 		BB170A0F6EDD04B901018053 /* AlertVerifierTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertVerifierTests.swift; sourceTree = "<group>"; };
 		BB170ED7810BEA2800855367 /* StoryboardNextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardNextViewController.swift; sourceTree = "<group>"; };
 		BB170F190A3F87881ED05594 /* PresentationVerifierTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationVerifierTests.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				4804BCA822E169A9000130AD /* XcodeWarnings.xcconfig */,
 				BB170A0F6EDD04B901018053 /* AlertVerifierTests.swift */,
 				BB170F190A3F87881ED05594 /* PresentationVerifierTests.swift */,
+				BB17083802A53CACC6764A2E /* DismissalVerifierTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 				BB17009B68161DEF4B893859 /* ViewControllerPresentationTests.swift in Sources */,
 				BB170E974A1EAE6E715F3539 /* AlertVerifierTests.swift in Sources */,
 				BB1702F538CDAC8D7AD2DD6B /* PresentationVerifierTests.swift in Sources */,
+				BB170882C39E82580AE429AB /* DismissalVerifierTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

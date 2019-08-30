@@ -87,7 +87,7 @@
         <!--Storyboard Next View Controller-->
         <scene sceneID="9dR-lw-3K9">
             <objects>
-                <viewController id="KbI-a0-wdB" customClass="StoryboardNextViewController" customModule="SwiftSampleViewControllerPresentationSpy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StoryboardNextViewController" id="KbI-a0-wdB" customClass="StoryboardNextViewController" customModule="SwiftSampleViewControllerPresentationSpy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TlC-GF-T7s"/>
                         <viewControllerLayoutGuide type="bottom" id="Y2p-pf-2AV"/>
@@ -99,7 +99,11 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lhA-2G-JZi">
                                 <rect key="frame" x="0.0" y="64" width="375" height="44"/>
                                 <items>
-                                    <barButtonItem systemItem="cancel" id="IbD-V3-9Mb"/>
+                                    <barButtonItem systemItem="cancel" id="IbD-V3-9Mb">
+                                        <connections>
+                                            <action selector="cancel" destination="KbI-a0-wdB" id="gUY-H9-Y4a"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>
@@ -111,6 +115,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="cancelButton" destination="IbD-V3-9Mb" id="pLi-im-4cb"/>
                         <outlet property="toolbar" destination="lhA-2G-JZi" id="qVb-Y0-DeJ"/>
                     </connections>
                 </viewController>

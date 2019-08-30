@@ -8,8 +8,8 @@ import UIKit
     Captures presented view controllers.
  
     Instantiate a PresentationVerifier before the execution phase of the test. Then invoke the code
-    to create and present your view controller. Information about the view controller is then
-    available through the PresentationVerifier.
+    to create and present your view controller. Information about the presentation is then available
+    through the PresentationVerifier.
  */
 @objc(QCOPresentationVerifier)
 public class PresentationVerifier: NSObject {

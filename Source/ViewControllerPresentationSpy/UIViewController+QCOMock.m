@@ -11,6 +11,7 @@ NSString *const QCOMockViewControllerPresentingViewControllerKey = @"QCOMockView
 NSString *const QCOMockViewControllerAnimatedKey = @"QCOMockViewControllerAnimatedKey";
 NSString *const QCOMockViewControllerCompletionKey = @"QCOMockViewControllerCompletionKey";
 NSString *const QCOMockViewControllerPresentedNotification = @"QCOMockViewControllerPresentedNotification";
+NSString *const QCOMockViewControllerDismissedNotification = @"QCOMockViewControllerDismissedNotification";
 
 @implementation UIViewController (QCOMock)
 
@@ -24,6 +25,12 @@ NSString *const QCOMockViewControllerPresentedNotification = @"QCOMockViewContro
 {
     [self qcoMockAlerts_replaceInstanceMethod:@selector(presentViewController:animated:completion:)
                                    withMethod:@selector(qcoMock_presentViewControllerCapturingIt:animated:completion:)];
+}
+
++ (void)qcoMock_swizzleCaptureDismiss
+{
+    [self qcoMockAlerts_replaceInstanceMethod:@selector(dismissViewControllerAnimated:completion:)
+                                   withMethod:@selector(qcoMock_dismissViewControllerAnimated:completion:)];
 }
 
 - (void)qcoMock_presentViewControllerCapturingAlert:(UIViewController *)viewControllerToPresent
@@ -57,6 +64,19 @@ NSString *const QCOMockViewControllerPresentedNotification = @"QCOMockViewContro
                       object:viewControllerToPresent
                     userInfo:@{
                             QCOMockViewControllerPresentingViewControllerKey: self,
+                            QCOMockViewControllerAnimatedKey: @(flag),
+                            QCOMockViewControllerCompletionKey: closureContainer,
+                    }];
+}
+
+- (void)qcoMock_dismissViewControllerAnimated:(BOOL)flag
+                                   completion:(void (^ __nullable)(void))completion
+{
+    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+    QCOClosureContainer *closureContainer = [[QCOClosureContainer alloc] initWithClosure:completion];
+    [nc postNotificationName:QCOMockViewControllerDismissedNotification
+                      object:self
+                    userInfo:@{
                             QCOMockViewControllerAnimatedKey: @(flag),
                             QCOMockViewControllerCompletionKey: closureContainer,
                     }];
