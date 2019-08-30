@@ -115,15 +115,15 @@ extension AlertVerifier {
             presentingViewController: UIViewController? = nil,
             file: StaticString = #file,
             line: UInt = #line) {
-        let abort = verifyPresentedCount(actual: self.presentedCount, file: file, line: line)
+        let abort = verifyCallCount(actual: self.presentedCount, action: "present", file: file, line: line)
         if abort { return }
         XCTAssertEqual(self.title, title, "alert title", file: file, line: line)
         XCTAssertEqual(self.message, message, "alert message", file: file, line: line)
-        verifyAnimated(actual: self.animated, expected: animated, file: file, line: line)
+        verifyAnimated(actual: self.animated, expected: animated, action: "present", file: file, line: line)
         verifyActions(expected: actions, file: file, line: line)
         verifyPreferredStyle(expected: preferredStyle, file: file, line: line)
-        verifyPresentingViewController(actual: self.presentingViewController,
-                expected: presentingViewController, file: file, line: line)
+        verifyViewController(actual: self.presentingViewController, expected: presentingViewController,
+                adjective: "presenting", file: file, line: line)
     }
 
     private func verifyActions(expected: [Action], file: StaticString, line: UInt) {

@@ -75,10 +75,11 @@ extension PresentationVerifier {
             file: StaticString = #file,
             line: UInt = #line
     ) -> VC? {
-        let abort = verifyPresentedCount(actual: self.presentedCount, file: file, line: line)
+        let abort = verifyCallCount(actual: self.presentedCount, action: "present", file: file, line: line)
         if abort { return nil }
-        verifyAnimated(actual: self.animated, expected: animated, file: file, line: line)
-        verifyPresentingViewController(actual: self.presentingViewController, expected: presentingViewController, file: file, line: line)
+        verifyAnimated(actual: self.animated, expected: animated, action: "present", file: file, line: line)
+        verifyViewController(actual: self.presentingViewController, expected: presentingViewController,
+                adjective: "presenting", file: file, line: line)
         let nextVC = presentedViewController as? VC
         if nextVC == nil {
             XCTFail("Expected presented view controller to be \(VC.self)), " +
