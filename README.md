@@ -207,7 +207,7 @@ controllers will also cease to exist.
 
 ### How do I test dismissing a modal?
 
-1. Instantiate an `DismissalVerifier` before the Act phase of the test.
+1. Instantiate a `DismissalVerifier` before the Act phase of the test.
 2. Invoke the code to dismiss your modal.
 
 Information about the dismissal is then available through the
