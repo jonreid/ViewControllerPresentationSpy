@@ -26,6 +26,98 @@ For more discussion, see my blog post
 
 Nothing.
 
+### How do I test an alert controller?
+
+1. Instantiate an `AlertVerifier` before the Act phase of the test.
+2. Invoke the code to create and present your alert or action sheet.
+
+Information about the alert or action sheet is then available through the
+[AlertVerifier](https://github.com/jonreid/ViewControllerPresentationSpy/blob/master/Source/ViewControllerPresentationSpy/AlertVerifier.swift).
+
+For example, here's a test verifying:
+
+ - That one alert was presented, with animation.
+ - That the presenting view controller was the System Under Test.
+ - The alert title.
+ - The alert message.
+ - The preferred style of UIAlertController.Style.
+ - The titles and styles of each action.
+ 
+`sut` is the System Under Test in the test fixture. The Swift version uses a handy `verify` method.
+
+```swift
+func test_showAlert_alertShouldHaveTitle() {
+    let alertVerifier = AlertVerifier()
+
+    sut.showAlert() // Whatever triggers the alert
+
+    alertVerifier.verify(
+        title: "Hello!",
+        message: "How are you?",
+        animated: true,
+        presentingViewController: sut,
+        actions: [
+            .default("OK"),
+            .cancel("Cancel"),
+        ]
+    )
+}
+```
+
+```obj-c
+- (void)test_showAlert_alertShouldHaveTitle
+{
+    QCOAlertVerifier *alertVerifier = [[QCOAlertVerifier alloc] init];
+
+    [sut showAlert]; // Whatever triggers the alert
+
+    XCTAssertEqual(alertVerifier.presentedCount, 1, @"presented count");
+    XCTAssertEqualObjects(alertVerifier.title, @"Hello!", @"title");
+    XCTAssertEqualObjects(alertVerifier.message, @"How are you?", @"message");
+    XCTAssertEqual(alertVerifier.animated, YES, @"animated");
+    XCTAssertEqual(alertVerifier.preferredStyle, UIAlertController.Style.alert, @"preferred style");
+    XCTAssertEqual(alertVerifier.presentingViewController, sut, @"presenting view controller");
+    XCTAssertEqual(alertVerifier.actions.count, 2, @"actions count);
+    XCTAssertEqualObjects(alertVerifier.actions[0].title, @"OK", @"first action");
+    XCTAssertEqual(alertVerifier.actions[0].style, UIAlertActionStyleDefault, @"first action");
+    XCTAssertEqualObjects(alertVerifier.actions[1].title, @"Cancel", @"second action");
+    XCTAssertEqual(alertVerifier.actions[1].style, UIAlertActionStyleCancel, @"second action");
+}
+```
+
+### How can I invoke the closure associated with a UIAlertAction?
+
+Go through the steps above to present your alert or action sheet. Then call
+`executeAction (forButton:)` on your `AlertVerifier` with the button title. For example:
+
+```swift
+func test_executingActionForOKButton_shouldDoSomething() throws {
+    let alertVerifier = AlertVerifier()
+    sut.showAlert()
+    
+    try alertVerifier.executeAction(forButton: "OK")
+
+    // Now assert what you want
+}
+```
+
+```obj-c
+- (void)test_executingActionForOKButton_shouldDoSomething
+{
+    QCOAlertVerifier *alertVerifier = [[QCOAlertVerifier alloc] init];
+    [sut showAlert];
+
+    NSError *error = nil;
+    [alertVerifier executeActionForButton:@"OK" returningError:&error];
+
+    XCTAssertNil(error);
+    // Now add your own assertions
+}
+```
+
+Because this method can throw an exception, declare the Swift test method as `throws` and call
+the method with `try`. For Objective-C, pass in an NSError and check that it's not nil.
+
 ### How do I test a presented view controller?
 
 1. Instantiate a `PresentationVerifier` before the Act phase of the test.
@@ -147,98 +239,6 @@ func test_dismissingVC() {
     XCTAssertEqual(dismissalVerifier.presentingViewController, sut, @"dismissed view controller");
 }
 ```
-
-### How do I test an alert controller?
-
-1. Instantiate an `AlertVerifier` before the Act phase of the test.
-2. Invoke the code to create and present your alert or action sheet.
-
-Information about the alert or action sheet is then available through the
-[AlertVerifier](https://github.com/jonreid/ViewControllerPresentationSpy/blob/master/Source/ViewControllerPresentationSpy/AlertVerifier.swift).
-
-For example, here's a test verifying:
-
- - That one alert was presented, with animation.
- - That the presenting view controller was the System Under Test.
- - The alert title.
- - The alert message.
- - The preferred style of UIAlertController.Style.
- - The titles and styles of each action.
- 
-`sut` is the System Under Test in the test fixture. The Swift version uses a handy `verify` method.
-
-```swift
-func test_showAlert_alertShouldHaveTitle() {
-    let alertVerifier = AlertVerifier()
-
-    sut.showAlert() // Whatever triggers the alert
-
-    alertVerifier.verify(
-        title: "Hello!",
-        message: "How are you?",
-        animated: true,
-        presentingViewController: sut,
-        actions: [
-            .default("OK"),
-            .cancel("Cancel"),
-        ]
-    )
-}
-```
-
-```obj-c
-- (void)test_showAlert_alertShouldHaveTitle
-{
-    QCOAlertVerifier *alertVerifier = [[QCOAlertVerifier alloc] init];
-
-    [sut showAlert]; // Whatever triggers the alert
-
-    XCTAssertEqual(alertVerifier.presentedCount, 1, @"presented count");
-    XCTAssertEqualObjects(alertVerifier.title, @"Hello!", @"title");
-    XCTAssertEqualObjects(alertVerifier.message, @"How are you?", @"message");
-    XCTAssertEqual(alertVerifier.animated, YES, @"animated");
-    XCTAssertEqual(alertVerifier.preferredStyle, UIAlertController.Style.alert, @"preferred style");
-    XCTAssertEqual(alertVerifier.presentingViewController, sut, @"presenting view controller");
-    XCTAssertEqual(alertVerifier.actions.count, 2, @"actions count);
-    XCTAssertEqualObjects(alertVerifier.actions[0].title, @"OK", @"first action");
-    XCTAssertEqual(alertVerifier.actions[0].style, UIAlertActionStyleDefault, @"first action");
-    XCTAssertEqualObjects(alertVerifier.actions[1].title, @"Cancel", @"second action");
-    XCTAssertEqual(alertVerifier.actions[1].style, UIAlertActionStyleCancel, @"second action");
-}
-```
-
-### How can I invoke the closure associated with a UIAlertAction?
-
-Go through the steps above to present your alert or action sheet. Then call
-`executeAction (forButton:)` on your `AlertVerifier` with the button title. For example:
-
-```swift
-func test_executingActionForOKButton_shouldDoSomething() throws {
-    let alertVerifier = AlertVerifier()
-    sut.showAlert()
-    
-    try alertVerifier.executeAction(forButton: "OK")
-
-    // Now assert what you want
-}
-```
-
-```obj-c
-- (void)test_executingActionForOKButton_shouldDoSomething
-{
-    QCOAlertVerifier *alertVerifier = [[QCOAlertVerifier alloc] init];
-    [sut showAlert];
-
-    NSError *error = nil;
-    [alertVerifier executeActionForButton:@"OK" returningError:&error];
-
-    XCTAssertNil(error);
-    // Now add your own assertions
-}
-```
-
-Because this method can throw an exception, declare the Swift test method as `throws` and call
-the method with `try`. For Objective-C, pass in an NSError and check that it's not nil.
 
 ### How can I invoke the closure passed to present(_:animated:completion:) or dismiss(_:completion)?
 
