@@ -65,9 +65,11 @@ final class ViewController: UIViewController {
         case "presentModal"?:
             guard let nextVC = segue.destination as? StoryboardNextViewController else { return }
             nextVC.backgroundColor = .green
+            nextVC.hideToolbar = false
         case "show"?:
             guard let nextVC = segue.destination as? StoryboardNextViewController else { return }
             nextVC.backgroundColor = .red
+            nextVC.hideToolbar = true
         default:
             return
         }
