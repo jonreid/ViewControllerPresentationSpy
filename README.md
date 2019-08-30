@@ -6,9 +6,9 @@
 [![Twitter Follow](https://img.shields.io/twitter/follow/qcoding.svg?style=social)](https://twitter.com/qcoding)
 
 ViewControllerPresentationSpy has three verifiers:
-* AlertVerifier to capture alerts and action sheets
-* PresentationVerifier to capture presented view controllers
-* DismissalVerifier to capture dismissed view controllers
+* `AlertVerifier` to capture alerts and action sheets
+* `PresentationVerifier` to capture presented view controllers
+* `DismissalVerifier` to capture dismissed view controllers
 
 Segues can be captured. Nothing is actually presented or dismissed. This means:
 
