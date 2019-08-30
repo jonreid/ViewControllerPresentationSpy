@@ -19,7 +19,7 @@ public class DismissalVerifier: NSObject {
     @objc public var dismissedViewController: UIViewController?
     @objc public var animated: Bool = false
 
-    /// Production code completion handler passed to present(_:animated:completion:).
+    /// Production code completion handler passed to dismiss(_:completion:).
     @objc public var capturedCompletion: (() -> Void)?
 
     /// Test code can provide its own completion handler to fulfill XCTestExpectations.
