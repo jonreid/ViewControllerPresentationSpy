@@ -5,10 +5,12 @@
 [![CocoaPods Version](https://cocoapod-badges.herokuapp.com/v/ViewControllerPresentationSpy/badge.png)](https://cocoapods.org/pods/ViewControllerPresentationSpy)
 [![Twitter Follow](https://img.shields.io/twitter/follow/qcoding.svg?style=social)](https://twitter.com/qcoding)
 
-ViewControllerPresentationSpy intercepts presented view controllers, including alerts and actions
-sheets.
+ViewControllerPresentationSpy has three verifiers:
+* AlertVerifier to capture alerts and action sheets
+* PresentationVerifier to capture presented view controllers
+* DismissalVerifier to capture dismissed view controllers
 
-Segues can be captured. For alerts, no actual alerts are presented. This means:
+Segues can be captured. Nothing is actually presented or dismissed. This means:
 
 * The workflow doesn't pause for an alert action to be selected.
 * Tests are blazing fast.
@@ -30,7 +32,7 @@ Nothing.
 2. Invoke the code to create and present your view controller.
 
 Information about the presentation is then available through the
-[PresententationVerifier](https://github.com/jonreid/ViewControllerPresentationSpy/blob/master/Source/ViewControllerPresentationSpy/PresentationVerifier.swift).
+[PresentationVerifier](https://github.com/jonreid/ViewControllerPresentationSpy/blob/master/Source/ViewControllerPresentationSpy/PresentationVerifier.swift).
 
 For example, here's a test verifying:
 
@@ -110,6 +112,41 @@ RunLoop.current.run(until: Date())
 
 This ensures that both the presenting view controller and the presented view controller are
 deallocated at the end of the test case.
+
+### How do I test dismissing a modal?
+
+1. Instantiate an `DismissalVerifier` before the Act phase of the test.
+2. Invoke the code to dismiss your modal.
+
+Information about the dismissal is then available through the
+[DismissalVerifier](https://github.com/jonreid/ViewControllerPresentationSpy/blob/master/Source/ViewControllerPresentationSpy/DismissalVerifier.swift).
+
+For example, here's a test verifying that a particular view controller was dismissed, with animation.
+ 
+`sut` is the System Under Test in the test fixture. The Swift version uses a handy `verify` method.
+
+```swift
+func test_dismissingVC() {
+    let dismissalVerifier = DismissalVerifier()
+
+    sut.dismissVC() // Whatever dismisses the view controller
+
+    dismissalVerifier.verify(animated: true, dismissedViewController: sut)
+}
+```
+
+```obj-c
+- (void) test_dismissingVC
+{
+    QCODismissalVerifier *dismissalVerifier = [[QCODismissalVerifier alloc] init];
+
+    [sut dismissVC]; // Whatever dismisses the view controller
+
+    XCTAssertEqual(dismissalVerifier.dismissedCount, 1, @"dismissed count");
+    XCTAssertTrue(dismissalVerifier.animated, @"animated");
+    XCTAssertEqual(dismissalVerifier.presentingViewController, sut, @"dismissed view controller");
+}
+```
 
 ### How do I test an alert controller?
 
@@ -203,11 +240,11 @@ func test_executingActionForOKButton_shouldDoSomething() throws {
 Because this method can throw an exception, declare the Swift test method as `throws` and call
 the method with `try`. For Objective-C, pass in an NSError and check that it's not nil.
 
-### How can I invoke the closure passed to present(_:animated:completion:)?
+### How can I invoke the closure passed to present(_:animated:completion:) or dismiss(_:completion)?
 
 The production code completion handler is captured in the verifier's `capturedCompletion` property.
 
-### How can I test something that's presented using DispatchQueue.main?
+### How can I test something that's presented or dismissed using DispatchQueue.main?
 
 Create an expectation in your test case. Fulfill it in the verifier's `testCompletion` closure.
 Add a short wait at the start of the Assert phase.
@@ -253,7 +290,7 @@ Add the following to your Podfile, changing "MyTests" to the name of your test t
 ```ruby
 target 'MyTests' do
   inherit! :search_paths
-  pod 'ViewControllerPresentationSpy', '~> 4.0'
+  pod 'ViewControllerPresentationSpy', '~> 4.2'
 end
 ```
 
@@ -262,7 +299,7 @@ end
 Add the following to your Cartfile:
 
 ```
-github "jonreid/ViewControllerPresentationSpy" ~> 4.0
+github "jonreid/ViewControllerPresentationSpy" ~> 4.2
 ```
 
 ### Prebuilt Framework

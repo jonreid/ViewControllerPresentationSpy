@@ -1,3 +1,17 @@
+Version 4.2.0
+-------------
+_30 Aug 2019_
+
+Added `DismissalVerifier` to capture calls to dismiss view controller. The Swift version has a
+`verify` method which checks:
+  * That the dismissed count is 1.
+  * The animated flag.
+  * The dismissed view controller, if provided.
+
+Like the other verifiers, it also has a `capturedCompletion` to capture any production code
+completion handler, and a `testCompletion` so that test code can supply its own completion handler.
+
+
 Version 4.1.1
 -------------
 _24 Aug 2019_
