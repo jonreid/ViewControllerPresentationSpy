@@ -67,12 +67,12 @@ extension DismissalVerifier {
     /**
         Verifies dismissal of one view controller.
     */
-    @discardableResult public func verify(
+    public func verify(
             animated: Bool,
             dismissedViewController: UIViewController? = nil,
             file: StaticString = #file,
             line: UInt = #line
-    ) -> Void {
+    ) {
         let abort = verifyCallCount(actual: self.dismissedCount, action: "dismiss", file: file, line: line)
         if abort { return }
         verifyAnimated(actual: self.animated, expected: animated, action: "dismiss", file: file, line: line)

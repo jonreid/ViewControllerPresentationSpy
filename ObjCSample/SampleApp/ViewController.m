@@ -73,11 +73,13 @@
     {
         StoryboardNextViewController *nextVC = segue.destinationViewController;
         nextVC.backgroundColor = UIColor.greenColor;
+        nextVC.hideToolbar = NO;
     }
     else if ([segue.identifier isEqualToString:@"show"])
     {
         StoryboardNextViewController *nextVC = segue.destinationViewController;
         nextVC.backgroundColor = UIColor.redColor;
+        nextVC.hideToolbar = YES;
     }
 }
 

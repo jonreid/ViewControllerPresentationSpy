@@ -12,6 +12,7 @@
 		0E748F9D1B6543A000B29AED /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E748F9C1B6543A000B29AED /* ViewController.m */; };
 		0E748FA01B6543A000B29AED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E748F9E1B6543A000B29AED /* Main.storyboard */; };
 		0E748FA21B6543A000B29AED /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E748FA11B6543A000B29AED /* Images.xcassets */; };
+		480574BA2319C67200CB9F89 /* DismissalVerifierTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 480574B92319C67200CB9F89 /* DismissalVerifierTests.m */; };
 		483E05421DE80ACF00B5E4E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 483E05401DE80ACF00B5E4E4 /* LaunchScreen.storyboard */; };
 		48A6B5E222E03E4D00356685 /* StoryboardNextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A6B5E122E03E4D00356685 /* StoryboardNextViewController.m */; };
 		48EECF4A22E3B77E00A940C5 /* ViewControllerPresentationSpy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48EECF4222E3B61100A940C5 /* ViewControllerPresentationSpy.framework */; };
@@ -52,6 +53,7 @@
 		0E748FAA1B6543A000B29AED /* ObjCSampleViewControllerPresentationSpyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ObjCSampleViewControllerPresentationSpyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E748FAF1B6543A000B29AED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4804BCA522E16949000130AD /* XcodeWarnings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = XcodeWarnings.xcconfig; path = ../../Source/XcodeWarnings.xcconfig; sourceTree = "<group>"; };
+		480574B92319C67200CB9F89 /* DismissalVerifierTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DismissalVerifierTests.m; sourceTree = "<group>"; };
 		483E05411DE80ACF00B5E4E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		48A6B5E022E03E4D00356685 /* StoryboardNextViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StoryboardNextViewController.h; sourceTree = "<group>"; };
 		48A6B5E122E03E4D00356685 /* StoryboardNextViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StoryboardNextViewController.m; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				4804BCA522E16949000130AD /* XcodeWarnings.xcconfig */,
 				609E95F254C2B32C24D9C980 /* AlertVerifierTests.m */,
 				BB170BCC325BC08FC93AB6BA /* PresentationVerifierTests.m */,
+				480574B92319C67200CB9F89 /* DismissalVerifierTests.m */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				609E9B6130BB35372D63FC0F /* AlertVerifierTests.m in Sources */,
+				480574BA2319C67200CB9F89 /* DismissalVerifierTests.m in Sources */,
 				609E9F1E2EC677BB9B797C36 /* ViewControllerAlertTests.m in Sources */,
 				BB1700CDA7D976FD6DEFFF9F /* ViewControllerPresentationTests.m in Sources */,
 				BB1706F395003FB985714D2A /* PresentationVerifierTests.m in Sources */,

@@ -93,7 +93,7 @@
         <!--Storyboard Next View Controller-->
         <scene sceneID="zSe-xz-YWW">
             <objects>
-                <viewController id="2Wl-4a-hxd" customClass="StoryboardNextViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StoryboardNextViewController" id="2Wl-4a-hxd" customClass="StoryboardNextViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="NZq-Mf-J1C"/>
                         <viewControllerLayoutGuide type="bottom" id="oSd-TQ-YNm"/>
@@ -101,8 +101,29 @@
                     <view key="view" contentMode="scaleToFill" id="VU4-oc-mIe">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jTn-9g-I2v">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <items>
+                                    <barButtonItem systemItem="cancel" id="CU2-Uv-ixv">
+                                        <connections>
+                                            <action selector="cancel" destination="2Wl-4a-hxd" id="wzZ-rh-YFK"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="jTn-9g-I2v" secondAttribute="trailing" id="Fad-mM-clh"/>
+                            <constraint firstItem="jTn-9g-I2v" firstAttribute="leading" secondItem="VU4-oc-mIe" secondAttribute="leading" id="RBu-RG-rUh"/>
+                            <constraint firstItem="jTn-9g-I2v" firstAttribute="top" secondItem="NZq-Mf-J1C" secondAttribute="bottom" id="mrv-Nu-gGi"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cancelButton" destination="CU2-Uv-ixv" id="juD-hh-pvc"/>
+                        <outlet property="toolbar" destination="jTn-9g-I2v" id="NHd-kC-JcF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z0I-25-zL1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
