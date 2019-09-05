@@ -1,3 +1,10 @@
+Version 4.2.1
+-------------
+_05 Sep 2019_
+
+Reduced minimum deployment target to iOS 9.0.
+
+
 Version 4.2.0
 -------------
 _30 Aug 2019_
