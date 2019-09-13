@@ -1,3 +1,11 @@
+Version 4.2.2
+-------------
+_13 Sep 2019_
+
+Switch to Legacy Build System to try to improve flaky build errors around importing Swift-generated
+headers into Objective-C.
+
+
 Version 4.2.1
 -------------
 _05 Sep 2019_
