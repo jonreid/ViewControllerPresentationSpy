@@ -1,3 +1,6 @@
+//  ViewControllerPresentationSpy by Jon Reid, https://qualitycoding.org/
+//  Copyright 2020 Quality Coding, Inc. See LICENSE.txt
+
 @testable import SwiftSampleViewControllerPresentationSpy
 import ViewControllerPresentationSpy
 import XCTest
