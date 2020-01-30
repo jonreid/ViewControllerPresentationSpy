@@ -25,14 +25,23 @@ public class DismissalVerifier: NSObject {
     /// Test code can provide its own completion handler to fulfill XCTestExpectations.
     @objc public var testCompletion: (() -> Void)?
 
+    static private(set) var isSwizzled = false
+
     /**
         Initializes a newly allocated verifier.
      
         Instantiating a DismissalVerifier swizzles UIViewController. It remains swizzled until the
-        DismissalVerifier is deallocated.
+        DismissalVerifier is deallocated. Only one DismissalVerifier may exist at a time.
      */
     @objc public override init() {
         super.init()
+        guard !DismissalVerifier.isSwizzled else {
+            XCTFail("""
+                    More than one instance of DismissalVerifier exists. This may be caused by \
+                    creating one setUp() but failing to set the property to nil in tearDown().
+                    """)
+            return
+        }
         NotificationCenter.default.addObserver(
                 self,
                 selector: #selector(viewControllerWasDismissed(_:)),
@@ -49,6 +58,7 @@ public class DismissalVerifier: NSObject {
 
     private static func swizzleMocks() {
         UIViewController.qcoMock_swizzleCaptureDismiss()
+        DismissalVerifier.isSwizzled.toggle()
     }
 
     @objc private func viewControllerWasDismissed(_ notification: Notification) {

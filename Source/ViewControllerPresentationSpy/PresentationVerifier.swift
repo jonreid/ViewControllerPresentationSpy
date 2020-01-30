@@ -26,14 +26,23 @@ public class PresentationVerifier: NSObject {
     /// Test code can provide its own completion handler to fulfill XCTestExpectations.
     @objc public var testCompletion: (() -> Void)?
 
+    static private(set) var isSwizzled = false
+
     /**
         Initializes a newly allocated verifier.
      
         Instantiating a PresentationVerifier swizzles UIViewController. It remains swizzled until
-        the PresentationVerifier is deallocated.
+        the PresentationVerifier is deallocated. Only one PresentationVerifier may exist at a time.
      */
     @objc public override init() {
         super.init()
+        guard !PresentationVerifier.isSwizzled else {
+            XCTFail("""
+                    More than one instance of PresentationVerifier exists. This may be caused by \
+                    creating one setUp() but failing to set the property to nil in tearDown().
+                    """)
+            return
+        }
         NotificationCenter.default.addObserver(
                 self,
                 selector: #selector(viewControllerWasPresented(_:)),
@@ -50,6 +59,7 @@ public class PresentationVerifier: NSObject {
 
     private static func swizzleMocks() {
         UIViewController.qcoMock_swizzleCapture()
+        PresentationVerifier.isSwizzled.toggle()
     }
 
     @objc private func viewControllerWasPresented(_ notification: Notification) {

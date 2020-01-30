@@ -26,6 +26,8 @@ public class AlertVerifier: NSObject {
     @objc public var popover: UIPopoverPresentationController?
     @objc public var textFields: [UITextField]?
 
+    static private(set) var isSwizzled = false
+
     /// Production code completion handler passed to present(_:animated:completion:).
     @objc public var capturedCompletion: (() -> Void)?
 
@@ -36,10 +38,18 @@ public class AlertVerifier: NSObject {
         Initializes a newly allocated verifier.
      
         Instantiating an AlertVerifier swizzles UIViewController, UIAlertController, and
-        UIAlertAction. They remain swizzled until the AlertVerifier is deallocated.
+        UIAlertAction. They remain swizzled until the AlertVerifier is deallocated. Only one
+        AlertVerifier may exist at a time.
      */
     @objc public override init() {
         super.init()
+        guard !AlertVerifier.isSwizzled else {
+            XCTFail("""
+                    More than one instance of AlertVerifier exists. This may be caused by \
+                    creating one setUp() but failing to set the property to nil in tearDown().
+                    """)
+            return
+        }
         NotificationCenter.default.addObserver(
                 self,
                 selector: #selector(alertControllerWasPresented(_:)),
@@ -58,6 +68,7 @@ public class AlertVerifier: NSObject {
         UIAlertAction.qcoMock_swizzle()
         UIAlertController.qcoMock_swizzle()
         UIViewController.qcoMock_swizzleCaptureAlert()
+        AlertVerifier.isSwizzled.toggle()
     }
 
     @objc private func alertControllerWasPresented(_ notification: Notification) {
