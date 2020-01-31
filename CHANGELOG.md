@@ -1,5 +1,8 @@
-NEXT RELEASE
-------------
+Version 5.0.0
+-------------
+_30 Jan 2020_
+
+This release adds diagnostic test failures if verifiers clash.
 
 - Fail test if code creates multiple instances of any single verifier. This inadvertently undid its
   swizzling, leading to test failures that were tricky to diagnose. Now a failure message provides
