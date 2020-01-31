@@ -39,7 +39,8 @@ public class AlertVerifier: NSObject {
      
         Instantiating an AlertVerifier swizzles UIViewController, UIAlertController, and
         UIAlertAction. They remain swizzled until the AlertVerifier is deallocated. Only one
-        AlertVerifier may exist at a time.
+        AlertVerifier may exist at a time, and none may be created while a PresentationVerifier
+        exists. (This is because they both swizzle UIViewController.)
      */
     @objc public override init() {
         super.init()

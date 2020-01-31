@@ -32,7 +32,9 @@ public class PresentationVerifier: NSObject {
         Initializes a newly allocated verifier.
      
         Instantiating a PresentationVerifier swizzles UIViewController. It remains swizzled until
-        the PresentationVerifier is deallocated. Only one PresentationVerifier may exist at a time.
+        the PresentationVerifier is deallocated. Only one PresentationVerifier may exist at a time,
+        and none may be created while an AlertVerifier exists. (This is because they both swizzle
+        UIViewController.)
      */
     @objc public override init() {
         super.init()
@@ -40,6 +42,14 @@ public class PresentationVerifier: NSObject {
             XCTFail("""
                     More than one instance of PresentationVerifier exists. This may be caused by \
                     creating one setUp() but failing to set the property to nil in tearDown().
+                    """)
+            return
+        }
+        guard !AlertVerifier.isSwizzled else {
+            XCTFail("""
+                    A PresentationVerifier may not be created while an AlertVerifier exists. Try \
+                    making the AlertVerifier optional, and setting it to nil before creating the \
+                    PresentationVerifier.
                     """)
             return
         }
