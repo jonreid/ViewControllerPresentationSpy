@@ -290,7 +290,7 @@ Add the following to your Podfile, changing "MyTests" to the name of your test t
 ```ruby
 target 'MyTests' do
   inherit! :search_paths
-  pod 'ViewControllerPresentationSpy', '~> 4.2'
+  pod 'ViewControllerPresentationSpy', '~> 5.0'
 end
 ```
 
@@ -299,7 +299,7 @@ end
 Add the following to your Cartfile:
 
 ```
-github "jonreid/ViewControllerPresentationSpy" ~> 4.2
+github "jonreid/ViewControllerPresentationSpy" ~> 5.0
 ```
 
 ### Prebuilt Framework
