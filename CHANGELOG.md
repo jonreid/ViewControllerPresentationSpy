@@ -1,3 +1,14 @@
+NEXT RELEASE
+------------
+
+- Fail test if code creates multiple instances of any single verifier. This inadvertently undid its
+  swizzling, leading to test failures that were tricky to diagnose. Now a failure message provides
+  guidance.
+- Also fail if an AlertVerifier and a PresentationVerifier exist simultaneously, since they both
+  swizzle UIAlertViewController. This has the potential to change test results, so this is marked as
+  a major release.
+
+
 Version 4.2.2
 -------------
 _13 Sep 2019_
