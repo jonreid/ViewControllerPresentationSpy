@@ -281,11 +281,12 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/usr/lib";
 				MARKETING_VERSION = 5.0.0;
 				OTHER_LDFLAGS = (
 					"-weak_framework",
 					XCTest,
-					"-weak-lswiftXCTest",
+					"-weak-lXCTestSwiftSupport",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.qualitycoding.ViewControllerPresentationSpy;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -315,11 +316,12 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/usr/lib";
 				MARKETING_VERSION = 5.0.0;
 				OTHER_LDFLAGS = (
 					"-weak_framework",
 					XCTest,
-					"-weak-lswiftXCTest",
+					"-weak-lXCTestSwiftSupport",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.qualitycoding.ViewControllerPresentationSpy;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
