@@ -11,7 +11,7 @@ rm -rf build
 mkdir build
 
 echo Building ViewControllerPresentationSpy - Release
-xcodebuild -configuration Release -target ViewControllerPresentationSpy
+xcodebuild -configuration Release -target ViewControllerPresentationSpy -sdk iphonesimulator
 OUT=$?
 if [ "${OUT}" -ne "0" ]; then
     echo ViewControllerPresentationSpy release build failed
@@ -22,7 +22,7 @@ fi
 echo Assembling Distribution
 rm -rf "${DISTPATH}"
 mkdir "${DISTPATH}"
-cp -R "build/Release-iphoneos/ViewControllerPresentationSpy.framework" "${DISTPATH}"
+cp -R "build/Release-iphonesimulator/ViewControllerPresentationSpy.framework" "${DISTPATH}"
 cp "${PROJECTROOT}/README.md" "${DISTPATH}"
 cp "${PROJECTROOT}/CHANGELOG.md" "${DISTPATH}"
 cp "${PROJECTROOT}/LICENSE.txt" "${DISTPATH}"
