@@ -1,3 +1,9 @@
+NEXT RELEASE
+------------
+
+Fixed to load on iOS 10.3.3 devices.
+
+
 Version 5.0.0
 -------------
 _30 Jan 2020_
