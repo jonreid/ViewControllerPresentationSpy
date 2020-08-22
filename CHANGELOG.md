@@ -1,5 +1,6 @@
 Version 5.0.1
 -------------
+_21 Aug 2020_
 
 Fixed to load on iOS 10.3.3 devices.
 
