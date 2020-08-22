@@ -265,7 +265,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 5.0.0;
+				CURRENT_PROJECT_VERSION = 5.0.1;
 				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -282,7 +282,7 @@
 					"@loader_path/Frameworks",
 				);
 				LIBRARY_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/usr/lib";
-				MARKETING_VERSION = 5.0.0;
+				MARKETING_VERSION = 5.0.1;
 				OTHER_LDFLAGS = (
 					"-weak_framework",
 					XCTest,
@@ -300,7 +300,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 5.0.0;
+				CURRENT_PROJECT_VERSION = 5.0.1;
 				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -317,7 +317,7 @@
 					"@loader_path/Frameworks",
 				);
 				LIBRARY_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/usr/lib";
-				MARKETING_VERSION = 5.0.0;
+				MARKETING_VERSION = 5.0.1;
 				OTHER_LDFLAGS = (
 					"-weak_framework",
 					XCTest,

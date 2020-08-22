@@ -1,5 +1,5 @@
-NEXT RELEASE
-------------
+Version 5.0.1
+-------------
 
 Fixed to load on iOS 10.3.3 devices.
 
