@@ -19,8 +19,8 @@ Pod::Spec.new do |s|
   s.author   = { 'Jon Reid' => 'jon@qualitycoding.org' }
   s.social_media_url = 'https://twitter.com/qcoding'
     
-  s.ios.deployment_target = '9.0'
-  s.source   = { :git => 'https://github.com/jonreid/ViewControllerPresentationSpy.git', :tag => 'v5.0.1' }
+  s.ios.deployment_target = '10.0'
+  s.source   = { :git => 'https://github.com/jonreid/ViewControllerPresentationSpy.git', :tag => 'v5.1.0' }
   s.source_files = 'Source/ViewControllerPresentationSpy/*.{h,m,swift}'
   s.public_header_files = 'Source/ViewControllerPresentationSpy/QCOMockPopoverPresentationController.h', 'Source/ViewControllerPresentationSpy/UIAlertAction+QCOMock.h', 'Source/ViewControllerPresentationSpy/UIAlertController+QCOMock.h', 'Source/ViewControllerPresentationSpy/UIViewController+QCOMock.h'
   s.requires_arc = true

@@ -1,3 +1,11 @@
+Version 5.1.0
+-------------
+_07 Oct 2020_
+
+- Bump project settings to Xcode 12.
+- Bump minimum deployment target to iOS 10.0.
+
+
 Version 5.0.1
 -------------
 _21 Aug 2020_
