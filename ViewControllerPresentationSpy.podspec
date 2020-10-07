@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name     = 'ViewControllerPresentationSpy'
-  s.version  = '5.0.1'
+  s.version  = '5.1.0'
   s.summary  = 'Unit test presented view controllers, alerts, and action sheets for iOS'
   s.description = <<-DESC
                     ViewControllerPresentationSpy has three verifiers:
