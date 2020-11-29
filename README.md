@@ -16,7 +16,7 @@ Segues can be captured. Nothing is actually presented or dismissed. This means:
 * Tests are blazing fast.
 * You can test things with unit tests instead of UI tests.
 
-For concrete examples, see my book [iOS Unit Testing by Example](https://pragprog.com/titles/jrlegios/ios-unit-testing-by-example/): chapter 9, "Testing Alerts" and chapter 10, "Testing Navigation Between Screens."
+For concrete examples, see my book _[iOS Unit Testing by Example](https://pragprog.com/titles/jrlegios/ios-unit-testing-by-example/):_ chapter 9 "Testing Alerts," and chapter 10 "Testing Navigation Between Screens."
 
 ## Writing Tests
 
