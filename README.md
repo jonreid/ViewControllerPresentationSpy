@@ -16,9 +16,7 @@ Segues can be captured. Nothing is actually presented or dismissed. This means:
 * Tests are blazing fast.
 * You can test things with unit tests instead of UI tests.
 
-For more discussion, see my blog post
-[How to Test UIAlertControllers and Control Swizzling](http://qualitycoding.org/testing-uialertcontrollers/).
-
+For concrete examples, see my book [iOS Unit Testing by Example](https://pragprog.com/titles/jrlegios/ios-unit-testing-by-example/): chapter 9, "Testing Alerts" and chapter 10, "Testing Navigation Between Screens."
 
 ## Writing Tests
 
