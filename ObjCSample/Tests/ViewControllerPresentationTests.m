@@ -1,5 +1,5 @@
-//  ViewControllerPresentationSpy by Jon Reid, https://qualitycoding.org/
-//  Copyright 2020 Quality Coding, Inc. See LICENSE.txt
+//  ViewControllerPresentationSpy by Jon Reid, https://qualitycoding.org
+//  Copyright 2021 Quality Coding, Inc. See LICENSE.txt
 
 #import "CodeNextViewController.h"
 
