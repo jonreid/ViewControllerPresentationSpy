@@ -1,6 +1,6 @@
 # ViewControllerPresentationSpy
 
-[![Build Status](https://travis-ci.org/jonreid/ViewControllerPresentationSpy.svg?branch=master)](https://travis-ci.org/jonreid/ViewControllerPresentationSpy)
+[![Build Status](https://travis-ci.org/jonreid/ViewControllerPresentationSpy.svg?branch=)](https://travis-ci.org/jonreid/ViewControllerPresentationSpy)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![CocoaPods Version](https://cocoapod-badges.herokuapp.com/v/ViewControllerPresentationSpy/badge.png)](https://cocoapods.org/pods/ViewControllerPresentationSpy)
 [![Twitter Follow](https://img.shields.io/twitter/follow/qcoding.svg?style=social)](https://twitter.com/qcoding)
@@ -30,7 +30,7 @@ Nothing.
 2. Invoke the code to create and present your alert or action sheet.
 
 Information about the alert or action sheet is then available through the
-[AlertVerifier](https://github.com/jonreid/ViewControllerPresentationSpy/blob/master/Source/ViewControllerPresentationSpy/AlertVerifier.swift).
+[AlertVerifier](https://github.com/jonreid/ViewControllerPresentationSpy/blob/main/Source/ViewControllerPresentationSpy/AlertVerifier.swift).
 
 For example, here's a test verifying:
 
@@ -122,7 +122,7 @@ the method with `try`. For Objective-C, pass in an NSError and check that it's n
 2. Invoke the code to create and present your view controller.
 
 Information about the presentation is then available through the
-[PresentationVerifier](https://github.com/jonreid/ViewControllerPresentationSpy/blob/master/Source/ViewControllerPresentationSpy/PresentationVerifier.swift).
+[PresentationVerifier](https://github.com/jonreid/ViewControllerPresentationSpy/blob/main/Source/ViewControllerPresentationSpy/PresentationVerifier.swift).
 
 For example, here's a test verifying:
 
@@ -209,7 +209,7 @@ controllers will also cease to exist.
 2. Invoke the code to dismiss your modal.
 
 Information about the dismissal is then available through the
-[DismissalVerifier](https://github.com/jonreid/ViewControllerPresentationSpy/blob/master/Source/ViewControllerPresentationSpy/DismissalVerifier.swift).
+[DismissalVerifier](https://github.com/jonreid/ViewControllerPresentationSpy/blob/main/Source/ViewControllerPresentationSpy/DismissalVerifier.swift).
 
 For example, here's a test verifying that a particular view controller was dismissed, with animation.
  
