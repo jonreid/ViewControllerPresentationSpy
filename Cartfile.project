@@ -1,0 +1,10 @@
+ViewControllerPresentationSpy:
+  project: Source/ViewControllerPresentationSpy.xcodeproj
+  sdks:
+  - iphonesimulator
+  - iphoneos
+ViewControllerPresentationSpy-tvOS:
+  project: Source/ViewControllerPresentationSpy.xcodeproj
+  sdks:
+  - appletvos
+  - appletvsimulator
