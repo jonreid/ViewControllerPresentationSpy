@@ -1,0 +1,6 @@
+coverage_service: coveralls
+xcodeproj: ./SwiftSample/SwiftSampleViewControllerPresentationSpy.xcodeproj
+scheme: SwiftSampleViewControllerPresentationSpy
+ignore:
+  - SwiftSample/*
+  
