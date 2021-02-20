@@ -3,5 +3,9 @@
 
 #import "QCOMockPopoverPresentationController.h"
 
+#if TARGET_OS_IOS
+
 @implementation QCOMockPopoverPresentationController
 @end
+
+#endif

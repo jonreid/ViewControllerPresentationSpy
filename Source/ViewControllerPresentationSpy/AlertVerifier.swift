@@ -23,7 +23,9 @@ public class AlertVerifier: NSObject {
     @objc public var preferredStyle: UIAlertController.Style = .alert
     @objc public var actions: [UIAlertAction] = []
     @objc public var preferredAction: UIAlertAction?
+    #if os(iOS)
     @objc public var popover: UIPopoverPresentationController?
+    #endif
     @objc public var textFields: [UITextField]?
 
     static private(set) var isSwizzled = false
@@ -84,7 +86,9 @@ public class AlertVerifier: NSObject {
         preferredStyle = alertController?.preferredStyle ?? .alert
         preferredAction = alertController?.preferredAction
         actions = alertController?.actions ?? []
+        #if os(iOS)
         popover = alertController?.popoverPresentationController
+        #endif
         textFields = alertController?.textFields
         if let completion = testCompletion {
             completion()
