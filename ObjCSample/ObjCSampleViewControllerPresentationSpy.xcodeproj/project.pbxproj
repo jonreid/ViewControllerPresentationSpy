@@ -31,6 +31,13 @@
 			remoteGlobalIDString = 0E748F901B6543A000B29AED;
 			remoteInfo = MockAlertsExample;
 		};
+		48213EBA25E0CEF600201AEF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 48EECF3D22E3B61100A940C5 /* ViewControllerPresentationSpy.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 48213D2F25DF8B2100201AEF;
+			remoteInfo = "ViewControllerPresentationSpy-tvOS";
+		};
 		48EECF4122E3B61100A940C5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 48EECF3D22E3B61100A940C5 /* ViewControllerPresentationSpy.xcodeproj */;
@@ -158,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				48EECF4222E3B61100A940C5 /* ViewControllerPresentationSpy.framework */,
+				48213EBB25E0CEF600201AEF /* ViewControllerPresentationSpy.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -245,6 +253,13 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		48213EBB25E0CEF600201AEF /* ViewControllerPresentationSpy.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ViewControllerPresentationSpy.framework;
+			remoteRef = 48213EBA25E0CEF600201AEF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		48EECF4222E3B61100A940C5 /* ViewControllerPresentationSpy.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -337,6 +352,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO;
+				CODE_SIGN_IDENTITY = "";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -367,6 +383,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO;
+				CODE_SIGN_IDENTITY = "";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_NS_ASSERTIONS = NO;
