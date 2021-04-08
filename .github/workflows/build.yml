@@ -25,13 +25,14 @@ jobs:
       project: 'SwiftSample/SwiftSampleViewControllerPresentationSpy.xcodeproj'
       scheme: 'SwiftSampleViewControllerPresentationSpy'
       sdk: 'iphonesimulator'
+      destination: 'platform=iOS Simulator,OS=latest,name=iPad Air (4th generation)'
     steps:
       - name: Check out project
         uses: actions/checkout@v2
       - name: Show current version of Xcode
         run: xcodebuild -version
       - name: Build & test
-        run: set -o pipefail && xcodebuild test -project $project -scheme $scheme -sdk $sdk -destination 'platform=iOS Simulator,OS=latest,name=iPad Air (4th generation)' | xcpretty
+        run: set -o pipefail && xcodebuild test -project $project -scheme $scheme -sdk $sdk -destination '${{ env.destination }}' | xcpretty
 
   podspec:
     name: Pod Spec Lint
