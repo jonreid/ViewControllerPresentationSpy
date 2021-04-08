@@ -1,9 +1,0 @@
-language: objective-c
-osx_image: xcode12.2
-
-script:
-  - set -o pipefail;
-  - xcodebuild build -project Source/ViewControllerPresentationSpy.xcodeproj -scheme ViewControllerPresentationSpy-tvOS -sdk appletvsimulator -destination "platform=tvOS Simulator,OS=latest,name=Apple TV" | xcpretty
-  - xcodebuild build -project ObjCSample/ObjCSampleViewControllerPresentationSpy.xcodeproj -scheme ObjCSampleViewControllerPresentationSpy -sdk iphonesimulator -destination "platform=iOS Simulator,OS=latest,name=iPhone 8" | xcpretty
-  - xcodebuild test -project SwiftSample/SwiftSampleViewControllerPresentationSpy.xcodeproj -scheme SwiftSampleViewControllerPresentationSpy -sdk iphonesimulator -destination "platform=iOS Simulator,OS=latest,name=iPad Air" | xcpretty
-  - pod spec lint --quick
