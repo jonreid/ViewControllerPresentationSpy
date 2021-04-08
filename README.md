@@ -1,6 +1,6 @@
 # ViewControllerPresentationSpy
 
-[![Build Status](https://travis-ci.org/jonreid/ViewControllerPresentationSpy.svg?branch=)](https://travis-ci.org/jonreid/ViewControllerPresentationSpy)
+[![Build Status](https://github.com/jonreid/ViewControllerPresentationSpy/actions/workflows/build.yml/badge.svg)](https://github.com/jonreid/ViewControllerPresentationSpy/actions/workflows/build.yml)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![CocoaPods Version](https://cocoapod-badges.herokuapp.com/v/ViewControllerPresentationSpy/badge.png)](https://cocoapods.org/pods/ViewControllerPresentationSpy)
 [![Twitter Follow](https://img.shields.io/twitter/follow/qcoding.svg?style=social)](https://twitter.com/qcoding)
