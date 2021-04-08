@@ -8,8 +8,8 @@ jobs:
     strategy:
       matrix:
         run-config:
-          - { project: 'Source/ViewControllerPresentationSpy.xcodeproj', scheme: 'ViewControllerPresentationSpy-tvOS', -sdk: 'appletvsimulator', destination: 'platform=tvOS Simulator,OS=latest,name=Apple TV' }
-          - { project: 'ObjCSample/ObjCSampleViewControllerPresentationSpy.xcodeproj', scheme: 'ObjCSampleViewControllerPresentationSpy', -sdk: 'iphonesimulator', destination: 'platform=iOS Simulator,OS=latest,name=iPhone 8' }
+          - { project: 'Source/ViewControllerPresentationSpy.xcodeproj', scheme: 'ViewControllerPresentationSpy-tvOS', sdk: 'appletvsimulator', destination: 'platform=tvOS Simulator,OS=latest,name=Apple TV' }
+          - { project: 'ObjCSample/ObjCSampleViewControllerPresentationSpy.xcodeproj', scheme: 'ObjCSampleViewControllerPresentationSpy', sdk: 'iphonesimulator', destination: 'platform=iOS Simulator,OS=latest,name=iPhone 8' }
     steps:
       - name: Check out project
         uses: actions/checkout@v2
@@ -40,7 +40,7 @@ jobs:
       - name: Show Available Destinations
         run: xcodebuild -showdestinations -project $project -scheme $scheme -sdk $sdk
       - name: Build & test
-        run: set -o pipefail && xcodebuild test -project $project -scheme $scheme -sdk $sdk -destination $destination | xcpretty
+        run: set -o pipefail && xcodebuild test -project $project -scheme $scheme -sdk $sdk -destination '$destination' | xcpretty
 
   podspec:
     name: Pod Spec Lint
