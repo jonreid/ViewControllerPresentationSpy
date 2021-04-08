@@ -15,7 +15,9 @@ jobs:
         uses: actions/checkout@v2
       - name: Show current version of Xcode
         run: xcodebuild -version
-      - name: Show Xcode destinations
+      - name: Show Available SDKs
+        run: xcodebuild -showsdks -project '${{ matrix.run-config['project'] }}' -scheme '${{ matrix.run-config['scheme'] }}'
+      - name: Show Available Destinations
         run: xcodebuild -showdestinations -project '${{ matrix.run-config['project'] }}' -scheme '${{ matrix.run-config['scheme'] }}' -sdk '${{ matrix.run-config['sdk'] }}'
       - name: Build
         run: set -o pipefail && xcodebuild build -project '${{ matrix.run-config['project'] }}' -scheme '${{ matrix.run-config['scheme'] }}' -sdk '${{ matrix.run-config['sdk'] }}' -destination '${{ matrix.run-config['destination'] }}' | xcpretty
@@ -27,13 +29,15 @@ jobs:
       project: 'SwiftSample/SwiftSampleViewControllerPresentationSpy.xcodeproj'
       scheme: 'SwiftSampleViewControllerPresentationSpy'
       sdk: 'iphonesimulator'
-      destination: 'platform=iOS Simulator,OS=latest,name=iPad Air'
+      destination: 'platform=iOS Simulator,OS=latest,name=iPad Air (4th generation)'
     steps:
       - name: Check out project
         uses: actions/checkout@v2
       - name: Show current version of Xcode
         run: xcodebuild -version
-      - name: Show Xcode destinations
+      - name: Show Available SDKs
+        run: xcodebuild -showsdks -project $project -scheme $scheme
+      - name: Show Available Destinations
         run: xcodebuild -showdestinations -project $project -scheme $scheme -sdk $sdk
       - name: Build & test
         run: set -o pipefail && xcodebuild test -project $project -scheme $scheme -sdk $sdk -destination $destination | xcpretty
