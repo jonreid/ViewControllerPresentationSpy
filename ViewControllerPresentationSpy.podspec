@@ -19,7 +19,8 @@ Pod::Spec.new do |s|
   s.author   = { 'Jon Reid' => 'jon@qualitycoding.org' }
   s.social_media_url = 'https://twitter.com/qcoding'
     
-  s.ios.deployment_target = '10.0'
+  s.ios.deployment_target = '12.0'
+  s.tvos.deployment_target = '12.0'
   s.source   = { :git => 'https://github.com/jonreid/ViewControllerPresentationSpy.git', :tag => 'v5.1.0' }
   s.source_files = 'Source/ViewControllerPresentationSpy/*.{h,m,swift}'
   s.public_header_files = 'Source/ViewControllerPresentationSpy/QCOMockPopoverPresentationController.h', 'Source/ViewControllerPresentationSpy/UIAlertAction+QCOMock.h', 'Source/ViewControllerPresentationSpy/UIAlertController+QCOMock.h', 'Source/ViewControllerPresentationSpy/UIViewController+QCOMock.h'
@@ -27,7 +28,7 @@ Pod::Spec.new do |s|
   s.swift_version = "5.0"
   s.weak_framework = "XCTest"
   s.pod_target_xcconfig = {
-    "ENABLE_TESTING_SEARCH_PATHS" => "YES" # Required for Xcode 12.5
+    'ENABLE_TESTING_SEARCH_PATHS' => 'YES'
   }
   s.user_target_xcconfig = {
     'FRAMEWORK_SEARCH_PATHS' => '$(inherited) "$(PLATFORM_DIR)/Developer/Library/Frameworks"',
