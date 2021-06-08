@@ -5,7 +5,11 @@
 
 #import "NSObject+QCOMockAlerts.h"
 #import "UIAlertController+QCOMock.h"
-#import <ViewControllerPresentationSpy/ViewControllerPresentationSpy-Swift.h>
+#if __has_include("ViewControllerPresentationSpy-Swift.h")
+    #import "ViewControllerPresentationSpy-Swift.h"
+#else
+    #import <ViewControllerPresentationSpy/ViewControllerPresentationSpy-Swift.h>
+#endif
 
 NSString *const QCOMockViewControllerPresentingViewControllerKey = @"QCOMockViewControllerPresentingViewControllerKey";
 NSString *const QCOMockViewControllerAnimatedKey = @"QCOMockViewControllerAnimatedKey";
