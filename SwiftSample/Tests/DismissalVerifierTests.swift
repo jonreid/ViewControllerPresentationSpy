@@ -13,7 +13,7 @@ final class DismissalVerifierTests: XCTestCase {
         super.setUp()
         sut = DismissalVerifier()
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        vc = storyboard.instantiateViewController(withIdentifier: String(describing: StoryboardNextViewController.self)) as? StoryboardNextViewController
+        vc = storyboard.instantiateViewController(identifier: String(describing: StoryboardNextViewController.self))
         vc.loadViewIfNeeded()
     }
 

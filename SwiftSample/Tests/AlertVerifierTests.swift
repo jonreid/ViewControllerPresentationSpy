@@ -13,7 +13,7 @@ final class AlertVerifierTests: XCTestCase {
         super.setUp()
         sut = AlertVerifier()
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        vc = storyboard.instantiateViewController(withIdentifier: String(describing: ViewController.self)) as? ViewController
+        vc = storyboard.instantiateViewController(identifier: String(describing: ViewController.self))
         vc.loadViewIfNeeded()
     }
     

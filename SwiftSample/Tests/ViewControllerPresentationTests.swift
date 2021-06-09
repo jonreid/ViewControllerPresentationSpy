@@ -13,7 +13,7 @@ final class ViewControllerPresentationTests: XCTestCase {
         super.setUp()
         presentationVerifier = PresentationVerifier()
         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
-        sut = storyboard.instantiateViewController(withIdentifier: String(describing: ViewController.self)) as? ViewController
+        sut = storyboard.instantiateViewController(identifier: String(describing: ViewController.self))
         sut.loadViewIfNeeded()
     }
 
