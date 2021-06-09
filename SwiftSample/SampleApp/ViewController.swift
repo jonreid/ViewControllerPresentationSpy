@@ -10,8 +10,8 @@ final class ViewController: UIViewController {
     var alertDefaultActionCount = 0
     var alertCancelActionCount = 0
     var alertDestroyActionCount = 0
-    var alertPresentedCompletion: (() -> Void)? = nil
-    var viewControllerPresentedCompletion: (() -> Void)? = nil
+    var alertPresentedCompletion: (() -> Void)?
+    var viewControllerPresentedCompletion: (() -> Void)?
 
     @IBAction private func showAlert() {
         let alertController = UIAlertController(title: "Title", message: "Message", preferredStyle: .alert)

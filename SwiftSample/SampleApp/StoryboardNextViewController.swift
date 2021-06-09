@@ -3,7 +3,7 @@ import UIKit
 final class StoryboardNextViewController: UIViewController {
     var backgroundColor: UIColor!
     var hideToolbar = true
-    var viewControllerDismissedCompletion: (() -> Void)? = nil
+    var viewControllerDismissedCompletion: (() -> Void)?
     @IBOutlet private(set) var toolbar: UIToolbar!
     @IBOutlet private(set) var cancelButton: UIBarButtonItem!
 
