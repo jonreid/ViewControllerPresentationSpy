@@ -417,6 +417,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../Source\"";
 				INFOPLIST_FILE = Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.qualitycoding.MockUIAlertControllerSampleSwiftTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -432,6 +433,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../Source\"";
 				INFOPLIST_FILE = Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.qualitycoding.MockUIAlertControllerSampleSwiftTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
