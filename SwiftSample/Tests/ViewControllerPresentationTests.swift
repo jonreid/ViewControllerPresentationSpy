@@ -32,7 +32,7 @@ final class ViewControllerPresentationTests: XCTestCase {
 
     func test_tappingSeguePresentModalButton_shouldPresentNextViewControllerWithGreenBackground() {
         sut.seguePresentModalButton.sendActions(for: .touchUpInside)
-        
+
         let nextVC: StoryboardNextViewController? =
                 presentationVerifier.verify(animated: true, presentingViewController: sut)
         XCTAssertEqual(nextVC?.backgroundColor, .green, "Background color passed in")
@@ -42,7 +42,7 @@ final class ViewControllerPresentationTests: XCTestCase {
         let window = UIWindow()
         window.rootViewController = sut
         window.isHidden = false
-        
+
         sut.segueShowButton.sendActions(for: .touchUpInside)
 
         let nextVC: StoryboardNextViewController? =

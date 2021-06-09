@@ -16,26 +16,26 @@ final class AlertVerifierTests: XCTestCase {
         vc = storyboard.instantiateViewController(identifier: String(describing: ViewController.self))
         vc.loadViewIfNeeded()
     }
-    
+
     override func tearDown() {
         sut = nil
         vc = nil
         super.tearDown()
     }
-    
+
     private func showAlert() {
         vc.showAlertButton.sendActions(for: .touchUpInside)
     }
 
     func test_executeActionForButtonWithTitle_withNonexistentTitle_shouldThrowException() {
         showAlert()
-        
+
         XCTAssertThrowsError(try sut.executeAction(forButton: "NO SUCH BUTTON"))
     }
 
     func test_executeActionForButtonWithTitle_withoutHandler_shouldNotCrash() throws {
         showAlert()
-        
+
         try sut.executeAction(forButton: "No Handler")
     }
 
@@ -45,7 +45,7 @@ final class AlertVerifierTests: XCTestCase {
             completionCallCount += 1
         }
         showAlert()
-        
+
         XCTAssertEqual(completionCallCount, 0, "precondition")
         sut.capturedCompletion?()
         XCTAssertEqual(completionCallCount, 1)
@@ -53,7 +53,7 @@ final class AlertVerifierTests: XCTestCase {
 
     func test_showingAlert_withoutCompletion_shouldNotCaptureCompletionBlock() {
         showAlert()
-        
+
         XCTAssertNil(sut.capturedCompletion)
     }
 
@@ -62,9 +62,9 @@ final class AlertVerifierTests: XCTestCase {
         sut.testCompletion = {
             completionCallCount += 1
         }
-        
+
         showAlert()
-        
+
         XCTAssertEqual(completionCallCount, 1)
     }
 
@@ -73,7 +73,7 @@ final class AlertVerifierTests: XCTestCase {
         sut.testCompletion = {
             completionCallCount += 1
         }
-        
+
         XCTAssertEqual(completionCallCount, 0)
     }
 }

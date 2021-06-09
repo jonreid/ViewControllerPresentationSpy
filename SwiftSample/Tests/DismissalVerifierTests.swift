@@ -50,7 +50,7 @@ final class DismissalVerifierTests: XCTestCase {
         }
 
         dismissViewController()
-        
+
         XCTAssertEqual(completionCallCount, 0, "precondition")
         sut.capturedCompletion?()
         XCTAssertEqual(completionCallCount, 1)
