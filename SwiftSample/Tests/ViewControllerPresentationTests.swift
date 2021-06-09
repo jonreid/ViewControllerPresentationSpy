@@ -33,7 +33,8 @@ final class ViewControllerPresentationTests: XCTestCase {
     func test_tappingSeguePresentModalButton_shouldPresentNextViewControllerWithGreenBackground() {
         sut.seguePresentModalButton.sendActions(for: .touchUpInside)
         
-        let nextVC: StoryboardNextViewController? = presentationVerifier.verify(animated: true, presentingViewController: sut)
+        let nextVC: StoryboardNextViewController? =
+                presentationVerifier.verify(animated: true, presentingViewController: sut)
         XCTAssertEqual(nextVC?.backgroundColor, .green, "Background color passed in")
     }
 
@@ -44,14 +45,16 @@ final class ViewControllerPresentationTests: XCTestCase {
         
         sut.segueShowButton.sendActions(for: .touchUpInside)
 
-        let nextVC: StoryboardNextViewController? = presentationVerifier.verify(animated: true, presentingViewController: sut)
+        let nextVC: StoryboardNextViewController? =
+                presentationVerifier.verify(animated: true, presentingViewController: sut)
         XCTAssertEqual(nextVC?.backgroundColor, .red, "Background color passed in")
     }
 
     func test_tappingCodeModalButton_shouldPresentNextViewControllerWithPurpleBackground() {
         sut.codePresentModalButton.sendActions(for: .touchUpInside)
 
-        let nextVC: CodeNextViewController? = presentationVerifier.verify(animated: true, presentingViewController: sut)
+        let nextVC: CodeNextViewController? =
+                presentationVerifier.verify(animated: true, presentingViewController: sut)
         XCTAssertEqual(nextVC?.backgroundColor, .purple, "Background color passed in")
     }
 }
