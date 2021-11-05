@@ -6,23 +6,21 @@ DISTPATH=build/${DISTFILE}
 PROJECTROOT=..
 
 echo Preparing clean build
-
 rm -rf build
 mkdir build
 
-echo Building ViewControllerPresentationSpy - Release
-xcodebuild -configuration Release -target ViewControllerPresentationSpy -sdk iphonesimulator
+echo Building XCFramework
+source makeXCFramework.sh
 OUT=$?
 if [ "${OUT}" -ne "0" ]; then
-    echo ViewControllerPresentationSpy release build failed
+    echo ViewControllerPresentationSpy build failed
     exit ${OUT}
 fi
-
 
 echo Assembling Distribution
 rm -rf "${DISTPATH}"
 mkdir "${DISTPATH}"
-cp -R "build/Release-iphonesimulator/ViewControllerPresentationSpy.framework" "${DISTPATH}"
+cp -R "build/ViewControllerPresentationSpy.xcframework" "${DISTPATH}"
 cp "${PROJECTROOT}/README.md" "${DISTPATH}"
 cp "${PROJECTROOT}/CHANGELOG.md" "${DISTPATH}"
 cp "${PROJECTROOT}/LICENSE.txt" "${DISTPATH}"
