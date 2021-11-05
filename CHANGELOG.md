@@ -2,6 +2,12 @@ NEXT RELEASE
 ------------
 
 - Added tvOS support.
+- Packaged pre-built binary as single XCFramework containing 5 architectures:
+  * iOS device
+  * iOS simulator
+  * Mac Catalyst
+  * tvOS device
+  * tvOS simulator
 - Fixed Xcode 12.5 build errors. _Thanks to: Felix Yuan_
 
 
