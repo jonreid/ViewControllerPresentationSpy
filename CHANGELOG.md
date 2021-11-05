@@ -1,3 +1,10 @@
+NEXT RELEASE
+------------
+
+- Added tvOS support.
+- Fixed Xcode 12.5 build errors. _Thanks to: Felix Yuan_
+
+
 Version 5.1.0
 -------------
 _07 Oct 2020_
