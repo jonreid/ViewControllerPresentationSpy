@@ -393,11 +393,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				CURRENT_PROJECT_VERSION = 5.1.0;
+				CURRENT_PROJECT_VERSION = 6.0.0;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				LIBRARY_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/usr/lib";
-				MARKETING_VERSION = 5.1.0;
+				MARKETING_VERSION = 6.0.0;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -406,11 +406,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				CURRENT_PROJECT_VERSION = 5.1.0;
+				CURRENT_PROJECT_VERSION = 6.0.0;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				LIBRARY_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/usr/lib";
-				MARKETING_VERSION = 5.1.0;
+				MARKETING_VERSION = 6.0.0;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;

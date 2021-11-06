@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name     = 'ViewControllerPresentationSpy'
-  s.version  = '5.1.0'
+  s.version  = '6.0.0'
   s.summary  = 'Unit test presented view controllers, alerts, and action sheets for iOS'
   s.description = <<-DESC
                     ViewControllerPresentationSpy has three verifiers:
@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
     
   s.ios.deployment_target = '12.0'
   s.tvos.deployment_target = '12.0'
-  s.source   = { :git => 'https://github.com/jonreid/ViewControllerPresentationSpy.git', :tag => 'v5.1.0' }
+  s.source   = { :git => 'https://github.com/jonreid/ViewControllerPresentationSpy.git', :tag => 'v6.0.0' }
   s.source_files = 'Source/ViewControllerPresentationSpy/*.{h,m,swift}'
   s.public_header_files = 'Source/ViewControllerPresentationSpy/QCOMockPopoverPresentationController.h', 'Source/ViewControllerPresentationSpy/UIAlertAction+QCOMock.h', 'Source/ViewControllerPresentationSpy/UIAlertController+QCOMock.h', 'Source/ViewControllerPresentationSpy/UIViewController+QCOMock.h'
   s.requires_arc = true
