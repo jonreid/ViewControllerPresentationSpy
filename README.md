@@ -288,7 +288,7 @@ Add the following to your Podfile, changing "MyTests" to the name of your test t
 ```ruby
 target 'MyTests' do
   inherit! :search_paths
-  pod 'ViewControllerPresentationSpy', '~> 5.0'
+  pod 'ViewControllerPresentationSpy', '~> 6.0'
 end
 ```
 
@@ -297,15 +297,26 @@ end
 Add the following to your Cartfile:
 
 ```
-github "jonreid/ViewControllerPresentationSpy" ~> 5.0
+github "jonreid/ViewControllerPresentationSpy" ~> 6.0
 ```
 
 ### Prebuilt Framework
 
-Prebuilt binaries are available on
-[GitHub](https://github.com/jonreid/ViewControllerPresentationSpy/releases).
+A prebuilt binary is available on [GitHub](https://github.com/jonreid/ViewControllerPresentationSpy/releases).
+The binary is packaged as ViewControllerPresentationSpy.xcframework, containing these architectures:
+* Mac Catalyst
+* iOS device
+* iOS simulator
+* tvOS device
+* tvOS simulator
 
-- Drag ViewControllerPresentationSpy.framework into your project, specifying "Copy items into
-  destination group's folder".
-- Add a "Copy Files" build phase to copy ViewControllerPresentationSpy.framework to your Products
-  Directory.
+Drag the XCFramework into your project.
+
+### Build Your Own
+
+If you want to build ViewControllerPresentationSpy yourself, clone the repo, then
+
+```sh
+$ cd Source
+$ ./MakeDistribution.sh
+```

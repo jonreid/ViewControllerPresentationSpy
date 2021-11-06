@@ -1,11 +1,12 @@
-NEXT RELEASE
-------------
+Version 6.0.0
+-------------
+_06 Nov 2021_
 
 - Added tvOS support.
 - Packaged pre-built binary as single XCFramework containing 5 architectures:
+  * Mac Catalyst
   * iOS device
   * iOS simulator
-  * Mac Catalyst
   * tvOS device
   * tvOS simulator
 - Fixed Xcode 12.5 build errors. _Thanks to: Felix Yuan_
