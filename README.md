@@ -257,7 +257,7 @@ func test_dismissingVC() {
 }
 ```
 
-### How can I invoke the closure passed to present(_:animated:completion:) or dismiss(_:completion)?
+### How can I invoke the closure passed to present or dismiss?
 
 The production code completion handler is captured in the verifier's `capturedCompletion` property.
 
