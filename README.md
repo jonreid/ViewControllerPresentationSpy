@@ -31,7 +31,7 @@ For concrete examples, see _[iOS Unit Testing by Example](https://pragprog.com/t
     * [How can I invoke the closure passed to present or dismiss?](#how-can-i-invoke-the-closure-passed-to-present-or-dismiss)
     * [How can I test something that's presented or dismissed using DispatchQueue.main?](#how-can-i-test-something-thats-presented-or-dismissed-using-dispatchqueuemain)
     * [Can I see some examples?](#can-i-see-some-examples)
-  * [Adding it to your project](#adding-it-to-your-project)
+  * [How Do I Add ViewControllerPresentationSpy to My Project?](#how-do-i-add-viewcontrollerpresentationspy-to-my-project)
     * [CocoaPods](#cocoapods)
     * [Carthage](#carthage)
     * [Prebuilt Framework](#prebuilt-framework)
