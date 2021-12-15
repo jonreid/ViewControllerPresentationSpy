@@ -298,7 +298,7 @@ There are sample apps in both Swift and Objective-C. Run them on both phone & pa
 they do, then read the ViewControllerAlertTests and ViewControllerPresentationTests.
 
 
-## Adding it to your project
+## How Do I Add ViewControllerPresentationSpy to My Project?
 
 ### CocoaPods
 
