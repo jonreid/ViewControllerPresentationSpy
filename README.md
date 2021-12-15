@@ -18,7 +18,24 @@ Segues can be captured. Nothing is actually presented or dismissed. This means:
 
 For concrete examples, see _[iOS Unit Testing by Example](https://pragprog.com/titles/jrlegios/ios-unit-testing-by-example/):_ chapter 9 "Testing Alerts," and chapter 10 "Testing Navigation Between Screens."
 
-toc
+<!-- toc -->
+## Contents
+
+  * [Writing Tests](#writing-tests)
+    * [What do I need to change in production code?](#what-do-i-need-to-change-in-production-code)
+    * [How do I test an alert controller?](#how-do-i-test-an-alert-controller)
+    * [How can I invoke the closure associated with a UIAlertAction?](#how-can-i-invoke-the-closure-associated-with-a-uialertaction)
+    * [How do I test a presented view controller?](#how-do-i-test-a-presented-view-controller)
+    * [How do I test a segue?](#how-do-i-test-a-segue)
+    * [How do I test dismissing a modal?](#how-do-i-test-dismissing-a-modal)
+    * [How can I invoke the closure passed to present(_:animated:completion:) or dismiss(_:completion)?](#how-can-i-invoke-the-closure-passed-to-present_animatedcompletion-or-dismiss_completion)
+    * [How can I test something that's presented or dismissed using DispatchQueue.main?](#how-can-i-test-something-thats-presented-or-dismissed-using-dispatchqueuemain)
+    * [Can I see some examples?](#can-i-see-some-examples)
+  * [Adding it to your project](#adding-it-to-your-project)
+    * [CocoaPods](#cocoapods)
+    * [Carthage](#carthage)
+    * [Prebuilt Framework](#prebuilt-framework)
+    * [Build Your Own](#build-your-own)<!-- endToc -->
 
 ## Writing Tests
 
