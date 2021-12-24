@@ -34,6 +34,14 @@ jobs:
       - name: Build & test
         run: set -o pipefail && xcodebuild test -project '${{ env.project }}' -scheme '${{ env.scheme }}' -sdk '${{ env.sdk }}' -destination '${{ env.destination }}' | xcpretty
 
+  buildCarthage:
+    name: Build Carthage
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build
+      run: carthage build --configuration Release --no-skip-current --use-xcframeworks
+
   podspec:
     name: Pod Spec Lint
     runs-on: macos-latest
