@@ -38,6 +38,7 @@
 		BB1707360BE35588D3F40492 /* ClosureContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1706C2B7CE68DD81C1E383 /* ClosureContainer.swift */; };
 		BB1707A21243C9FA6F558CAC /* PresentationVerifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1701BF26D1A6EC6D6736E3 /* PresentationVerifier.swift */; };
 		BB1709AE226B61ABE035BEA5 /* AlertVerifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB170F803977DDBC293D88B0 /* AlertVerifier.swift */; };
+		BB1709E0725162F8F0C4DCDD /* UIAlertController+QCOMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB17047748F94AA24D8F67A4 /* UIAlertController+QCOMock.swift */; };
 		BB170F50DED2DEF45DAD3DB2 /* VerifyHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1701C77B1F2B9326CD33DA /* VerifyHelpers.swift */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +61,7 @@
 		BB1701BF26D1A6EC6D6736E3 /* PresentationVerifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationVerifier.swift; sourceTree = "<group>"; };
 		BB1701C77B1F2B9326CD33DA /* VerifyHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyHelpers.swift; sourceTree = "<group>"; };
 		BB1701CD1FBD8F6138CD874B /* DismissalVerifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DismissalVerifier.swift; sourceTree = "<group>"; };
+		BB17047748F94AA24D8F67A4 /* UIAlertController+QCOMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+QCOMock.swift"; sourceTree = "<group>"; };
 		BB1706C2B7CE68DD81C1E383 /* ClosureContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClosureContainer.swift; sourceTree = "<group>"; };
 		BB170F803977DDBC293D88B0 /* AlertVerifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertVerifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -119,6 +121,7 @@
 				48007C8F2079A7E3007A4AB0 /* UIViewController+QCOMock.h */,
 				48007C872079A7E2007A4AB0 /* UIViewController+QCOMock.m */,
 				BB1706C2B7CE68DD81C1E383 /* ClosureContainer.swift */,
+				BB17047748F94AA24D8F67A4 /* UIAlertController+QCOMock.swift */,
 			);
 			path = ViewControllerPresentationSpy;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 				BB1707360BE35588D3F40492 /* ClosureContainer.swift in Sources */,
 				BB170F50DED2DEF45DAD3DB2 /* VerifyHelpers.swift in Sources */,
 				BB17038F1FA4823879B0BF2F /* DismissalVerifier.swift in Sources */,
+				BB1709E0725162F8F0C4DCDD /* UIAlertController+QCOMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
