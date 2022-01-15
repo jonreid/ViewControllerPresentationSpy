@@ -11,7 +11,7 @@
 		48007C912079A7E3007A4AB0 /* UIAlertController+QCOMock.h in Headers */ = {isa = PBXBuildFile; fileRef = 48007C852079A7E2007A4AB0 /* UIAlertController+QCOMock.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		48007C922079A7E3007A4AB0 /* UIAlertController+QCOMock.m in Sources */ = {isa = PBXBuildFile; fileRef = 48007C862079A7E2007A4AB0 /* UIAlertController+QCOMock.m */; };
 		48007C932079A7E3007A4AB0 /* UIViewController+QCOMock.m in Sources */ = {isa = PBXBuildFile; fileRef = 48007C872079A7E2007A4AB0 /* UIViewController+QCOMock.m */; };
-		48007C942079A7E3007A4AB0 /* NSObject+QCOMockAlerts.h in Headers */ = {isa = PBXBuildFile; fileRef = 48007C882079A7E2007A4AB0 /* NSObject+QCOMockAlerts.h */; };
+		48007C942079A7E3007A4AB0 /* NSObject+QCOMockAlerts.h in Headers */ = {isa = PBXBuildFile; fileRef = 48007C882079A7E2007A4AB0 /* NSObject+QCOMockAlerts.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		48007C962079A7E3007A4AB0 /* UIAlertAction+QCOMock.h in Headers */ = {isa = PBXBuildFile; fileRef = 48007C8A2079A7E2007A4AB0 /* UIAlertAction+QCOMock.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		48007C972079A7E3007A4AB0 /* NSObject+QCOMockAlerts.m in Sources */ = {isa = PBXBuildFile; fileRef = 48007C8B2079A7E2007A4AB0 /* NSObject+QCOMockAlerts.m */; };
 		48007C982079A7E3007A4AB0 /* QCOMockPopoverPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48007C8C2079A7E2007A4AB0 /* QCOMockPopoverPresentationController.m */; };
@@ -21,7 +21,7 @@
 		48213D3D25DF8B6300201AEF /* PresentationVerifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1701BF26D1A6EC6D6736E3 /* PresentationVerifier.swift */; };
 		48213D3E25DF8B6300201AEF /* AlertVerifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB170F803977DDBC293D88B0 /* AlertVerifier.swift */; };
 		48213D3F25DF8B6300201AEF /* DismissalVerifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1701CD1FBD8F6138CD874B /* DismissalVerifier.swift */; };
-		48213D4025DF8B6300201AEF /* NSObject+QCOMockAlerts.h in Headers */ = {isa = PBXBuildFile; fileRef = 48007C882079A7E2007A4AB0 /* NSObject+QCOMockAlerts.h */; };
+		48213D4025DF8B6300201AEF /* NSObject+QCOMockAlerts.h in Headers */ = {isa = PBXBuildFile; fileRef = 48007C882079A7E2007A4AB0 /* NSObject+QCOMockAlerts.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		48213D4125DF8B6300201AEF /* VerifyHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1701C77B1F2B9326CD33DA /* VerifyHelpers.swift */; };
 		48213D4225DF8B6300201AEF /* UIAlertAction+QCOMock.m in Sources */ = {isa = PBXBuildFile; fileRef = 48007C8D2079A7E2007A4AB0 /* UIAlertAction+QCOMock.m */; };
 		48213D4325DF8B6300201AEF /* UIAlertController+QCOMock.h in Headers */ = {isa = PBXBuildFile; fileRef = 48007C852079A7E2007A4AB0 /* UIAlertController+QCOMock.h */; settings = {ATTRIBUTES = (Public, ); }; };
