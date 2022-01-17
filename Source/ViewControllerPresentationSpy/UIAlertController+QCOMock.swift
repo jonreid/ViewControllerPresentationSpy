@@ -7,6 +7,13 @@ extension UIAlertController {
             #selector(UIAlertController.init(title:message:preferredStyle:)),
             withMethod: #selector(UIAlertController.qcoMock_alertController(withTitle:message:preferredStyle:))
     )
+    
+    #if (os(iOS))
+        NSObject.qcoMockAlerts_replaceInstanceMethod(
+                #selector(getter: UIAlertController.popoverPresentationController),
+                withMethod: #selector(UIAlertController.qcoMock_popoverPresentationController)
+        )
+    #endif
 
 //    NSObject.qcoMockAlerts_replaceClassMet
 //    [self qcoMockAlerts_replaceClassMethod:@selector(alertControllerWithTitle:message:preferredStyle:)
