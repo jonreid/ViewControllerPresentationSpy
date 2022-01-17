@@ -9,6 +9,7 @@ extern NSString *const QCOMockAlertControllerPresentedNotification;
 
 @interface UIAlertController (QCOMock)
 + (void)qcoMock_swizzle;
++ (instancetype)qcoMock_alertControllerWithTitle:(NSString *)title message:(NSString *)message preferredStyle:(UIAlertControllerStyle)preferredStyle;
 @end
 
 NS_ASSUME_NONNULL_END
