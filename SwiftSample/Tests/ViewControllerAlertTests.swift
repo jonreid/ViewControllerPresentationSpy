@@ -60,10 +60,10 @@ final class ViewControllerAlertTests: XCTestCase {
                 preferredStyle: .actionSheet)
     }
 
-    func test_popoverForActionSheet() {
+    func test_popoverForActionSheet() throws {
         sut.showActionSheetButton.sendActions(for: .touchUpInside)
 
-        let popover = alertVerifier.popover!
+        let popover = try XCTUnwrap(alertVerifier.popover)
 
         XCTAssertEqual(popover.sourceView, sut.showActionSheetButton, "source view")
         XCTAssertEqual("\(popover.sourceRect)", "\(sut.showActionSheetButton.bounds)", "source rect")
