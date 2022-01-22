@@ -5,7 +5,7 @@ extension UIAlertController {
     @objc class func qcoMock_swizzle() {
         UIAlertController.qcoMockAlerts_replaceClassMethod(
                 #selector(UIAlertController.init(title:message:preferredStyle:)),
-                withMethod: #selector(UIAlertController.qcoMock_alertController2(title:message:preferredStyle:))
+                withMethod: #selector(UIAlertController.qcoMock_alertController(title:message:preferredStyle:))
         )
 
         #if (os(iOS))
@@ -16,7 +16,7 @@ extension UIAlertController {
         #endif
     }
     
-    @objc class func qcoMock_alertController2(
+    @objc class func qcoMock_alertController(
             title: String,
             message: String,
             preferredStyle: UIAlertController.Style
