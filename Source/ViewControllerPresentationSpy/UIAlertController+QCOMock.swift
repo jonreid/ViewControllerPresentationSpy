@@ -16,8 +16,12 @@ extension UIAlertController {
         #endif
     }
     
-    @objc class func qcoMock_alertController2(title: String, message: String, preferredStyle: UIAlertController.Style) {
-        
+    @objc class func qcoMock_alertController2(
+            title: String,
+            message: String,
+            preferredStyle: UIAlertController.Style
+    ) -> UIAlertController {
+        return UIAlertController.init(qcoMockWithTitle: title, message:message, preferredStyle:preferredStyle)
     } 
     
     /*

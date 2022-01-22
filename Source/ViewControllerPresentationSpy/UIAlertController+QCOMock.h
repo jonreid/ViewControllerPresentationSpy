@@ -10,6 +10,7 @@ extern NSString *const QCOMockAlertControllerPresentedNotification;
 @interface UIAlertController (QCOMock)
 
 + (instancetype)qcoMock_alertControllerWithTitle:(NSString *)title message:(NSString *)message preferredStyle:(UIAlertControllerStyle)preferredStyle;
+- (instancetype)initQCOMockWithTitle:(NSString *)title message:(NSString *)message preferredStyle:(UIAlertControllerStyle)style;
 #if TARGET_OS_IOS
 - (UIPopoverPresentationController *)qcoMock_popoverPresentationController;
 #endif
