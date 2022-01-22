@@ -18,13 +18,6 @@ NSString *const QCOMockAlertControllerPresentedNotification = @"QCOMockAlertCont
 
 @implementation UIAlertController (QCOMock)
 
-+ (instancetype)qcoMock_alertControllerWithTitle:(NSString *)title
-                                         message:(NSString *)message
-                                  preferredStyle:(UIAlertControllerStyle)preferredStyle
-{
-    return [[self alloc] initQCOMockWithTitle:title message:message preferredStyle:preferredStyle];
-}
-
 - (instancetype)initQCOMockWithTitle:(NSString *)title
                              message:(NSString *)message
                       preferredStyle:(UIAlertControllerStyle)style
