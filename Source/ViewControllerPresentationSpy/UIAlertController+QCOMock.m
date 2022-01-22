@@ -18,17 +18,6 @@ NSString *const QCOMockAlertControllerPresentedNotification = @"QCOMockAlertCont
 
 @implementation UIAlertController (QCOMock)
 
-+ (void)qcoMock_swizzle
-{
-    [self qcoMockAlerts_replaceClassMethod:@selector(alertControllerWithTitle:message:preferredStyle:)
-                                withMethod:@selector(qcoMock_alertControllerWithTitle:message:preferredStyle:)];
-
-#if TARGET_OS_IOS
-    [self qcoMockAlerts_replaceInstanceMethod:@selector(popoverPresentationController)
-                                   withMethod:@selector(qcoMock_popoverPresentationController)];
-#endif
-}
-
 + (instancetype)qcoMock_alertControllerWithTitle:(NSString *)title
                                          message:(NSString *)message
                                   preferredStyle:(UIAlertControllerStyle)preferredStyle

@@ -8,7 +8,7 @@ NS_ASSUME_NONNULL_BEGIN
 extern NSString *const QCOMockAlertControllerPresentedNotification;
 
 @interface UIAlertController (QCOMock)
-+ (void)qcoMock_swizzle;
+
 + (instancetype)qcoMock_alertControllerWithTitle:(NSString *)title message:(NSString *)message preferredStyle:(UIAlertControllerStyle)preferredStyle;
 #if TARGET_OS_IOS
 - (UIPopoverPresentationController *)qcoMock_popoverPresentationController;
