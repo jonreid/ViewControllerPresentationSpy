@@ -15,4 +15,17 @@ extension UIAlertController {
             )
         #endif
     }
+    
+    @objc class func qcoMock_alertController2(title: String, message: String, preferredStyle: UIAlertController.Style) {
+        
+    } 
+    
+    /*
++ (instancetype)qcoMock_alertControllerWithTitle:(NSString *)title
+                                    message:(NSString *)message
+                             preferredStyle:(UIAlertControllerStyle)preferredStyle
+{
+    return [[self alloc] initQCOMockWithTitle:title message:message preferredStyle:preferredStyle];
+}
+     */
 }
