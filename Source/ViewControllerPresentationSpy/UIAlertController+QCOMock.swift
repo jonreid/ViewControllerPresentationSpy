@@ -22,14 +22,29 @@ extension UIAlertController {
             preferredStyle: UIAlertController.Style
     ) -> UIAlertController {
         return UIAlertController.init(qcoMockWithTitle: title, message:message, preferredStyle:preferredStyle)
-    } 
+    }
+    
+    @objc convenience init(qcoMockWithTitle2 title: String, message: String, preferredStyle style: UIAlertController.Style) {
+        self.init(title: title, message: message, preferredStyle: style)
+        // mockPopover
+    }
     
     /*
-+ (instancetype)qcoMock_alertControllerWithTitle:(NSString *)title
-                                    message:(NSString *)message
-                             preferredStyle:(UIAlertControllerStyle)preferredStyle
+- (instancetype)initQCOMockWithTitle:(NSString *)title
+                             message:(NSString *)message
+                      preferredStyle:(UIAlertControllerStyle)style
 {
-    return [[self alloc] initQCOMockWithTitle:title message:message preferredStyle:preferredStyle];
+    self = [super init];
+    if (self)
+    {
+        self.title = title;
+        self.message = message;
+        self.preferredStyle = style;
+#if TARGET_OS_IOS
+        self.qcoMock_mockPopover = [[QCOMockPopoverPresentationController alloc] init];
+#endif
+    }
+    return self;
 }
      */
 }
