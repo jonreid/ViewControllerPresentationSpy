@@ -35,6 +35,7 @@
 		48213D4B25DF8B6300201AEF /* UIAlertAction+QCOMock.h in Headers */ = {isa = PBXBuildFile; fileRef = 48007C8A2079A7E2007A4AB0 /* UIAlertAction+QCOMock.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		48213D4C25DF8B6300201AEF /* ViewControllerPresentationSpy.h in Headers */ = {isa = PBXBuildFile; fileRef = 48007C7C2079A76E007A4AB0 /* ViewControllerPresentationSpy.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BB17038F1FA4823879B0BF2F /* DismissalVerifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1701CD1FBD8F6138CD874B /* DismissalVerifier.swift */; };
+		BB170585B7E1C561C02496A3 /* UIAlertController+QCOMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB17047748F94AA24D8F67A4 /* UIAlertController+QCOMock.swift */; };
 		BB1707360BE35588D3F40492 /* ClosureContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1706C2B7CE68DD81C1E383 /* ClosureContainer.swift */; };
 		BB1707A21243C9FA6F558CAC /* PresentationVerifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1701BF26D1A6EC6D6736E3 /* PresentationVerifier.swift */; };
 		BB1709AE226B61ABE035BEA5 /* AlertVerifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB170F803977DDBC293D88B0 /* AlertVerifier.swift */; };
@@ -282,6 +283,7 @@
 				48213D4725DF8B6300201AEF /* NSObject+QCOMockAlerts.m in Sources */,
 				48213D4425DF8B6300201AEF /* UIAlertController+QCOMock.m in Sources */,
 				48213D3D25DF8B6300201AEF /* PresentationVerifier.swift in Sources */,
+				BB170585B7E1C561C02496A3 /* UIAlertController+QCOMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
