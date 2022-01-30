@@ -21,11 +21,14 @@ extension UIAlertController {
             message: String,
             preferredStyle: UIAlertController.Style
     ) -> UIAlertController {
-        return UIAlertController.init(qcoMockWithTitle: title, message:message, preferredStyle:preferredStyle)
+        UIAlertController.init(qcoMockWithTitle: title, message: message, preferredStyle: preferredStyle)
     }
     
     @objc convenience init(qcoMockWithTitle2 title: String, message: String, preferredStyle style: UIAlertController.Style) {
-        self.init(title: title, message: message, preferredStyle: style)
+        self.init()
+        self.title = title
+        self.message = message
+//        self.preferredStyle = style
         // mockPopover
     }
     
