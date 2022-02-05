@@ -33,13 +33,11 @@ extension UIAlertController {
         self.init()
         self.title = title
         self.message = message
-//        self.preferredStyle = style
 
-        let extraProperties = UIAlertControllerExtraProperties(preferredStyle: style)
         objc_setAssociatedObject(
                 self,
-                "extraProperties",
-                extraProperties,
+                UIAlertControllerExtraProperties.associatedObjectKey,
+                UIAlertControllerExtraProperties(preferredStyle: style),
                 .OBJC_ASSOCIATION_RETAIN_NONATOMIC
         )
 
@@ -47,8 +45,11 @@ extension UIAlertController {
     }
 
     @objc var qcoMock_preferredStyle: UIAlertController.Style {
-        let extraProperties: UIAlertControllerExtraProperties? = objc_getAssociatedObject(self, "extraProperties") as! UIAlertControllerExtraProperties?
-        return extraProperties!.preferredStyle
+        guard let extraProperties = objc_getAssociatedObject(self, UIAlertControllerExtraProperties.associatedObjectKey)
+                as? UIAlertControllerExtraProperties else {
+            fatalError("Associated object UIAlertControllerExtraProperties not found")
+        }
+        return extraProperties.preferredStyle
     }
     
     /*
@@ -72,6 +73,8 @@ extension UIAlertController {
 }
 
 class UIAlertControllerExtraProperties: NSObject {
+    static let associatedObjectKey = "extraProperties"
+
     let preferredStyle: UIAlertController.Style
 
     init(preferredStyle: UIAlertController.Style) {
