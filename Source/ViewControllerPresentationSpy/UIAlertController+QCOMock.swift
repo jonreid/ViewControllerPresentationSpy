@@ -1,11 +1,16 @@
 import UIKit
 
 extension UIAlertController {
-
+    
     @objc class func qcoMock_swizzle() {
         UIAlertController.qcoMockAlerts_replaceClassMethod(
                 #selector(UIAlertController.init(title:message:preferredStyle:)),
                 withMethod: #selector(UIAlertController.qcoMock_alertController(title:message:preferredStyle:))
+        )
+
+        UIAlertController.qcoMockAlerts_replaceInstanceMethod(
+                #selector(getter: UIAlertController.preferredStyle),
+                withMethod: #selector(getter: UIAlertController.qcoMock_preferredStyle)
         )
 
         #if (os(iOS))
@@ -21,7 +26,7 @@ extension UIAlertController {
             message: String,
             preferredStyle: UIAlertController.Style
     ) -> UIAlertController {
-        UIAlertController.init(qcoMockWithTitle: title, message: message, preferredStyle: preferredStyle)
+        UIAlertController.init(qcoMockWithTitle2: title, message: message, preferredStyle: preferredStyle)
     }
     
     @objc convenience init(qcoMockWithTitle2 title: String, message: String, preferredStyle style: UIAlertController.Style) {
@@ -39,6 +44,11 @@ extension UIAlertController {
         )
 
         // mockPopover
+    }
+
+    @objc var qcoMock_preferredStyle: UIAlertController.Style {
+        let extraProperties: UIAlertControllerExtraProperties? = objc_getAssociatedObject(self, "extraProperties") as! UIAlertControllerExtraProperties?
+        return extraProperties!.preferredStyle
     }
     
     /*
