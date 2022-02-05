@@ -29,6 +29,15 @@ extension UIAlertController {
         self.title = title
         self.message = message
 //        self.preferredStyle = style
+
+        let extraProperties = UIAlertControllerExtraProperties(preferredStyle: style)
+        objc_setAssociatedObject(
+                self,
+                "extraProperties",
+                extraProperties,
+                .OBJC_ASSOCIATION_RETAIN_NONATOMIC
+        )
+
         // mockPopover
     }
     
@@ -50,4 +59,13 @@ extension UIAlertController {
     return self;
 }
      */
+}
+
+class UIAlertControllerExtraProperties: NSObject {
+    let preferredStyle: UIAlertController.Style
+
+    init(preferredStyle: UIAlertController.Style) {
+        self.preferredStyle = preferredStyle 
+        super.init()
+    }
 }
