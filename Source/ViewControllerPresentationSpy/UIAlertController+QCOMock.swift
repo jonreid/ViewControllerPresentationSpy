@@ -57,6 +57,9 @@ extension UIAlertController {
     }
     
     #if os(iOS)
+        @objc var qcoMock_popoverPresentationController2: UIPopoverPresentationController? {
+            return nil
+        }
     #endif
     
     /*
