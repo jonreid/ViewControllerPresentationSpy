@@ -63,6 +63,7 @@ extension UIAlertController {
             fatalError("Associated object UIAlertControllerExtraProperties not found")
         }
         return nil
+//        return extraProperties.qcoMock_mockPopover2
     }
     #endif
     /*
@@ -95,4 +96,20 @@ class UIAlertControllerExtraProperties: NSObject {
         self.preferredStyle = preferredStyle 
         super.init()
     }
+}
+
+extension UIPopoverPresentationController {
+    @objc convenience init(presentedViewController2: UIViewController, presenting presentingViewController: UIViewController?) {
+        self.init(presentedViewController: presentedViewController2, presenting: presentingViewController)
+
+        objc_setAssociatedObject(
+                self,
+                UIPopoverPresentationControllerExtraProperties.associatedObjectKey,
+                UIPopoverPresentationControllerExtraProperties(),
+                .OBJC_ASSOCIATION_RETAIN_NONATOMIC
+        )
+    }
+}
+class UIPopoverPresentationControllerExtraProperties: NSObject {
+    static let associatedObjectKey = "extraProperties"
 }
