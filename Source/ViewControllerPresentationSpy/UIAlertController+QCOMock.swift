@@ -41,7 +41,11 @@ extension UIAlertController {
                 .OBJC_ASSOCIATION_RETAIN_NONATOMIC
         )
 
-        // mockPopover
+//        #if TARGET_OS_IOS
+//            self.qcoMock_mockPopover = [[QCOMockPopoverPresentationController alloc] init];
+//        #endif
+
+
     }
 
     @objc var qcoMock_preferredStyle: UIAlertController.Style {
@@ -52,22 +56,17 @@ extension UIAlertController {
         return extraProperties.preferredStyle
     }
     
+    #if os(iOS)
+    #endif
+    
     /*
-- (instancetype)initQCOMockWithTitle:(NSString *)title
-                             message:(NSString *)message
-                      preferredStyle:(UIAlertControllerStyle)style
+     #if TARGET_OS_IOS
+- (UIPopoverPresentationController *)qcoMock_popoverPresentationController
 {
-    self = [super init];
-    if (self)
-    {
-        self.title = title;
-        self.message = message;
-        self.preferredStyle = style;
-#if TARGET_OS_IOS
-        self.qcoMock_mockPopover = [[QCOMockPopoverPresentationController alloc] init];
-#endif
+    if ([self respondsToSelector:@selector(qcoMock_mockPopover)]) {
+        return (id)self.qcoMock_mockPopover;
     }
-    return self;
+    return nil;
 }
      */
 }
