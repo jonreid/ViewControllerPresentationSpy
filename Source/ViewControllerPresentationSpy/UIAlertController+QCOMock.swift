@@ -57,11 +57,14 @@ extension UIAlertController {
     }
     
     #if os(iOS)
-        @objc var qcoMock_popoverPresentationController2: UIPopoverPresentationController? {
-            return nil
+    @objc var qcoMock_popoverPresentationController2: UIPopoverPresentationController? {
+        guard let extraProperties = objc_getAssociatedObject(self, UIAlertControllerExtraProperties.associatedObjectKey)
+                as? UIAlertControllerExtraProperties else {
+            fatalError("Associated object UIAlertControllerExtraProperties not found")
         }
+        return nil
+    }
     #endif
-    
     /*
      #if TARGET_OS_IOS
 - (UIPopoverPresentationController *)qcoMock_popoverPresentationController
