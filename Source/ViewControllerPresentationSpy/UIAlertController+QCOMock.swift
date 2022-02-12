@@ -41,9 +41,9 @@ extension UIAlertController {
                 .OBJC_ASSOCIATION_RETAIN_NONATOMIC
         )
 
-        #if os(iOS)
-            UIPopoverPresentationController(presentedViewController2: self, presenting: nil)
-        #endif
+//        #if os(iOS)
+//            UIPopoverPresentationController(presentedViewController2: self, presenting: nil)
+//        #endif
 
 //        #if TARGET_OS_IOS
 //            self.qcoMock_mockPopover = [[QCOMockPopoverPresentationController alloc] init];
@@ -98,6 +98,7 @@ class UIAlertControllerExtraProperties: NSObject {
 
      */
     init(preferredStyle: UIAlertController.Style, alertController: UIAlertController) {
+//        self.preferredStyle = alertController.preferredStyle
         self.preferredStyle = preferredStyle
         mockPopover = UIPopoverPresentationController(presentedViewController2: alertController, presenting: nil)
         super.init()
