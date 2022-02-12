@@ -78,7 +78,16 @@ class UIAlertControllerExtraProperties: NSObject {
     static let associatedObjectKey = "extraProperties"
 
     let preferredStyle: UIAlertController.Style
+    #if os(iOS)
+        var qcoMock_mockPopover2: QCOMockPopoverPresentationController?
+    #endif
 
+    /*
+     #if TARGET_OS_IOS
+@property (nonatomic, strong) QCOMockPopoverPresentationController *qcoMock_mockPopover;
+#endif
+
+     */
     init(preferredStyle: UIAlertController.Style) {
         self.preferredStyle = preferredStyle 
         super.init()
