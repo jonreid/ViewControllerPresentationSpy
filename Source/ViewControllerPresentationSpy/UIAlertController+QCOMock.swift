@@ -99,7 +99,7 @@ class UIAlertControllerExtraProperties: NSObject {
      */
     init(preferredStyle: UIAlertController.Style, alertController: UIAlertController) {
         self.preferredStyle = preferredStyle
-//        UIPopoverPresentationController(presentedViewController2: <#T##UIViewController##UIKit.UIViewController#>)
+        mockPopover = UIPopoverPresentationController(presentedViewController2: alertController, presenting: nil)
         super.init()
     }
 }
