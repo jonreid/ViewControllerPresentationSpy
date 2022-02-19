@@ -8,10 +8,10 @@ extension UIAlertController {
                 withMethod: #selector(UIAlertController.qcoMock_alertController(title:message:preferredStyle:))
         )
 
-        UIAlertController.qcoMockAlerts_replaceInstanceMethod(
-                #selector(getter: UIAlertController.preferredStyle),
-                withMethod: #selector(getter: UIAlertController.qcoMock_preferredStyle)
-        )
+//        UIAlertController.qcoMockAlerts_replaceInstanceMethod(
+//                #selector(getter: UIAlertController.preferredStyle),
+//                withMethod: #selector(getter: UIAlertController.qcoMock_preferredStyle)
+//        )
 
         #if (os(iOS))
             UIAlertController.qcoMockAlerts_replaceInstanceMethod(
@@ -26,7 +26,7 @@ extension UIAlertController {
             message: String,
             preferredStyle: UIAlertController.Style
     ) -> UIAlertController {
-        UIAlertController.init(qcoMockWithTitle2: title, message: message, preferredStyle: preferredStyle)
+        UIAlertController.init(qcoMockWithTitle: title, message: message, preferredStyle: preferredStyle)
     }
     
     @objc convenience init(qcoMockWithTitle2 title: String, message: String, preferredStyle style: UIAlertController.Style) {
