@@ -8,6 +8,7 @@ extension UIAlertController {
                 withMethod: #selector(UIAlertController.qcoMock_alertController(title:message:preferredStyle:))
         )
 
+        // Must keep in sync with whether we use old init or new one:
 //        UIAlertController.qcoMockAlerts_replaceInstanceMethod(
 //                #selector(getter: UIAlertController.preferredStyle),
 //                withMethod: #selector(getter: UIAlertController.qcoMock_preferredStyle)
@@ -41,15 +42,9 @@ extension UIAlertController {
                 .OBJC_ASSOCIATION_RETAIN_NONATOMIC
         )
 
-//        #if os(iOS)
-//            UIPopoverPresentationController(presentedViewController2: self, presenting: nil)
-//        #endif
-
-//        #if TARGET_OS_IOS
-//            self.qcoMock_mockPopover = [[QCOMockPopoverPresentationController alloc] init];
-//        #endif
-
-
+        #if os(iOS)
+        // Intercept popover
+        #endif
     }
 
     @objc var qcoMock_preferredStyle: UIAlertController.Style {
@@ -70,16 +65,6 @@ extension UIAlertController {
 //        return extraProperties.qcoMock_mockPopover2
     }
     #endif
-    /*
-     #if TARGET_OS_IOS
-- (UIPopoverPresentationController *)qcoMock_popoverPresentationController
-{
-    if ([self respondsToSelector:@selector(qcoMock_mockPopover)]) {
-        return (id)self.qcoMock_mockPopover;
-    }
-    return nil;
-}
-     */
 }
 
 class UIAlertControllerExtraProperties: NSObject {
@@ -91,20 +76,18 @@ class UIAlertControllerExtraProperties: NSObject {
         var mockPopover: UIPopoverPresentationController?
     #endif
 
-    /*
      #if TARGET_OS_IOS
-@property (nonatomic, strong) QCOMockPopoverPresentationController *qcoMock_mockPopover;
-#endif
+    // @property (nonatomic, strong) QCOMockPopoverPresentationController *qcoMock_mockPopover;
+    #endif
 
-     */
     init(preferredStyle: UIAlertController.Style, alertController: UIAlertController) {
-//        self.preferredStyle = alertController.preferredStyle
         self.preferredStyle = preferredStyle
-        mockPopover = UIPopoverPresentationController(presentedViewController2: alertController, presenting: nil)
+//        mockPopover = UIPopoverPresentationController(presentedViewController2: alertController, presenting: nil)
         super.init()
     }
 }
 
+#if os(iOS)
 extension UIPopoverPresentationController {
     @objc convenience init(presentedViewController2: UIViewController, presenting presentingViewController: UIViewController?) {
         self.init(presentedViewController: presentedViewController2, presenting: presentingViewController)
@@ -120,3 +103,4 @@ extension UIPopoverPresentationController {
 class UIPopoverPresentationControllerExtraProperties: NSObject {
     static let associatedObjectKey = "extraProperties"
 }
+#endif
