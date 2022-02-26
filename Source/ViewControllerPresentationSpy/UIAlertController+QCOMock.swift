@@ -35,16 +35,20 @@ extension UIAlertController {
         self.title = title
         self.message = message
 
+        attachExtraProperties(style: style)
+
+        #if os(iOS)
+        // Intercept popover
+        #endif
+    }
+
+    @objc public func attachExtraProperties(style: Style) {
         objc_setAssociatedObject(
                 self,
                 UIAlertControllerExtraProperties.associatedObjectKey,
                 UIAlertControllerExtraProperties(preferredStyle: style, alertController: self),
                 .OBJC_ASSOCIATION_RETAIN_NONATOMIC
         )
-
-        #if os(iOS)
-        // Intercept popover
-        #endif
     }
 
     @objc var qcoMock_preferredStyle: UIAlertController.Style {
