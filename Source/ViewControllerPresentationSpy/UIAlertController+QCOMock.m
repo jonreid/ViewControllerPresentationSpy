@@ -6,6 +6,7 @@
 #import "NSObject+QCOMockAlerts.h"
 #import "QCOMockPopoverPresentationController.h"
 #import <objc/runtime.h>
+#import "ViewControllerPresentationSpy/ViewControllerPresentationSpy-Swift.h"
 
 NSString *const QCOMockAlertControllerPresentedNotification = @"QCOMockAlertControllerPresentedNotification";
 
