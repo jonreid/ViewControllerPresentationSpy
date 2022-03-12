@@ -78,14 +78,10 @@ class UIAlertControllerExtraProperties: NSObject {
         var qcoMock_mockPopover2: QCOMockPopoverPresentationController?
         var mockPopover: UIPopoverPresentationController?
     #endif
-
-     #if TARGET_OS_IOS
-    // @property (nonatomic, strong) QCOMockPopoverPresentationController *qcoMock_mockPopover;
-    #endif
-
+        
     init(preferredStyle: UIAlertController.Style, alertController: UIAlertController) {
         self.preferredStyle = preferredStyle
-//        mockPopover = UIPopoverPresentationController(presentedViewController2: alertController, presenting: nil)
+        mockPopover = UIPopoverPresentationController(presentedViewController2: alertController, presenting: nil)
         super.init()
     }
 }
