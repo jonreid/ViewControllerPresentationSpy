@@ -101,5 +101,7 @@ extension UIPopoverPresentationController {
 }
 class UIPopoverPresentationControllerExtraProperties: NSObject {
     static let associatedObjectKey = "extraProperties"
+
+    var arrowDirection: UIPopoverArrowDirection = .unknown
 }
 #endif
