@@ -26,7 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, strong) UIBarButtonItem *barButtonItem;
 
 // Returns the direction the arrow is pointing on a presented popover. Before presentation, this returns UIPopoverArrowDirectionUnknown.
-@property (nonatomic, readwrite) UIPopoverArrowDirection arrowDirection;
+@property (nonatomic, readonly) UIPopoverArrowDirection arrowDirection;
 
 // By default, a popover disallows interaction with any view outside of the popover while the popover is presented.
 // This property allows the specification of an array of UIView instances which the user is allowed to interact with
