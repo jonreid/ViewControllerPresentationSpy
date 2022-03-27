@@ -172,9 +172,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 48007C812079A76E007A4AB0 /* Build configuration list for PBXNativeTarget "ViewControllerPresentationSpy" */;
 			buildPhases = (
+				48007C762079A76E007A4AB0 /* Headers */,
 				48007C742079A76E007A4AB0 /* Sources */,
 				48007C752079A76E007A4AB0 /* Frameworks */,
-				48007C762079A76E007A4AB0 /* Headers */,
 			);
 			buildRules = (
 			);
