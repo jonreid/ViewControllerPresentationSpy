@@ -26,19 +26,14 @@ extension UIAlertController {
             message: String,
             preferredStyle: UIAlertController.Style
     ) -> UIAlertController {
-        UIAlertController.init(qcoMockWithTitle2: title, message: message, preferredStyle: preferredStyle)
+        UIAlertController.init(qcoMockWithTitle: title, message: message, preferredStyle: preferredStyle)
     }
     
-    @objc convenience init(qcoMockWithTitle2 title: String, message: String, preferredStyle style: UIAlertController.Style) {
+    @objc convenience init(qcoMockWithTitle title: String, message: String, preferredStyle style: UIAlertController.Style) {
         self.init()
         self.title = title
         self.message = message
-
         attachExtraProperties(style: style)
-
-        #if os(iOS)
-        // Intercept popover
-        #endif
     }
 
     @objc public func attachExtraProperties(style: Style) {
@@ -74,7 +69,6 @@ class UIAlertControllerExtraProperties: NSObject {
 
     let preferredStyle: UIAlertController.Style
     #if os(iOS)
-//        var qcoMock_mockPopover2: QCOMockPopoverPresentationController?
         var mockPopover: UIPopoverPresentationController?
     #endif
         
