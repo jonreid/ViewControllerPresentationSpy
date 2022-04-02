@@ -9,26 +9,3 @@
 #import "ViewControllerPresentationSpy/ViewControllerPresentationSpy-Swift.h"
 
 NSString *const QCOMockAlertControllerPresentedNotification = @"QCOMockAlertControllerPresentedNotification";
-
-@interface UIAlertController ()
-#if TARGET_OS_IOS
-@property (nonatomic, strong) QCOMockPopoverPresentationController *qcoMock_mockPopover;
-#endif
-@end
-
-@implementation UIAlertController (QCOMock)
-
-#if TARGET_OS_IOS
-
-- (QCOMockPopoverPresentationController *)qcoMock_mockPopover
-{
-    return objc_getAssociatedObject(self, @selector(qcoMock_mockPopover));
-}
-
-- (void)setQcoMock_mockPopover:(QCOMockPopoverPresentationController *)popover
-{
-    objc_setAssociatedObject(self, @selector(qcoMock_mockPopover), popover, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-#endif
-
-@end
