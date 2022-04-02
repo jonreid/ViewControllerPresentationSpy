@@ -4,7 +4,6 @@
 #import "UIViewController+QCOMock.h"
 
 #import "NSObject+QCOMockAlerts.h"
-#import "UIAlertController+QCOMock.h"
 #if __has_include("ViewControllerPresentationSpy-Swift.h")
     #import "ViewControllerPresentationSpy-Swift.h"
 #else
