@@ -74,7 +74,7 @@ class UIAlertControllerExtraProperties: NSObject {
 
     let preferredStyle: UIAlertController.Style
     #if os(iOS)
-        var qcoMock_mockPopover2: QCOMockPopoverPresentationController?
+//        var qcoMock_mockPopover2: QCOMockPopoverPresentationController?
         var mockPopover: UIPopoverPresentationController?
     #endif
         
@@ -86,23 +86,3 @@ class UIAlertControllerExtraProperties: NSObject {
         super.init()
     }
 }
-
-#if os(iOS)
-extension UIPopoverPresentationController {
-    @objc convenience init(presentedViewController2: UIViewController, presenting presentingViewController: UIViewController?) {
-        self.init(presentedViewController: presentedViewController2, presenting: presentingViewController)
-
-        objc_setAssociatedObject(
-                self,
-                UIPopoverPresentationControllerExtraProperties.associatedObjectKey,
-                UIPopoverPresentationControllerExtraProperties(),
-                .OBJC_ASSOCIATION_RETAIN_NONATOMIC
-        )
-    }
-}
-class UIPopoverPresentationControllerExtraProperties: NSObject {
-    static let associatedObjectKey = "extraProperties"
-
-    var arrowDirection: UIPopoverArrowDirection = .unknown
-}
-#endif
