@@ -18,23 +18,6 @@ NSString *const QCOMockAlertControllerPresentedNotification = @"QCOMockAlertCont
 
 @implementation UIAlertController (QCOMock)
 
-- (instancetype)initQCOMockWithTitle:(NSString *)title
-                             message:(NSString *)message
-                      preferredStyle:(UIAlertControllerStyle)style
-{
-    self = [super init];
-    if (self)
-    {
-        self.title = title;
-        self.message = message;
-        [self attachExtraPropertiesWithStyle:style];
-#if TARGET_OS_IOS
-        self.qcoMock_mockPopover = [[QCOMockPopoverPresentationController alloc] init];
-#endif
-    }
-    return self;
-}
-
 #if TARGET_OS_IOS
 
 - (QCOMockPopoverPresentationController *)qcoMock_mockPopover

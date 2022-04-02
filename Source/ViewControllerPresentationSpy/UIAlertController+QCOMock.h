@@ -9,7 +9,6 @@ extern NSString *const QCOMockAlertControllerPresentedNotification;
 
 @interface UIAlertController (QCOMock)
 
-- (instancetype)initQCOMockWithTitle:(NSString *)title message:(NSString *)message preferredStyle:(UIAlertControllerStyle)style;
 #if TARGET_OS_IOS
 #endif
 @end
