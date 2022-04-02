@@ -12,7 +12,7 @@ jobs:
           - { project: 'ObjCSample/ObjCSampleViewControllerPresentationSpy.xcodeproj', scheme: 'ObjCSampleViewControllerPresentationSpy', sdk: 'iphonesimulator', destination: 'platform=iOS Simulator,OS=latest,name=iPhone 8' }
     steps:
       - name: Check out project
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Show current version of Xcode
         run: xcodebuild -version
       - name: Build
@@ -28,7 +28,7 @@ jobs:
       destination: 'platform=iOS Simulator,OS=latest,name=iPad Air (4th generation)'
     steps:
       - name: Check out project
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Show current version of Xcode
         run: xcodebuild -version
       - name: Build & test
@@ -38,7 +38,7 @@ jobs:
     name: Build Carthage
     runs-on: macos-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: Build
       run: carthage build --configuration Release --no-skip-current --use-xcframeworks
 
@@ -47,6 +47,6 @@ jobs:
     runs-on: macos-latest
     steps:
       - name: Check out project
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Lint the pod spec
         run: pod spec lint --quick
