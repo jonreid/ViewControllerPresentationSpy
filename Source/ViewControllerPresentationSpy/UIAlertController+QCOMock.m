@@ -36,13 +36,6 @@ NSString *const QCOMockAlertControllerPresentedNotification = @"QCOMockAlertCont
 }
 
 #if TARGET_OS_IOS
-- (UIPopoverPresentationController *)qcoMock_popoverPresentationController
-{
-    if ([self respondsToSelector:@selector(mockPopover)]) {
-        return (id)self.qcoMock_mockPopover;
-    }
-    return nil;
-}
 
 - (QCOMockPopoverPresentationController *)qcoMock_mockPopover
 {
