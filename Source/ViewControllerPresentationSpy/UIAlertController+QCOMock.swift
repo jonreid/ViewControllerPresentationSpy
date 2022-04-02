@@ -16,7 +16,7 @@ extension UIAlertController {
         #if (os(iOS))
             UIAlertController.qcoMockAlerts_replaceInstanceMethod(
                     #selector(getter: UIAlertController.popoverPresentationController),
-                    withMethod: #selector(UIAlertController.qcoMock_popoverPresentationController)
+                    withMethod: #selector(getter: UIAlertController.qcoMock_popoverPresentationController2)
             )
         #endif
     }
@@ -26,7 +26,7 @@ extension UIAlertController {
             message: String,
             preferredStyle: UIAlertController.Style
     ) -> UIAlertController {
-        UIAlertController.init(qcoMockWithTitle: title, message: message, preferredStyle: preferredStyle)
+        UIAlertController.init(qcoMockWithTitle2: title, message: message, preferredStyle: preferredStyle)
     }
     
     @objc convenience init(qcoMockWithTitle2 title: String, message: String, preferredStyle style: UIAlertController.Style) {
@@ -64,8 +64,7 @@ extension UIAlertController {
                 as? UIAlertControllerExtraProperties else {
             fatalError("Associated object UIAlertControllerExtraProperties not found")
         }
-        return nil
-//        return extraProperties.qcoMock_mockPopover2
+        return extraProperties.mockPopover
     }
     #endif
 }
@@ -82,7 +81,7 @@ class UIAlertControllerExtraProperties: NSObject {
     init(preferredStyle: UIAlertController.Style, alertController: UIAlertController) {
         self.preferredStyle = preferredStyle
         #if os(iOS)
-            mockPopover = UIPopoverPresentationController(presentedViewController2: alertController, presenting: nil)
+            mockPopover = UIPopoverPresentationController(presentedViewController: alertController, presenting: nil)
         #endif
         super.init()
     }
