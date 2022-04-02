@@ -8,4 +8,3 @@
 #import <objc/runtime.h>
 #import "ViewControllerPresentationSpy/ViewControllerPresentationSpy-Swift.h"
 
-NSString *const QCOMockAlertControllerPresentedNotification = @"QCOMockAlertControllerPresentedNotification";

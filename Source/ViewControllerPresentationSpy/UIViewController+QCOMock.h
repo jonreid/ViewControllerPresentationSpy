@@ -10,6 +10,7 @@ extern NSString *const QCOMockViewControllerAnimatedKey;
 extern NSString *const QCOMockViewControllerCompletionKey;
 extern NSString *const QCOMockViewControllerPresentedNotification;
 extern NSString *const QCOMockViewControllerDismissedNotification;
+extern NSString *const QCOMockAlertControllerPresentedNotification;
 
 @interface UIViewController (QCOMock)
 + (void)qcoMock_swizzleCaptureAlert;
