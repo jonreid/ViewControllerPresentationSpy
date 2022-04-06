@@ -35,6 +35,7 @@ jobs:
         run: set -o pipefail && xcodebuild test -project '${{ env.project }}' -scheme '${{ env.scheme }}' -sdk '${{ env.sdk }}' -destination '${{ env.destination }}' | xcpretty
 
   buildCarthage:
+    needs: [ build, test ]
     name: Build Carthage
     runs-on: macos-latest
     steps:
@@ -43,6 +44,7 @@ jobs:
       run: carthage build --configuration Release --no-skip-current --use-xcframeworks
 
   podspec:
+    needs: [ build, test ]
     name: Pod Spec Lint
     runs-on: macos-latest
     steps:
