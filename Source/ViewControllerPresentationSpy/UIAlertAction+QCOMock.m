@@ -8,12 +8,6 @@
 
 @implementation UIAlertAction (QCOMock)
 
-+ (void)qcoMock_swizzle
-{
-    [self qcoMockAlerts_replaceClassMethod:@selector(actionWithTitle:style:handler:)
-                                withMethod:@selector(qcoMock_actionWithTitle:style:handler:)];
-}
-
 + (instancetype)qcoMock_actionWithTitle:(NSString *)title
                                   style:(UIAlertActionStyle)style
                                 handler:(void (^ __nullable)(UIAlertAction *action))handler

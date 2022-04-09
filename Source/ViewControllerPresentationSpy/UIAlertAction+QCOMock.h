@@ -6,7 +6,6 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface UIAlertAction (QCOMock)
-+ (void)qcoMock_swizzle;
 + (instancetype)qcoMock_actionWithTitle:(NSString *)title style:(UIAlertActionStyle)style handler:(void (^ __nullable)(UIAlertAction *))handler;
 - (void (^ __nullable)(UIAlertAction *action))qcoMock_handler;
 @end
