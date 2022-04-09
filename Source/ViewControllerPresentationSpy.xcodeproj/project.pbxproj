@@ -113,11 +113,11 @@
 				48007C8C2079A7E2007A4AB0 /* QCOMockPopoverPresentationController.m */,
 				48007C8A2079A7E2007A4AB0 /* UIAlertAction+QCOMock.h */,
 				48007C8D2079A7E2007A4AB0 /* UIAlertAction+QCOMock.m */,
+				BB1707DE38257385128F7C87 /* UIAlertAction+QCOMock.swift */,
 				48007C8F2079A7E3007A4AB0 /* UIViewController+QCOMock.h */,
 				48007C872079A7E2007A4AB0 /* UIViewController+QCOMock.m */,
 				BB1706C2B7CE68DD81C1E383 /* ClosureContainer.swift */,
 				BB17047748F94AA24D8F67A4 /* UIAlertController+QCOMock.swift */,
-				BB1707DE38257385128F7C87 /* UIAlertAction+QCOMock.swift */,
 			);
 			path = ViewControllerPresentationSpy;
 			sourceTree = "<group>";
