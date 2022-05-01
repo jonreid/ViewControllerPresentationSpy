@@ -125,7 +125,7 @@ func test_executingActionForOKButton_shouldDoSomething() throws {
     [sut showAlert];
 
     NSError *error = nil;
-    [alertVerifier executeActionForButton:@"OK" returningError:&error];
+    [alertVerifier executeActionForButton:@"OK" andReturnError:&error];
 
     XCTAssertNil(error);
     // Now add your own assertions
