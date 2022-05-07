@@ -28,12 +28,12 @@ extension UIAlertAction {
     }
 }
 
-class UIAlertActionExtraProperties: NSObject {
-    static let associatedObjectKey = "extraProperties"
+public class UIAlertActionExtraProperties: NSObject {
+    @objc public static let associatedObjectKey = "extraProperties"
 
-    let handler: ((UIAlertAction) -> Void)?
+    @objc public let handler: ((UIAlertAction) -> Void)?
 
-    init(handler: ((UIAlertAction) -> Void)?) {
+    @objc public init(handler: ((UIAlertAction) -> Void)?) {
         self.handler = handler
         super.init()
     }
