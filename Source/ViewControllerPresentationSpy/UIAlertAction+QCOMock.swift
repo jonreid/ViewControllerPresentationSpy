@@ -24,7 +24,7 @@ public class UIAlertActionExtraProperties: NSObject {
 
     @objc public let handler: ((UIAlertAction) -> Void)?
 
-    @objc public init(handler: ((UIAlertAction) -> Void)?) {
+    init(handler: ((UIAlertAction) -> Void)?) {
         self.handler = handler
         super.init()
     }
