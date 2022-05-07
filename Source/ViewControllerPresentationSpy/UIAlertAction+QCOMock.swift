@@ -22,7 +22,8 @@ extension UIAlertAction {
 
     @objc class func qcoMock_action2(withTitle title: String, style: UIAlertAction.Style, handler: ((UIAlertAction) -> Void)?) -> UIAlertAction {
         let action = UIAlertAction.qcoMock_action2(withTitle: title, style: style, handler: handler)
-        objc_setAssociatedObject(action, foo, handler, .OBJC_ASSOCIATION_COPY_NONATOMIC)
+        let extraProperties = UIAlertActionExtraProperties(handler: handler)
+        objc_setAssociatedObject(action, foo, extraProperties, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         return action
     }
 }
