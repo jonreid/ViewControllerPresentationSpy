@@ -8,7 +8,7 @@ NS_ASSUME_NONNULL_BEGIN
 extern void *const foo;
 
 @interface UIAlertAction (QCOMock)
-+ (instancetype)qcoMock_actionWithTitle:(NSString *)title style:(UIAlertActionStyle)style handler:(void (^ __nullable)(UIAlertAction *))handler;
+
 - (void (^ __nullable)(UIAlertAction *action))qcoMock_handler;
 @end
 
