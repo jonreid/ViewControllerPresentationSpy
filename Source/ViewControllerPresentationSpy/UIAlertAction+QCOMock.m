@@ -3,7 +3,6 @@
 
 #import "UIAlertAction+QCOMock.h"
 
-#import "NSObject+QCOMockAlerts.h"
 #import "ViewControllerPresentationSpy/ViewControllerPresentationSpy-Swift.h"
 #import <objc/runtime.h>
 
