@@ -19,7 +19,7 @@ extension UIAlertAction {
     }
 }
 
-public class UIAlertActionExtraProperties: NSObject {
+public final class UIAlertActionExtraProperties: NSObject {
     @objc public static let associatedObjectKey = "extraProperties"
 
     @objc public let handler: ((UIAlertAction) -> Void)?
