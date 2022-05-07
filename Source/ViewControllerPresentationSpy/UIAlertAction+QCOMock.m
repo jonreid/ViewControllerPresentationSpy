@@ -23,8 +23,8 @@ void *const foo = @"foo";
 
 - (void (^ __nullable)(UIAlertAction *action))qcoMock_handler
 {
-    UIAlertActionExtraProperties *foobar = objc_getAssociatedObject(self, foo);
-    return foobar.handler;
+    UIAlertActionExtraProperties *extraProperties = objc_getAssociatedObject(self, foo);
+    return extraProperties.handler;
 }
 
 @end
