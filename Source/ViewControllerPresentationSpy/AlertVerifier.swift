@@ -103,7 +103,7 @@ public class AlertVerifier: NSObject {
     @objc(executeActionForButton:andReturnError:)
     public func executeAction(forButton title: String) throws {
         let action = try actionWithTitle(title)
-        if let handler = action.qcoMock_handler2() {
+        if let handler = action.qcoMock_handler() {
             handler(action)
         }
     }

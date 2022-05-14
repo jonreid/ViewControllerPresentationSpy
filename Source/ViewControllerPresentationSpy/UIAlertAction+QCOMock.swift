@@ -18,7 +18,7 @@ extension UIAlertAction {
         return action
     }
 
-    func qcoMock_handler2() -> ((UIAlertAction) -> Void)? {
+    func qcoMock_handler() -> ((UIAlertAction) -> Void)? {
         guard let extraProperties: UIAlertActionExtraProperties = objc_getAssociatedObject(self, foo)
             as? UIAlertActionExtraProperties
         else {
