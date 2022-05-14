@@ -6,4 +6,3 @@
 #import "ViewControllerPresentationSpy/ViewControllerPresentationSpy-Swift.h"
 #import <objc/runtime.h>
 
-void *const foo = @"foo";

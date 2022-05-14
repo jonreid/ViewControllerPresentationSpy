@@ -14,12 +14,12 @@ extension UIAlertAction {
     @objc class func qcoMock_action(withTitle title: String, style: UIAlertAction.Style, handler: ((UIAlertAction) -> Void)?) -> UIAlertAction {
         let action = UIAlertAction.qcoMock_action(withTitle: title, style: style, handler: handler)
         let extraProperties = UIAlertActionExtraProperties(handler: handler)
-        objc_setAssociatedObject(action, foo, extraProperties, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        objc_setAssociatedObject(action, UIAlertActionExtraProperties.associatedObjectKey, extraProperties, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         return action
     }
 
     func qcoMock_handler() -> ((UIAlertAction) -> Void)? {
-        guard let extraProperties: UIAlertActionExtraProperties = objc_getAssociatedObject(self, foo)
+        guard let extraProperties: UIAlertActionExtraProperties = objc_getAssociatedObject(self, UIAlertActionExtraProperties.associatedObjectKey)
             as? UIAlertActionExtraProperties
         else {
             return nil

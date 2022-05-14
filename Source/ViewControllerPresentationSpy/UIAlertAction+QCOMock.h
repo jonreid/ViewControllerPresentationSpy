@@ -5,6 +5,4 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-extern void *const foo;
-
 NS_ASSUME_NONNULL_END
