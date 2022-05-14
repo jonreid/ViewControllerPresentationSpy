@@ -17,6 +17,15 @@ extension UIAlertAction {
         objc_setAssociatedObject(action, foo, extraProperties, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         return action
     }
+
+    func qcoMock_handler2() -> ((UIAlertAction) -> Void)? {
+        guard let extraProperties: UIAlertActionExtraProperties = objc_getAssociatedObject(self, foo)
+            as? UIAlertActionExtraProperties
+        else {
+            return nil
+        }
+        return extraProperties.handler
+    }
 }
 
 public final class UIAlertActionExtraProperties: NSObject {

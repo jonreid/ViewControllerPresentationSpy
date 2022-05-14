@@ -1,12 +1,12 @@
 //  ViewControllerPresentationSpy by Jon Reid, https://qualitycoding.org
 //  Copyright 2022 Jonathan M. Reid. See LICENSE.txt
 
-import XCTest
 import UIKit
+import XCTest
 
 /**
     Captures presented UIAlertControllers.
- 
+
     Instantiate an AlertVerifier before the execution phase of the test. Then invoke the code to
     create and present your alert. Information about the alert is then available through the
     AlertVerifier.
@@ -24,11 +24,11 @@ public class AlertVerifier: NSObject {
     @objc public var actions: [UIAlertAction] = []
     @objc public var preferredAction: UIAlertAction?
     #if os(iOS)
-    @objc public var popover: UIPopoverPresentationController?
+        @objc public var popover: UIPopoverPresentationController?
     #endif
     @objc public var textFields: [UITextField]?
 
-    static private(set) var isSwizzled = false
+    private(set) static var isSwizzled = false
 
     /// Production code completion handler passed to present(_:animated:completion:).
     @objc public var capturedCompletion: (() -> Void)?
@@ -38,26 +38,26 @@ public class AlertVerifier: NSObject {
 
     /**
         Initializes a newly allocated verifier.
-     
+
         Instantiating an AlertVerifier swizzles UIViewController, UIAlertController, and
         UIAlertAction. They remain swizzled until the AlertVerifier is deallocated. Only one
         AlertVerifier may exist at a time, and none may be created while a PresentationVerifier
         exists. (This is because they both swizzle UIViewController.)
      */
-    @objc public override init() {
+    @objc override public init() {
         super.init()
         guard !AlertVerifier.isSwizzled else {
             XCTFail("""
-                    More than one instance of AlertVerifier exists. This may be caused by \
-                    creating one setUp() but failing to set the property to nil in tearDown().
-                    """)
+            More than one instance of AlertVerifier exists. This may be caused by \
+            creating one setUp() but failing to set the property to nil in tearDown().
+            """)
             return
         }
         NotificationCenter.default.addObserver(
-                self,
-                selector: #selector(alertControllerWasPresented(_:)),
-                name: NSNotification.Name.QCOMockAlertControllerPresented,
-                object: nil
+            self,
+            selector: #selector(alertControllerWasPresented(_:)),
+            name: NSNotification.Name.QCOMockAlertControllerPresented,
+            object: nil
         )
         AlertVerifier.swizzleMocks()
     }
@@ -87,7 +87,7 @@ public class AlertVerifier: NSObject {
         preferredAction = alertController?.preferredAction
         actions = alertController?.actions ?? []
         #if os(iOS)
-        popover = alertController?.popoverPresentationController
+            popover = alertController?.popoverPresentationController
         #endif
         textFields = alertController?.textFields
         if let completion = testCompletion {
@@ -97,13 +97,13 @@ public class AlertVerifier: NSObject {
 
     /**
         Executes the action for the button with the specified title.
-        
+
         Throws an exception (or returns an error in ObjC) if no button with given title is found.
      */
     @objc(executeActionForButton:andReturnError:)
     public func executeAction(forButton title: String) throws {
         let action = try actionWithTitle(title)
-        if let handler = action.qcoMock_handler() {
+        if let handler = action.qcoMock_handler2() {
             handler(action)
         }
     }
@@ -120,18 +120,19 @@ public class AlertVerifier: NSObject {
 
 extension AlertVerifier {
     /**
-        Verifies presentation of one alert.
-    */
+         Verifies presentation of one alert.
+     */
     public func verify(
-            title: String?,
-            message: String?,
-            animated: Bool,
-            actions: [Action],
-            preferredStyle: UIAlertController.Style = .alert,
-            presentingViewController: UIViewController? = nil,
-            file: StaticString = #file,
-            line: UInt = #line) {
-        let abort = verifyCallCount(actual: self.presentedCount, action: "present", file: file, line: line)
+        title: String?,
+        message: String?,
+        animated: Bool,
+        actions: [Action],
+        preferredStyle: UIAlertController.Style = .alert,
+        presentingViewController: UIViewController? = nil,
+        file: StaticString = #file,
+        line: UInt = #line
+    ) {
+        let abort = verifyCallCount(actual: presentedCount, action: "present", file: file, line: line)
         if abort { return }
         XCTAssertEqual(self.title, title, "alert title", file: file, line: line)
         XCTAssertEqual(self.message, message, "alert message", file: file, line: line)
@@ -139,7 +140,7 @@ extension AlertVerifier {
         verifyActions(expected: actions, file: file, line: line)
         verifyPreferredStyle(expected: preferredStyle, file: file, line: line)
         verifyViewController(actual: self.presentingViewController, expected: presentingViewController,
-                adjective: "presenting", file: file, line: line)
+                             adjective: "presenting", file: file, line: line)
     }
 
     private func verifyActions(expected: [Action], file: StaticString, line: UInt) {
@@ -152,18 +153,18 @@ extension AlertVerifier {
             }
         }
         if actual.count < expected.count {
-            let missing = expected[actual.count ..< expected.count].map{ $0.description }
+            let missing = expected[actual.count ..< expected.count].map { $0.description }
             XCTFail("Did not meet count of \(expected.count) actions, missing \(missing.joined(separator: ", "))",
                     file: file, line: line)
         } else if actual.count > expected.count {
-            let extra = actual[expected.count ..< actual.count].map{ $0.description }
+            let extra = actual[expected.count ..< actual.count].map { $0.description }
             XCTFail("Exceeded count of \(expected.count) actions, with unexpected \(extra.joined(separator: ", "))",
                     file: file, line: line)
         }
     }
 
     func actionsAsSwiftType() -> [Action] {
-        return self.actions.map { action in
+        return actions.map { action in
             switch action.style {
             case .default:
                 return .default(action.title)
@@ -179,8 +180,9 @@ extension AlertVerifier {
 
     private func verifyPreferredStyle(expected: UIAlertController.Style,
                                       file: StaticString,
-                                      line: UInt) {
-        let actual = self.preferredStyle
+                                      line: UInt)
+    {
+        let actual = preferredStyle
         if actual != expected {
             switch expected {
             case .actionSheet:
@@ -194,8 +196,8 @@ extension AlertVerifier {
     }
 }
 
-extension AlertVerifier {
-    public enum Action: Equatable {
+public extension AlertVerifier {
+    enum Action: Equatable {
         case `default`(String?)
         case cancel(String?)
         case destructive(String?)
