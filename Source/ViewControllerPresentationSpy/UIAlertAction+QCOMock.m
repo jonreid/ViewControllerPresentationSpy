@@ -7,13 +7,3 @@
 #import <objc/runtime.h>
 
 void *const foo = @"foo";
-
-@implementation UIAlertAction (QCOMock)
-
-- (void (^ __nullable)(UIAlertAction *action))qcoMock_handler
-{
-    UIAlertActionExtraProperties *extraProperties = objc_getAssociatedObject(self, foo);
-    return extraProperties.handler;
-}
-
-@end
