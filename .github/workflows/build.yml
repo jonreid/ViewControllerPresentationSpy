@@ -21,7 +21,7 @@ jobs:
       - name: Show current version of Xcode
         run: xcodebuild -version
       - name: Build
-        run: set -o pipefail && xcodebuild build -project '${{ matrix.run-config['project'] }}' -scheme '${{ matrix.run-config['scheme'] }}' -sdk '${{ matrix.run-config['sdk'] }}' -destination '${{ matrix.run-config['destination'] }}' | xcpretty
+        run: xcodebuild build -project '${{ matrix.run-config['project'] }}' -scheme '${{ matrix.run-config['scheme'] }}' -sdk '${{ matrix.run-config['sdk'] }}' -destination '${{ matrix.run-config['destination'] }}' | xcpretty && exit ${PIPESTATUS[0]}
 
   test:
     name: Build & test
@@ -37,7 +37,7 @@ jobs:
       - name: Show current version of Xcode
         run: xcodebuild -version
       - name: Build & test
-        run: set -o pipefail && xcodebuild test -project '${{ env.project }}' -scheme '${{ env.scheme }}' -sdk '${{ env.sdk }}' -destination '${{ env.destination }}' | xcpretty
+        run: xcodebuild test -project '${{ env.project }}' -scheme '${{ env.scheme }}' -sdk '${{ env.sdk }}' -destination '${{ env.destination }}' | xcpretty && exit ${PIPESTATUS[0]}
 
   buildCarthage:
     needs: [ build, test ]
