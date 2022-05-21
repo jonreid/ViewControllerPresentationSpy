@@ -25,7 +25,7 @@ NSString *const QCOMockAlertControllerPresentedNotification = @"QCOMockAlertCont
                                    withMethod:@selector(qcoMock_presentViewControllerCapturingAlert:animated:completion:)];
 }
 
-+ (void)qcoMock_swizzleCaptureViewController
++ (void)qcoMock_swizzleCapturePresent
 {
     [self qcoMockAlerts_replaceInstanceMethod:@selector(presentViewController:animated:completion:)
                                    withMethod:@selector(qcoMock_presentViewControllerCapturingIt:animated:completion:)];

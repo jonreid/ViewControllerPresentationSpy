@@ -68,7 +68,7 @@ public class PresentationVerifier: NSObject {
     }
 
     private static func swizzleMocks() {
-        UIViewController.qcoMock_swizzleCapture()
+        UIViewController.qcoMock_swizzleCapturePresent()
         PresentationVerifier.isSwizzled.toggle()
     }
 
