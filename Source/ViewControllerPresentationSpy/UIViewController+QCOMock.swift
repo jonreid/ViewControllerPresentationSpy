@@ -4,10 +4,16 @@
 import UIKit
 
 extension UIViewController {
-//    class func qcoMock_swizzle() {
-//        UIAlertAction.qcoMockAlerts_replaceClassMethod(
-//                #selector(UIAlertAction.init(title:style:handler:)),
-//                withMethod: #selector(UIAlertAction.qcoMock_action(withTitle:style:handler:))
-//        )
-//    }
+    // + (void)qcoMock_swizzleCaptureAlert
+    // {
+    // [self qcoMockAlerts_replaceInstanceMethod:@selector(presentViewController:animated:completion:)
+    //        withMethod:@selector(qcoMock_presentViewControllerCapturingAlert:animated:completion:)];
+    // }
+
+    class func qcoMock_swizzleCaptureAlert2() {
+        UIViewController.qcoMockAlerts_replaceInstanceMethod(
+            #selector(UIViewController.present(_:animated:completion:)),
+            withMethod: #selector(UIViewController.qcoMock_presentCapturingAlert(_:animated:completion:))
+        )
+    }
 }
