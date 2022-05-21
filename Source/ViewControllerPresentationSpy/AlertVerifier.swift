@@ -70,7 +70,7 @@ public class AlertVerifier: NSObject {
     private static func swizzleMocks() {
         UIAlertAction.qcoMock_swizzle()
         UIAlertController.qcoMock_swizzle()
-        UIViewController.qcoMock_swizzleCaptureAlert()
+        UIViewController.qcoMock_swizzleCaptureAlert2()
         AlertVerifier.isSwizzled.toggle()
     }
 
