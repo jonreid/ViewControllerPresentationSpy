@@ -4,7 +4,7 @@
 import UIKit
 
 extension UIAlertController {
-    @objc class func qcoMock_swizzle() {
+    class func qcoMock_swizzle() {
         UIAlertController.qcoMockAlerts_replaceClassMethod(
             #selector(UIAlertController.init(title:message:preferredStyle:)),
             withMethod: #selector(UIAlertController.qcoMock_alertController(title:message:preferredStyle:))
@@ -31,14 +31,14 @@ extension UIAlertController {
         UIAlertController(qcoMockWithTitle: title, message: message, preferredStyle: preferredStyle)
     }
 
-    @objc convenience init(qcoMockWithTitle title: String, message: String, preferredStyle style: UIAlertController.Style) {
+    convenience init(qcoMockWithTitle title: String, message: String, preferredStyle style: UIAlertController.Style) {
         self.init()
         self.title = title
         self.message = message
         attachExtraProperties(style: style)
     }
 
-    @objc public func attachExtraProperties(style: Style) {
+    func attachExtraProperties(style: Style) {
         objc_setAssociatedObject(
             self,
             UIAlertControllerExtraProperties.associatedObjectKey,
