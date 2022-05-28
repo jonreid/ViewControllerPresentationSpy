@@ -11,7 +11,7 @@ extension UIViewController {
         )
     }
 
-    @objc public func viewControllerToPresent2(viewControllerToPresent: UIViewController, animated flag: Bool, closureContainer: ClosureContainer) {
+    @objc public func sendAlertInfo(viewControllerToPresent: UIViewController, animated flag: Bool, closureContainer: ClosureContainer) {
         let nc = NotificationCenter.default
         nc.post(
             name: NSNotification.Name.QCOMockAlertControllerPresented,
