@@ -42,19 +42,6 @@ NSString *const QCOMockAlertControllerPresentedNotification = @"QCOMockAlertCont
     
     QCOClosureContainer *closureContainer = [[QCOClosureContainer alloc] initWithClosure:completion];
     [self viewControllerToPresent2WithViewControllerToPresent:viewControllerToPresent animated:flag closureContainer:closureContainer];
-//    [self viewControllerToPresent:viewControllerToPresent animated:flag closureContainer:closureContainer];
-}
-
-- (void)viewControllerToPresent:(UIViewController *)viewControllerToPresent animated:(BOOL)flag closureContainer:(QCOClosureContainer *)closureContainer
-{
-    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
-    [nc postNotificationName:QCOMockAlertControllerPresentedNotification
-                      object:viewControllerToPresent
-                    userInfo:@{
-                            QCOMockViewControllerPresentingViewControllerKey: self,
-                            QCOMockViewControllerAnimatedKey: @(flag),
-                            QCOMockViewControllerCompletionKey: closureContainer,
-                    }];
 }
 
 - (void)qcoMock_presentViewControllerCapturingIt:(UIViewController *)viewControllerToPresent
