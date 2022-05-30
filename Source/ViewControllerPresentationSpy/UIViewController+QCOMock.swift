@@ -12,6 +12,12 @@ public extension UIViewController {
         )
     }
 
+    @objc func qcoMock_presentViewControllerCapturingAlert2(
+        viewControllerToPresent: UIViewController, animated flag: Bool, completion: (() -> Void)?
+    ) {
+        guard viewControllerToPresent.isKind(of: UIAlertController.self) else { return }
+    }
+
     @objc func sendAlertInfo(viewControllerToPresent: UIViewController, animated flag: Bool, closureContainer: ClosureContainer) {
         let nc = NotificationCenter.default
         nc.post(
@@ -30,3 +36,16 @@ public extension UIViewController {
         return ClosureContainer(closure: completion)
     }
 }
+
+/*
+  - (void)qcoMock_presentViewControllerCapturingAlert:(UIViewController *)viewControllerToPresent
+                                            animated:(BOOL)flag
+                                          completion:(void (^ __nullable)(void))completion
+ {
+     if (![viewControllerToPresent isKindOfClass:[UIAlertController class]])
+         return;
+
+     QCOClosureContainer *closureContainer = [self getClosureContainerWithViewControllerToPresent:viewControllerToPresent completion:completion];
+     [self sendAlertInfoWithViewControllerToPresent:viewControllerToPresent animated:flag closureContainer:closureContainer];
+ }
+  */
