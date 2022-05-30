@@ -4,15 +4,15 @@
 
 import UIKit
 
-extension UIViewController {
-    class func qcoMock_swizzleCaptureAlert() {
+public extension UIViewController {
+    internal class func qcoMock_swizzleCaptureAlert() {
         UIViewController.qcoMockAlerts_replaceInstanceMethod(
             #selector(UIViewController.present(_:animated:completion:)),
             withMethod: #selector(UIViewController.qcoMock_presentCapturingAlert(_:animated:completion:))
         )
     }
 
-    @objc public func sendAlertInfo(viewControllerToPresent: UIViewController, animated flag: Bool, closureContainer: ClosureContainer) {
+    @objc func sendAlertInfo(viewControllerToPresent: UIViewController, animated flag: Bool, closureContainer: ClosureContainer) {
         let nc = NotificationCenter.default
         nc.post(
             name: NSNotification.Name.QCOMockAlertControllerPresented,
@@ -23,5 +23,10 @@ extension UIViewController {
                 QCOMockViewControllerCompletionKey: closureContainer,
             ]
         )
+    }
+
+    @objc func getClosureContainer(viewControllerToPresent: UIViewController, completion: (() -> Void)?) -> ClosureContainer {
+        viewControllerToPresent.loadViewIfNeeded()
+        return ClosureContainer(closure: completion)
     }
 }
