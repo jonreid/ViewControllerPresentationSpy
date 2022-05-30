@@ -32,17 +32,6 @@ NSString *const QCOMockAlertControllerPresentedNotification = @"QCOMockAlertCont
                                    withMethod:@selector(qcoMock_dismissViewControllerAnimated:completion:)];
 }
 
-- (void)qcoMock_presentViewControllerCapturingAlert:(UIViewController *)viewControllerToPresent
-                                           animated:(BOOL)flag
-                                         completion:(void (^ __nullable)(void))completion
-{
-    if (![viewControllerToPresent isKindOfClass:[UIAlertController class]])
-        return;
-    
-    QCOClosureContainer *closureContainer = [self getClosureContainerWithViewControllerToPresent:viewControllerToPresent completion:completion];
-    [self sendAlertInfoWithViewControllerToPresent:viewControllerToPresent animated:flag closureContainer:closureContainer];
-}
-
 - (void)qcoMock_presentViewControllerCapturingIt:(UIViewController *)viewControllerToPresent
                                         animated:(BOOL)flag
                                       completion:(void (^ __nullable)(void))completion
