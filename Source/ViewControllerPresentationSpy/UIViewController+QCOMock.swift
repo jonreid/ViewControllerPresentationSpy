@@ -25,17 +25,3 @@ extension UIViewController {
         )
     }
 }
-
-/*
-  - (void)viewControllerToPresent:(UIViewController *)viewControllerToPresent animated:(BOOL)flag closureContainer:(QCOClosureContainer *)closureContainer
- {
-     NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
-     [nc postNotificationName:QCOMockAlertControllerPresentedNotification
-                       object:viewControllerToPresent
-                     userInfo:@{
-                             QCOMockViewControllerPresentingViewControllerKey: self,
-                             QCOMockViewControllerAnimatedKey: @(flag),
-                             QCOMockViewControllerCompletionKey: closureContainer,
-                     }];
- }
-  */
