@@ -8,7 +8,7 @@ public extension UIViewController {
     internal class func qcoMock_swizzleCaptureAlert() {
         UIViewController.qcoMockAlerts_replaceInstanceMethod(
             #selector(UIViewController.present(_:animated:completion:)),
-            withMethod: #selector(UIViewController.qcoMock_presentCapturingAlert(_:animated:completion:))
+            withMethod: #selector(UIViewController.qcoMock_presentViewControllerCapturingAlert2(viewControllerToPresent:animated:completion:))
         )
     }
 
