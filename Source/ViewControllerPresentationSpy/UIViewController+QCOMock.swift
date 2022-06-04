@@ -35,7 +35,7 @@ public extension UIViewController {
     ) {
         let nc = NotificationCenter.default
         nc.post(
-            name: NSNotification.Name.QCOMockAlertControllerPresented,
+            name: NSNotification.Name.QCOMockViewControllerPresented,
             object: viewControllerToPresent,
             userInfo: [
                 QCOMockViewControllerPresentingViewControllerKey: self,
@@ -44,18 +44,4 @@ public extension UIViewController {
             ]
         )
     }
-
-    /*
-          - (void)postNotificationAboutPresent:(UIViewController *)viewControllerToPresent animated:(BOOL)flag closureContainer:(QCOClosureContainer *)closureContainer
-     {
-         NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
-         [nc postNotificationName:QCOMockViewControllerPresentedNotification
-                           object:viewControllerToPresent
-                         userInfo:@{
-                                 QCOMockViewControllerPresentingViewControllerKey: self,
-                                 QCOMockViewControllerAnimatedKey: @(flag),
-                                 QCOMockViewControllerCompletionKey: closureContainer,
-                         }];
-     }
-          */
 }

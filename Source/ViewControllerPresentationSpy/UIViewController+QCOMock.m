@@ -38,7 +38,7 @@ NSString *const QCOMockAlertControllerPresentedNotification = @"QCOMockAlertCont
 {
     [viewControllerToPresent loadViewIfNeeded];
     QCOClosureContainer *closureContainer = [[QCOClosureContainer alloc] initWithClosure:completion];
-    [self postNotificationAboutPresent:viewControllerToPresent animated:flag closureContainer:closureContainer];
+    [self postNotificationAboutPresent2WithViewControllerToPresent:viewControllerToPresent animated:flag closureContainer:closureContainer];
 }
 
 - (void)postNotificationAboutPresent:(UIViewController *)viewControllerToPresent animated:(BOOL)flag closureContainer:(QCOClosureContainer *)closureContainer
