@@ -6,20 +6,20 @@ import UIKit
 
 extension UIAlertController {
     class func qcoMock_swizzle() {
-        UIAlertController.qcoMockAlerts_replaceClassMethod(
-            #selector(UIAlertController.init(title:message:preferredStyle:)),
-            withMethod: #selector(UIAlertController.qcoMock_alertController(title:message:preferredStyle:))
+        Self.qcoMockAlerts_replaceClassMethod(
+            #selector(Self.init(title:message:preferredStyle:)),
+            withMethod: #selector(Self.qcoMock_alertController(title:message:preferredStyle:))
         )
 
-        UIAlertController.qcoMockAlerts_replaceInstanceMethod(
-            #selector(getter: UIAlertController.preferredStyle),
-            withMethod: #selector(getter: UIAlertController.qcoMock_preferredStyle)
+        Self.qcoMockAlerts_replaceInstanceMethod(
+            #selector(getter: Self.preferredStyle),
+            withMethod: #selector(getter: Self.qcoMock_preferredStyle)
         )
 
         #if os(iOS)
-            UIAlertController.qcoMockAlerts_replaceInstanceMethod(
-                #selector(getter: UIAlertController.popoverPresentationController),
-                withMethod: #selector(getter: UIAlertController.qcoMock_popoverPresentationController)
+            Self.qcoMockAlerts_replaceInstanceMethod(
+                #selector(getter: Self.popoverPresentationController),
+                withMethod: #selector(getter: Self.qcoMock_popoverPresentationController)
             )
         #endif
     }
