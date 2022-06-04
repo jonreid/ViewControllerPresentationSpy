@@ -16,7 +16,8 @@ public extension UIViewController {
         viewControllerToPresent: UIViewController, animated flag: Bool, completion: (() -> Void)?
     ) {
         guard viewControllerToPresent.isKind(of: UIAlertController.self) else { return }
-        let closureContainer = getClosureContainer(viewControllerToPresent: viewControllerToPresent, completion: completion)
+        viewControllerToPresent.loadViewIfNeeded()
+        let closureContainer = ClosureContainer(closure: completion)
         let nc = NotificationCenter.default
         nc.post(
             name: NSNotification.Name.QCOMockAlertControllerPresented,
@@ -27,10 +28,5 @@ public extension UIViewController {
                 QCOMockViewControllerCompletionKey: closureContainer,
             ]
         )
-    }
-
-    @objc func getClosureContainer(viewControllerToPresent: UIViewController, completion: (() -> Void)?) -> ClosureContainer {
-        viewControllerToPresent.loadViewIfNeeded()
-        return ClosureContainer(closure: completion)
     }
 }
