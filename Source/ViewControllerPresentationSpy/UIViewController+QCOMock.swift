@@ -30,7 +30,7 @@ public extension UIViewController {
         )
     }
 
-    @objc func postNotificationAboutPresent2(
+    @objc func postNotificationAboutPresent(
         viewControllerToPresent: UIViewController, animated flag: Bool, closureContainer: ClosureContainer
     ) {
         let nc = NotificationCenter.default
