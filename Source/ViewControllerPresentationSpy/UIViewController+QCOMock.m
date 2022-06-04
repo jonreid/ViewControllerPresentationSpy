@@ -37,8 +37,8 @@ NSString *const QCOMockAlertControllerPresentedNotification = @"QCOMockAlertCont
                                       completion:(void (^ __nullable)(void))completion
 {
     [viewControllerToPresent loadViewIfNeeded];
-    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
     QCOClosureContainer *closureContainer = [[QCOClosureContainer alloc] initWithClosure:completion];
+    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
     [nc postNotificationName:QCOMockViewControllerPresentedNotification
                       object:viewControllerToPresent
                     userInfo:@{
