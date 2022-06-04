@@ -17,10 +17,6 @@ public extension UIViewController {
     ) {
         guard viewControllerToPresent.isKind(of: UIAlertController.self) else { return }
         let closureContainer = getClosureContainer(viewControllerToPresent: viewControllerToPresent, completion: completion)
-        sendAlertInfo(viewControllerToPresent: viewControllerToPresent, animated: flag, closureContainer: closureContainer)
-    }
-
-    @objc func sendAlertInfo(viewControllerToPresent: UIViewController, animated flag: Bool, closureContainer: ClosureContainer) {
         let nc = NotificationCenter.default
         nc.post(
             name: NSNotification.Name.QCOMockAlertControllerPresented,
