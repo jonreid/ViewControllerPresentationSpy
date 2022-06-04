@@ -29,4 +29,33 @@ public extension UIViewController {
             ]
         )
     }
+
+    @objc func postNotificationAboutPresent2(
+        viewControllerToPresent: UIViewController, animated flag: Bool, closureContainer: ClosureContainer
+    ) {
+        let nc = NotificationCenter.default
+        nc.post(
+            name: NSNotification.Name.QCOMockAlertControllerPresented,
+            object: viewControllerToPresent,
+            userInfo: [
+                QCOMockViewControllerPresentingViewControllerKey: self,
+                QCOMockViewControllerAnimatedKey: flag,
+                QCOMockViewControllerCompletionKey: closureContainer,
+            ]
+        )
+    }
+
+    /*
+          - (void)postNotificationAboutPresent:(UIViewController *)viewControllerToPresent animated:(BOOL)flag closureContainer:(QCOClosureContainer *)closureContainer
+     {
+         NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+         [nc postNotificationName:QCOMockViewControllerPresentedNotification
+                           object:viewControllerToPresent
+                         userInfo:@{
+                                 QCOMockViewControllerPresentingViewControllerKey: self,
+                                 QCOMockViewControllerAnimatedKey: @(flag),
+                                 QCOMockViewControllerCompletionKey: closureContainer,
+                         }];
+     }
+          */
 }
