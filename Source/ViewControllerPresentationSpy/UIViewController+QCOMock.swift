@@ -35,19 +35,8 @@ public extension UIViewController {
     ) {
         viewControllerToPresent.loadViewIfNeeded()
         let closureContainer = ClosureContainer(closure: completion)
-        self.postNotificationAboutPresent(viewControllerToPresent: viewControllerToPresent, animated: flag, closureContainer: closureContainer)
+        postNotificationAboutPresent(viewControllerToPresent: viewControllerToPresent, animated: flag, closureContainer: closureContainer)
     }
-
-    /*
-          - (void)qcoMock_presentViewControllerCapturingIt:(UIViewController *)viewControllerToPresent
-                                             animated:(BOOL)flag
-                                           completion:(void (^ __nullable)(void))completion
-     {
-         [viewControllerToPresent loadViewIfNeeded];
-         QCOClosureContainer *closureContainer = [[QCOClosureContainer alloc] initWithClosure:completion];
-         [self postNotificationAboutPresentWithViewControllerToPresent:viewControllerToPresent animated:flag closureContainer:closureContainer];
-     }
-          */
 
     @objc func postNotificationAboutPresent(
         viewControllerToPresent: UIViewController, animated flag: Bool, closureContainer: ClosureContainer
