@@ -35,12 +35,6 @@ public extension UIViewController {
     ) {
         viewControllerToPresent.loadViewIfNeeded()
         let closureContainer = ClosureContainer(closure: completion)
-        postNotificationAboutPresent(viewControllerToPresent: viewControllerToPresent, animated: flag, closureContainer: closureContainer)
-    }
-
-    @objc func postNotificationAboutPresent(
-        viewControllerToPresent: UIViewController, animated flag: Bool, closureContainer: ClosureContainer
-    ) {
         let nc = NotificationCenter.default
         nc.post(
             name: NSNotification.Name.QCOMockViewControllerPresented,
