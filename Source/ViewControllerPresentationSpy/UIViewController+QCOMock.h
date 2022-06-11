@@ -15,7 +15,6 @@ extern NSString *const QCOMockAlertControllerPresentedNotification;
 
 @interface UIViewController (QCOMock)
 
-+ (void)qcoMock_swizzleCapturePresent;
 + (void)qcoMock_swizzleCaptureDismiss;
 @end
 
