@@ -30,7 +30,7 @@ public extension UIViewController {
         )
     }
 
-    @objc func qcoMock_presentViewControllerCapturingIt2(
+    @objc func qcoMock_presentViewControllerCapturingIt(
         viewControllerToPresent: UIViewController, animated flag: Bool, completion: (() -> Void)?
     ) {
         viewControllerToPresent.loadViewIfNeeded()
