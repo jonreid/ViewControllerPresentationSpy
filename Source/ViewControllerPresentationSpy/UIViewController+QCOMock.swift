@@ -12,7 +12,7 @@ public extension UIViewController {
         )
     }
 
-    class func qcoMock_swizzleCapturePresent2() {
+    class func qcoMock_swizzleCapturePresent() {
         Self.qcoMockAlerts_replaceInstanceMethod(
             #selector(Self.present(_:animated:completion:)),
             withMethod: #selector(Self.qcoMock_presentViewControllerCapturingIt(viewControllerToPresent:animated:completion:))
