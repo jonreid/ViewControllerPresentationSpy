@@ -30,6 +30,21 @@ public extension UIViewController {
         )
     }
 
+    @objc func qcoMock_presentViewControllerCapturingIt2(
+        viewControllerToPresent: UIViewController, animated flag: Bool, completion: (() -> Void)?
+    ) {}
+
+    /*
+          - (void)qcoMock_presentViewControllerCapturingIt:(UIViewController *)viewControllerToPresent
+                                             animated:(BOOL)flag
+                                           completion:(void (^ __nullable)(void))completion
+     {
+         [viewControllerToPresent loadViewIfNeeded];
+         QCOClosureContainer *closureContainer = [[QCOClosureContainer alloc] initWithClosure:completion];
+         [self postNotificationAboutPresentWithViewControllerToPresent:viewControllerToPresent animated:flag closureContainer:closureContainer];
+     }
+          */
+
     @objc func postNotificationAboutPresent(
         viewControllerToPresent: UIViewController, animated flag: Bool, closureContainer: ClosureContainer
     ) {
