@@ -32,7 +32,11 @@ public extension UIViewController {
 
     @objc func qcoMock_presentViewControllerCapturingIt2(
         viewControllerToPresent: UIViewController, animated flag: Bool, completion: (() -> Void)?
-    ) {}
+    ) {
+        viewControllerToPresent.loadViewIfNeeded()
+        let closureContainer = ClosureContainer(closure: completion)
+        self.postNotificationAboutPresent(viewControllerToPresent: viewControllerToPresent, animated: flag, closureContainer: closureContainer)
+    }
 
     /*
           - (void)qcoMock_presentViewControllerCapturingIt:(UIViewController *)viewControllerToPresent
