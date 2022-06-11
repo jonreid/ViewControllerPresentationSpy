@@ -35,8 +35,7 @@ public extension UIViewController {
     ) {
         viewControllerToPresent.loadViewIfNeeded()
         let closureContainer = ClosureContainer(closure: completion)
-        let nc = NotificationCenter.default
-        nc.post(
+        NotificationCenter.default.post(
             name: NSNotification.Name.QCOMockViewControllerPresented,
             object: viewControllerToPresent,
             userInfo: [
