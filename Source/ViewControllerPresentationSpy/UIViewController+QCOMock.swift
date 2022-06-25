@@ -56,10 +56,6 @@ public extension UIViewController {
     @objc func qcoMock_dismissViewController(animated flag: Bool, completion: (() -> Void)?) {
         let nc = NotificationCenter.default
         let closureContainer = ClosureContainer(closure: completion)
-        postDismissalNotification(animated: flag, nc: nc, closureContainer: closureContainer)
-    }
-
-    @objc func postDismissalNotification(animated flag: Bool, nc: NotificationCenter, closureContainer: ClosureContainer) {
         nc.post(
             name: NSNotification.Name.QCOMockViewControllerDismissed,
             object: self,
