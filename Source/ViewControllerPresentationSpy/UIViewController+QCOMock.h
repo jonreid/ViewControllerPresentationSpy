@@ -14,8 +14,6 @@ extern NSString *const QCOMockViewControllerDismissedNotification;
 extern NSString *const QCOMockAlertControllerPresentedNotification;
 
 @interface UIViewController (QCOMock)
-
-+ (void)qcoMock_swizzleCaptureDismiss;
 @end
 
 NS_ASSUME_NONNULL_END

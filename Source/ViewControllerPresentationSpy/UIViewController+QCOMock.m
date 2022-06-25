@@ -20,10 +20,4 @@ NSString *const QCOMockAlertControllerPresentedNotification = @"QCOMockAlertCont
 
 @implementation UIViewController (QCOMock)
 
-+ (void)qcoMock_swizzleCaptureDismiss
-{
-    [self qcoMockAlerts_replaceInstanceMethod:@selector(dismissViewControllerAnimated:completion:)
-                                   withMethod:@selector(qcoMock_dismissViewControllerWithAnimated:completion:)];
-}
-
 @end

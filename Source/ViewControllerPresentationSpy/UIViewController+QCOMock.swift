@@ -25,14 +25,6 @@ public extension UIViewController {
             withMethod: #selector(Self.qcoMock_dismissViewController(animated:completion:))
         )
     }
-    
-    /*
-     + (void)qcoMock_swizzleCaptureDismiss
-{
-    [self qcoMockAlerts_replaceInstanceMethod:@selector(dismissViewControllerAnimated:completion:)
-                                   withMethod:@selector(qcoMock_dismissViewControllerWithAnimated:completion:)];
-}
-     */
 
     @objc func qcoMock_presentViewControllerCapturingAlert(
         viewControllerToPresent: UIViewController, animated flag: Bool, completion: (() -> Void)?
