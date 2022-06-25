@@ -63,15 +63,4 @@ public extension UIViewController {
             ]
         )
     }
-    /*
-          - (void)postDismissalNotification:(BOOL)flag nc:(NSNotificationCenter *)nc closureContainer:(QCOClosureContainer *)closureContainer
-     {
-         [nc postNotificationName:QCOMockViewControllerDismissedNotification
-                           object:self
-                         userInfo:@{
-                                 QCOMockViewControllerAnimatedKey: @(flag),
-                                 QCOMockViewControllerCompletionKey: closureContainer,
-                         }];
-     }
-          */
 }
