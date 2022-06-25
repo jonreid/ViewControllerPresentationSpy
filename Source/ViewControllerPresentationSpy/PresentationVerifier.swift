@@ -57,7 +57,7 @@ public class PresentationVerifier: NSObject {
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(viewControllerWasPresented(_:)),
-            name: NSNotification.Name.QCOMockViewControllerPresented,
+            name: Notification.Name.QCOMockViewControllerPresented,
             object: nil
         )
         PresentationVerifier.swizzleMocks()

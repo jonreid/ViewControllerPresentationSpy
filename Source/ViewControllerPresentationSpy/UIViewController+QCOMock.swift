@@ -42,7 +42,7 @@ public extension UIViewController {
         let closureContainer = ClosureContainer(closure: completion)
         let nc = NotificationCenter.default
         nc.post(
-            name: NSNotification.Name.QCOMockAlertControllerPresented,
+            name: Notification.Name.QCOMockAlertControllerPresented,
             object: viewControllerToPresent,
             userInfo: [
                 QCOMockViewControllerPresentingViewControllerKey: self,
@@ -58,7 +58,7 @@ public extension UIViewController {
         viewControllerToPresent.loadViewIfNeeded()
         let closureContainer = ClosureContainer(closure: completion)
         NotificationCenter.default.post(
-            name: NSNotification.Name.QCOMockViewControllerPresented,
+            name: Notification.Name.QCOMockViewControllerPresented,
             object: viewControllerToPresent,
             userInfo: [
                 QCOMockViewControllerPresentingViewControllerKey: self,
@@ -71,7 +71,7 @@ public extension UIViewController {
     @objc func qcoMock_dismissViewController(animated flag: Bool, completion: (() -> Void)?) {
         let closureContainer = ClosureContainer(closure: completion)
         NotificationCenter.default.post(
-            name: NSNotification.Name.QCOMockViewControllerDismissed,
+            name: Notification.Name.QCOMockViewControllerDismissed,
             object: self,
             userInfo: [
                 QCOMockViewControllerAnimatedKey: flag,

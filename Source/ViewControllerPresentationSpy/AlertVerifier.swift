@@ -57,7 +57,7 @@ public class AlertVerifier: NSObject {
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(alertControllerWasPresented(_:)),
-            name: NSNotification.Name.QCOMockAlertControllerPresented,
+            name: Notification.Name.QCOMockAlertControllerPresented,
             object: nil
         )
         AlertVerifier.swizzleMocks()
