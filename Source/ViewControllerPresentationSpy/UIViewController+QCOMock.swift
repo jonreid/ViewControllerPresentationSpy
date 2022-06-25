@@ -5,6 +5,8 @@
 import UIKit
 
 let QCOMockViewControllerPresentingViewControllerKey = "QCOMockViewControllerPresentingViewControllerKey"
+let QCOMockViewControllerAnimatedKey = "QCOMockViewControllerAnimatedKey"
+let QCOMockViewControllerCompletionKey = "QCOMockViewControllerCompletionKey"
 
 public extension UIViewController {
     class func qcoMock_swizzleCaptureAlert() {

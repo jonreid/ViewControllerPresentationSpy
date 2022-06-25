@@ -12,8 +12,8 @@
 #endif
 
 //NSString *const QCOMockViewControllerPresentingViewControllerKey = @"QCOMockViewControllerPresentingViewControllerKey";
-NSString *const QCOMockViewControllerAnimatedKey = @"QCOMockViewControllerAnimatedKey";
-NSString *const QCOMockViewControllerCompletionKey = @"QCOMockViewControllerCompletionKey";
+//NSString *const QCOMockViewControllerAnimatedKey = @"QCOMockViewControllerAnimatedKey";
+//NSString *const QCOMockViewControllerCompletionKey = @"QCOMockViewControllerCompletionKey";
 NSString *const QCOMockViewControllerPresentedNotification = @"QCOMockViewControllerPresentedNotification";
 NSString *const QCOMockViewControllerDismissedNotification = @"QCOMockViewControllerDismissedNotification";
 NSString *const QCOMockAlertControllerPresentedNotification = @"QCOMockAlertControllerPresentedNotification";

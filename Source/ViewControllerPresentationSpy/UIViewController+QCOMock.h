@@ -7,8 +7,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 //extern NSString *const QCOMockViewControllerPresentingViewControllerKey;
-extern NSString *const QCOMockViewControllerAnimatedKey;
-extern NSString *const QCOMockViewControllerCompletionKey;
+//extern NSString *const QCOMockViewControllerAnimatedKey;
+//extern NSString *const QCOMockViewControllerCompletionKey;
 extern NSString *const QCOMockViewControllerPresentedNotification;
 extern NSString *const QCOMockViewControllerDismissedNotification;
 extern NSString *const QCOMockAlertControllerPresentedNotification;
