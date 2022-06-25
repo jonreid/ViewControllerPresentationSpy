@@ -26,12 +26,4 @@ NSString *const QCOMockAlertControllerPresentedNotification = @"QCOMockAlertCont
                                    withMethod:@selector(qcoMock_dismissViewControllerAnimated2WithAnimated:completion:)];
 }
 
-- (void)qcoMock_dismissViewControllerAnimated:(BOOL)flag
-                                   completion:(void (^ __nullable)(void))completion
-{
-    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
-    QCOClosureContainer *closureContainer = [[QCOClosureContainer alloc] initWithClosure:completion];
-    [self postDismissalNotificationWithAnimated:flag nc:nc closureContainer:closureContainer];
-}
-
 @end
