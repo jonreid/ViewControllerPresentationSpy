@@ -8,6 +8,10 @@ let QCOMockViewControllerPresentingViewControllerKey = "QCOMockViewControllerPre
 let QCOMockViewControllerAnimatedKey = "QCOMockViewControllerAnimatedKey"
 let QCOMockViewControllerCompletionKey = "QCOMockViewControllerCompletionKey"
 
+public extension Notification.Name {
+    static let QCOMockAlertControllerPresented2 = Notification.Name("QCOMockAlertControllerPresented")
+}
+
 public extension UIViewController {
     class func qcoMock_swizzleCaptureAlert() {
         Self.qcoMockAlerts_replaceInstanceMethod(
