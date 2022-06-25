@@ -53,7 +53,7 @@ public extension UIViewController {
         )
     }
 
-    @objc func qcoMock_dismissViewControllerAnimated2(animated flag: Bool, completion: (() -> Void)?) {
+    @objc func qcoMock_dismissViewController(animated flag: Bool, completion: (() -> Void)?) {
         let nc = NotificationCenter.default
         let closureContainer = ClosureContainer(closure: completion)
         postDismissalNotification(animated: flag, nc: nc, closureContainer: closureContainer)
