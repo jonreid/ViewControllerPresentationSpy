@@ -2,12 +2,12 @@
 // Copyright 2022 Jonathan M. Reid. https://github.com/jonreid/ViewControllerPresentationSpy/blob/main/LICENSE.txt
 // SPDX-License-Identifier: MIT
 
-import XCTest
 import UIKit
+import XCTest
 
 /**
     Captures dismissed view controllers.
- 
+
     Instantiate a DismissalVerifier before the execution phase of the test. Then invoke the code to
     dismiss your view controller. Information about the dismissal is then available through the
     DismissalVerifier.
@@ -26,28 +26,28 @@ public class DismissalVerifier: NSObject {
     /// Test code can provide its own completion handler to fulfill XCTestExpectations.
     @objc public var testCompletion: (() -> Void)?
 
-    static private(set) var isSwizzled = false
+    private(set) static var isSwizzled = false
 
     /**
         Initializes a newly allocated verifier.
-     
+
         Instantiating a DismissalVerifier swizzles UIViewController. It remains swizzled until the
         DismissalVerifier is deallocated. Only one DismissalVerifier may exist at a time.
      */
-    @objc public override init() {
+    @objc override public init() {
         super.init()
         guard !DismissalVerifier.isSwizzled else {
             XCTFail("""
-                    More than one instance of DismissalVerifier exists. This may be caused by \
-                    creating one setUp() but failing to set the property to nil in tearDown().
-                    """)
+            More than one instance of DismissalVerifier exists. This may be caused by \
+            creating one setUp() but failing to set the property to nil in tearDown().
+            """)
             return
         }
         NotificationCenter.default.addObserver(
-                self,
-                selector: #selector(viewControllerWasDismissed(_:)),
-                name: NSNotification.Name.QCOMockViewControllerDismissed,
-                object: nil
+            self,
+            selector: #selector(viewControllerWasDismissed(_:)),
+            name: NSNotification.Name.QCOMockViewControllerDismissed,
+            object: nil
         )
         DismissalVerifier.swizzleMocks()
     }
@@ -58,7 +58,7 @@ public class DismissalVerifier: NSObject {
     }
 
     private static func swizzleMocks() {
-        UIViewController.qcoMock_swizzleCaptureDismiss()
+        UIViewController.qcoMock_swizzleCaptureDismiss2()
         DismissalVerifier.isSwizzled.toggle()
     }
 
@@ -74,20 +74,20 @@ public class DismissalVerifier: NSObject {
     }
 }
 
-extension DismissalVerifier {
+public extension DismissalVerifier {
     /**
-        Verifies dismissal of one view controller.
-    */
-    public func verify(
-            animated: Bool,
-            dismissedViewController: UIViewController? = nil,
-            file: StaticString = #file,
-            line: UInt = #line
+         Verifies dismissal of one view controller.
+     */
+    func verify(
+        animated: Bool,
+        dismissedViewController: UIViewController? = nil,
+        file: StaticString = #file,
+        line: UInt = #line
     ) {
-        let abort = verifyCallCount(actual: self.dismissedCount, action: "dismiss", file: file, line: line)
+        let abort = verifyCallCount(actual: dismissedCount, action: "dismiss", file: file, line: line)
         if abort { return }
         verifyAnimated(actual: self.animated, expected: animated, action: "dismiss", file: file, line: line)
         verifyViewController(actual: self.dismissedViewController, expected: dismissedViewController,
-                adjective: "dismissed", file: file, line: line)
+                             adjective: "dismissed", file: file, line: line)
     }
 }
