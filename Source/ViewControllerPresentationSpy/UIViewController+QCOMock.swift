@@ -52,6 +52,22 @@ public extension UIViewController {
             ]
         )
     }
+    
+    @objc func qcoMock_dismissViewControllerAnimated2(animated flag: Bool, completion: (() -> Void)?) {
+        let nc = NotificationCenter.default
+        let closureContainer = ClosureContainer(closure: completion)
+        postDismissalNotification(animated: flag, nc: nc, closureContainer: closureContainer)
+    }
+    
+    /*
+     - (void)qcoMock_dismissViewControllerAnimated:(BOOL)flag
+                                   completion:(void (^ __nullable)(void))completion
+{
+    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+    QCOClosureContainer *closureContainer = [[QCOClosureContainer alloc] initWithClosure:completion];
+    [self postDismissalNotificationWithAnimated:flag nc:nc closureContainer:closureContainer];
+}
+     */
 
     @objc func postDismissalNotification(animated flag: Bool, nc: NotificationCenter, closureContainer: ClosureContainer) {
         nc.post(
