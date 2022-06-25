@@ -11,9 +11,6 @@
     #import <ViewControllerPresentationSpy/ViewControllerPresentationSpy-Swift.h>
 #endif
 
-//NSString *const QCOMockViewControllerPresentingViewControllerKey = @"QCOMockViewControllerPresentingViewControllerKey";
-//NSString *const QCOMockViewControllerAnimatedKey = @"QCOMockViewControllerAnimatedKey";
-//NSString *const QCOMockViewControllerCompletionKey = @"QCOMockViewControllerCompletionKey";
 NSString *const QCOMockViewControllerPresentedNotification = @"QCOMockViewControllerPresentedNotification";
 NSString *const QCOMockViewControllerDismissedNotification = @"QCOMockViewControllerDismissedNotification";
 NSString *const QCOMockAlertControllerPresentedNotification = @"QCOMockAlertControllerPresentedNotification";
