@@ -31,6 +31,11 @@ NSString *const QCOMockAlertControllerPresentedNotification = @"QCOMockAlertCont
 {
     NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
     QCOClosureContainer *closureContainer = [[QCOClosureContainer alloc] initWithClosure:completion];
+    [self postDismissalNotification:flag nc:nc closureContainer:closureContainer];
+}
+
+- (void)postDismissalNotification:(BOOL)flag nc:(NSNotificationCenter *)nc closureContainer:(QCOClosureContainer *)closureContainer
+{
     [nc postNotificationName:QCOMockViewControllerDismissedNotification
                       object:self
                     userInfo:@{
