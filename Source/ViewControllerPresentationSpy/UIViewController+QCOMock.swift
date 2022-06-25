@@ -4,6 +4,8 @@
 
 import UIKit
 
+let QCOMockViewControllerPresentingViewControllerKey = "QCOMockViewControllerPresentingViewControllerKey"
+
 public extension UIViewController {
     class func qcoMock_swizzleCaptureAlert() {
         Self.qcoMockAlerts_replaceInstanceMethod(
