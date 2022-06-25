@@ -52,4 +52,26 @@ public extension UIViewController {
             ]
         )
     }
+
+    @objc func postDismissalNotification(animated flag: Bool, nc: NotificationCenter, closureContainer: ClosureContainer) {
+        nc.post(
+            name: NSNotification.Name.QCOMockViewControllerDismissed,
+            object: self,
+            userInfo: [
+                QCOMockViewControllerAnimatedKey: flag,
+                QCOMockViewControllerCompletionKey: closureContainer,
+            ]
+        )
+    }
+    /*
+          - (void)postDismissalNotification:(BOOL)flag nc:(NSNotificationCenter *)nc closureContainer:(QCOClosureContainer *)closureContainer
+     {
+         [nc postNotificationName:QCOMockViewControllerDismissedNotification
+                           object:self
+                         userInfo:@{
+                                 QCOMockViewControllerAnimatedKey: @(flag),
+                                 QCOMockViewControllerCompletionKey: closureContainer,
+                         }];
+     }
+          */
 }
