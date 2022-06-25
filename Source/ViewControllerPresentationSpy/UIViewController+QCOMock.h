@@ -13,7 +13,4 @@ extern NSString *const QCOMockViewControllerPresentedNotification;
 extern NSString *const QCOMockViewControllerDismissedNotification;
 extern NSString *const QCOMockAlertControllerPresentedNotification;
 
-@interface UIViewController (QCOMock)
-@end
-
 NS_ASSUME_NONNULL_END

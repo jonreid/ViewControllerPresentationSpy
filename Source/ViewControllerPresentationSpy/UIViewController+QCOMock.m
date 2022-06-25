@@ -17,7 +17,3 @@ NSString *const QCOMockViewControllerCompletionKey = @"QCOMockViewControllerComp
 NSString *const QCOMockViewControllerPresentedNotification = @"QCOMockViewControllerPresentedNotification";
 NSString *const QCOMockViewControllerDismissedNotification = @"QCOMockViewControllerDismissedNotification";
 NSString *const QCOMockAlertControllerPresentedNotification = @"QCOMockAlertControllerPresentedNotification";
-
-@implementation UIViewController (QCOMock)
-
-@end
