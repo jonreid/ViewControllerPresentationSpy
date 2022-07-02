@@ -9,5 +9,4 @@ FOUNDATION_EXPORT const unsigned char ViewControllerPresentationSpyVersionString
 
 #pragma clang system_header
 #import "NSObject+QCOMockAlerts.h"
-#import "QCOMockPopoverPresentationController.h"
 #import "UIViewController+QCOMock.h"

@@ -2,8 +2,6 @@
 // Copyright 2022 Jonathan M. Reid. https://github.com/jonreid/ViewControllerPresentationSpy/blob/main/LICENSE.txt
 // SPDX-License-Identifier: MIT
 
-#import "QCOMockPopoverPresentationController.h"
-
 #if TARGET_OS_IOS
 
 @implementation QCOMockPopoverPresentationController
