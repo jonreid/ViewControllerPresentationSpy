@@ -8,15 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		48007C7E2079A76E007A4AB0 /* ViewControllerPresentationSpy.h in Headers */ = {isa = PBXBuildFile; fileRef = 48007C7C2079A76E007A4AB0 /* ViewControllerPresentationSpy.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		48007C942079A7E3007A4AB0 /* NSObject+QCOMockAlerts.h in Headers */ = {isa = PBXBuildFile; fileRef = 48007C882079A7E2007A4AB0 /* NSObject+QCOMockAlerts.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		48007C972079A7E3007A4AB0 /* NSObject+QCOMockAlerts.m in Sources */ = {isa = PBXBuildFile; fileRef = 48007C8B2079A7E2007A4AB0 /* NSObject+QCOMockAlerts.m */; };
 		48213D3D25DF8B6300201AEF /* PresentationVerifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1701BF26D1A6EC6D6736E3 /* PresentationVerifier.swift */; };
 		48213D3E25DF8B6300201AEF /* AlertVerifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB170F803977DDBC293D88B0 /* AlertVerifier.swift */; };
 		48213D3F25DF8B6300201AEF /* DismissalVerifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1701CD1FBD8F6138CD874B /* DismissalVerifier.swift */; };
-		48213D4025DF8B6300201AEF /* NSObject+QCOMockAlerts.h in Headers */ = {isa = PBXBuildFile; fileRef = 48007C882079A7E2007A4AB0 /* NSObject+QCOMockAlerts.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		48213D4125DF8B6300201AEF /* VerifyHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1701C77B1F2B9326CD33DA /* VerifyHelpers.swift */; };
 		48213D4525DF8B6300201AEF /* ClosureContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1706C2B7CE68DD81C1E383 /* ClosureContainer.swift */; };
-		48213D4725DF8B6300201AEF /* NSObject+QCOMockAlerts.m in Sources */ = {isa = PBXBuildFile; fileRef = 48007C8B2079A7E2007A4AB0 /* NSObject+QCOMockAlerts.m */; };
 		48213D4C25DF8B6300201AEF /* ViewControllerPresentationSpy.h in Headers */ = {isa = PBXBuildFile; fileRef = 48007C7C2079A76E007A4AB0 /* ViewControllerPresentationSpy.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		48E15E862802273B0071D76B /* UIAlertAction+QCOMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1707DE38257385128F7C87 /* UIAlertAction+QCOMock.swift */; };
 		BB17023083C66FBB74B52808 /* UIViewController+QCOMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1707B2A77935428A87EA23 /* UIViewController+QCOMock.swift */; };
@@ -37,8 +33,6 @@
 		48007C792079A76E007A4AB0 /* ViewControllerPresentationSpy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ViewControllerPresentationSpy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		48007C7C2079A76E007A4AB0 /* ViewControllerPresentationSpy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewControllerPresentationSpy.h; sourceTree = "<group>"; };
 		48007C7D2079A76E007A4AB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		48007C882079A7E2007A4AB0 /* NSObject+QCOMockAlerts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+QCOMockAlerts.h"; sourceTree = "<group>"; };
-		48007C8B2079A7E2007A4AB0 /* NSObject+QCOMockAlerts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+QCOMockAlerts.m"; sourceTree = "<group>"; };
 		48007C9D2079A8D4007A4AB0 /* XcodeWarnings.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = XcodeWarnings.xcconfig; sourceTree = "<group>"; };
 		48213D2F25DF8B2100201AEF /* ViewControllerPresentationSpy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ViewControllerPresentationSpy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB1701BF26D1A6EC6D6736E3 /* PresentationVerifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationVerifier.swift; sourceTree = "<group>"; };
@@ -96,8 +90,6 @@
 				BB1701CD1FBD8F6138CD874B /* DismissalVerifier.swift */,
 				BB1701C77B1F2B9326CD33DA /* VerifyHelpers.swift */,
 				48007C7C2079A76E007A4AB0 /* ViewControllerPresentationSpy.h */,
-				48007C882079A7E2007A4AB0 /* NSObject+QCOMockAlerts.h */,
-				48007C8B2079A7E2007A4AB0 /* NSObject+QCOMockAlerts.m */,
 				BB1707DE38257385128F7C87 /* UIAlertAction+QCOMock.swift */,
 				BB1706C2B7CE68DD81C1E383 /* ClosureContainer.swift */,
 				BB17047748F94AA24D8F67A4 /* UIAlertController+QCOMock.swift */,
@@ -124,7 +116,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				48007C7E2079A76E007A4AB0 /* ViewControllerPresentationSpy.h in Headers */,
-				48007C942079A7E3007A4AB0 /* NSObject+QCOMockAlerts.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,7 +124,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				48213D4C25DF8B6300201AEF /* ViewControllerPresentationSpy.h in Headers */,
-				48213D4025DF8B6300201AEF /* NSObject+QCOMockAlerts.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,7 +217,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48007C972079A7E3007A4AB0 /* NSObject+QCOMockAlerts.m in Sources */,
 				BB1707A21243C9FA6F558CAC /* PresentationVerifier.swift in Sources */,
 				BB1709AE226B61ABE035BEA5 /* AlertVerifier.swift in Sources */,
 				BB1707360BE35588D3F40492 /* ClosureContainer.swift in Sources */,
@@ -249,7 +238,6 @@
 				48213D3E25DF8B6300201AEF /* AlertVerifier.swift in Sources */,
 				48213D4525DF8B6300201AEF /* ClosureContainer.swift in Sources */,
 				48213D4125DF8B6300201AEF /* VerifyHelpers.swift in Sources */,
-				48213D4725DF8B6300201AEF /* NSObject+QCOMockAlerts.m in Sources */,
 				48213D3D25DF8B6300201AEF /* PresentationVerifier.swift in Sources */,
 				BB170585B7E1C561C02496A3 /* UIAlertController+QCOMock.swift in Sources */,
 				BB1705C6B173DC8FC2D19089 /* UIViewController+QCOMock.swift in Sources */,
