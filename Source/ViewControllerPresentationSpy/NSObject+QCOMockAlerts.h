@@ -8,7 +8,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSObject (QCOMockAlerts)
 
-+ (void)qcoMockAlerts_replaceInstanceMethod:(SEL)originalSelector withMethod:(SEL)swizzledSelector;
 @end
 
 NS_ASSUME_NONNULL_END
