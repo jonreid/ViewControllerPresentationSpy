@@ -17,22 +17,22 @@ public extension Notification.Name {
 public extension UIViewController {
     class func qcoMock_swizzleCaptureAlert() {
         Self.qcoMockAlerts_replaceInstanceMethod(
-            #selector(Self.present(_:animated:completion:)),
-            withMethod: #selector(Self.qcoMock_presentViewControllerCapturingAlert(viewControllerToPresent:animated:completion:))
+            original: #selector(Self.present(_:animated:completion:)),
+            swizzled: #selector(Self.qcoMock_presentViewControllerCapturingAlert(viewControllerToPresent:animated:completion:))
         )
     }
 
     class func qcoMock_swizzleCapturePresent() {
         Self.qcoMockAlerts_replaceInstanceMethod(
-            #selector(Self.present(_:animated:completion:)),
-            withMethod: #selector(Self.qcoMock_presentViewControllerCapturingIt(viewControllerToPresent:animated:completion:))
+            original: #selector(Self.present(_:animated:completion:)),
+            swizzled: #selector(Self.qcoMock_presentViewControllerCapturingIt(viewControllerToPresent:animated:completion:))
         )
     }
 
     class func qcoMock_swizzleCaptureDismiss() {
         Self.qcoMockAlerts_replaceInstanceMethod(
-            #selector(Self.dismiss(animated:completion:)),
-            withMethod: #selector(Self.qcoMock_dismissViewController(animated:completion:))
+            original: #selector(Self.dismiss(animated:completion:)),
+            swizzled: #selector(Self.qcoMock_dismissViewController(animated:completion:))
         )
     }
 

@@ -12,14 +12,14 @@ extension UIAlertController {
         )
 
         Self.qcoMockAlerts_replaceInstanceMethod(
-            #selector(getter: Self.preferredStyle),
-            withMethod: #selector(getter: Self.qcoMock_preferredStyle)
+            original: #selector(getter: Self.preferredStyle),
+            swizzled: #selector(getter: Self.qcoMock_preferredStyle)
         )
 
         #if os(iOS)
             Self.qcoMockAlerts_replaceInstanceMethod(
-                #selector(getter: Self.popoverPresentationController),
-                withMethod: #selector(getter: Self.qcoMock_popoverPresentationController)
+                original: #selector(getter: Self.popoverPresentationController),
+                swizzled: #selector(getter: Self.qcoMock_popoverPresentationController)
             )
         #endif
     }
