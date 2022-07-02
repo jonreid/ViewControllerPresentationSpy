@@ -6,8 +6,4 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-extern NSString *const QCOMockViewControllerPresentedNotification;
-extern NSString *const QCOMockViewControllerDismissedNotification;
-extern NSString *const QCOMockAlertControllerPresentedNotification;
-
 NS_ASSUME_NONNULL_END

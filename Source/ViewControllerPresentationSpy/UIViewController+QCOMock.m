@@ -11,6 +11,3 @@
     #import <ViewControllerPresentationSpy/ViewControllerPresentationSpy-Swift.h>
 #endif
 
-NSString *const QCOMockViewControllerPresentedNotification = @"QCOMockViewControllerPresentedNotification";
-NSString *const QCOMockViewControllerDismissedNotification = @"QCOMockViewControllerDismissedNotification";
-NSString *const QCOMockAlertControllerPresentedNotification = @"QCOMockAlertControllerPresentedNotification";
