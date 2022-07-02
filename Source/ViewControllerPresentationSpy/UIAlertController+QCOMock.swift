@@ -6,9 +6,9 @@ import UIKit
 
 extension UIAlertController {
     class func qcoMock_swizzle() {
-        Self.qcoMockAlerts_replaceClassMethod(
+        Self.qcoMockAlerts_replaceClassMethod2(
             #selector(Self.init(title:message:preferredStyle:)),
-            withMethod: #selector(Self.qcoMock_alertController(title:message:preferredStyle:))
+            #selector(Self.qcoMock_alertController(title:message:preferredStyle:))
         )
 
         Self.qcoMockAlerts_replaceInstanceMethod(
