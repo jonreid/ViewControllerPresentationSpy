@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,7 +13,7 @@
 		483E05281DE8064D00B5E4E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 483E05271DE8064D00B5E4E4 /* Assets.xcassets */; };
 		483E052B1DE8064D00B5E4E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 483E05291DE8064D00B5E4E4 /* LaunchScreen.storyboard */; };
 		483E05361DE8064D00B5E4E4 /* ViewControllerAlertTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483E05351DE8064D00B5E4E4 /* ViewControllerAlertTests.swift */; };
-		48EECF4722E3B73B00A940C5 /* ViewControllerPresentationSpy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 480A9BAD22E3B4F000513296 /* ViewControllerPresentationSpy.framework */; };
+		487C60BF2879F53E00DA427D /* ViewControllerPresentationSpy in Frameworks */ = {isa = PBXBuildFile; productRef = 487C60BE2879F53E00DA427D /* ViewControllerPresentationSpy */; };
 		BB17009B68161DEF4B893859 /* ViewControllerPresentationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB170641301DFD266F710CFF /* ViewControllerPresentationTests.swift */; };
 		BB1702F538CDAC8D7AD2DD6B /* PresentationVerifierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB170F190A3F87881ED05594 /* PresentationVerifierTests.swift */; };
 		BB170882C39E82580AE429AB /* DismissalVerifierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB17083802A53CACC6764A2E /* DismissalVerifierTests.swift */; };
@@ -23,20 +23,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		480A9BAC22E3B4F000513296 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 48007CA72079B1A2007A4AB0 /* ViewControllerPresentationSpy.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 48007C792079A76E007A4AB0;
-			remoteInfo = ViewControllerPresentationSpy;
-		};
-		48213EC925E0CF9300201AEF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 48007CA72079B1A2007A4AB0 /* ViewControllerPresentationSpy.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 48213D2F25DF8B2100201AEF;
-			remoteInfo = "ViewControllerPresentationSpy-tvOS";
-		};
 		483E05321DE8064D00B5E4E4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 483E05151DE8064D00B5E4E4 /* Project object */;
@@ -47,7 +33,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		48007CA72079B1A2007A4AB0 /* ViewControllerPresentationSpy.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ViewControllerPresentationSpy.xcodeproj; path = ../../Source/ViewControllerPresentationSpy.xcodeproj; sourceTree = "<group>"; };
 		4804BCA822E169A9000130AD /* XcodeWarnings.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = XcodeWarnings.xcconfig; path = ../../Source/XcodeWarnings.xcconfig; sourceTree = "<group>"; };
 		483E051D1DE8064D00B5E4E4 /* SwiftSampleViewControllerPresentationSpy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftSampleViewControllerPresentationSpy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		483E05201DE8064D00B5E4E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -80,22 +65,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48EECF4722E3B73B00A940C5 /* ViewControllerPresentationSpy.framework in Frameworks */,
+				487C60BF2879F53E00DA427D /* ViewControllerPresentationSpy in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		480A9BA922E3B4F000513296 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				480A9BAD22E3B4F000513296 /* ViewControllerPresentationSpy.framework */,
-				48213ECA25E0CF9300201AEF /* ViewControllerPresentationSpy.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		48105E711DE81450000C8EB7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -143,7 +119,6 @@
 			children = (
 				483E05351DE8064D00B5E4E4 /* ViewControllerAlertTests.swift */,
 				BB170641301DFD266F710CFF /* ViewControllerPresentationTests.swift */,
-				48007CA72079B1A2007A4AB0 /* ViewControllerPresentationSpy.xcodeproj */,
 				483E05371DE8064D00B5E4E4 /* Info.plist */,
 				4804BCA822E169A9000130AD /* XcodeWarnings.xcconfig */,
 				BB170A0F6EDD04B901018053 /* AlertVerifierTests.swift */,
@@ -187,6 +162,9 @@
 				483E05331DE8064D00B5E4E4 /* PBXTargetDependency */,
 			);
 			name = SwiftSampleViewControllerPresentationSpyTests;
+			packageProductDependencies = (
+				487C60BE2879F53E00DA427D /* ViewControllerPresentationSpy */,
+			);
 			productName = MockUIAlertControllerSampleSwiftTests;
 			productReference = 483E05311DE8064D00B5E4E4 /* SwiftSampleViewControllerPresentationSpyTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -223,14 +201,11 @@
 				Base,
 			);
 			mainGroup = 483E05141DE8064D00B5E4E4;
+			packageReferences = (
+				487C60BD2879F53E00DA427D /* XCRemoteSwiftPackageReference "ViewControllerPresentationSpy" */,
+			);
 			productRefGroup = 483E051E1DE8064D00B5E4E4 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 480A9BA922E3B4F000513296 /* Products */;
-					ProjectRef = 48007CA72079B1A2007A4AB0 /* ViewControllerPresentationSpy.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				483E051C1DE8064D00B5E4E4 /* SwiftSampleViewControllerPresentationSpy */,
@@ -238,23 +213,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		480A9BAD22E3B4F000513296 /* ViewControllerPresentationSpy.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = ViewControllerPresentationSpy.framework;
-			remoteRef = 480A9BAC22E3B4F000513296 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		48213ECA25E0CF9300201AEF /* ViewControllerPresentationSpy.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = ViewControllerPresentationSpy.framework;
-			remoteRef = 48213EC925E0CF9300201AEF /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		483E051B1DE8064D00B5E4E4 /* Resources */ = {
@@ -378,7 +336,8 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -391,7 +350,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SampleApp/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.qualitycoding.MockUIAlertControllerSampleSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -403,7 +365,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SampleApp/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.qualitycoding.MockUIAlertControllerSampleSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -418,7 +383,11 @@
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../Source\"";
 				INFOPLIST_FILE = Tests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.qualitycoding.MockUIAlertControllerSampleSwiftTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -434,7 +403,11 @@
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../Source\"";
 				INFOPLIST_FILE = Tests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.qualitycoding.MockUIAlertControllerSampleSwiftTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -473,6 +446,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		487C60BD2879F53E00DA427D /* XCRemoteSwiftPackageReference "ViewControllerPresentationSpy" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jonreid/ViewControllerPresentationSpy";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		487C60BE2879F53E00DA427D /* ViewControllerPresentationSpy */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 487C60BD2879F53E00DA427D /* XCRemoteSwiftPackageReference "ViewControllerPresentationSpy" */;
+			productName = ViewControllerPresentationSpy;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 483E05151DE8064D00B5E4E4 /* Project object */;
 }
