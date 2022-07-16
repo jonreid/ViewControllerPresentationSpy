@@ -46,7 +46,7 @@ public class DismissalVerifier: NSObject {
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(viewControllerWasDismissed(_:)),
-            name: Notification.Name.QCOMockViewControllerDismissed2,
+            name: Notification.Name.viewControllerDismissed,
             object: nil
         )
         DismissalVerifier.swizzleMocks()
