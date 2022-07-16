@@ -42,14 +42,14 @@ extension UIAlertController {
     func attachExtraProperties(style: Style) {
         objc_setAssociatedObject(
             self,
-            UIAlertControllerExtraProperties.associatedObjectKey,
+            &UIAlertControllerExtraProperties.associatedObjectKey,
             UIAlertControllerExtraProperties(preferredStyle: style, alertController: self),
             .OBJC_ASSOCIATION_RETAIN_NONATOMIC
         )
     }
 
     @objc var qcoMock_preferredStyle: UIAlertController.Style {
-        guard let extraProperties = objc_getAssociatedObject(self, UIAlertControllerExtraProperties.associatedObjectKey)
+        guard let extraProperties = objc_getAssociatedObject(self, &UIAlertControllerExtraProperties.associatedObjectKey)
             as? UIAlertControllerExtraProperties
         else {
             fatalError("Associated object UIAlertControllerExtraProperties not found")
@@ -59,7 +59,7 @@ extension UIAlertController {
 
     #if os(iOS)
         @objc var qcoMock_popoverPresentationController: UIPopoverPresentationController? {
-            guard let extraProperties = objc_getAssociatedObject(self, UIAlertControllerExtraProperties.associatedObjectKey)
+            guard let extraProperties = objc_getAssociatedObject(self, &UIAlertControllerExtraProperties.associatedObjectKey)
                 as? UIAlertControllerExtraProperties
             else {
                 fatalError("Associated object UIAlertControllerExtraProperties not found")
@@ -70,7 +70,7 @@ extension UIAlertController {
 }
 
 final class UIAlertControllerExtraProperties: NSObject {
-    static let associatedObjectKey = "extraProperties"
+    static var associatedObjectKey = "extraProperties"
 
     let preferredStyle: UIAlertController.Style
     #if os(iOS)
