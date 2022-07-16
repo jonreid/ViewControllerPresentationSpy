@@ -5,7 +5,7 @@
 import UIKit
 
 extension UIAlertAction {
-    class func qcoMock_swizzle() {
+    static func qcoMock_swizzle() {
         Self.qcoMockAlerts_replaceClassMethod(
             original: #selector(Self.init(title:style:handler:)),
             swizzled: #selector(Self.qcoMock_action(withTitle:style:handler:))
