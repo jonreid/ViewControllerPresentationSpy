@@ -4,9 +4,9 @@
 
 import UIKit
 
-let QCOMockViewControllerPresentingViewControllerKey = "QCOMockViewControllerPresentingViewControllerKey"
-let QCOMockViewControllerAnimatedKey = "QCOMockViewControllerAnimatedKey"
-let QCOMockViewControllerCompletionKey = "QCOMockViewControllerCompletionKey"
+let presentingViewControllerKey = "presentingViewControllerKey"
+let animatedKey = "animatedKey"
+let completionKey = "completionKey"
 
 public extension Notification.Name {
     static let QCOMockViewControllerPresented2 = Notification.Name("QCOMockViewControllerPresented")
@@ -47,9 +47,9 @@ public extension UIViewController {
             name: Notification.Name.QCOMockAlertControllerPresented2,
             object: viewControllerToPresent,
             userInfo: [
-                QCOMockViewControllerPresentingViewControllerKey: self,
-                QCOMockViewControllerAnimatedKey: flag,
-                QCOMockViewControllerCompletionKey: closureContainer,
+                presentingViewControllerKey: self,
+                animatedKey: flag,
+                completionKey: closureContainer,
             ]
         )
     }
@@ -63,9 +63,9 @@ public extension UIViewController {
             name: Notification.Name.QCOMockViewControllerPresented2,
             object: viewControllerToPresent,
             userInfo: [
-                QCOMockViewControllerPresentingViewControllerKey: self,
-                QCOMockViewControllerAnimatedKey: flag,
-                QCOMockViewControllerCompletionKey: closureContainer,
+                presentingViewControllerKey: self,
+                animatedKey: flag,
+                completionKey: closureContainer,
             ]
         )
     }
@@ -76,8 +76,8 @@ public extension UIViewController {
             name: Notification.Name.QCOMockViewControllerDismissed2,
             object: self,
             userInfo: [
-                QCOMockViewControllerAnimatedKey: flag,
-                QCOMockViewControllerCompletionKey: closureContainer,
+                animatedKey: flag,
+                completionKey: closureContainer,
             ]
         )
     }

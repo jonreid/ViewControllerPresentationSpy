@@ -77,9 +77,9 @@ public class AlertVerifier: NSObject {
 
     @objc private func alertControllerWasPresented(_ notification: Notification) {
         presentedCount += 1
-        presentingViewController = notification.userInfo?[QCOMockViewControllerPresentingViewControllerKey] as? UIViewController
-        animated = (notification.userInfo?[QCOMockViewControllerAnimatedKey] as? NSNumber)?.boolValue ?? false
-        let closureContainer = notification.userInfo?[QCOMockViewControllerCompletionKey] as? ClosureContainer
+        presentingViewController = notification.userInfo?[presentingViewControllerKey] as? UIViewController
+        animated = (notification.userInfo?[animatedKey] as? NSNumber)?.boolValue ?? false
+        let closureContainer = notification.userInfo?[completionKey] as? ClosureContainer
         capturedCompletion = closureContainer?.closure
         let alertController = notification.object as? UIAlertController
         title = alertController?.title

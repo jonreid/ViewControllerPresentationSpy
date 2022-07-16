@@ -76,9 +76,9 @@ public class PresentationVerifier: NSObject {
     @objc private func viewControllerWasPresented(_ notification: Notification) {
         presentedCount += 1
         presentedViewController = notification.object as? UIViewController
-        presentingViewController = notification.userInfo?[QCOMockViewControllerPresentingViewControllerKey] as? UIViewController
-        animated = (notification.userInfo?[QCOMockViewControllerAnimatedKey] as? NSNumber)?.boolValue ?? false
-        let closureContainer = notification.userInfo?[QCOMockViewControllerCompletionKey] as? ClosureContainer
+        presentingViewController = notification.userInfo?[presentingViewControllerKey] as? UIViewController
+        animated = (notification.userInfo?[animatedKey] as? NSNumber)?.boolValue ?? false
+        let closureContainer = notification.userInfo?[completionKey] as? ClosureContainer
         capturedCompletion = closureContainer?.closure
         if let completion = testCompletion {
             completion()

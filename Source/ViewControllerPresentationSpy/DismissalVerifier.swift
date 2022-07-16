@@ -65,8 +65,8 @@ public class DismissalVerifier: NSObject {
     @objc private func viewControllerWasDismissed(_ notification: Notification) {
         dismissedCount += 1
         dismissedViewController = notification.object as? UIViewController
-        animated = (notification.userInfo?[QCOMockViewControllerAnimatedKey] as? NSNumber)?.boolValue ?? false
-        let closureContainer = notification.userInfo?[QCOMockViewControllerCompletionKey] as? ClosureContainer
+        animated = (notification.userInfo?[animatedKey] as? NSNumber)?.boolValue ?? false
+        let closureContainer = notification.userInfo?[completionKey] as? ClosureContainer
         capturedCompletion = closureContainer?.closure
         if let completion = testCompletion {
             completion()
