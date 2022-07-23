@@ -15,12 +15,12 @@ extension UIAlertAction {
     @objc class func mock_action(withTitle title: String, style: UIAlertAction.Style, handler: ((UIAlertAction) -> Void)?) -> UIAlertAction {
         let action = Self.mock_action(withTitle: title, style: style, handler: handler)
         let extraProperties = UIAlertActionExtraProperties(handler: handler)
-        objc_setAssociatedObject(action, &UIAlertActionExtraProperties.associatedObjectKey, extraProperties, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        objc_setAssociatedObject(action, UIAlertActionExtraProperties.associatedObjectKey, extraProperties, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         return action
     }
 
     func handler() -> ((UIAlertAction) -> Void)? {
-        guard let extraProperties: UIAlertActionExtraProperties = objc_getAssociatedObject(self, &UIAlertActionExtraProperties.associatedObjectKey)
+        guard let extraProperties: UIAlertActionExtraProperties = objc_getAssociatedObject(self, UIAlertActionExtraProperties.associatedObjectKey)
             as? UIAlertActionExtraProperties
         else {
             return nil
@@ -30,7 +30,7 @@ extension UIAlertAction {
 }
 
 public final class UIAlertActionExtraProperties: NSObject {
-    public static var associatedObjectKey = "extraProperties"
+    fileprivate static let associatedObjectKey = UnsafeMutableRawPointer.allocate(byteCount: 1, alignment: 1)
 
     public let handler: ((UIAlertAction) -> Void)?
 
