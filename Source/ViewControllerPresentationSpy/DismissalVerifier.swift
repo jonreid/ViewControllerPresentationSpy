@@ -58,7 +58,7 @@ public class DismissalVerifier: NSObject {
     }
 
     private static func swizzleMocks() {
-        UIViewController.qcoMock_swizzleCaptureDismiss()
+        UIViewController.swizzleCaptureDismiss()
         DismissalVerifier.isSwizzled.toggle()
     }
 

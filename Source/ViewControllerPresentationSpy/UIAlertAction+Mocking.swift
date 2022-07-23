@@ -5,8 +5,8 @@
 import UIKit
 
 extension UIAlertAction {
-    static func qcoMock_swizzle() {
-        Self.qcoMockAlerts_replaceClassMethod(
+    static func swizzle() {
+        Self.replaceClassMethod(
             original: #selector(Self.init(title:style:handler:)),
             swizzled: #selector(Self.qcoMock_action(withTitle:style:handler:))
         )
@@ -19,7 +19,7 @@ extension UIAlertAction {
         return action
     }
 
-    func qcoMock_handler() -> ((UIAlertAction) -> Void)? {
+    func handler() -> ((UIAlertAction) -> Void)? {
         guard let extraProperties: UIAlertActionExtraProperties = objc_getAssociatedObject(self, &UIAlertActionExtraProperties.associatedObjectKey)
             as? UIAlertActionExtraProperties
         else {

@@ -69,9 +69,9 @@ public class AlertVerifier: NSObject {
     }
 
     private static func swizzleMocks() {
-        UIAlertAction.qcoMock_swizzle()
-        UIAlertController.qcoMock_swizzle()
-        UIViewController.qcoMock_swizzleCaptureAlert()
+        UIAlertAction.swizzle()
+        UIAlertController.swizzle()
+        UIViewController.swizzleCaptureAlert()
         AlertVerifier.isSwizzled.toggle()
     }
 
@@ -104,7 +104,7 @@ public class AlertVerifier: NSObject {
     @objc(executeActionForButton:andReturnError:)
     public func executeAction(forButton title: String) throws {
         let action = try actionWithTitle(title)
-        if let handler = action.qcoMock_handler() {
+        if let handler = action.handler() {
             handler(action)
         }
     }
