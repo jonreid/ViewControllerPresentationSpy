@@ -8,23 +8,23 @@ extension UIAlertController {
     static func swizzle() {
         Self.replaceClassMethod(
             original: #selector(Self.init(title:message:preferredStyle:)),
-            swizzled: #selector(Self.qcoMock_alertController(title:message:preferredStyle:))
+            swizzled: #selector(Self.mock_alertController(title:message:preferredStyle:))
         )
 
         Self.replaceInstanceMethod(
             original: #selector(getter: Self.preferredStyle),
-            swizzled: #selector(getter: Self.qcoMock_preferredStyle)
+            swizzled: #selector(getter: Self.mock_preferredStyle)
         )
 
         #if os(iOS)
             Self.replaceInstanceMethod(
                 original: #selector(getter: Self.popoverPresentationController),
-                swizzled: #selector(getter: Self.qcoMock_popoverPresentationController)
+                swizzled: #selector(getter: Self.mock_popoverPresentationController)
             )
         #endif
     }
 
-    @objc class func qcoMock_alertController(
+    @objc class func mock_alertController(
         title: String,
         message: String,
         preferredStyle: UIAlertController.Style
@@ -48,7 +48,7 @@ extension UIAlertController {
         )
     }
 
-    @objc var qcoMock_preferredStyle: UIAlertController.Style {
+    @objc var mock_preferredStyle: UIAlertController.Style {
         guard let extraProperties = objc_getAssociatedObject(self, &UIAlertControllerExtraProperties.associatedObjectKey)
             as? UIAlertControllerExtraProperties
         else {
@@ -58,7 +58,7 @@ extension UIAlertController {
     }
 
     #if os(iOS)
-        @objc var qcoMock_popoverPresentationController: UIPopoverPresentationController? {
+        @objc var mock_popoverPresentationController: UIPopoverPresentationController? {
             guard let extraProperties = objc_getAssociatedObject(self, &UIAlertControllerExtraProperties.associatedObjectKey)
                 as? UIAlertControllerExtraProperties
             else {

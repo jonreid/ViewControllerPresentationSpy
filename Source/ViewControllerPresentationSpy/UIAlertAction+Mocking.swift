@@ -8,12 +8,12 @@ extension UIAlertAction {
     static func swizzle() {
         Self.replaceClassMethod(
             original: #selector(Self.init(title:style:handler:)),
-            swizzled: #selector(Self.qcoMock_action(withTitle:style:handler:))
+            swizzled: #selector(Self.mock_action(withTitle:style:handler:))
         )
     }
 
-    @objc class func qcoMock_action(withTitle title: String, style: UIAlertAction.Style, handler: ((UIAlertAction) -> Void)?) -> UIAlertAction {
-        let action = Self.qcoMock_action(withTitle: title, style: style, handler: handler)
+    @objc class func mock_action(withTitle title: String, style: UIAlertAction.Style, handler: ((UIAlertAction) -> Void)?) -> UIAlertAction {
+        let action = Self.mock_action(withTitle: title, style: style, handler: handler)
         let extraProperties = UIAlertActionExtraProperties(handler: handler)
         objc_setAssociatedObject(action, &UIAlertActionExtraProperties.associatedObjectKey, extraProperties, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         return action

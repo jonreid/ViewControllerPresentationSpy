@@ -18,25 +18,25 @@ public extension UIViewController {
     static func swizzleCaptureAlert() {
         Self.replaceInstanceMethod(
             original: #selector(Self.present(_:animated:completion:)),
-            swizzled: #selector(Self.qcoMock_presentViewControllerCapturingAlert(viewControllerToPresent:animated:completion:))
+            swizzled: #selector(Self.mock_presentViewControllerCapturingAlert(viewControllerToPresent:animated:completion:))
         )
     }
 
     static func swizzleCapturePresent() {
         Self.replaceInstanceMethod(
             original: #selector(Self.present(_:animated:completion:)),
-            swizzled: #selector(Self.qcoMock_presentViewControllerCapturingIt(viewControllerToPresent:animated:completion:))
+            swizzled: #selector(Self.mock_presentViewControllerCapturingIt(viewControllerToPresent:animated:completion:))
         )
     }
 
     static func swizzleCaptureDismiss() {
         Self.replaceInstanceMethod(
             original: #selector(Self.dismiss(animated:completion:)),
-            swizzled: #selector(Self.qcoMock_dismissViewController(animated:completion:))
+            swizzled: #selector(Self.mock_dismissViewController(animated:completion:))
         )
     }
 
-    @objc func qcoMock_presentViewControllerCapturingAlert(
+    @objc func mock_presentViewControllerCapturingAlert(
         viewControllerToPresent: UIViewController, animated flag: Bool, completion: (() -> Void)?
     ) {
         guard viewControllerToPresent.isKind(of: UIAlertController.self) else { return }
@@ -54,7 +54,7 @@ public extension UIViewController {
         )
     }
 
-    @objc func qcoMock_presentViewControllerCapturingIt(
+    @objc func mock_presentViewControllerCapturingIt(
         viewControllerToPresent: UIViewController, animated flag: Bool, completion: (() -> Void)?
     ) {
         viewControllerToPresent.loadViewIfNeeded()
@@ -70,7 +70,7 @@ public extension UIViewController {
         )
     }
 
-    @objc func qcoMock_dismissViewController(animated flag: Bool, completion: (() -> Void)?) {
+    @objc func mock_dismissViewController(animated flag: Bool, completion: (() -> Void)?) {
         let closureContainer = ClosureContainer(closure: completion)
         NotificationCenter.default.post(
             name: Notification.Name.viewControllerDismissed,
