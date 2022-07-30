@@ -31,11 +31,10 @@ jobs:
   test:
     name: Build & test
     runs-on: macos-latest
-    env:
-      project: 'SwiftSample/SwiftSampleViewControllerPresentationSpy.xcodeproj'
-      scheme: 'SwiftSampleViewControllerPresentationSpy'
-      sdk: 'iphonesimulator'
-      destination: 'platform=iOS Simulator,OS=latest,name=iPad Air (4th generation)'
+    strategy:
+      matrix:
+        run-config:
+          - { project: 'SwiftSample/SwiftSampleViewControllerPresentationSpy.xcodeproj', scheme: 'SwiftSampleViewControllerPresentationSpy', sdk: 'iphonesimulator', destination: 'platform=iOS Simulator,OS=latest,name=iPad Air (4th generation)' }
     steps:
       - name: Check out project
         uses: actions/checkout@v3
