@@ -23,7 +23,6 @@ Pod::Spec.new do |s|
   s.tvos.deployment_target = '12.0'
   s.source   = { :git => 'https://github.com/jonreid/ViewControllerPresentationSpy.git', :tag => 'v6.1.0' }
   s.source_files = 'Source/ViewControllerPresentationSpy/*.{h,m,swift}'
-  s.public_header_files = 'Source/ViewControllerPresentationSpy/QCOMockPopoverPresentationController.h', 'Source/ViewControllerPresentationSpy/UIAlertAction+QCOMock.h', 'Source/ViewControllerPresentationSpy/UIAlertController+QCOMock.h', 'Source/ViewControllerPresentationSpy/UIViewController+QCOMock.h'
   s.requires_arc = true
   s.swift_version = "5.0"
   s.weak_framework = "XCTest"
