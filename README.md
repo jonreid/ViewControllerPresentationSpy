@@ -300,6 +300,19 @@ they do, then read the ViewControllerAlertTests and ViewControllerPresentationTe
 
 ## How Do I Add ViewControllerPresentationSpy to My Project?
 
+### Swift Package Manager
+
+Include a ViewControllerPresentationSpy package in your Package.swift manifest's array of dependencies:
+
+```swift
+dependencies: [
+    .package(
+        url: "https://github.com/jonreid/ViewControllerPresentationSpy",
+        .upToNextMajor(from: "6.0.0")
+    ),
+],
+```
+
 ### CocoaPods
 
 Add the following to your Podfile, changing "MyTests" to the name of your test target:
