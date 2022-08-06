@@ -1,3 +1,10 @@
+Version 6.1.0
+-------------
+_06 Aug 2022_
+
+Now available from Swift Package Manager!
+
+
 Version 6.0.0
 -------------
 _06 Nov 2021_
