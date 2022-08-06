@@ -8,13 +8,13 @@ let presentingViewControllerKey = "presentingViewControllerKey"
 let animatedKey = "animatedKey"
 let completionKey = "completionKey"
 
-public extension Notification.Name {
+extension Notification.Name {
     static let viewControllerPresented = Notification.Name("viewControllerPresented")
     static let viewControllerDismissed = Notification.Name("viewControllerDismissed")
     static let alertControllerPresented = Notification.Name("alertControllerPresented")
 }
 
-public extension UIViewController {
+extension UIViewController {
     static func swizzleCaptureAlert() {
         Self.replaceInstanceMethod(
             original: #selector(Self.present(_:animated:completion:)),
