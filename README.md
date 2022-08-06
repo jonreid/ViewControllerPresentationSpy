@@ -32,6 +32,7 @@ For concrete examples, see _[iOS Unit Testing by Example](https://pragprog.com/t
     * [How can I test something that's presented or dismissed using DispatchQueue.main?](#how-can-i-test-something-thats-presented-or-dismissed-using-dispatchqueuemain)
     * [Can I see some examples?](#can-i-see-some-examples)
   * [How Do I Add ViewControllerPresentationSpy to My Project?](#how-do-i-add-viewcontrollerpresentationspy-to-my-project)
+    * [Swift Package Manager](#swift-package-manager)
     * [CocoaPods](#cocoapods)
     * [Carthage](#carthage)
     * [Prebuilt Framework](#prebuilt-framework)
