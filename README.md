@@ -1,6 +1,7 @@
 # ViewControllerPresentationSpy
 
 [![Build Status](https://github.com/jonreid/ViewControllerPresentationSpy/actions/workflows/build.yml/badge.svg)](https://github.com/jonreid/ViewControllerPresentationSpy/actions/workflows/build.yml)
+[![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fjonreid%2FViewControllerPresentationSpy%2Fbadge%3Ftype%3Dplatforms)](https://swiftpackageindex.com/jonreid/ViewControllerPresentationSpy)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![CocoaPods Version](https://cocoapod-badges.herokuapp.com/v/ViewControllerPresentationSpy/badge.png)](https://cocoapods.org/pods/ViewControllerPresentationSpy)
 [![Twitter Follow](https://img.shields.io/twitter/follow/qcoding.svg?style=social)](https://twitter.com/qcoding)
