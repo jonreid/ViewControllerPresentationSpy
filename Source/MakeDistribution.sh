@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VERSION=6.1.0
+VERSION=7.0.0
 DISTFILE=ViewControllerPresentationSpy-${VERSION}
 DISTPATH=build/${DISTFILE}
 PROJECTROOT=..
