@@ -85,6 +85,7 @@ final class DismissalVerifierTests: XCTestCase {
     }
 }
 
+@MainActor
 func tap(_ button: UIBarButtonItem) {
     _ = button.target?.perform(button.action, with: nil)
 }
