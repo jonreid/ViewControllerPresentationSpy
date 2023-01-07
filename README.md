@@ -310,7 +310,7 @@ Include a ViewControllerPresentationSpy package in your Package.swift manifest's
 dependencies: [
     .package(
         url: "https://github.com/jonreid/ViewControllerPresentationSpy",
-        .upToNextMajor(from: "6.0.0")
+        .upToNextMajor(from: "7.0.0")
     ),
 ],
 ```
@@ -322,7 +322,7 @@ Add the following to your Podfile, changing "MyTests" to the name of your test t
 ```ruby
 target 'MyTests' do
   inherit! :search_paths
-  pod 'ViewControllerPresentationSpy', '~> 6.0'
+  pod 'ViewControllerPresentationSpy', '~> 7.0'
 end
 ```
 
@@ -331,7 +331,7 @@ end
 Add the following to your Cartfile:
 
 ```
-github "jonreid/ViewControllerPresentationSpy" ~> 6.0
+github "jonreid/ViewControllerPresentationSpy" ~> 7.0
 ```
 
 ### Prebuilt Framework

@@ -1,3 +1,11 @@
+Version 7.0.0
+-------------
+_07 Jan 2023_
+
+Adds @MainActor annotations to spies for Xcode 14 fix. You will need to add @MainActor to any
+test suites that use these spies.
+
+
 Version 6.1.0
 -------------
 _06 Aug 2022_
