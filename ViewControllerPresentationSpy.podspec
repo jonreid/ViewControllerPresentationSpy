@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name     = 'ViewControllerPresentationSpy'
-  s.version  = '6.1.0'
+  s.version  = '7.0.0'
   s.summary  = 'Unit test presented view controllers, alerts, and action sheets for iOS'
   s.description = <<-DESC
                     ViewControllerPresentationSpy has three verifiers:
@@ -21,10 +21,10 @@ Pod::Spec.new do |s|
     
   s.ios.deployment_target = '12.0'
   s.tvos.deployment_target = '12.0'
-  s.source   = { :git => 'https://github.com/jonreid/ViewControllerPresentationSpy.git', :tag => 'v6.1.0' }
+  s.source   = { :git => 'https://github.com/jonreid/ViewControllerPresentationSpy.git', :tag => 'v7.0.0' }
   s.source_files = 'Source/ViewControllerPresentationSpy/*.{h,m,swift}'
   s.requires_arc = true
-  s.swift_version = "5.0"
+  s.swift_version = "5.7"
   s.weak_framework = "XCTest"
   s.pod_target_xcconfig = {
     'ENABLE_TESTING_SEARCH_PATHS' => 'YES'
