@@ -286,6 +286,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MARKETING_VERSION = 7.0.0;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"-weak_framework",
@@ -335,6 +336,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MARKETING_VERSION = 7.0.0;
 				OTHER_LDFLAGS = (
 					"-weak_framework",
 					XCTest,
@@ -361,7 +363,6 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				LIBRARY_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/usr/lib";
-				MARKETING_VERSION = 6.1.0;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -374,7 +375,6 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				LIBRARY_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/usr/lib";
-				MARKETING_VERSION = 6.1.0;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
