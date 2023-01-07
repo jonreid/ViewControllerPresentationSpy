@@ -19,8 +19,8 @@ Pod::Spec.new do |s|
   s.author   = { 'Jon Reid' => 'jon@qualitycoding.org' }
   s.social_media_url = 'https://twitter.com/qcoding'
     
-  s.ios.deployment_target = '12.0'
-  s.tvos.deployment_target = '12.0'
+  s.ios.deployment_target = '13.0'
+  s.tvos.deployment_target = '13.0'
   s.source   = { :git => 'https://github.com/jonreid/ViewControllerPresentationSpy.git', :tag => 'v7.0.0' }
   s.source_files = 'Source/ViewControllerPresentationSpy/*.{h,m,swift}'
   s.requires_arc = true
