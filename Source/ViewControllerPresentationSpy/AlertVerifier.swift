@@ -12,6 +12,7 @@ import XCTest
     create and present your alert. Information about the alert is then available through the
     AlertVerifier.
  */
+@MainActor
 @objc(QCOAlertVerifier)
 public class AlertVerifier: NSObject {
     /// Number of times present(_:animated:completion:) was called.
@@ -60,15 +61,19 @@ public class AlertVerifier: NSObject {
             name: Notification.Name.alertControllerPresented,
             object: nil
         )
-        AlertVerifier.swizzleMocks()
+        AlertVerifier.swizzleMocksIgnoringActorIsolation()
     }
 
     deinit {
-        AlertVerifier.swizzleMocks()
+        AlertVerifier.swizzleMocksIgnoringActorIsolation()
         NotificationCenter.default.removeObserver(self)
     }
 
-    private static func swizzleMocks() {
+    private nonisolated static func swizzleMocksIgnoringActorIsolation() {
+        perform(#selector(swizzleMocks))
+    }
+
+    @objc private static func swizzleMocks() {
         UIAlertAction.swizzle()
         UIAlertController.swizzle()
         UIViewController.swizzleCaptureAlert()
@@ -164,7 +169,7 @@ extension AlertVerifier {
         }
     }
 
-    func actionsAsSwiftType() -> [Action] {
+    private func actionsAsSwiftType() -> [Action] {
         return actions.map { action in
             switch action.style {
             case .default:

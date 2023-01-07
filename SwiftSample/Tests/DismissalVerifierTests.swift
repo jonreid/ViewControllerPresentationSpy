@@ -6,6 +6,7 @@
 import ViewControllerPresentationSpy
 import XCTest
 
+@MainActor
 final class DismissalVerifierTests: XCTestCase {
     private var sut: DismissalVerifier!
     private var vc: StoryboardNextViewController!

@@ -6,6 +6,7 @@ import ViewControllerPresentationSpy
 @testable import SwiftSampleViewControllerPresentationSpy
 import XCTest
 
+@MainActor
 final class PresentationVerifierTests: XCTestCase {
     private var sut: PresentationVerifier!
     private var vc: ViewController!

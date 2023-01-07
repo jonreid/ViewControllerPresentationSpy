@@ -6,6 +6,7 @@ import ViewControllerPresentationSpy
 @testable import SwiftSampleViewControllerPresentationSpy
 import XCTest
 
+@MainActor
 final class AlertVerifierTests: XCTestCase {
     private var sut: AlertVerifier!
     private var vc: ViewController!

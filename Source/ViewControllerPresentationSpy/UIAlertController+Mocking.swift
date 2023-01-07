@@ -77,6 +77,7 @@ private final class UIAlertControllerExtraProperties: NSObject {
         var popover: UIPopoverPresentationController?
     #endif
 
+    @MainActor
     init(preferredStyle: UIAlertController.Style, alertController: UIAlertController) {
         self.preferredStyle = preferredStyle
         #if os(iOS)

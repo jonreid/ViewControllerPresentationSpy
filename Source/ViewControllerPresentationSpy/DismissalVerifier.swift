@@ -12,6 +12,7 @@ import XCTest
     dismiss your view controller. Information about the dismissal is then available through the
     DismissalVerifier.
  */
+@MainActor
 @objc(QCODismissalVerifier)
 public class DismissalVerifier: NSObject {
     /// Number of times dismiss(_:completion:) was called.
@@ -49,15 +50,19 @@ public class DismissalVerifier: NSObject {
             name: Notification.Name.viewControllerDismissed,
             object: nil
         )
-        DismissalVerifier.swizzleMocks()
+        DismissalVerifier.swizzleMocksIgnoringActorIsolation()
     }
 
     deinit {
-        DismissalVerifier.swizzleMocks()
+        DismissalVerifier.swizzleMocksIgnoringActorIsolation()
         NotificationCenter.default.removeObserver(self)
     }
 
-    private static func swizzleMocks() {
+    nonisolated private static func swizzleMocksIgnoringActorIsolation() {
+        perform(#selector(swizzleMocks))
+    }
+
+    @objc private static func swizzleMocks() {
         UIViewController.swizzleCaptureDismiss()
         DismissalVerifier.isSwizzled.toggle()
     }

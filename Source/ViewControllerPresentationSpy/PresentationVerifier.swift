@@ -12,6 +12,7 @@ import XCTest
     to create and present your view controller. Information about the presentation is then available
     through the PresentationVerifier.
  */
+@MainActor
 @objc(QCOPresentationVerifier)
 public class PresentationVerifier: NSObject {
     /// Number of times present(_:animated:completion:) was called.
@@ -60,15 +61,19 @@ public class PresentationVerifier: NSObject {
             name: Notification.Name.viewControllerPresented,
             object: nil
         )
-        PresentationVerifier.swizzleMocks()
+        PresentationVerifier.swizzleMocksIgnoringActorIsolation()
     }
 
     deinit {
-        PresentationVerifier.swizzleMocks()
+        PresentationVerifier.swizzleMocksIgnoringActorIsolation()
         NotificationCenter.default.removeObserver(self)
     }
 
-    private static func swizzleMocks() {
+    nonisolated private static func swizzleMocksIgnoringActorIsolation() {
+        perform(#selector(swizzleMocks))
+    }
+
+    @objc private static func swizzleMocks() {
         UIViewController.swizzleCapturePresent()
         PresentationVerifier.isSwizzled.toggle()
     }
