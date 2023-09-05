@@ -22,7 +22,7 @@ jobs:
           - { project: 'ObjCSample/ObjCSampleViewControllerPresentationSpy.xcodeproj', scheme: 'ObjCSampleViewControllerPresentationSpy', sdk: 'iphonesimulator', destination: 'platform=iOS Simulator,OS=latest,name=iPhone 8' }
     steps:
       - name: Check out project
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Show current version of Xcode
         run: xcodebuild -version
       - name: Build
@@ -38,7 +38,7 @@ jobs:
           - { project: 'SwiftSamplePackage/SwiftSampleViewControllerPresentationSpy.xcodeproj', scheme: 'SwiftSampleViewControllerPresentationSpy', sdk: 'iphonesimulator', destination: 'platform=iOS Simulator,OS=latest,name=iPad Air (4th generation)' }
     steps:
       - name: Check out project
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Show current version of Xcode
         run: xcodebuild -version
       - name: Build & test
@@ -49,7 +49,7 @@ jobs:
     name: Build Carthage
     runs-on: macos-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: Build
       run: carthage build --configuration Release --no-skip-current --use-xcframeworks
 
@@ -59,7 +59,7 @@ jobs:
     runs-on: macos-latest
     steps:
       - name: Check out project
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Lint the pod spec
         run: pod spec lint --quick
 
@@ -68,7 +68,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: auto-merge
         if: |
           github.actor == 'dependabot[bot]' &&
