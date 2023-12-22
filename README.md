@@ -18,7 +18,7 @@ Segues can be captured. Nothing is actually presented or dismissed. This means:
 * Tests are blazing fast.
 * You can test things with unit tests instead of UI tests.
 
-For concrete examples, see _[iOS Unit Testing by Example](https://pragprog.com/titles/jrlegios/ios-unit-testing-by-example/):_ chapter 9 "Testing Alerts," and chapter 10 "Testing Navigation Between Screens."
+For concrete examples, see _[iOS Unit Testing by Example](https://iosunittestingbyexample.com):_ chapter 9 "Testing Alerts," and chapter 10 "Testing Navigation Between Screens."
 
 <!-- toc -->
 ## Contents
@@ -355,3 +355,7 @@ If you want to build ViewControllerPresentationSpy yourself, clone the repo, the
 $ cd Source
 $ ./MakeDistribution.sh
 ```
+
+## Author
+
+Jon Reid is the author of _[iOS Unit Testing by Example](https://iosunittestingbyexample.com)._ His website is [Quality Coding](https://qualitycoding.org).
