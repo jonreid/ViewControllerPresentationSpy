@@ -67,6 +67,7 @@ For example, here's a test verifying:
 `sut` is the System Under Test in the test fixture. The Swift version uses a handy `verify` method.
 
 ```swift
+@MainActor
 func test_showAlert_alertShouldHaveTitle() {
     let alertVerifier = AlertVerifier()
 
@@ -112,6 +113,7 @@ Go through the steps above to present your alert or action sheet. Then call
 `executeAction (forButton:)` on your `AlertVerifier` with the button title. For example:
 
 ```swift
+@MainActor
 func test_executingActionForOKButton_shouldDoSomething() throws {
     let alertVerifier = AlertVerifier()
     sut.showAlert()
@@ -157,6 +159,7 @@ For example, here's a test verifying:
 `sut` is the System Under Test in the test fixture. The Swift version uses a handy `verify` method.
 
 ```swift
+@MainActor
 func test_presentedVC_shouldHaveSpecialSettingHello() {
     let presentationVerifier = PresentationVerifier()
 
@@ -239,6 +242,7 @@ For example, here's a test verifying that a particular view controller was dismi
 `sut` is the System Under Test in the test fixture. The Swift version uses a handy `verify` method.
 
 ```swift
+@MainActor
 func test_dismissingVC() {
     let dismissalVerifier = DismissalVerifier()
 
@@ -271,6 +275,7 @@ Create an expectation in your test case. Fulfill it in the verifier's `testCompl
 Add a short wait at the start of the Assert phase.
 
 ```swift
+@MainActor
 func test_showAlertOnMainDispatchQueue_shouldDoSomething() {
     let alertVerifier = AlertVerifier()
     let expectation = self.expectation(description: "alert presented")
@@ -284,6 +289,7 @@ func test_showAlertOnMainDispatchQueue_shouldDoSomething() {
 ```
 
 ```swift
+@MainActor
 func test_presentViewControllerOnMainDispatchQueue_shouldDoSomething() {
     let presentationVerifier = PresentationVerifier()
     let expectation = self.expectation(description: "view controller presented")
