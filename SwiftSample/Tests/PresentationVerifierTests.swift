@@ -6,11 +6,11 @@ import ViewControllerPresentationSpy
 @testable import SwiftSampleViewControllerPresentationSpy
 import XCTest
 
-@MainActor
 final class PresentationVerifierTests: XCTestCase {
     private var sut: PresentationVerifier!
     private var vc: ViewController!
 
+    @MainActor
     override func setUp() {
         super.setUp()
         sut = PresentationVerifier()
@@ -25,10 +25,12 @@ final class PresentationVerifierTests: XCTestCase {
         super.tearDown()
     }
 
+    @MainActor
     private func presentViewController() {
         vc.codePresentModalButton.sendActions(for: .touchUpInside)
     }
 
+    @MainActor
     func test_presentingVC_withCompletion_shouldCaptureCompletionBlock() {
         var completionCallCount = 0
         vc.viewControllerPresentedCompletion = {
@@ -41,12 +43,14 @@ final class PresentationVerifierTests: XCTestCase {
         XCTAssertEqual(completionCallCount, 1)
     }
 
+    @MainActor
     func test_presentingVC_withoutCompletion_shouldNotCaptureCompletionBlock() {
         presentViewController()
 
         XCTAssertNil(sut.capturedCompletion)
     }
 
+    @MainActor
     func test_presentingVC_shouldExecuteTestCompletionBlock() {
         var completionCallCount = 0
         sut.testCompletion = {
@@ -58,6 +62,7 @@ final class PresentationVerifierTests: XCTestCase {
         XCTAssertEqual(completionCallCount, 1)
     }
 
+    @MainActor
     func test_notPresentingVC_shouldNotExecuteTestCompletionBlock() {
         var completionCallCount = 0
         sut.testCompletion = {

@@ -6,11 +6,11 @@
 import ViewControllerPresentationSpy
 import XCTest
 
-@MainActor
 final class DismissalVerifierTests: XCTestCase {
     private var sut: DismissalVerifier!
     private var vc: StoryboardNextViewController!
 
+    @MainActor
     override func setUp() {
         super.setUp()
         sut = DismissalVerifier()
@@ -25,16 +25,19 @@ final class DismissalVerifierTests: XCTestCase {
         super.tearDown()
     }
 
+    @MainActor
     private func dismissViewController() {
         tap(vc.cancelButton)
     }
 
+    @MainActor
     func test_dismissingVC_shouldCaptureAnimationFlag() {
         dismissViewController()
 
         XCTAssertTrue(sut.animated)
     }
 
+    @MainActor
     func test_dismissingVC_shouldCaptureDismissedViewController() {
         dismissViewController()
 
@@ -45,6 +48,7 @@ final class DismissalVerifierTests: XCTestCase {
                 """)
     }
 
+    @MainActor
     func test_dismissingVC_withCompletion_shouldCaptureCompletionBlock() {
         var completionCallCount = 0
         vc.viewControllerDismissedCompletion = {
@@ -58,12 +62,14 @@ final class DismissalVerifierTests: XCTestCase {
         XCTAssertEqual(completionCallCount, 1)
     }
 
+    @MainActor
     func test_dismissingVC_withoutCompletion_shouldNotCaptureCompletionBlock() {
         dismissViewController()
 
         XCTAssertNil(sut.capturedCompletion)
     }
 
+    @MainActor
     func test_dismissingVC_shouldExecuteTestCompletionBlock() {
         var completionCallCount = 0
         sut.testCompletion = {
@@ -75,6 +81,7 @@ final class DismissalVerifierTests: XCTestCase {
         XCTAssertEqual(completionCallCount, 1)
     }
 
+    @MainActor
     func test_notDismissingVC_shouldNotExecuteTestCompletionBlock() {
         var completionCallCount = 0
         sut.testCompletion = {

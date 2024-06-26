@@ -6,11 +6,11 @@
 import ViewControllerPresentationSpy
 import XCTest
 
-@MainActor
 final class ViewControllerPresentationTests: XCTestCase {
     private var presentationVerifier: PresentationVerifier!
     private var sut: ViewController!
 
+    @MainActor
     override func setUp() {
         super.setUp()
         presentationVerifier = PresentationVerifier()
@@ -26,12 +26,14 @@ final class ViewControllerPresentationTests: XCTestCase {
         super.tearDown()
     }
 
+    @MainActor
     func test_outlets_shouldBeConnected() {
         XCTAssertNotNil(sut.seguePresentModalButton)
         XCTAssertNotNil(sut.segueShowButton)
         XCTAssertNotNil(sut.codePresentModalButton)
     }
 
+    @MainActor
     func test_tappingSeguePresentModalButton_shouldPresentNextViewControllerWithGreenBackground() {
         sut.seguePresentModalButton.sendActions(for: .touchUpInside)
 
@@ -40,6 +42,7 @@ final class ViewControllerPresentationTests: XCTestCase {
         XCTAssertEqual(nextVC?.backgroundColor, .green, "Background color passed in")
     }
 
+    @MainActor
     func test_tappingSegueShowButton_shouldShowNextViewControllerWithRedBackground() {
         let window = UIWindow()
         window.rootViewController = sut
@@ -52,6 +55,7 @@ final class ViewControllerPresentationTests: XCTestCase {
         XCTAssertEqual(nextVC?.backgroundColor, .red, "Background color passed in")
     }
 
+    @MainActor
     func test_tappingCodeModalButton_shouldPresentNextViewControllerWithPurpleBackground() {
         sut.codePresentModalButton.sendActions(for: .touchUpInside)
 
