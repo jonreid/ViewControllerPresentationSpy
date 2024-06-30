@@ -297,6 +297,7 @@
 					XCTest,
 					"-weak-lXCTestSwiftSupport",
 				);
+				OTHER_SWIFT_FLAGS = "-enable-upcoming-feature DisableOutwardActorInference";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.qualitycoding.${TARGET_NAME}";
 				PRODUCT_NAME = ViewControllerPresentationSpy;
 				SDKROOT = iphoneos;
@@ -349,6 +350,7 @@
 					XCTest,
 					"-weak-lXCTestSwiftSupport",
 				);
+				OTHER_SWIFT_FLAGS = "-enable-upcoming-feature DisableOutwardActorInference";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.qualitycoding.${TARGET_NAME}";
 				PRODUCT_NAME = ViewControllerPresentationSpy;
 				SDKROOT = iphoneos;
