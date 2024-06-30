@@ -297,7 +297,7 @@
 					XCTest,
 					"-weak-lXCTestSwiftSupport",
 				);
-				OTHER_SWIFT_FLAGS = "-enable-upcoming-feature DisableOutwardActorInference -enable-upcoming-feature GlobalConcurrency";
+				OTHER_SWIFT_FLAGS = "-enable-upcoming-feature DisableOutwardActorInference -enable-upcoming-feature GlobalConcurrency -enable-upcoming-feature InferSendableFromCaptures";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.qualitycoding.${TARGET_NAME}";
 				PRODUCT_NAME = ViewControllerPresentationSpy;
 				SDKROOT = iphoneos;
@@ -350,7 +350,7 @@
 					XCTest,
 					"-weak-lXCTestSwiftSupport",
 				);
-				OTHER_SWIFT_FLAGS = "-enable-upcoming-feature DisableOutwardActorInference -enable-upcoming-feature GlobalConcurrency";
+				OTHER_SWIFT_FLAGS = "-enable-upcoming-feature DisableOutwardActorInference -enable-upcoming-feature GlobalConcurrency -enable-upcoming-feature InferSendableFromCaptures";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.qualitycoding.${TARGET_NAME}";
 				PRODUCT_NAME = ViewControllerPresentationSpy;
 				SDKROOT = iphoneos;
