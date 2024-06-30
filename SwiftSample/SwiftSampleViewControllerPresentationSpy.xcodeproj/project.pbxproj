@@ -48,7 +48,7 @@
 
 /* Begin PBXFileReference section */
 		48007CA72079B1A2007A4AB0 /* ViewControllerPresentationSpy.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ViewControllerPresentationSpy.xcodeproj; path = ../../Source/ViewControllerPresentationSpy.xcodeproj; sourceTree = "<group>"; };
-		4804BCA822E169A9000130AD /* XcodeWarnings.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = XcodeWarnings.xcconfig; sourceTree = "<group>"; };
+		4804BCA822E169A9000130AD /* XcodeWarnings.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = XcodeWarnings.xcconfig; path = ../../Source/XcodeWarnings.xcconfig; sourceTree = "<group>"; };
 		483E051D1DE8064D00B5E4E4 /* SwiftSampleViewControllerPresentationSpy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftSampleViewControllerPresentationSpy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		483E05201DE8064D00B5E4E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		483E05221DE8064D00B5E4E4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -107,7 +107,6 @@
 		483E05141DE8064D00B5E4E4 = {
 			isa = PBXGroup;
 			children = (
-				4804BCA822E169A9000130AD /* XcodeWarnings.xcconfig */,
 				483E051F1DE8064D00B5E4E4 /* SampleApp */,
 				483E05341DE8064D00B5E4E4 /* Tests */,
 				483E051E1DE8064D00B5E4E4 /* Products */,
@@ -146,6 +145,7 @@
 				BB170641301DFD266F710CFF /* ViewControllerPresentationTests.swift */,
 				48007CA72079B1A2007A4AB0 /* ViewControllerPresentationSpy.xcodeproj */,
 				483E05371DE8064D00B5E4E4 /* Info.plist */,
+				4804BCA822E169A9000130AD /* XcodeWarnings.xcconfig */,
 				BB170A0F6EDD04B901018053 /* AlertVerifierTests.swift */,
 				BB170F190A3F87881ED05594 /* PresentationVerifierTests.swift */,
 				BB17083802A53CACC6764A2E /* DismissalVerifierTests.swift */,
