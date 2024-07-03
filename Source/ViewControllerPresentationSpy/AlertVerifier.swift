@@ -135,7 +135,7 @@ extension AlertVerifier {
         actions: [Action],
         preferredStyle: UIAlertController.Style = .alert,
         presentingViewController: UIViewController? = nil,
-        file: StaticString = #file,
+        file: StaticString = #filePath,
         line: UInt = #line
     ) {
         let abort = verifyCallCount(actual: presentedCount, action: "present", file: file, line: line)

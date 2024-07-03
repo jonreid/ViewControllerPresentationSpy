@@ -98,7 +98,7 @@ public extension PresentationVerifier {
     @discardableResult func verify<VC: UIViewController>(
         animated: Bool,
         presentingViewController: UIViewController? = nil,
-        file: StaticString = #file,
+        file: StaticString = #filePath,
         line: UInt = #line
     ) -> VC? {
         let abort = verifyCallCount(actual: presentedCount, action: "present", file: file, line: line)
