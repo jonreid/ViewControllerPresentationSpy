@@ -70,7 +70,7 @@ extension UIAlertController {
 }
 
 private final class UIAlertControllerExtraProperties: NSObject {
-    fileprivate static let associatedObjectKey = UnsafeMutableRawPointer.allocate(byteCount: 1, alignment: 1)
+    @MainActor fileprivate static let associatedObjectKey = UnsafeMutableRawPointer.allocate(byteCount: 1, alignment: 1)
 
     let preferredStyle: UIAlertController.Style
     #if os(iOS)

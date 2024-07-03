@@ -30,7 +30,7 @@ extension UIAlertAction {
 }
 
 private final class UIAlertActionExtraProperties: NSObject {
-    fileprivate static let associatedObjectKey = UnsafeMutableRawPointer.allocate(byteCount: 1, alignment: 1)
+    @MainActor fileprivate static let associatedObjectKey = UnsafeMutableRawPointer.allocate(byteCount: 1, alignment: 1)
 
     public let handler: ((UIAlertAction) -> Void)?
 
