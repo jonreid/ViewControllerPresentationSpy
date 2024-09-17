@@ -77,11 +77,11 @@ func test_showAlert_alertShouldHaveTitle() {
         title: "Hello!",
         message: "How are you?",
         animated: true,
-        presentingViewController: sut,
         actions: [
             .default("OK"),
             .cancel("Cancel"),
-        ]
+        ],
+        presentingViewController: sut
     )
 }
 ```
