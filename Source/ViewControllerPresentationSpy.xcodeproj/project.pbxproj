@@ -173,7 +173,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				DefaultBuildSystemTypeForWorkspace = Latest;
-				LastUpgradeCheck = 1540;
+				LastUpgradeCheck = 1600;
 				ORGANIZATIONNAME = "Quality Coding";
 				TargetAttributes = {
 					48007C782079A76E007A4AB0 = {
