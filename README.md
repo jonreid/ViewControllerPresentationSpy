@@ -269,10 +269,10 @@ func test_dismissingVC() {
 
 The production code completion handler is captured in the verifier's `capturedCompletion` property.
 
-### How can I test something that's presented or dismissed using DispatchQueue.main?
+### How can I test something that's presented or dismissed in a Task or using DispatchQueue.main?
 
 Create an expectation in your test case. Fulfill it in the verifier's `testCompletion` closure.
-Add a short wait at the start of the Assert phase.
+Add a short `waitForExpectations` at the start of the Assert phase.
 
 ```swift
 @MainActor
