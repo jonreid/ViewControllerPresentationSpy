@@ -138,7 +138,7 @@ extension AlertVerifier {
         file: StaticString = #filePath,
         line: UInt = #line
     ) {
-        let abort = verifyCallCount(actual: presentedCount, action: "present", file: file, line: line)
+        let abort = verifyCalledOnce(actual: presentedCount, action: "present", file: file, line: line)
         if abort { return }
         XCTAssertEqual(self.title, title, "alert title", file: file, line: line)
         XCTAssertEqual(self.message, message, "alert message", file: file, line: line)

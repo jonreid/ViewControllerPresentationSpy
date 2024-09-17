@@ -89,7 +89,7 @@ public extension DismissalVerifier {
         file: StaticString = #file,
         line: UInt = #line
     ) {
-        let abort = verifyCallCount(actual: dismissedCount, action: "dismiss", file: file, line: line)
+        let abort = verifyCalledOnce(actual: dismissedCount, action: "dismiss", file: file, line: line)
         if abort { return }
         verifyAnimated(actual: self.animated, expected: animated, action: "dismiss", file: file, line: line)
         verifyViewController(actual: self.dismissedViewController, expected: dismissedViewController,

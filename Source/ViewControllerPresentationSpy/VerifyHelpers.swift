@@ -5,7 +5,7 @@
 import UIKit
 import XCTest
 
-func verifyCallCount(actual: Int, action: String, file: StaticString, line: UInt) -> Bool {
+func verifyCalledOnce(actual: Int, action: String, file: StaticString, line: UInt) -> Bool {
     if actual == 0 {
         XCTFail("\(action) not called", file: file, line: line)
         return true // Abort test

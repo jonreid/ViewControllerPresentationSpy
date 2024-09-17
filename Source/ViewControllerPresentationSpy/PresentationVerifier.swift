@@ -101,7 +101,7 @@ public extension PresentationVerifier {
         file: StaticString = #filePath,
         line: UInt = #line
     ) -> VC? {
-        let abort = verifyCallCount(actual: presentedCount, action: "present", file: file, line: line)
+        let abort = verifyCalledOnce(actual: presentedCount, action: "present", file: file, line: line)
         if abort { return nil }
         verifyAnimated(actual: self.animated, expected: animated, action: "present", file: file, line: line)
         verifyViewController(actual: self.presentingViewController, expected: presentingViewController,
