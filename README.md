@@ -31,7 +31,7 @@ For concrete examples, see _[iOS Unit Testing by Example](https://iosunittesting
     * [How do I test a segue?](#how-do-i-test-a-segue)
     * [How do I test dismissing a modal?](#how-do-i-test-dismissing-a-modal)
     * [How can I invoke the closure passed to present or dismiss?](#how-can-i-invoke-the-closure-passed-to-present-or-dismiss)
-    * [How can I test something that's presented or dismissed using DispatchQueue.main?](#how-can-i-test-something-thats-presented-or-dismissed-using-dispatchqueuemain)
+    * [How can I test something that's presented or dismissed in a Task or using DispatchQueue.main?](#how-can-i-test-something-thats-presented-or-dismissed-in-a-task-or-using-dispatchqueuemain)
     * [Can I see some examples?](#can-i-see-some-examples)
   * [How Do I Add ViewControllerPresentationSpy to My Project?](#how-do-i-add-viewcontrollerpresentationspy-to-my-project)
     * [Swift Package Manager](#swift-package-manager)
