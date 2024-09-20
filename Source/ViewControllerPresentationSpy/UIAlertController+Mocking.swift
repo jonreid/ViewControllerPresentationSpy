@@ -62,7 +62,8 @@ extension UIAlertController {
             guard let extraProperties = objc_getAssociatedObject(self, UIAlertControllerExtraProperties.associatedObjectKey)
                 as? UIAlertControllerExtraProperties
             else {
-                fatalError("Associated object UIAlertControllerExtraProperties not found")
+                print("ViewControllerPresentationSpy warning: Associated object UIAlertControllerExtraProperties not found. Another view controller is trying to access the swizzled popoverPresentationController before the UIAlertController is created.")
+                return nil
             }
             return extraProperties.popover
         }
