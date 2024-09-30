@@ -98,7 +98,7 @@ func test_showAlert_alertShouldHaveTitle() {
     XCTAssertEqualObjects(alertVerifier.message, @"How are you?", @"message");
     XCTAssertEqual(alertVerifier.animated, YES, @"animated");
     XCTAssertEqual(alertVerifier.preferredStyle, UIAlertController.Style.alert, @"preferred style");
-    XCTAssertEqual(alertVerifier.presentingViewController, sut, @"presenting view controller");
+    XCTAssertIdentical(alertVerifier.presentingViewController, sut, @"presenting view controller");
     XCTAssertEqual(alertVerifier.actions.count, 2, @"actions count);
     XCTAssertEqualObjects(alertVerifier.actions[0].title, @"OK", @"first action");
     XCTAssertEqual(alertVerifier.actions[0].style, UIAlertActionStyleDefault, @"first action");
@@ -180,7 +180,7 @@ func test_presentedVC_shouldHaveSpecialSettingHello() {
 
     XCTAssertEqual(presentationVerifier.presentedCount, 1, @"presented count");
     XCTAssertTrue(presentationVerifier.animated, @"animated");
-    XCTAssertEqual(presentationVerifier.presentingViewController, sut, @"presenting view controller");
+    XCTAssertIdentical(presentationVerifier.presentingViewController, sut, @"presenting view controller");
     if (![presentationVerifier.presentedViewController isKindOfClass:[MyViewController class]])
     {
         XCTFail(@"Expected MyViewController, but was %@", presentationVerifier.presentedViewController);
@@ -261,7 +261,7 @@ func test_dismissingVC() {
 
     XCTAssertEqual(dismissalVerifier.dismissedCount, 1, @"dismissed count");
     XCTAssertTrue(dismissalVerifier.animated, @"animated");
-    XCTAssertEqual(dismissalVerifier.presentingViewController, sut, @"dismissed view controller");
+    XCTAssertIdentical(dismissalVerifier.dismissedViewController, sut, @"dismissed view controller");
 }
 ```
 

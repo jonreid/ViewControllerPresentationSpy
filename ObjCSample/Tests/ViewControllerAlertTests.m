@@ -44,7 +44,7 @@
     
     XCTAssertEqual(alertVerifier.presentedCount, 1, @"presented count");
     XCTAssertEqual(alertVerifier.preferredStyle, UIAlertControllerStyleAlert, @"preferred style");
-    XCTAssertEqual(alertVerifier.presentingViewController, sut, @"presenting view controller");
+    XCTAssertIdentical(alertVerifier.presentingViewController, sut, @"presenting view controller");
     XCTAssertTrue(alertVerifier.animated, @"animated");
     XCTAssertEqualObjects(alertVerifier.title, @"Title", @"title");
     XCTAssertEqualObjects(alertVerifier.message, @"Message", @"message");
@@ -56,7 +56,7 @@
 
     XCTAssertEqual(alertVerifier.presentedCount, 1, @"presented count");
     XCTAssertEqual(alertVerifier.preferredStyle, UIAlertControllerStyleActionSheet, @"preferred style");
-    XCTAssertEqual(alertVerifier.presentingViewController, sut, @"presenting view controller");
+    XCTAssertIdentical(alertVerifier.presentingViewController, sut, @"presenting view controller");
     XCTAssertTrue(alertVerifier.animated, @"animated");
     XCTAssertEqualObjects(alertVerifier.title, @"Title", @"title");
     XCTAssertEqualObjects(alertVerifier.message, @"Message", @"message");
