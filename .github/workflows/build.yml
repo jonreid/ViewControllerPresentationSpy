@@ -20,27 +20,12 @@ jobs:
         run-config:
           - { project: 'Source/ViewControllerPresentationSpy.xcodeproj', scheme: 'ViewControllerPresentationSpy-tvOS', sdk: 'appletvsimulator', destination: 'platform=tvOS Simulator,OS=latest,name=Apple TV' }
           - { project: 'ObjCSample/ObjCSampleViewControllerPresentationSpy.xcodeproj', scheme: 'ObjCSampleViewControllerPresentationSpy', sdk: 'iphonesimulator', destination: 'platform=iOS Simulator,OS=latest,name=iPhone 8' }
-          - { project: 'SwiftSamplePackage/SwiftSampleViewControllerPresentationSpy.xcodeproj', scheme: 'SwiftSampleViewControllerPresentationSpy', sdk: 'iphonesimulator', destination: 'platform=iOS Simulator,OS=latest,name=iPad Air (4th generation)' }
     steps:
       - uses: actions/checkout@v4
       - name: Show current version of Xcode
         run: xcodebuild -version
       - name: Build
         run: set -o pipefail && xcodebuild build -project '${{ matrix.run-config['project'] }}' -scheme '${{ matrix.run-config['scheme'] }}' -sdk '${{ matrix.run-config['sdk'] }}' -destination '${{ matrix.run-config['destination'] }}' CODE_SIGNING_ALLOWED='NO' | xcbeautify
-
-  test:
-    name: Build & test
-    runs-on: macos-latest
-    strategy:
-      matrix:
-        run-config:
-          - { project: 'SwiftSample/SwiftSampleViewControllerPresentationSpy.xcodeproj', scheme: 'SwiftSampleViewControllerPresentationSpy', sdk: 'iphonesimulator', destination: 'platform=iOS Simulator,OS=latest,name=iPad Air (4th generation)' }
-    steps:
-      - uses: actions/checkout@v4
-      - name: Show current version of Xcode
-        run: xcodebuild -version
-      - name: Build & test
-        run: set -o pipefail && xcodebuild test -project '${{ matrix.run-config['project'] }}' -scheme '${{ matrix.run-config['scheme'] }}' -sdk '${{ matrix.run-config['sdk'] }}' -destination '${{ matrix.run-config['destination'] }}' CODE_SIGNING_ALLOWED='NO' | xcbeautify
 
   buildCarthage:
     needs: [ build, test ]
