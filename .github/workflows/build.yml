@@ -25,7 +25,7 @@ jobs:
       - name: Show current version of Xcode
         run: xcodebuild -version
       - name: Build
-        run: set -o pipefail && xcodebuild build -project '${{ matrix.run-config['project'] }}' -scheme '${{ matrix.run-config['scheme'] }}' -sdk '${{ matrix.run-config['sdk'] }}' -destination '${{ matrix.run-config['destination'] }}' | xcbeautify
+        run: set -o pipefail && xcodebuild build -project '${{ matrix.run-config['project'] }}' -scheme '${{ matrix.run-config['scheme'] }}' -sdk '${{ matrix.run-config['sdk'] }}' -destination '${{ matrix.run-config['destination'] }}' CODE_SIGNING_ALLOWED='NO' | xcbeautify
 
   test:
     name: Build & test
@@ -40,7 +40,7 @@ jobs:
       - name: Show current version of Xcode
         run: xcodebuild -version
       - name: Build & test
-        run: set -o pipefail && xcodebuild test -project '${{ matrix.run-config['project'] }}' -scheme '${{ matrix.run-config['scheme'] }}' -sdk '${{ matrix.run-config['sdk'] }}' -destination '${{ matrix.run-config['destination'] }}' | xcbeautify
+        run: set -o pipefail && xcodebuild test -project '${{ matrix.run-config['project'] }}' -scheme '${{ matrix.run-config['scheme'] }}' -sdk '${{ matrix.run-config['sdk'] }}' -destination '${{ matrix.run-config['destination'] }}' CODE_SIGNING_ALLOWED='NO' | xcbeautify
 
   buildCarthage:
     needs: [ build, test ]
