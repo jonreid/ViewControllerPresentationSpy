@@ -4,6 +4,7 @@
 
 import UIKit
 import XCTest
+import Testing
 
 /**
     Captures presented view controllers.
@@ -41,14 +42,14 @@ public class PresentationVerifier: NSObject {
     @objc override public init() {
         super.init()
         guard !PresentationVerifier.isSwizzled else {
-            XCTFail("""
+            fail("""
             More than one instance of PresentationVerifier exists. This may be caused by \
             creating one setUp() but failing to set the property to nil in tearDown().
             """)
             return
         }
         guard !AlertVerifier.isSwizzled else {
-            XCTFail("""
+            fail("""
             A PresentationVerifier may not be created while an AlertVerifier exists. Try \
             making the AlertVerifier optional, and setting it to nil before creating the \
             PresentationVerifier.
@@ -99,17 +100,18 @@ public extension PresentationVerifier {
         animated: Bool,
         presentingViewController: UIViewController? = nil,
         file: StaticString = #filePath,
-        line: UInt = #line
+        line: UInt = #line,
+        sourceLocation: SourceLocation = #_sourceLocation
     ) -> VC? {
-        let abort = verifyCalledOnce(actual: presentedCount, action: "present", file: file, line: line)
+        let abort = verifyCalledOnce(actual: presentedCount, action: "present", file: file, line: line, sourceLocation: sourceLocation)
         if abort { return nil }
-        verifyAnimated(actual: self.animated, expected: animated, action: "present", file: file, line: line)
+        verifyAnimated(actual: self.animated, expected: animated, action: "present", file: file, line: line, sourceLocation: sourceLocation)
         verifyViewController(actual: self.presentingViewController, expected: presentingViewController,
-                             adjective: "presenting", file: file, line: line)
+                             adjective: "presenting", file: file, line: line, sourceLocation: sourceLocation)
         let nextVC = presentedViewController as? VC
         if nextVC == nil {
-            XCTFail("Expected presented view controller to be \(VC.self)), " +
-                "but was \(String(describing: presentedViewController))", file: file, line: line)
+            fail("Expected presented view controller to be \(VC.self)), but was \(String(describing: presentedViewController))",
+                 file: file, line: line, sourceLocation: sourceLocation)
         }
         return nextVC
     }
