@@ -4,6 +4,7 @@
 
 import UIKit
 import XCTest
+import Testing
 
 /**
     Captures dismissed view controllers.
@@ -38,7 +39,7 @@ public class DismissalVerifier: NSObject {
     @objc override public init() {
         super.init()
         guard !DismissalVerifier.isSwizzled else {
-            XCTFail("""
+            fail("""
             More than one instance of DismissalVerifier exists. This may be caused by \
             creating one setUp() but failing to set the property to nil in tearDown().
             """)
@@ -87,12 +88,13 @@ public extension DismissalVerifier {
         animated: Bool,
         dismissedViewController: UIViewController? = nil,
         file: StaticString = #file,
-        line: UInt = #line
+        line: UInt = #line,
+        sourceLocation: SourceLocation = #_sourceLocation
     ) {
-        let abort = verifyCalledOnce(actual: dismissedCount, action: "dismiss", file: file, line: line)
+        let abort = verifyCalledOnce(actual: dismissedCount, action: "dismiss", file: file, line: line, sourceLocation: sourceLocation)
         if abort { return }
-        verifyAnimated(actual: self.animated, expected: animated, action: "dismiss", file: file, line: line)
+        verifyAnimated(actual: self.animated, expected: animated, action: "dismiss", file: file, line: line, sourceLocation: sourceLocation)
         verifyViewController(actual: self.dismissedViewController, expected: dismissedViewController,
-                             adjective: "dismissed", file: file, line: line)
+                             adjective: "dismissed", file: file, line: line, sourceLocation: sourceLocation)
     }
 }

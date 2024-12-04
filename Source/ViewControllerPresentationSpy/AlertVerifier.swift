@@ -4,6 +4,7 @@
 
 import UIKit
 import XCTest
+import Testing
 
 /**
     Captures presented UIAlertControllers.
@@ -49,7 +50,7 @@ public class AlertVerifier: NSObject {
     @objc override public init() {
         super.init()
         guard !AlertVerifier.isSwizzled else {
-            XCTFail("""
+            fail("""
             More than one instance of AlertVerifier exists. This may be caused by \
             creating one setUp() but failing to set the property to nil in tearDown().
             """)
@@ -136,36 +137,37 @@ extension AlertVerifier {
         preferredStyle: UIAlertController.Style = .alert,
         presentingViewController: UIViewController? = nil,
         file: StaticString = #filePath,
-        line: UInt = #line
+        line: UInt = #line,
+        sourceLocation: SourceLocation = #_sourceLocation
     ) {
-        let abort = verifyCalledOnce(actual: presentedCount, action: "present", file: file, line: line)
+        let abort = verifyCalledOnce(actual: presentedCount, action: "present", file: file, line: line, sourceLocation: sourceLocation)
         if abort { return }
-        XCTAssertEqual(self.title, title, "alert title", file: file, line: line)
-        XCTAssertEqual(self.message, message, "alert message", file: file, line: line)
-        verifyAnimated(actual: self.animated, expected: animated, action: "present", file: file, line: line)
-        verifyActions(expected: actions, file: file, line: line)
-        verifyPreferredStyle(expected: preferredStyle, file: file, line: line)
+        assertEqual(self.title, title, "alert title", file: file, line: line, sourceLocation: sourceLocation)
+        assertEqual(self.message, message, "alert message", file: file, line: line, sourceLocation: sourceLocation)
+        verifyAnimated(actual: self.animated, expected: animated, action: "present", file: file, line: line, sourceLocation: sourceLocation)
+        verifyActions(expected: actions, file: file, line: line, sourceLocation: sourceLocation)
+        verifyPreferredStyle(expected: preferredStyle, file: file, line: line, sourceLocation: sourceLocation)
         verifyViewController(actual: self.presentingViewController, expected: presentingViewController,
-                             adjective: "presenting", file: file, line: line)
+                             adjective: "presenting", file: file, line: line, sourceLocation: sourceLocation)
     }
 
-    private func verifyActions(expected: [Action], file: StaticString, line: UInt) {
+    private func verifyActions(expected: [Action], file: StaticString, line: UInt, sourceLocation: SourceLocation) {
         let actual = actionsAsSwiftType()
         let minCount = min(actual.count, expected.count)
         for i in 0 ..< minCount {
             if actual[i] != expected[i] {
-                XCTFail("Action \(i): Expected \(expected[i]), but was \(actual[i])",
-                        file: file, line: line)
+                fail("Action \(i): Expected \(expected[i]), but was \(actual[i])",
+                     file: file, line: line, sourceLocation: sourceLocation)
             }
         }
         if actual.count < expected.count {
             let missing = expected[actual.count ..< expected.count].map { $0.description }
-            XCTFail("Did not meet count of \(expected.count) actions, missing \(missing.joined(separator: ", "))",
-                    file: file, line: line)
+            fail("Did not meet count of \(expected.count) actions, missing \(missing.joined(separator: ", "))",
+                 file: file, line: line, sourceLocation: sourceLocation)
         } else if actual.count > expected.count {
             let extra = actual[expected.count ..< actual.count].map { $0.description }
-            XCTFail("Exceeded count of \(expected.count) actions, with unexpected \(extra.joined(separator: ", "))",
-                    file: file, line: line)
+            fail("Exceeded count of \(expected.count) actions, with unexpected \(extra.joined(separator: ", "))",
+                 file: file, line: line, sourceLocation: sourceLocation)
         }
     }
 
@@ -186,15 +188,16 @@ extension AlertVerifier {
 
     private func verifyPreferredStyle(expected: UIAlertController.Style,
                                       file: StaticString,
-                                      line: UInt)
+                                      line: UInt,
+                                      sourceLocation: SourceLocation)
     {
         let actual = preferredStyle
         if actual != expected {
             switch expected {
             case .actionSheet:
-                XCTFail("Expected preferred style .actionSheet, but was .alert", file: file, line: line)
+                fail("Expected preferred style .actionSheet, but was .alert", file: file, line: line, sourceLocation: sourceLocation)
             case .alert:
-                XCTFail("Expected preferred style .alert, but was .actionSheet", file: file, line: line)
+                fail("Expected preferred style .alert, but was .actionSheet", file: file, line: line, sourceLocation: sourceLocation)
             @unknown default:
                 fatalError("Unknown UIAlertController.Style for preferred style")
             }
