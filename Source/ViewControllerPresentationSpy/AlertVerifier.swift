@@ -140,8 +140,8 @@ extension AlertVerifier {
     ) {
         let abort = verifyCalledOnce(actual: presentedCount, action: "present", file: file, line: line)
         if abort { return }
-        XCTAssertEqual(self.title, title, "alert title", file: file, line: line)
-        XCTAssertEqual(self.message, message, "alert message", file: file, line: line)
+        verifyEqual(self.title, title, message: "alert title", file: file, line: line)
+        verifyEqual(self.message, message, message: "alert message", file: file, line: line)
         verifyAnimated(actual: self.animated, expected: animated, action: "present", file: file, line: line)
         verifyActions(expected: actions, file: file, line: line)
         verifyPreferredStyle(expected: preferredStyle, file: file, line: line)

@@ -5,6 +5,13 @@
 import UIKit
 import XCTest
 
+func verifyEqual<T: Equatable>(_ actual: T, _ expected: T, message: String? = nil, file: StaticString, line: UInt) {
+    if actual != expected {
+        let message = message.map { "- \($0)" } ?? ""
+        XCTFail("Expected \(expected), but was \(actual)\(message)", file: file, line: line)
+    }
+}
+
 func verifyCalledOnce(actual: Int, action: String, file: StaticString, line: UInt) -> Bool {
     if actual == 0 {
         XCTFail("\(action) not called", file: file, line: line)
