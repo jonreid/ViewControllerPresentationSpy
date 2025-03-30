@@ -6,45 +6,41 @@
 import ViewControllerPresentationSpy
 import XCTest
 
-final class AlertVerifierTests: XCTestCase {
+@MainActor
+final class AlertVerifierTests: XCTestCase, Sendable {
     private var sut: AlertVerifier!
     private var vc: ViewController!
 
-    @MainActor
-    override func setUp() {
-        super.setUp()
+    override func setUp() async throws {
+        try await super.setUp()
         sut = AlertVerifier()
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         vc = storyboard.instantiateViewController(identifier: String(describing: ViewController.self))
         vc.loadViewIfNeeded()
     }
 
-    override func tearDown() {
+    override func tearDown() async throws {
         sut = nil
         vc = nil
-        super.tearDown()
+        try await super.tearDown()
     }
 
-    @MainActor
     private func showAlert() {
         vc.showAlertButton.sendActions(for: .touchUpInside)
     }
 
-    @MainActor
     func test_executeActionForButtonWithTitle_withNonexistentTitle_shouldThrowException() {
         showAlert()
 
         XCTAssertThrowsError(try sut.executeAction(forButton: "NO SUCH BUTTON"))
     }
 
-    @MainActor
     func test_executeActionForButtonWithTitle_withoutHandler_shouldNotCrash() throws {
         showAlert()
 
         try sut.executeAction(forButton: "No Handler")
     }
 
-    @MainActor
     func test_showingAlert_withCompletion_shouldCaptureCompletionBlock() {
         var completionCallCount = 0
         vc.alertPresentedCompletion = {
@@ -57,14 +53,12 @@ final class AlertVerifierTests: XCTestCase {
         XCTAssertEqual(completionCallCount, 1)
     }
 
-    @MainActor
     func test_showingAlert_withoutCompletion_shouldNotCaptureCompletionBlock() {
         showAlert()
 
         XCTAssertNil(sut.capturedCompletion)
     }
 
-    @MainActor
     func test_showingAlert_shouldExecuteTestCompletionBlock() {
         var completionCallCount = 0
         sut.testCompletion = {
@@ -76,7 +70,6 @@ final class AlertVerifierTests: XCTestCase {
         XCTAssertEqual(completionCallCount, 1)
     }
 
-    @MainActor
     func test_notShowingAlert_shouldNotExecuteTestCompletionBlock() {
         var completionCallCount = 0
         sut.testCompletion = {

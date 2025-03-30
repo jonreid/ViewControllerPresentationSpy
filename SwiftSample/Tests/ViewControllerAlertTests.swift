@@ -6,32 +6,30 @@
 import ViewControllerPresentationSpy
 import XCTest
 
-final class ViewControllerAlertTests: XCTestCase {
+@MainActor
+final class ViewControllerAlertTests: XCTestCase, Sendable {
     private var alertVerifier: AlertVerifier!
     private var sut: ViewController!
 
-    @MainActor
-    override func setUp() {
-        super.setUp()
+    override func setUp() async throws {
+        try await super.setUp()
         alertVerifier = AlertVerifier()
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         sut = storyboard.instantiateViewController(identifier: String(describing: ViewController.self))
         sut.loadViewIfNeeded()
     }
 
-    override func tearDown() {
+    override func tearDown() async throws {
         alertVerifier = nil
         sut = nil
-        super.tearDown()
+        try await super.tearDown()
     }
 
-    @MainActor
     func test_outlets_shouldBeConnected() {
         XCTAssertNotNil(sut.showAlertButton)
         XCTAssertNotNil(sut.showActionSheetButton)
     }
 
-    @MainActor
     func test_tappingShowAlertButton_shouldShowAlert() {
         sut.showAlertButton.sendActions(for: .touchUpInside)
 
@@ -48,7 +46,6 @@ final class ViewControllerAlertTests: XCTestCase {
         )
     }
 
-    @MainActor
     func test_tappingShowActionSheetButton_shouldShowActionSheet() {
         sut.showActionSheetButton.sendActions(for: .touchUpInside)
 
@@ -66,7 +63,6 @@ final class ViewControllerAlertTests: XCTestCase {
         )
     }
 
-    @MainActor
     func test_popoverForActionSheet() throws {
         sut.showActionSheetButton.sendActions(for: .touchUpInside)
 
@@ -77,14 +73,12 @@ final class ViewControllerAlertTests: XCTestCase {
         XCTAssertEqual(popover.permittedArrowDirections, UIPopoverArrowDirection.any, "permitted arrow directions")
     }
 
-    @MainActor
     func test_preferredActionForAlert() {
         sut.showAlertButton.sendActions(for: .touchUpInside)
 
         XCTAssertEqual(alertVerifier.preferredAction?.title, "Default")
     }
 
-    @MainActor
     func test_executeActionForButton_withDefaultButton_shouldExecuteDefaultAction() throws {
         sut.showAlertButton.sendActions(for: .touchUpInside)
 
@@ -93,7 +87,6 @@ final class ViewControllerAlertTests: XCTestCase {
         XCTAssertEqual(sut.alertDefaultActionCount, 1)
     }
 
-    @MainActor
     func test_executeActionForButton_withCancelButton_shouldExecuteCancelAction() throws {
         sut.showAlertButton.sendActions(for: .touchUpInside)
 
@@ -102,7 +95,6 @@ final class ViewControllerAlertTests: XCTestCase {
         XCTAssertEqual(sut.alertCancelActionCount, 1)
     }
 
-    @MainActor
     func test_executeActionForButton_withDestroyButton_shouldExecuteDestroyAction() throws {
         sut.showAlertButton.sendActions(for: .touchUpInside)
 
@@ -111,7 +103,6 @@ final class ViewControllerAlertTests: XCTestCase {
         XCTAssertEqual(sut.alertDestroyActionCount, 1)
     }
 
-    @MainActor
     func test_textFieldsForAlert() {
         sut.showAlertButton.sendActions(for: .touchUpInside)
 
@@ -119,7 +110,6 @@ final class ViewControllerAlertTests: XCTestCase {
         XCTAssertEqual(alertVerifier.textFields?[0].placeholder, "Placeholder")
     }
 
-    @MainActor
     func test_textFields_shouldNotBeAddedToActionSheets() {
         sut.showActionSheetButton.sendActions(for: .touchUpInside)
 

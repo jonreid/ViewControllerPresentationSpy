@@ -6,38 +6,35 @@
 import ViewControllerPresentationSpy
 import XCTest
 
-final class DismissalVerifierTests: XCTestCase {
+@MainActor
+final class DismissalVerifierTests: XCTestCase, Sendable {
     private var sut: DismissalVerifier!
     private var vc: StoryboardNextViewController!
 
-    @MainActor
-    override func setUp() {
-        super.setUp()
+    override func setUp() async throws {
+        try await super.setUp()
         sut = DismissalVerifier()
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         vc = storyboard.instantiateViewController(identifier: String(describing: StoryboardNextViewController.self))
         vc.loadViewIfNeeded()
     }
 
-    override func tearDown() {
+    override func tearDown() async throws {
         sut = nil
         vc = nil
-        super.tearDown()
+        try await super.tearDown()
     }
 
-    @MainActor
     private func dismissViewController() {
         tap(vc.cancelButton)
     }
 
-    @MainActor
     func test_dismissingVC_shouldCaptureAnimationFlag() {
         dismissViewController()
 
         XCTAssertTrue(sut.animated)
     }
 
-    @MainActor
     func test_dismissingVC_shouldCaptureDismissedViewController() {
         dismissViewController()
 
@@ -50,7 +47,6 @@ final class DismissalVerifierTests: XCTestCase {
         )
     }
 
-    @MainActor
     func test_dismissingVC_withCompletion_shouldCaptureCompletionBlock() {
         var completionCallCount = 0
         vc.viewControllerDismissedCompletion = {
@@ -64,14 +60,12 @@ final class DismissalVerifierTests: XCTestCase {
         XCTAssertEqual(completionCallCount, 1)
     }
 
-    @MainActor
     func test_dismissingVC_withoutCompletion_shouldNotCaptureCompletionBlock() {
         dismissViewController()
 
         XCTAssertNil(sut.capturedCompletion)
     }
 
-    @MainActor
     func test_dismissingVC_shouldExecuteTestCompletionBlock() {
         var completionCallCount = 0
         sut.testCompletion = {
@@ -83,7 +77,6 @@ final class DismissalVerifierTests: XCTestCase {
         XCTAssertEqual(completionCallCount, 1)
     }
 
-    @MainActor
     func test_notDismissingVC_shouldNotExecuteTestCompletionBlock() {
         var completionCallCount = 0
         sut.testCompletion = {

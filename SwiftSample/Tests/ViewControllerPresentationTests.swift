@@ -6,34 +6,32 @@
 import ViewControllerPresentationSpy
 import XCTest
 
-final class ViewControllerPresentationTests: XCTestCase {
+@MainActor
+final class ViewControllerPresentationTests: XCTestCase, Sendable {
     private var presentationVerifier: PresentationVerifier!
     private var sut: ViewController!
 
-    @MainActor
-    override func setUp() {
-        super.setUp()
+    override func setUp() async throws {
+        try await super.setUp()
         presentationVerifier = PresentationVerifier()
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         sut = storyboard.instantiateViewController(identifier: String(describing: ViewController.self))
         sut.loadViewIfNeeded()
     }
 
-    override func tearDown() {
+    override func tearDown() async throws {
         RunLoop.current.run(until: Date()) // Free objects after segue show
         presentationVerifier = nil
         sut = nil
-        super.tearDown()
+        try await super.tearDown()
     }
 
-    @MainActor
     func test_outlets_shouldBeConnected() {
         XCTAssertNotNil(sut.seguePresentModalButton)
         XCTAssertNotNil(sut.segueShowButton)
         XCTAssertNotNil(sut.codePresentModalButton)
     }
 
-    @MainActor
     func test_tappingSeguePresentModalButton_shouldPresentNextViewControllerWithGreenBackground() {
         sut.seguePresentModalButton.sendActions(for: .touchUpInside)
 
@@ -42,7 +40,6 @@ final class ViewControllerPresentationTests: XCTestCase {
         XCTAssertEqual(nextVC?.backgroundColor, .green, "Background color passed in")
     }
 
-    @MainActor
     func test_tappingSegueShowButton_shouldShowNextViewControllerWithRedBackground() {
         let window = UIWindow()
         window.rootViewController = sut
@@ -55,7 +52,6 @@ final class ViewControllerPresentationTests: XCTestCase {
         XCTAssertEqual(nextVC?.backgroundColor, .red, "Background color passed in")
     }
 
-    @MainActor
     func test_tappingCodeModalButton_shouldPresentNextViewControllerWithPurpleBackground() {
         sut.codePresentModalButton.sendActions(for: .touchUpInside)
 
