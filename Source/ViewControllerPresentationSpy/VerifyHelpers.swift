@@ -24,13 +24,10 @@ func verifyCalledOnce(actual: Int, action: String, file: StaticString, line: UIn
 }
 
 func verifyAnimated(actual: Bool, expected: Bool, action: String, file: StaticString, line: UInt) {
-    if actual != expected {
-        if expected {
-            XCTFail("Expected animated \(action), but was not animated", file: file, line: line)
-        } else {
-            XCTFail("Expected non-animated \(action), but was animated", file: file, line: line)
-        }
-    }
+    guard actual != expected else { return }
+    let message = expected ? "Expected animated \(action), but was not animated"
+        : "Expected non-animated \(action), but was animated"
+    XCTFail(message, file: file, line: line)
 }
 
 func verifyViewController(actual: UIViewController?,
@@ -38,11 +35,10 @@ func verifyViewController(actual: UIViewController?,
                           adjective: String,
                           file: StaticString,
                           line: UInt) {
-    if let expected = expected, let actual = actual {
-        XCTAssertTrue(
-                expected === actual,
-                "Expected \(adjective) view controller to be \(expected)), but was \(actual)",
-                file: file,
-                line: line)
-    }
+    guard let expected, let actual else { return }
+    XCTAssertTrue(
+        expected === actual,
+        "Expected \(adjective) view controller to be \(expected)), but was \(actual)",
+        file: file,
+        line: line)
 }
