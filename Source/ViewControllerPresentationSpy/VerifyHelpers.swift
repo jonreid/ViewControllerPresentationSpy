@@ -6,10 +6,15 @@ import UIKit
 import XCTest
 
 func verifyEqual<T: Equatable>(_ actual: T, _ expected: T, message: String? = nil, file: StaticString, line: UInt) {
-    if actual != expected {
-        let message = message.map { "- \($0)" } ?? ""
-        XCTFail("Expected \(expected), but was \(actual)\(message)", file: file, line: line)
-    }
+    if actual == expected { return }
+    let message = message.map { "- \($0)" } ?? ""
+    XCTFail("Expected \(expected), but was \(actual)\(message)", file: file, line: line)
+}
+
+func verifyIdentical<T: AnyObject>(_ actual: T, _ expected: T, message: String? = nil, file: StaticString, line: UInt) {
+    if actual === expected { return }
+    let message = message.map { "- \($0)" } ?? ""
+    XCTFail("Expected same instance as \(expected), but was \(actual)\(message)", file: file, line: line)
 }
 
 func verifyCalledOnce(actual: Int, action: String, file: StaticString, line: UInt) -> Bool {
@@ -24,7 +29,7 @@ func verifyCalledOnce(actual: Int, action: String, file: StaticString, line: UIn
 }
 
 func verifyAnimated(actual: Bool, expected: Bool, action: String, file: StaticString, line: UInt) {
-    guard actual != expected else { return }
+    if actual == expected { return }
     let message = expected ? "Expected animated \(action), but was not animated"
         : "Expected non-animated \(action), but was animated"
     XCTFail(message, file: file, line: line)
@@ -38,9 +43,5 @@ func verifyViewController(
     line: UInt
 ) {
     guard let expected, let actual else { return }
-    XCTAssertTrue(
-        expected === actual,
-        "Expected \(adjective) view controller to be \(expected)), but was \(actual)",
-        file: file,
-        line: line)
+    verifyIdentical(actual, expected, message: "\(adjective) view controller", file: file, line: line)
 }
