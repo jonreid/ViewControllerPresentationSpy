@@ -14,7 +14,7 @@ final class ViewControllerAlertTests: XCTestCase {
     override func setUp() {
         super.setUp()
         alertVerifier = AlertVerifier()
-        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
         sut = storyboard.instantiateViewController(identifier: String(describing: ViewController.self))
         sut.loadViewIfNeeded()
     }
@@ -36,15 +36,15 @@ final class ViewControllerAlertTests: XCTestCase {
         sut.showAlertButton.sendActions(for: .touchUpInside)
 
         alertVerifier.verify(
-                title: "Title",
-                message: "Message",
-                animated: true,
-                actions: [
-                    .default("No Handler"),
-                    .default("Default"),
-                    .cancel("Cancel"),
-                    .destructive("Destroy"),
-                ]
+            title: "Title",
+            message: "Message",
+            animated: true,
+            actions: [
+                .default("No Handler"),
+                .default("Default"),
+                .cancel("Cancel"),
+                .destructive("Destroy"),
+            ]
         )
     }
 
@@ -53,16 +53,17 @@ final class ViewControllerAlertTests: XCTestCase {
         sut.showActionSheetButton.sendActions(for: .touchUpInside)
 
         alertVerifier.verify(
-                title: "Title",
-                message: "Message",
-                animated: true,
-                actions: [
-                    .default("No Handler"),
-                    .default("Default"),
-                    .cancel("Cancel"),
-                    .destructive("Destroy"),
-                ],
-                preferredStyle: .actionSheet)
+            title: "Title",
+            message: "Message",
+            animated: true,
+            actions: [
+                .default("No Handler"),
+                .default("Default"),
+                .cancel("Cancel"),
+                .destructive("Destroy"),
+            ],
+            preferredStyle: .actionSheet
+        )
     }
 
     @MainActor

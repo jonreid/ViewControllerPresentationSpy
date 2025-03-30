@@ -6,9 +6,9 @@ import UIKit
 
 extension UIAlertAction {
     static func swizzle() {
-        Self.replaceClassMethod(
+        replaceClassMethod(
             original: #selector(Self.init(title:style:handler:)),
-            swizzled: #selector(Self.mock_action(withTitle:style:handler:))
+            swizzled: #selector(mock_action(withTitle:style:handler:))
         )
     }
 

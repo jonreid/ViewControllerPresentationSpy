@@ -19,7 +19,7 @@ final class ViewController: UIViewController {
         alertController.addTextField { textField in
             textField.placeholder = "Placeholder"
         }
-        self.present(alertController, animated: true, completion: alertPresentedCompletion)
+        present(alertController, animated: true, completion: alertPresentedCompletion)
     }
 
     @IBAction private func showActionSheet(sender: AnyObject) {
@@ -33,7 +33,7 @@ final class ViewController: UIViewController {
             popover.permittedArrowDirections = .any
         }
 
-        self.present(alertController, animated: true)
+        present(alertController, animated: true)
     }
 
     private func setUpActions(for alertController: UIAlertController) {
@@ -41,14 +41,14 @@ final class ViewController: UIViewController {
         alertCancelActionCount = 0
         alertDestroyActionCount = 0
 
-        let actionWithoutHandler = UIAlertAction.init(title: "No Handler", style: .default)
-        let defaultAction = UIAlertAction.init(title: "Default", style: .default) { _ in
+        let actionWithoutHandler = UIAlertAction(title: "No Handler", style: .default)
+        let defaultAction = UIAlertAction(title: "Default", style: .default) { _ in
             self.alertDefaultActionCount += 1
         }
-        let cancelAction = UIAlertAction.init(title: "Cancel", style: .cancel) { _ in
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { _ in
             self.alertCancelActionCount += 1
         }
-        let destroyAction = UIAlertAction.init(title: "Destroy", style: .destructive) { _ in
+        let destroyAction = UIAlertAction(title: "Destroy", style: .destructive) { _ in
             self.alertDestroyActionCount += 1
         }
 
@@ -77,6 +77,6 @@ final class ViewController: UIViewController {
 
     @IBAction private func showModal() {
         let nextVC = CodeNextViewController(backgroundColor: .purple)
-        self.present(nextVC, animated: true, completion: viewControllerPresentedCompletion)
+        present(nextVC, animated: true, completion: viewControllerPresentedCompletion)
     }
 }

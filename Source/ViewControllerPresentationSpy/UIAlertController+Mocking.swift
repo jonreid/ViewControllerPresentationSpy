@@ -6,20 +6,20 @@ import UIKit
 
 extension UIAlertController {
     static func swizzle() {
-        Self.replaceClassMethod(
+        replaceClassMethod(
             original: #selector(Self.init(title:message:preferredStyle:)),
-            swizzled: #selector(Self.mock_alertController(title:message:preferredStyle:))
+            swizzled: #selector(mock_alertController(title:message:preferredStyle:))
         )
 
-        Self.replaceInstanceMethod(
-            original: #selector(getter: Self.preferredStyle),
-            swizzled: #selector(getter: Self.mock_preferredStyle)
+        replaceInstanceMethod(
+            original: #selector(getter: preferredStyle),
+            swizzled: #selector(getter: mock_preferredStyle)
         )
 
         #if os(iOS)
-            Self.replaceInstanceMethod(
-                original: #selector(getter: Self.popoverPresentationController),
-                swizzled: #selector(getter: Self.mock_popoverPresentationController)
+            replaceInstanceMethod(
+                original: #selector(getter: popoverPresentationController),
+                swizzled: #selector(getter: mock_popoverPresentationController)
             )
         #endif
     }

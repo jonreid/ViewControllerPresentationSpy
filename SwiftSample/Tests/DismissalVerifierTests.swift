@@ -41,11 +41,13 @@ final class DismissalVerifierTests: XCTestCase {
     func test_dismissingVC_shouldCaptureDismissedViewController() {
         dismissViewController()
 
-        XCTAssertTrue(sut.dismissedViewController === vc,
-                """
-                Expected dismissed view controller to be \(String(describing: vc))),
-                but was \(String(describing: sut.dismissedViewController)))
-                """)
+        XCTAssertTrue(
+            sut.dismissedViewController === vc,
+            """
+            Expected dismissed view controller to be \(String(describing: vc))),
+            but was \(String(describing: sut.dismissedViewController)))
+            """
+        )
     }
 
     @MainActor

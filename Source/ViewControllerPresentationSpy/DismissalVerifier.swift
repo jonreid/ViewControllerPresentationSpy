@@ -58,7 +58,7 @@ public class DismissalVerifier: NSObject {
         NotificationCenter.default.removeObserver(self)
     }
 
-    nonisolated private static func swizzleMocksIgnoringActorIsolation() {
+    private nonisolated static func swizzleMocksIgnoringActorIsolation() {
         perform(#selector(swizzleMocks))
     }
 

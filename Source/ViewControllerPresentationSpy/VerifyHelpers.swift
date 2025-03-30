@@ -30,11 +30,13 @@ func verifyAnimated(actual: Bool, expected: Bool, action: String, file: StaticSt
     XCTFail(message, file: file, line: line)
 }
 
-func verifyViewController(actual: UIViewController?,
-                          expected: UIViewController?,
-                          adjective: String,
-                          file: StaticString,
-                          line: UInt) {
+func verifyViewController(
+    actual: UIViewController?,
+    expected: UIViewController?,
+    adjective: String,
+    file: StaticString,
+    line: UInt
+) {
     guard let expected, let actual else { return }
     XCTAssertTrue(
         expected === actual,

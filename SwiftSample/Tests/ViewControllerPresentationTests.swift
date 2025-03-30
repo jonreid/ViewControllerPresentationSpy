@@ -14,7 +14,7 @@ final class ViewControllerPresentationTests: XCTestCase {
     override func setUp() {
         super.setUp()
         presentationVerifier = PresentationVerifier()
-        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
         sut = storyboard.instantiateViewController(identifier: String(describing: ViewController.self))
         sut.loadViewIfNeeded()
     }
@@ -38,7 +38,7 @@ final class ViewControllerPresentationTests: XCTestCase {
         sut.seguePresentModalButton.sendActions(for: .touchUpInside)
 
         let nextVC: StoryboardNextViewController? =
-                presentationVerifier.verify(animated: true, presentingViewController: sut)
+            presentationVerifier.verify(animated: true, presentingViewController: sut)
         XCTAssertEqual(nextVC?.backgroundColor, .green, "Background color passed in")
     }
 
@@ -51,7 +51,7 @@ final class ViewControllerPresentationTests: XCTestCase {
         sut.segueShowButton.sendActions(for: .touchUpInside)
 
         let nextVC: StoryboardNextViewController? =
-                presentationVerifier.verify(animated: true, presentingViewController: sut)
+            presentationVerifier.verify(animated: true, presentingViewController: sut)
         XCTAssertEqual(nextVC?.backgroundColor, .red, "Background color passed in")
     }
 
@@ -60,7 +60,7 @@ final class ViewControllerPresentationTests: XCTestCase {
         sut.codePresentModalButton.sendActions(for: .touchUpInside)
 
         let nextVC: CodeNextViewController? =
-                presentationVerifier.verify(animated: true, presentingViewController: sut)
+            presentationVerifier.verify(animated: true, presentingViewController: sut)
         XCTAssertEqual(nextVC?.backgroundColor, .purple, "Background color passed in")
     }
 }

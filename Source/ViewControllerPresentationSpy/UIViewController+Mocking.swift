@@ -16,23 +16,23 @@ extension Notification.Name {
 
 extension UIViewController {
     static func swizzleCaptureAlert() {
-        Self.replaceInstanceMethod(
-            original: #selector(Self.present(_:animated:completion:)),
-            swizzled: #selector(Self.mock_presentViewControllerCapturingAlert(viewControllerToPresent:animated:completion:))
+        replaceInstanceMethod(
+            original: #selector(present(_:animated:completion:)),
+            swizzled: #selector(mock_presentViewControllerCapturingAlert(viewControllerToPresent:animated:completion:))
         )
     }
 
     static func swizzleCapturePresent() {
-        Self.replaceInstanceMethod(
-            original: #selector(Self.present(_:animated:completion:)),
-            swizzled: #selector(Self.mock_presentViewControllerCapturingIt(viewControllerToPresent:animated:completion:))
+        replaceInstanceMethod(
+            original: #selector(present(_:animated:completion:)),
+            swizzled: #selector(mock_presentViewControllerCapturingIt(viewControllerToPresent:animated:completion:))
         )
     }
 
     static func swizzleCaptureDismiss() {
-        Self.replaceInstanceMethod(
-            original: #selector(Self.dismiss(animated:completion:)),
-            swizzled: #selector(Self.mock_dismissViewController(animated:completion:))
+        replaceInstanceMethod(
+            original: #selector(dismiss(animated:completion:)),
+            swizzled: #selector(mock_dismissViewController(animated:completion:))
         )
     }
 
