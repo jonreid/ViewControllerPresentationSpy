@@ -68,7 +68,7 @@ For example, here's a test verifying:
 
 ```swift
 @MainActor
-func test_showAlert_alertShouldHaveTitle() {
+func test_showAlert_alertShouldHaveTitle() throws {
     let alertVerifier = AlertVerifier()
 
     sut.showAlert() // Whatever triggers the alert
@@ -160,7 +160,7 @@ For example, here's a test verifying:
 
 ```swift
 @MainActor
-func test_presentedVC_shouldHaveSpecialSettingHello() {
+func test_presentedVC_shouldHaveSpecialSettingHello() throws {
     let presentationVerifier = PresentationVerifier()
 
     sut.showVC() // Whatever presents the view controller
@@ -243,7 +243,7 @@ For example, here's a test verifying that a particular view controller was dismi
 
 ```swift
 @MainActor
-func test_dismissingVC() {
+func test_dismissingVC() throws {
     let dismissalVerifier = DismissalVerifier()
 
     sut.dismissVC() // Whatever dismisses the view controller
@@ -276,7 +276,7 @@ Add a short `waitForExpectations` at the start of the Assert phase.
 
 ```swift
 @MainActor
-func test_showAlertOnMainDispatchQueue_shouldDoSomething() {
+func test_showAlertOnMainDispatchQueue_shouldDoSomething() throws {
     let alertVerifier = AlertVerifier()
     let expectation = self.expectation(description: "alert presented")
     alertVerifier.testCompletion = { expectation.fulfill() }
@@ -290,7 +290,7 @@ func test_showAlertOnMainDispatchQueue_shouldDoSomething() {
 
 ```swift
 @MainActor
-func test_presentViewControllerOnMainDispatchQueue_shouldDoSomething() {
+func test_presentViewControllerOnMainDispatchQueue_shouldDoSomething() throws {
     let presentationVerifier = PresentationVerifier()
     let expectation = self.expectation(description: "view controller presented")
     presentationVerifier.testCompletion = { expectation.fulfill() }
