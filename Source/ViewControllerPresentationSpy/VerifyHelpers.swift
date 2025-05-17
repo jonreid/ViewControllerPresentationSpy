@@ -34,7 +34,7 @@ func verifyIdentical<T: AnyObject>(
     failure: any Failing = Fail()
 ) {
     if actual === expected { return }
-    let message = message.map { "- \($0)" } ?? ""
+    let message = message.map { " - \($0)" } ?? ""
     failure.fail(
         message: "Expected same instance as \(expected), but was \(actual)\(message)",
         location: SourceLocation(fileID: fileID, filePath: filePath, line: line, column: column)

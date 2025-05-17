@@ -84,8 +84,8 @@ final class AlertVerifierTests: XCTestCase, Sendable {
             "Expected prefix 'Expected same instance as <UIViewController: ', but was \(message)"
         )
         XCTAssertTrue(
-            message.hasSuffix(">- presenting view controller"),
-            "Expected suffix '>- presenting view controller', but was \(message)"
+            message.hasSuffix("> - presenting view controller"),
+            "Expected suffix '> - presenting view controller', but was \(message)"
         )
     }
 
