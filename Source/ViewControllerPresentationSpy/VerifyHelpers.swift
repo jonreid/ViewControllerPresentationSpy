@@ -23,10 +23,22 @@ func verifyEqual<T: Equatable>(
     )
 }
 
-func verifyIdentical<T: AnyObject>(_ actual: T, _ expected: T, message: String? = nil, file: StaticString, line: UInt) {
+func verifyIdentical<T: AnyObject>(
+    _ actual: T,
+    _ expected: T,
+    message: String? = nil,
+    fileID: String = #fileID,
+    filePath: StaticString = #filePath,
+    line: UInt = #line,
+    column: UInt = #column,
+    failure: any Failing = Fail()
+) {
     if actual === expected { return }
     let message = message.map { "- \($0)" } ?? ""
-    XCTFail("Expected same instance as \(expected), but was \(actual)\(message)", file: file, line: line)
+    failure.fail(
+        message: "Expected same instance as \(expected), but was \(actual)\(message)",
+        location: SourceLocation(fileID: fileID, filePath: filePath, line: line, column: column)
+    )
 }
 
 func verifyCalledOnce(actual: Int, action: String, file: StaticString, line: UInt) -> Bool {
@@ -51,9 +63,21 @@ func verifyViewController(
     actual: UIViewController?,
     expected: UIViewController?,
     adjective: String,
-    file: StaticString,
-    line: UInt
+    fileID: String = #fileID,
+    filePath: StaticString = #filePath,
+    line: UInt = #line,
+    column: UInt = #column,
+    failure: any Failing = Fail()
 ) {
     guard let expected, let actual else { return }
-    verifyIdentical(actual, expected, message: "\(adjective) view controller", file: file, line: line)
+    verifyIdentical(
+        actual,
+        expected,
+        message: "\(adjective) view controller",
+        fileID: fileID,
+        filePath: filePath,
+        line: line,
+        column: column,
+        failure: failure
+    )
 }

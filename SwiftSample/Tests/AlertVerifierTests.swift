@@ -29,7 +29,7 @@ final class AlertVerifierTests: XCTestCase, Sendable {
         vc.showAlertButton.sendActions(for: .touchUpInside)
     }
 
-    func test_tappingShowAlertButton_shouldShowAlert() {
+    func test_wrongTitleAndMessage() {
         let failSpy = FailSpy()
 
         showAlert()
@@ -48,10 +48,46 @@ final class AlertVerifierTests: XCTestCase, Sendable {
         )
 
         XCTAssertEqual(failSpy.callCount, 2, "call count")
-        XCTAssertEqual(failSpy.messages.first, "Expected Optional(\"TITLE\"), but was Optional(\"Title\") - alert title")
-        XCTAssertEqual(failSpy.messages.last, "Expected Optional(\"MESSAGE\"), but was Optional(\"Message\") - alert message")
+        XCTAssertEqual(
+            failSpy.messages.first,
+            "Expected Optional(\"TITLE\"), but was Optional(\"Title\") - alert title"
+        )
+        XCTAssertEqual(
+            failSpy.messages.last,
+            "Expected Optional(\"MESSAGE\"), but was Optional(\"Message\") - alert message"
+        )
     }
 
+    func test_wrongPresentingViewController() throws {
+        let failSpy = FailSpy()
+
+        showAlert()
+
+        sut.verify(
+            title: "Title",
+            message: "Message",
+            animated: true,
+            actions: [
+                .default("No Handler"),
+                .default("Default"),
+                .cancel("Cancel"),
+                .destructive("Destroy"),
+            ],
+            presentingViewController: UIViewController(),
+            failure: failSpy
+        )
+
+        XCTAssertEqual(failSpy.callCount, 1, "call count")
+        let message = try XCTUnwrap(failSpy.messages.first)
+        XCTAssertTrue(
+            message.hasPrefix("Expected same instance as <UIViewController: "),
+            "Expected prefix 'Expected same instance as <UIViewController: ', but was \(message)"
+        )
+        XCTAssertTrue(
+            message.hasSuffix(">- presenting view controller"),
+            "Expected suffix '>- presenting view controller', but was \(message)"
+        )
+    }
 
     func test_executeActionForButtonWithTitle_withNonexistentTitle_shouldThrowException() {
         showAlert()

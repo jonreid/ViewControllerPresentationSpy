@@ -98,18 +98,29 @@ public extension PresentationVerifier {
     @discardableResult func verify<VC: UIViewController>(
         animated: Bool,
         presentingViewController: UIViewController? = nil,
-        file: StaticString = #filePath,
-        line: UInt = #line
+        fileID: String = #fileID,
+        filePath: StaticString = #filePath,
+        line: UInt = #line,
+        column: UInt = #column,
+        failure: any Failing = Fail()
     ) -> VC? {
-        let abort = verifyCalledOnce(actual: presentedCount, action: "present", file: file, line: line)
+        let abort = verifyCalledOnce(actual: presentedCount, action: "present", file: filePath, line: line)
         if abort { return nil }
-        verifyAnimated(actual: self.animated, expected: animated, action: "present", file: file, line: line)
-        verifyViewController(actual: self.presentingViewController, expected: presentingViewController,
-                             adjective: "presenting", file: file, line: line)
+        verifyAnimated(actual: self.animated, expected: animated, action: "present", file: filePath, line: line)
+        verifyViewController(
+            actual: self.presentingViewController,
+            expected: presentingViewController,
+            adjective: "presenting",
+            fileID: fileID,
+            filePath: filePath,
+            line: line,
+            column: column,
+            failure: failure
+        )
         let nextVC = presentedViewController as? VC
         if nextVC == nil {
             XCTFail("Expected presented view controller to be \(VC.self)), " +
-                "but was \(String(describing: presentedViewController))", file: file, line: line)
+                "but was \(String(describing: presentedViewController))", file: filePath, line: line)
         }
         return nextVC
     }

@@ -86,13 +86,24 @@ public extension DismissalVerifier {
     func verify(
         animated: Bool,
         dismissedViewController: UIViewController? = nil,
-        file: StaticString = #file,
-        line: UInt = #line
+        fileID: String = #fileID,
+        filePath: StaticString = #filePath,
+        line: UInt = #line,
+        column: UInt = #column,
+        failure: any Failing = Fail()
     ) {
-        let abort = verifyCalledOnce(actual: dismissedCount, action: "dismiss", file: file, line: line)
+        let abort = verifyCalledOnce(actual: dismissedCount, action: "dismiss", file: filePath, line: line)
         if abort { return }
-        verifyAnimated(actual: self.animated, expected: animated, action: "dismiss", file: file, line: line)
-        verifyViewController(actual: self.dismissedViewController, expected: dismissedViewController,
-                             adjective: "dismissed", file: file, line: line)
+        verifyAnimated(actual: self.animated, expected: animated, action: "dismiss", file: filePath, line: line)
+        verifyViewController(
+            actual: self.dismissedViewController,
+            expected: dismissedViewController,
+            adjective: "dismissed",
+            fileID: fileID,
+            filePath: filePath,
+            line: line,
+            column: column,
+            failure: failure
+        )
     }
 }

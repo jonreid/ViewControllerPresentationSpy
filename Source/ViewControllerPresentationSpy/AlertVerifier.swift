@@ -144,13 +144,39 @@ extension AlertVerifier {
     ) {
         let abort = verifyCalledOnce(actual: presentedCount, action: "present", file: file, line: line)
         if abort { return }
-        verifyEqual(self.title, title, message: "alert title", fileID: fileID, filePath: filePath, line: line, column: column, failure: failure)
-        verifyEqual(self.message, message, message: "alert message", fileID: fileID, filePath: filePath, line: line, column: column, failure: failure)
+        verifyEqual(
+            self.title,
+            title,
+            message: "alert title",
+            fileID: fileID,
+            filePath: filePath,
+            line: line,
+            column: column,
+            failure: failure
+        )
+        verifyEqual(
+            self.message,
+            message,
+            message: "alert message",
+            fileID: fileID,
+            filePath: filePath,
+            line: line,
+            column: column,
+            failure: failure
+        )
         verifyAnimated(actual: self.animated, expected: animated, action: "present", file: file, line: line)
         verifyActions(expected: actions, file: file, line: line)
         verifyPreferredStyle(expected: preferredStyle, file: file, line: line)
-        verifyViewController(actual: self.presentingViewController, expected: presentingViewController,
-                             adjective: "presenting", file: file, line: line)
+        verifyViewController(
+            actual: self.presentingViewController,
+            expected: presentingViewController,
+            adjective: "presenting",
+            fileID: fileID,
+            filePath: filePath,
+            line: line,
+            column: column,
+            failure: failure
+        )
     }
 
     private func verifyActions(expected: [Action], file: StaticString, line: UInt) {
