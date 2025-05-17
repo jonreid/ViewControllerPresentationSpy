@@ -20,7 +20,7 @@ final class ViewControllerPresentationTests: XCTestCase, Sendable {
     }
 
     override func tearDown() async throws {
-        RunLoop.current.run(until: Date()) // Free objects after segue show
+        try await Task.sleep(nanoseconds: 1) // Free objects after segue show
         presentationVerifier = nil
         sut = nil
         try await super.tearDown()
