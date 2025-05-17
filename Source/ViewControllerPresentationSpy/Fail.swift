@@ -1,5 +1,5 @@
 // ViewControllerPresentationSpy by Jon Reid, https://qualitycoding.org
-// Copyright 2023 Jonathan M. Reid. https://github.com/jonreid/ViewControllerPresentationSpy/blob/main/LICENSE.txt
+// Copyright 2015 Jonathan M. Reid. https://github.com/jonreid/ViewControllerPresentationSpy/blob/main/LICENSE.txt
 // SPDX-License-Identifier: MIT
 
 import XCTest

@@ -136,12 +136,16 @@ extension AlertVerifier {
         preferredStyle: UIAlertController.Style = .alert,
         presentingViewController: UIViewController? = nil,
         file: StaticString = #filePath,
-        line: UInt = #line
+        fileID: String = #fileID,
+        filePath: StaticString = #filePath,
+        line: UInt = #line,
+        column: UInt = #column,
+        failure: any Failing = Fail()
     ) {
         let abort = verifyCalledOnce(actual: presentedCount, action: "present", file: file, line: line)
         if abort { return }
-        verifyEqual(self.title, title, message: "alert title", file: file, line: line)
-        verifyEqual(self.message, message, message: "alert message", file: file, line: line)
+        verifyEqual(self.title, title, message: "alert title", fileID: fileID, filePath: filePath, line: line, column: column, failure: failure)
+        verifyEqual(self.message, message, message: "alert message", fileID: fileID, filePath: filePath, line: line, column: column, failure: failure)
         verifyAnimated(actual: self.animated, expected: animated, action: "present", file: file, line: line)
         verifyActions(expected: actions, file: file, line: line)
         verifyPreferredStyle(expected: preferredStyle, file: file, line: line)

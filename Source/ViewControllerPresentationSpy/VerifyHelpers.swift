@@ -5,10 +5,23 @@
 import UIKit
 import XCTest
 
-func verifyEqual<T: Equatable>(_ actual: T, _ expected: T, message: String? = nil, file: StaticString, line: UInt) {
+func verifyEqual<T: Equatable>(
+    _ actual: T,
+    _ expected: T,
+    message: String? = nil,
+    fileID: String = #fileID,
+    filePath: StaticString = #filePath,
+    line: UInt = #line,
+    column: UInt = #column,
+    failure: any Failing = Fail(),
+
+) {
     if actual == expected { return }
     let message = message.map { "- \($0)" } ?? ""
-    XCTFail("Expected \(expected), but was \(actual)\(message)", file: file, line: line)
+    failure.fail(
+        message: "Expected \(expected), but was \(actual)\(message)",
+        location: SourceLocation(fileID: fileID, filePath: filePath, line: line, column: column)
+    )
 }
 
 func verifyIdentical<T: AnyObject>(_ actual: T, _ expected: T, message: String? = nil, file: StaticString, line: UInt) {

@@ -29,6 +29,30 @@ final class AlertVerifierTests: XCTestCase, Sendable {
         vc.showAlertButton.sendActions(for: .touchUpInside)
     }
 
+    func test_tappingShowAlertButton_shouldShowAlert() {
+        let failSpy = FailSpy()
+
+        showAlert()
+
+        sut.verify(
+            title: "TITLE",
+            message: "MESSAGE",
+            animated: true,
+            actions: [
+                .default("No Handler"),
+                .default("Default"),
+                .cancel("Cancel"),
+                .destructive("Destroy"),
+            ],
+            failure: failSpy
+        )
+
+        XCTAssertEqual(failSpy.callCount, 2, "call count")
+        XCTAssertEqual(failSpy.messages.first, "Expected Optional(\"TITLE\"), but was Optional(\"Title\")- alert title")
+        XCTAssertEqual(failSpy.messages.last, "Expected Optional(\"MESSAGE\"), but was Optional(\"Message\")- alert message")
+    }
+
+
     func test_executeActionForButtonWithTitle_withNonexistentTitle_shouldThrowException() {
         showAlert()
 
@@ -77,5 +101,17 @@ final class AlertVerifierTests: XCTestCase, Sendable {
         }
 
         XCTAssertEqual(completionCallCount, 0)
+    }
+}
+
+final class FailSpy: Failing {
+    private(set) var callCount = 0
+    private(set) var messages: [String] = []
+    private(set) var locations: [SourceLocation] = []
+
+    func fail(message: String, location: SourceLocation) {
+        callCount += 1
+        self.messages.append(message)
+        self.locations.append(location)
     }
 }
