@@ -29,13 +29,13 @@ final class DismissalVerifierTests: XCTestCase, Sendable {
         tap(vc.cancelButton)
     }
 
-    func test_dismissingVC_shouldCaptureAnimationFlag() {
+    func test_dismissingVC_shouldCaptureAnimationFlag() throws {
         dismissViewController()
 
         XCTAssertTrue(sut.animated)
     }
 
-    func test_dismissingVC_shouldCaptureDismissedViewController() {
+    func test_dismissingVC_shouldCaptureDismissedViewController() throws {
         dismissViewController()
 
         XCTAssertTrue(
@@ -47,7 +47,7 @@ final class DismissalVerifierTests: XCTestCase, Sendable {
         )
     }
 
-    func test_dismissingVC_withCompletion_shouldCaptureCompletionBlock() {
+    func test_dismissingVC_withCompletion_shouldCaptureCompletionBlock() throws {
         var completionCallCount = 0
         vc.viewControllerDismissedCompletion = {
             completionCallCount += 1
@@ -60,13 +60,13 @@ final class DismissalVerifierTests: XCTestCase, Sendable {
         XCTAssertEqual(completionCallCount, 1)
     }
 
-    func test_dismissingVC_withoutCompletion_shouldNotCaptureCompletionBlock() {
+    func test_dismissingVC_withoutCompletion_shouldNotCaptureCompletionBlock() throws {
         dismissViewController()
 
         XCTAssertNil(sut.capturedCompletion)
     }
 
-    func test_dismissingVC_shouldExecuteTestCompletionBlock() {
+    func test_dismissingVC_shouldExecuteTestCompletionBlock() throws {
         var completionCallCount = 0
         sut.testCompletion = {
             completionCallCount += 1
@@ -77,7 +77,7 @@ final class DismissalVerifierTests: XCTestCase, Sendable {
         XCTAssertEqual(completionCallCount, 1)
     }
 
-    func test_notDismissingVC_shouldNotExecuteTestCompletionBlock() {
+    func test_notDismissingVC_shouldNotExecuteTestCompletionBlock() throws {
         var completionCallCount = 0
         sut.testCompletion = {
             completionCallCount += 1

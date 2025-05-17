@@ -25,12 +25,12 @@ final class ViewControllerAlertTests: XCTestCase, Sendable {
         try await super.tearDown()
     }
 
-    func test_outlets_shouldBeConnected() {
+    func test_outlets_shouldBeConnected() throws {
         XCTAssertNotNil(sut.showAlertButton)
         XCTAssertNotNil(sut.showActionSheetButton)
     }
 
-    func test_tappingShowAlertButton_shouldShowAlert() {
+    func test_tappingShowAlertButton_shouldShowAlert() throws {
         sut.showAlertButton.sendActions(for: .touchUpInside)
 
         alertVerifier.verify(
@@ -46,7 +46,7 @@ final class ViewControllerAlertTests: XCTestCase, Sendable {
         )
     }
 
-    func test_tappingShowActionSheetButton_shouldShowActionSheet() {
+    func test_tappingShowActionSheetButton_shouldShowActionSheet() throws {
         sut.showActionSheetButton.sendActions(for: .touchUpInside)
 
         alertVerifier.verify(
@@ -73,7 +73,7 @@ final class ViewControllerAlertTests: XCTestCase, Sendable {
         XCTAssertEqual(popover.permittedArrowDirections, UIPopoverArrowDirection.any, "permitted arrow directions")
     }
 
-    func test_preferredActionForAlert() {
+    func test_preferredActionForAlert() throws {
         sut.showAlertButton.sendActions(for: .touchUpInside)
 
         XCTAssertEqual(alertVerifier.preferredAction?.title, "Default")
@@ -103,14 +103,14 @@ final class ViewControllerAlertTests: XCTestCase, Sendable {
         XCTAssertEqual(sut.alertDestroyActionCount, 1)
     }
 
-    func test_textFieldsForAlert() {
+    func test_textFieldsForAlert() throws {
         sut.showAlertButton.sendActions(for: .touchUpInside)
 
         XCTAssertEqual(alertVerifier.textFields?.count, 1)
         XCTAssertEqual(alertVerifier.textFields?[0].placeholder, "Placeholder")
     }
 
-    func test_textFields_shouldNotBeAddedToActionSheets() {
+    func test_textFields_shouldNotBeAddedToActionSheets() throws {
         sut.showActionSheetButton.sendActions(for: .touchUpInside)
 
         XCTAssertEqual(alertVerifier.textFields?.count, 0)

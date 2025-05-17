@@ -29,7 +29,7 @@ final class AlertVerifierTests: XCTestCase, Sendable {
         vc.showAlertButton.sendActions(for: .touchUpInside)
     }
 
-    func test_wrongTitleAndMessage() {
+    func test_wrongTitleAndMessage() throws {
         let failSpy = FailSpy()
 
         showAlert()
@@ -93,7 +93,7 @@ final class AlertVerifierTests: XCTestCase, Sendable {
         )
     }
 
-    func test_executeActionForButtonWithTitle_withNonexistentTitle_shouldThrowException() {
+    func test_executeActionForButtonWithTitle_withNonexistentTitle_shouldThrowException() throws {
         showAlert()
 
         XCTAssertThrowsError(try sut.executeAction(forButton: "NO SUCH BUTTON"))
@@ -105,7 +105,7 @@ final class AlertVerifierTests: XCTestCase, Sendable {
         try sut.executeAction(forButton: "No Handler")
     }
 
-    func test_showingAlert_withCompletion_shouldCaptureCompletionBlock() {
+    func test_showingAlert_withCompletion_shouldCaptureCompletionBlock() throws {
         var completionCallCount = 0
         vc.alertPresentedCompletion = {
             completionCallCount += 1
@@ -117,13 +117,13 @@ final class AlertVerifierTests: XCTestCase, Sendable {
         XCTAssertEqual(completionCallCount, 1)
     }
 
-    func test_showingAlert_withoutCompletion_shouldNotCaptureCompletionBlock() {
+    func test_showingAlert_withoutCompletion_shouldNotCaptureCompletionBlock() throws {
         showAlert()
 
         XCTAssertNil(sut.capturedCompletion)
     }
 
-    func test_showingAlert_shouldExecuteTestCompletionBlock() {
+    func test_showingAlert_shouldExecuteTestCompletionBlock() throws {
         var completionCallCount = 0
         sut.testCompletion = {
             completionCallCount += 1
@@ -134,7 +134,7 @@ final class AlertVerifierTests: XCTestCase, Sendable {
         XCTAssertEqual(completionCallCount, 1)
     }
 
-    func test_notShowingAlert_shouldNotExecuteTestCompletionBlock() {
+    func test_notShowingAlert_shouldNotExecuteTestCompletionBlock() throws {
         var completionCallCount = 0
         sut.testCompletion = {
             completionCallCount += 1
