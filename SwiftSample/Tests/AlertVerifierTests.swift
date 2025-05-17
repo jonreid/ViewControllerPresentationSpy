@@ -48,8 +48,8 @@ final class AlertVerifierTests: XCTestCase, Sendable {
         )
 
         XCTAssertEqual(failSpy.callCount, 2, "call count")
-        XCTAssertEqual(failSpy.messages.first, "Expected Optional(\"TITLE\"), but was Optional(\"Title\")- alert title")
-        XCTAssertEqual(failSpy.messages.last, "Expected Optional(\"MESSAGE\"), but was Optional(\"Message\")- alert message")
+        XCTAssertEqual(failSpy.messages.first, "Expected Optional(\"TITLE\"), but was Optional(\"Title\") - alert title")
+        XCTAssertEqual(failSpy.messages.last, "Expected Optional(\"MESSAGE\"), but was Optional(\"Message\") - alert message")
     }
 
 
