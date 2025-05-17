@@ -44,12 +44,12 @@ func verifyIdentical<T: AnyObject>(
 func verifyCalledOnce(actual: Int, action: String, file: StaticString, line: UInt) -> Bool {
     if actual == 0 {
         XCTFail("\(action) not called", file: file, line: line)
-        return true // Abort test
+        return false // Abort test
     }
     if actual > 1 {
         XCTFail("\(action) called \(actual) times", file: file, line: line)
     }
-    return false // Continue test
+    return true // Continue test
 }
 
 func verifyAnimated(actual: Bool, expected: Bool, action: String, file: StaticString, line: UInt) {

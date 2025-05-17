@@ -142,8 +142,8 @@ extension AlertVerifier {
         column: UInt = #column,
         failure: any Failing = Fail()
     ) {
-        let abort = verifyCalledOnce(actual: presentedCount, action: "present", file: file, line: line)
-        if abort { return }
+        let continueTest = verifyCalledOnce(actual: presentedCount, action: "present", file: file, line: line)
+        guard continueTest else { return }
         verifyEqual(
             self.title,
             title,

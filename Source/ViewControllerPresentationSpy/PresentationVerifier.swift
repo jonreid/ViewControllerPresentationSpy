@@ -104,8 +104,8 @@ public extension PresentationVerifier {
         column: UInt = #column,
         failure: any Failing = Fail()
     ) -> VC? {
-        let abort = verifyCalledOnce(actual: presentedCount, action: "present", file: filePath, line: line)
-        if abort { return nil }
+        let continueTest = verifyCalledOnce(actual: presentedCount, action: "present", file: filePath, line: line)
+        guard continueTest else { return nil }
         verifyAnimated(actual: self.animated, expected: animated, action: "present", file: filePath, line: line)
         verifyViewController(
             actual: self.presentingViewController,
