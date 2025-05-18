@@ -68,7 +68,7 @@ For example, here's a test verifying:
 
 ```swift
 @MainActor
-func test_showAlert_alertShouldHaveTitle() throws {
+func test_showAlert() throws {
     let alertVerifier = AlertVerifier()
 
     sut.showAlert() // Whatever triggers the alert
@@ -87,7 +87,7 @@ func test_showAlert_alertShouldHaveTitle() throws {
 ```
 
 ```obj-c
-- (void)test_showAlert_alertShouldHaveTitle
+- (void)test_showAlert
 {
     QCOAlertVerifier *alertVerifier = [[QCOAlertVerifier alloc] init];
 
@@ -114,7 +114,7 @@ Go through the steps above to present your alert or action sheet. Then call
 
 ```swift
 @MainActor
-func test_executingActionForOKButton_shouldDoSomething() throws {
+func test_tappingOK_doesThing() throws {
     let alertVerifier = AlertVerifier()
     sut.showAlert()
     
@@ -125,7 +125,7 @@ func test_executingActionForOKButton_shouldDoSomething() throws {
 ```
 
 ```obj-c
-- (void)test_executingActionForOKButton_shouldDoSomething
+- (void)test_tappingOK_doesThing
 {
     QCOAlertVerifier *alertVerifier = [[QCOAlertVerifier alloc] init];
     [sut showAlert];
@@ -160,7 +160,7 @@ For example, here's a test verifying:
 
 ```swift
 @MainActor
-func test_presentedVC_shouldHaveSpecialSettingHello() throws {
+func test_presentedView_hasSpecialSettingHello() throws {
     let presentationVerifier = PresentationVerifier()
 
     sut.showVC() // Whatever presents the view controller
@@ -172,7 +172,7 @@ func test_presentedVC_shouldHaveSpecialSettingHello() throws {
 ```
 
 ```obj-c
-- (void) test_presentedVC_shouldHaveSpecialSettingHello
+- (void) test_presentedView_hasSpecialSettingHello
 {
     QCOPresentationVerifier *presentationVerifier = [[QCOPresentationVerifier alloc] init];
 
@@ -243,7 +243,7 @@ For example, here's a test verifying that a particular view controller was dismi
 
 ```swift
 @MainActor
-func test_dismissingVC() throws {
+func test_dismissingView() throws {
     let dismissalVerifier = DismissalVerifier()
 
     sut.dismissVC() // Whatever dismisses the view controller
@@ -253,7 +253,7 @@ func test_dismissingVC() throws {
 ```
 
 ```obj-c
-- (void) test_dismissingVC
+- (void) test_dismissingView
 {
     QCODismissalVerifier *dismissalVerifier = [[QCODismissalVerifier alloc] init];
 
@@ -276,7 +276,7 @@ Add a short `waitForExpectations` at the start of the Assert phase.
 
 ```swift
 @MainActor
-func test_showAlertOnMainDispatchQueue_shouldDoSomething() throws {
+func test_showingAlertOnMainDispatchQueue_doesThing() throws {
     let alertVerifier = AlertVerifier()
     let expectation = self.expectation(description: "alert presented")
     alertVerifier.testCompletion = { expectation.fulfill() }
@@ -290,7 +290,7 @@ func test_showAlertOnMainDispatchQueue_shouldDoSomething() throws {
 
 ```swift
 @MainActor
-func test_presentViewControllerOnMainDispatchQueue_shouldDoSomething() throws {
+func test_presentViewOnMainDispatchQueue_doesThing() throws {
     let presentationVerifier = PresentationVerifier()
     let expectation = self.expectation(description: "view controller presented")
     presentationVerifier.testCompletion = { expectation.fulfill() }
