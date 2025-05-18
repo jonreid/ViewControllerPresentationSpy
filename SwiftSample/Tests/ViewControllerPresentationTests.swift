@@ -25,13 +25,13 @@ final class ViewControllerPresentationTests: XCTestCase, Sendable {
         try await super.tearDown()
     }
 
-    func test_outlets_shouldBeConnected() throws {
+    func test_outlets_areConnected() throws {
         XCTAssertNotNil(sut.seguePresentModalButton)
         XCTAssertNotNil(sut.segueShowButton)
         XCTAssertNotNil(sut.codePresentModalButton)
     }
 
-    func test_tappingSeguePresentModalButton_shouldPresentNextViewControllerWithGreenBackground() throws {
+    func test_tappingSeguePresentModalButton_presentsNextViewWithGreenBackground() throws {
         sut.seguePresentModalButton.sendActions(for: .touchUpInside)
 
         let nextVC: StoryboardNextViewController? =
@@ -39,7 +39,7 @@ final class ViewControllerPresentationTests: XCTestCase, Sendable {
         XCTAssertEqual(nextVC?.backgroundColor, .green, "Background color passed in")
     }
 
-    func test_tappingSegueShowButton_shouldShowNextViewControllerWithRedBackground() throws {
+    func test_tappingSegueShowButton_showsNextViewWithRedBackground() throws {
         let window = UIWindow()
         window.rootViewController = sut
         window.isHidden = false
@@ -51,7 +51,7 @@ final class ViewControllerPresentationTests: XCTestCase, Sendable {
         XCTAssertEqual(nextVC?.backgroundColor, .red, "Background color passed in")
     }
 
-    func test_tappingCodeModalButton_shouldPresentNextViewControllerWithPurpleBackground() throws {
+    func test_tappingCodeModalButton_presentsNextViewWithPurpleBackground() throws {
         sut.codePresentModalButton.sendActions(for: .touchUpInside)
 
         let nextVC: CodeNextViewController? =

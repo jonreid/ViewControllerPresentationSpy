@@ -29,7 +29,7 @@ final class PresentationVerifierTests: XCTestCase, Sendable {
         vc.codePresentModalButton.sendActions(for: .touchUpInside)
     }
 
-    func test_presentingVC_withCompletion_shouldCaptureCompletionBlock() throws {
+    func test_presentingVC_withCompletion_capturesCompletion() throws {
         var completionCallCount = 0
         vc.viewControllerPresentedCompletion = {
             completionCallCount += 1
@@ -41,13 +41,13 @@ final class PresentationVerifierTests: XCTestCase, Sendable {
         XCTAssertEqual(completionCallCount, 1)
     }
 
-    func test_presentingVC_withoutCompletion_shouldNotCaptureCompletionBlock() throws {
+    func test_presentingVC_withoutCompletion_doesNotCaptureCompletion() throws {
         presentViewController()
 
         XCTAssertNil(sut.capturedCompletion)
     }
 
-    func test_presentingVC_shouldExecuteTestCompletionBlock() throws {
+    func test_presentingVC_executesCompletion() throws {
         var completionCallCount = 0
         sut.testCompletion = {
             completionCallCount += 1
@@ -58,7 +58,7 @@ final class PresentationVerifierTests: XCTestCase, Sendable {
         XCTAssertEqual(completionCallCount, 1)
     }
 
-    func test_notPresentingVC_shouldNotExecuteTestCompletionBlock() throws {
+    func test_notPresentingVC_doesNotExecuteCompletion() throws {
         var completionCallCount = 0
         sut.testCompletion = {
             completionCallCount += 1

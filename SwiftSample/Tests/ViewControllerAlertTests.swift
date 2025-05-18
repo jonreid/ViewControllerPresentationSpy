@@ -25,12 +25,12 @@ final class ViewControllerAlertTests: XCTestCase, Sendable {
         try await super.tearDown()
     }
 
-    func test_outlets_shouldBeConnected() throws {
+    func test_outlets_areConnected() throws {
         XCTAssertNotNil(sut.showAlertButton)
         XCTAssertNotNil(sut.showActionSheetButton)
     }
 
-    func test_tappingShowAlertButton_shouldShowAlert() throws {
+    func test_tappingShowAlertButton_showsAlert() throws {
         sut.showAlertButton.sendActions(for: .touchUpInside)
 
         alertVerifier.verify(
@@ -46,7 +46,7 @@ final class ViewControllerAlertTests: XCTestCase, Sendable {
         )
     }
 
-    func test_tappingShowActionSheetButton_shouldShowActionSheet() throws {
+    func test_tappingShowActionSheetButton_showsActionSheet() throws {
         sut.showActionSheetButton.sendActions(for: .touchUpInside)
 
         alertVerifier.verify(
@@ -79,7 +79,7 @@ final class ViewControllerAlertTests: XCTestCase, Sendable {
         XCTAssertEqual(alertVerifier.preferredAction?.title, "Default")
     }
 
-    func test_executeActionForButton_withDefaultButton_shouldExecuteDefaultAction() throws {
+    func test_executeActionForButton_withDefaultButton_executesDefaultAction() throws {
         sut.showAlertButton.sendActions(for: .touchUpInside)
 
         try alertVerifier.executeAction(forButton: "Default")
@@ -87,7 +87,7 @@ final class ViewControllerAlertTests: XCTestCase, Sendable {
         XCTAssertEqual(sut.alertDefaultActionCount, 1)
     }
 
-    func test_executeActionForButton_withCancelButton_shouldExecuteCancelAction() throws {
+    func test_executeActionForButton_withCancelButton_executesCancelAction() throws {
         sut.showAlertButton.sendActions(for: .touchUpInside)
 
         try alertVerifier.executeAction(forButton: "Cancel")
@@ -95,7 +95,7 @@ final class ViewControllerAlertTests: XCTestCase, Sendable {
         XCTAssertEqual(sut.alertCancelActionCount, 1)
     }
 
-    func test_executeActionForButton_withDestroyButton_shouldExecuteDestroyAction() throws {
+    func test_executeActionForButton_withDestroyButton_executesDestroyAction() throws {
         sut.showAlertButton.sendActions(for: .touchUpInside)
 
         try alertVerifier.executeAction(forButton: "Destroy")
@@ -110,7 +110,7 @@ final class ViewControllerAlertTests: XCTestCase, Sendable {
         XCTAssertEqual(alertVerifier.textFields?[0].placeholder, "Placeholder")
     }
 
-    func test_textFields_shouldNotBeAddedToActionSheets() throws {
+    func test_textFieldsAreNotAddedToActionSheets() throws {
         sut.showActionSheetButton.sendActions(for: .touchUpInside)
 
         XCTAssertEqual(alertVerifier.textFields?.count, 0)

@@ -93,7 +93,7 @@ final class AlertVerifierTests: XCTestCase, Sendable {
         )
     }
 
-    func test_executeActionForButtonWithTitle_withNonexistentTitle_shouldThrowException() throws {
+    func test_executeActionForButtonWithTitle_withNonexistentTitle_throwsException() throws {
         showAlert()
 
         XCTAssertThrowsError(try sut.executeAction(forButton: "NO SUCH BUTTON"))
@@ -105,7 +105,7 @@ final class AlertVerifierTests: XCTestCase, Sendable {
         try sut.executeAction(forButton: "No Handler")
     }
 
-    func test_showingAlert_withCompletion_shouldCaptureCompletionBlock() throws {
+    func test_showingAlert_withCompletion_capturesCompletion() throws {
         var completionCallCount = 0
         vc.alertPresentedCompletion = {
             completionCallCount += 1
@@ -117,13 +117,13 @@ final class AlertVerifierTests: XCTestCase, Sendable {
         XCTAssertEqual(completionCallCount, 1)
     }
 
-    func test_showingAlert_withoutCompletion_shouldNotCaptureCompletionBlock() throws {
+    func test_showingAlert_withoutCompletion_doesNotCaptureCompletion() throws {
         showAlert()
 
         XCTAssertNil(sut.capturedCompletion)
     }
 
-    func test_showingAlert_shouldExecuteTestCompletionBlock() throws {
+    func test_showingAlert_executesCompletion() throws {
         var completionCallCount = 0
         sut.testCompletion = {
             completionCallCount += 1
@@ -134,7 +134,7 @@ final class AlertVerifierTests: XCTestCase, Sendable {
         XCTAssertEqual(completionCallCount, 1)
     }
 
-    func test_notShowingAlert_shouldNotExecuteTestCompletionBlock() throws {
+    func test_notShowingAlert_doesNotExecuteCompletion() throws {
         var completionCallCount = 0
         sut.testCompletion = {
             completionCallCount += 1
