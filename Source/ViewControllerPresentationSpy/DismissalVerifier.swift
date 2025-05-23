@@ -38,10 +38,13 @@ public class DismissalVerifier: NSObject {
     @objc override public init() {
         super.init()
         guard !DismissalVerifier.isSwizzled else {
-            XCTFail("""
-            More than one instance of DismissalVerifier exists. This may be caused by \
-            creating one setUp() but failing to set the property to nil in tearDown().
-            """)
+            Fail().fail(
+                message: """
+                    More than one instance of DismissalVerifier exists. This may be caused by \
+                    creating one setUp() but failing to set the property to nil in tearDown().
+                    """,
+                location: SourceLocation(fileID: #fileID, filePath: #filePath, line: #line, column: #column)
+            )
             return
         }
         NotificationCenter.default.addObserver(

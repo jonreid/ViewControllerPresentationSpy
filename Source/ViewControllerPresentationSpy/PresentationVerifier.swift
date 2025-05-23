@@ -41,18 +41,24 @@ public class PresentationVerifier: NSObject {
     @objc override public init() {
         super.init()
         guard !PresentationVerifier.isSwizzled else {
-            XCTFail("""
-            More than one instance of PresentationVerifier exists. This may be caused by \
-            creating one setUp() but failing to set the property to nil in tearDown().
-            """)
+            Fail().fail(
+                message: """
+                    More than one instance of PresentationVerifier exists. This may be caused by \
+                    creating one setUp() but failing to set the property to nil in tearDown().
+                    """,
+                location: SourceLocation(fileID: #fileID, filePath: #filePath, line: #line, column: #column)
+            )
             return
         }
         guard !AlertVerifier.isSwizzled else {
-            XCTFail("""
-            A PresentationVerifier may not be created while an AlertVerifier exists. Try \
-            making the AlertVerifier optional, and setting it to nil before creating the \
-            PresentationVerifier.
-            """)
+            Fail().fail(
+                message: """
+                    A PresentationVerifier may not be created while an AlertVerifier exists. Try \
+                    making the AlertVerifier optional, and setting it to nil before creating the \
+                    PresentationVerifier.
+                    """,
+                location: SourceLocation(fileID: #fileID, filePath: #filePath, line: #line, column: #column)
+            )
             return
         }
         NotificationCenter.default.addObserver(
