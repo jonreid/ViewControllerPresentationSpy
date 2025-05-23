@@ -66,4 +66,24 @@ final class PresentationVerifierTests: XCTestCase, Sendable {
 
         XCTAssertEqual(completionCallCount, 0)
     }
+
+    func test_notCalled() throws {
+        let failSpy = FailSpy()
+
+        sut.verify(animated: true, presentingViewController: vc, failure: failSpy)
+
+        XCTAssertEqual(failSpy.callCount, 1, "call count")
+        XCTAssertEqual(failSpy.messages.first, "present not called")
+    }
+
+    func test_calledTwice() throws {
+        let failSpy = FailSpy()
+        presentViewController()
+        presentViewController()
+
+        sut.verify(animated: true, presentingViewController: vc, failure: failSpy)
+
+        XCTAssertEqual(failSpy.callCount, 1, "call count")
+        XCTAssertEqual(failSpy.messages.first, "present called 2 times, expected once")
+    }
 }

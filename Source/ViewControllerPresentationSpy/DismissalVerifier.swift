@@ -97,7 +97,8 @@ public extension DismissalVerifier {
             action: "dismiss",
             fileID: fileID,
             filePath: filePath,
-            line: line
+            line: line,
+            failure: failure
         )
         guard continueTest else { return }
         verifyAnimated(actual: self.animated, expected: animated, action: "dismiss", file: filePath, line: line)

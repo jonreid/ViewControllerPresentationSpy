@@ -85,6 +85,26 @@ final class DismissalVerifierTests: XCTestCase, Sendable {
 
         XCTAssertEqual(completionCallCount, 0)
     }
+
+    func test_notDismissed() throws {
+        let failSpy = FailSpy()
+
+        sut.verify(animated: true, failure: failSpy)
+
+        XCTAssertEqual(failSpy.callCount, 1, "call count")
+        XCTAssertEqual(failSpy.messages.first, "dismiss not called")
+    }
+
+    func test_dismissedTwice() throws {
+        let failSpy = FailSpy()
+        dismissViewController()
+        dismissViewController()
+
+        sut.verify(animated: true, failure: failSpy)
+
+        XCTAssertEqual(failSpy.callCount, 1, "call count")
+        XCTAssertEqual(failSpy.messages.first, "dismiss called 2 times, expected once")
+    }
 }
 
 @MainActor

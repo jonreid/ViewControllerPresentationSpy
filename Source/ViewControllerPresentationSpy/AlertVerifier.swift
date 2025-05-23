@@ -147,7 +147,8 @@ extension AlertVerifier {
             action: "present",
             fileID: fileID,
             filePath: filePath,
-            line: line
+            line: line,
+            failure: failure
         )
         guard continueTest else { return }
         verifyEqual(

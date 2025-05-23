@@ -109,7 +109,8 @@ public extension PresentationVerifier {
             action: "present",
             fileID: fileID,
             filePath: filePath,
-            line: line
+            line: line,
+            failure: failure
         )
         guard continueTest else { return nil }
         verifyAnimated(actual: self.animated, expected: animated, action: "present", file: filePath, line: line)

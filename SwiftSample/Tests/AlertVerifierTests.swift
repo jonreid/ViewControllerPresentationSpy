@@ -142,6 +142,48 @@ final class AlertVerifierTests: XCTestCase, Sendable {
 
         XCTAssertEqual(completionCallCount, 0)
     }
+
+    func test_notShown() throws {
+        let failSpy = FailSpy()
+
+        sut.verify(
+            title: "TITLE",
+            message: "MESSAGE",
+            animated: true,
+            actions: [
+                .default("No Handler"),
+                .default("Default"),
+                .cancel("Cancel"),
+                .destructive("Destroy"),
+            ],
+            failure: failSpy
+        )
+
+        XCTAssertEqual(failSpy.callCount, 1, "call count")
+        XCTAssertEqual(failSpy.messages.first, "present not called")
+    }
+
+    func test_shownTwice() throws {
+        let failSpy = FailSpy()
+        showAlert()
+        showAlert()
+
+        sut.verify(
+            title: "Title",
+            message: "Message",
+            animated: true,
+            actions: [
+                .default("No Handler"),
+                .default("Default"),
+                .cancel("Cancel"),
+                .destructive("Destroy"),
+            ],
+            failure: failSpy
+        )
+
+        XCTAssertEqual(failSpy.callCount, 1, "call count")
+        XCTAssertEqual(failSpy.messages.first, "present called 2 times, expected once")
+    }
 }
 
 final class FailSpy: Failing {
