@@ -92,7 +92,13 @@ public extension DismissalVerifier {
         column: UInt = #column,
         failure: any Failing = Fail()
     ) {
-        let continueTest = verifyCalledOnce(actual: dismissedCount, action: "dismiss", file: filePath, line: line)
+        let continueTest = verifyCalledOnce(
+            actual: dismissedCount,
+            action: "dismiss",
+            fileID: fileID,
+            filePath: filePath,
+            line: line
+        )
         guard continueTest else { return }
         verifyAnimated(actual: self.animated, expected: animated, action: "dismiss", file: filePath, line: line)
         verifyViewController(

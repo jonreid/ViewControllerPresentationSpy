@@ -41,13 +41,27 @@ func verifyIdentical<T: AnyObject>(
     )
 }
 
-func verifyCalledOnce(actual: Int, action: String, file: StaticString, line: UInt) -> Bool {
+func verifyCalledOnce(
+    actual: Int,
+    action: String,
+    fileID: String = #fileID,
+    filePath: StaticString = #filePath,
+    line: UInt = #line,
+    column: UInt = #column,
+    failure: any Failing = Fail()
+) -> Bool {
     if actual == 0 {
-        XCTFail("\(action) not called", file: file, line: line)
+        failure.fail(
+            message: "\(action) not called",
+            location: SourceLocation(fileID: fileID, filePath: filePath, line: line, column: column)
+        )
         return false // Abort test
     }
     if actual > 1 {
-        XCTFail("\(action) called \(actual) times", file: file, line: line)
+        failure.fail(
+            message: "\(action) called \(actual) times, expected once",
+            location: SourceLocation(fileID: fileID, filePath: filePath, line: line, column: column)
+        )
     }
     return true // Continue test
 }
