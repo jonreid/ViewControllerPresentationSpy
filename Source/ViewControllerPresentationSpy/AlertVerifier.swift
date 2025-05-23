@@ -171,7 +171,15 @@ extension AlertVerifier {
             column: column,
             failure: failure
         )
-        verifyAnimated(actual: self.animated, expected: animated, action: "present", file: file, line: line)
+        verifyAnimated(
+            actual: self.animated,
+            expected: animated,
+            action: "present",
+            fileID: fileID,
+            filePath: filePath,
+            line: line,
+            failure: failure
+        )
         verifyActions(expected: actions, file: file, line: line)
         verifyPreferredStyle(expected: preferredStyle, file: file, line: line)
         verifyViewController(

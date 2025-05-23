@@ -113,7 +113,15 @@ public extension PresentationVerifier {
             failure: failure
         )
         guard continueTest else { return nil }
-        verifyAnimated(actual: self.animated, expected: animated, action: "present", file: filePath, line: line)
+        verifyAnimated(
+            actual: self.animated,
+            expected: animated,
+            action: "present",
+            fileID: fileID,
+            filePath: filePath,
+            line: line,
+            failure: failure
+        )
         verifyViewController(
             actual: self.presentingViewController,
             expected: presentingViewController,

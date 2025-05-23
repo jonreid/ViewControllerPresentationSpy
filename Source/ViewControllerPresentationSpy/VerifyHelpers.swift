@@ -66,11 +66,23 @@ func verifyCalledOnce(
     return true // Continue test
 }
 
-func verifyAnimated(actual: Bool, expected: Bool, action: String, file: StaticString, line: UInt) {
+func verifyAnimated(
+    actual: Bool,
+    expected: Bool,
+    action: String,
+    fileID: String = #fileID,
+    filePath: StaticString = #filePath,
+    line: UInt = #line,
+    column: UInt = #column,
+    failure: any Failing = Fail()
+) {
     if actual == expected { return }
     let message = expected ? "Expected animated \(action), but was not animated"
         : "Expected non-animated \(action), but was animated"
-    XCTFail(message, file: file, line: line)
+    failure.fail(
+        message: message,
+        location: SourceLocation(fileID: fileID, filePath: filePath, line: line, column: column)
+    )
 }
 
 func verifyViewController(

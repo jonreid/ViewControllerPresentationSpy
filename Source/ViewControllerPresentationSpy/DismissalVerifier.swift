@@ -101,7 +101,15 @@ public extension DismissalVerifier {
             failure: failure
         )
         guard continueTest else { return }
-        verifyAnimated(actual: self.animated, expected: animated, action: "dismiss", file: filePath, line: line)
+        verifyAnimated(
+            actual: self.animated,
+            expected: animated,
+            action: "dismiss",
+            fileID: fileID,
+            filePath: filePath,
+            line: line,
+            failure: failure
+        )
         verifyViewController(
             actual: self.dismissedViewController,
             expected: dismissedViewController,
