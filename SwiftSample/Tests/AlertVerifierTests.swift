@@ -184,6 +184,27 @@ final class AlertVerifierTests: XCTestCase, Sendable {
         XCTAssertEqual(failSpy.callCount, 1, "call count")
         XCTAssertEqual(failSpy.messages.first, "present called 2 times, expected once")
     }
+
+    func test_wrongAnimatedFlag() throws {
+        let failSpy = FailSpy()
+        showAlert()
+
+        sut.verify(
+            title: "Title",
+            message: "Message",
+            animated: false,
+            actions: [
+                .default("No Handler"),
+                .default("Default"),
+                .cancel("Cancel"),
+                .destructive("Destroy"),
+            ],
+            failure: failSpy
+        )
+
+        XCTAssertEqual(failSpy.callCount, 1, "call count")
+        XCTAssertEqual(failSpy.messages.first, "Expected non-animated present, but was animated")
+    }
 }
 
 final class FailSpy: Failing {

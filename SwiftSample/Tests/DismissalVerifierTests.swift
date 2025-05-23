@@ -105,6 +105,16 @@ final class DismissalVerifierTests: XCTestCase, Sendable {
         XCTAssertEqual(failSpy.callCount, 1, "call count")
         XCTAssertEqual(failSpy.messages.first, "dismiss called 2 times, expected once")
     }
+
+    func test_wrongAnimatedFlag() throws {
+        let failSpy = FailSpy()
+        dismissViewController()
+
+        sut.verify(animated: false, failure: failSpy)
+
+        XCTAssertEqual(failSpy.callCount, 1, "call count")
+        XCTAssertEqual(failSpy.messages.first, "Expected non-animated dismiss, but was animated")
+    }
 }
 
 @MainActor

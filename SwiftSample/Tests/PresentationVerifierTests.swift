@@ -86,4 +86,14 @@ final class PresentationVerifierTests: XCTestCase, Sendable {
         XCTAssertEqual(failSpy.callCount, 1, "call count")
         XCTAssertEqual(failSpy.messages.first, "present called 2 times, expected once")
     }
+
+    func test_wrongAnimatedFlag() throws {
+        let failSpy = FailSpy()
+        presentViewController()
+
+        sut.verify(animated: false, presentingViewController: vc, failure: failSpy)
+
+        XCTAssertEqual(failSpy.callCount, 1, "call count")
+        XCTAssertEqual(failSpy.messages.first, "Expected non-animated present, but was animated")
+    }
 }
