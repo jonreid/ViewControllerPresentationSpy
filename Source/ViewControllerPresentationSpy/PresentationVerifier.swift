@@ -138,11 +138,15 @@ public extension PresentationVerifier {
             column: column,
             failure: failure
         )
-        let nextVC = presentedViewController as? VC
-        if nextVC == nil {
-            XCTFail("Expected presented view controller to be \(VC.self)), " +
-                "but was \(String(describing: presentedViewController))", file: filePath, line: line)
-        }
+        let nextVC: VC? = verifyViewController(
+            self.presentedViewController,
+            expectedType: VC.self,
+            fileID: fileID,
+            filePath: filePath,
+            line: line,
+            column: column,
+            failure: failure
+        )
         return nextVC
     }
 }

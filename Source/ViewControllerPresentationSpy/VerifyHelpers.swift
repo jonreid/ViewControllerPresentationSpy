@@ -107,3 +107,23 @@ func verifyIdenticalViewController(
         failure: failure
     )
 }
+
+@discardableResult
+func verifyViewController<ViewController>(
+    _ actual: UIViewController?,
+    expectedType: ViewController.Type,
+    fileID: String = #fileID,
+    filePath: StaticString = #filePath,
+    line: UInt = #line,
+    column: UInt = #column,
+    failure: any Failing = Fail()
+) -> ViewController? {
+    guard let typedVC = actual as? ViewController else {
+        failure.fail(
+            message: "Expected \(ViewController.self) but was \(String(describing: actual))",
+            location: SourceLocation(fileID: fileID, filePath: filePath, line: line, column: column)
+        )
+        return nil
+    }
+    return typedVC
+}
