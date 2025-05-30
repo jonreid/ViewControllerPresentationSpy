@@ -111,7 +111,7 @@ public extension PresentationVerifier {
         failure: any Failing = Fail()
     ) -> VC? {
         let continueTest = verifyCalledOnce(
-            actual: presentedCount,
+            count: presentedCount,
             action: "present",
             fileID: fileID,
             filePath: filePath,

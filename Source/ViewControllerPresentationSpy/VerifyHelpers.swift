@@ -42,7 +42,7 @@ func verifyIdentical<T: AnyObject>(
 }
 
 func verifyCalledOnce(
-    actual: Int,
+    count: Int,
     action: String,
     fileID: String = #fileID,
     filePath: StaticString = #filePath,
@@ -50,16 +50,16 @@ func verifyCalledOnce(
     column: UInt = #column,
     failure: any Failing = Fail()
 ) -> Bool {
-    if actual == 0 {
+    if count == 0 {
         failure.fail(
             message: "\(action) not called",
             location: SourceLocation(fileID: fileID, filePath: filePath, line: line, column: column)
         )
         return false // Abort test
     }
-    if actual > 1 {
+    if count > 1 {
         failure.fail(
-            message: "\(action) called \(actual) times, expected once",
+            message: "\(action) called \(count) times, expected once",
             location: SourceLocation(fileID: fileID, filePath: filePath, line: line, column: column)
         )
     }

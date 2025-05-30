@@ -96,7 +96,7 @@ public extension DismissalVerifier {
         failure: any Failing = Fail()
     ) {
         let continueTest = verifyCalledOnce(
-            actual: dismissedCount,
+            count: dismissedCount,
             action: "dismiss",
             fileID: fileID,
             filePath: filePath,

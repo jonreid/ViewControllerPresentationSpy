@@ -146,7 +146,7 @@ extension AlertVerifier {
         failure: any Failing = Fail()
     ) {
         let continueTest = verifyCalledOnce(
-            actual: presentedCount,
+            count: presentedCount,
             action: "present",
             fileID: fileID,
             filePath: filePath,
