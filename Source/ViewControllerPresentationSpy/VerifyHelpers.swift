@@ -24,8 +24,8 @@ func verifyEqual<T: Equatable>(
 }
 
 func verifyIdentical<T: AnyObject>(
-    _ actual: T,
-    _ expected: T,
+    actual: T,
+    expected: T,
     message: String? = nil,
     fileID: String = #fileID,
     filePath: StaticString = #filePath,
@@ -97,8 +97,8 @@ func verifyIdenticalViewController(
 ) {
     guard let expected, let actual else { return }
     verifyIdentical(
-        actual,
-        expected,
+        actual: actual,
+        expected: expected,
         message: "\(adjective) view controller",
         fileID: fileID,
         filePath: filePath,
