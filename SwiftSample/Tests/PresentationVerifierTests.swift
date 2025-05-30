@@ -105,7 +105,7 @@ final class PresentationVerifierTests: XCTestCase, Sendable {
 
         XCTAssertEqual(failSpy.callCount, 1, "call count")
         let message = try XCTUnwrap(failSpy.messages.first)
-        let expectedPrefix = "Expected StoryboardNextViewController but was Optional(<SwiftSampleViewControllerPresentationSpy.CodeNextViewController: "
+        let expectedPrefix = "Expected StoryboardNextViewController, but was Optional(<SwiftSampleViewControllerPresentationSpy.CodeNextViewController: "
         XCTAssertTrue(message.hasPrefix(expectedPrefix), "Expected prefix '\(expectedPrefix)', but was \(message)")
     }
 }

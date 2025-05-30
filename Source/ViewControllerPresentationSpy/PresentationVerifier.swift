@@ -138,7 +138,7 @@ public extension PresentationVerifier {
             column: column,
             failure: failure
         )
-        let nextVC: VC? = verifyViewController(
+        let nextVC = verifyType(
             self.presentedViewController,
             expectedType: VC.self,
             fileID: fileID,
