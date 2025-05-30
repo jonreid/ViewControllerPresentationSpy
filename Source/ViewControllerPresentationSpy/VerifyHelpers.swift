@@ -41,6 +41,29 @@ func verifyIdentical<T: AnyObject>(
     )
 }
 
+func verifyIdentical<T: AnyObject>(
+    actual: T?,
+    expected: T?,
+    message: String? = nil,
+    fileID: String = #fileID,
+    filePath: StaticString = #filePath,
+    line: UInt = #line,
+    column: UInt = #column,
+    failure: any Failing = Fail()
+) {
+    guard let expected, let actual else { return }
+    verifyIdentical(
+        actual: actual,
+        expected: expected,
+        message: message,
+        fileID: fileID,
+        filePath: filePath,
+        line: line,
+        column: column,
+        failure: failure
+    )
+}
+
 func verifyCalledOnce(
     count: Int,
     action: String,
@@ -82,29 +105,6 @@ func verifyAnimated(
     failure.fail(
         message: message,
         location: SourceLocation(fileID: fileID, filePath: filePath, line: line, column: column)
-    )
-}
-
-func verifyIdenticalViewController(
-    actual: UIViewController?,
-    expected: UIViewController?,
-    adjective: String,
-    fileID: String = #fileID,
-    filePath: StaticString = #filePath,
-    line: UInt = #line,
-    column: UInt = #column,
-    failure: any Failing = Fail()
-) {
-    guard let expected, let actual else { return }
-    verifyIdentical(
-        actual: actual,
-        expected: expected,
-        message: "\(adjective) view controller",
-        fileID: fileID,
-        filePath: filePath,
-        line: line,
-        column: column,
-        failure: failure
     )
 }
 

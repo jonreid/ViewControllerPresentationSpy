@@ -128,10 +128,10 @@ public extension PresentationVerifier {
             line: line,
             failure: failure
         )
-        verifyIdenticalViewController(
+        verifyIdentical(
             actual: self.presentingViewController,
             expected: presentingViewController,
-            adjective: "presenting",
+            message: "presenting view controller",
             fileID: fileID,
             filePath: filePath,
             line: line,

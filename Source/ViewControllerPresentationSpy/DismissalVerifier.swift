@@ -113,10 +113,10 @@ public extension DismissalVerifier {
             line: line,
             failure: failure
         )
-        verifyIdenticalViewController(
+        verifyIdentical(
             actual: self.dismissedViewController,
             expected: dismissedViewController,
-            adjective: "dismissed",
+            message: "dismissed view controller",
             fileID: fileID,
             filePath: filePath,
             line: line,
