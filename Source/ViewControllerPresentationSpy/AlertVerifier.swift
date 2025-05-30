@@ -155,8 +155,8 @@ extension AlertVerifier {
         )
         guard continueTest else { return }
         verifyEqual(
-            self.title,
-            title,
+            actual: self.title,
+            expected: title,
             message: "alert title",
             fileID: fileID,
             filePath: filePath,
@@ -165,8 +165,8 @@ extension AlertVerifier {
             failure: failure
         )
         verifyEqual(
-            self.message,
-            message,
+            actual: self.message,
+            expected: message,
             message: "alert message",
             fileID: fileID,
             filePath: filePath,

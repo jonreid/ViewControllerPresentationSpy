@@ -6,8 +6,8 @@ import UIKit
 import XCTest
 
 func verifyEqual<T: Equatable>(
-    _ actual: T,
-    _ expected: T,
+    actual: T,
+    expected: T,
     message: String? = nil,
     fileID: String = #fileID,
     filePath: StaticString = #filePath,
