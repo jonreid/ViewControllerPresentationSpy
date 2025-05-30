@@ -185,7 +185,7 @@ extension AlertVerifier {
         )
         verifyActions(expected: actions, file: file, line: line)
         verifyPreferredStyle(expected: preferredStyle, file: file, line: line)
-        verifyViewController(
+        verifyIdenticalViewController(
             actual: self.presentingViewController,
             expected: presentingViewController,
             adjective: "presenting",

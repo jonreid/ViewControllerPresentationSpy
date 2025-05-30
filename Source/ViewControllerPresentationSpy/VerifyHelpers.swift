@@ -85,7 +85,7 @@ func verifyAnimated(
     )
 }
 
-func verifyViewController(
+func verifyIdenticalViewController(
     actual: UIViewController?,
     expected: UIViewController?,
     adjective: String,

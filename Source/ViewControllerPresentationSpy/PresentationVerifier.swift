@@ -128,7 +128,7 @@ public extension PresentationVerifier {
             line: line,
             failure: failure
         )
-        verifyViewController(
+        verifyIdenticalViewController(
             actual: self.presentingViewController,
             expected: presentingViewController,
             adjective: "presenting",

@@ -113,7 +113,7 @@ public extension DismissalVerifier {
             line: line,
             failure: failure
         )
-        verifyViewController(
+        verifyIdenticalViewController(
             actual: self.dismissedViewController,
             expected: dismissedViewController,
             adjective: "dismissed",
