@@ -79,18 +79,30 @@ final class AlertVerifierTests: XCTestCase, Sendable {
 
         XCTAssertEqual(failSpy.callCount, 1, "call count")
         let message = try XCTUnwrap(failSpy.messages.first)
-        XCTAssertTrue(
-            message.hasPrefix("Expected same instance as <UIViewController: "),
-            "Expected prefix 'Expected same instance as <UIViewController: ', but was \(message)"
-        )
-        XCTAssertTrue(
-            message.contains(">, but was <SwiftSampleViewControllerPresentationSpy.ViewController: "),
-            "Expected middle '>, but was <SwiftSampleViewControllerPresentationSpy.ViewController: ', but was \(message)"
-        )
-        XCTAssertTrue(
-            message.hasSuffix("> - presenting view controller"),
-            "Expected suffix '> - presenting view controller', but was \(message)"
-        )
+        verify(message, hasPrefix: "Expected same instance as <UIViewController: ")
+        verify(message, contains: ">, but was <SwiftSampleViewControllerPresentationSpy.ViewController: ")
+        verify(message, hasSuffix: "> - presenting view controller")
+    }
+
+    func verify(_ actual: String, hasPrefix prefix: String, file: StaticString = #filePath, line: UInt = #line) {
+        guard actual.hasPrefix(prefix) else {
+            XCTFail("Expected string starting with \"\(prefix)\", but was \"\(actual)\"", file: file, line: line)
+            return
+        }
+    }
+
+    func verify(_ actual: String, hasSuffix suffix: String, file: StaticString = #filePath, line: UInt = #line) {
+        guard actual.hasSuffix(suffix) else {
+            XCTFail("Expected string ending with \"\(suffix)\", but was \"\(actual)\"", file: file, line: line)
+            return
+        }
+    }
+
+    func verify(_ actual: String, contains substring: String, file: StaticString = #filePath, line: UInt = #line) {
+        guard actual.contains(substring) else {
+            XCTFail("Expected string containing \"\(substring)\", but was \"\(actual)\"", file: file, line: line)
+            return
+        }
     }
 
     func test_executeActionForButtonWithTitle_withNonexistentTitle_throwsException() throws {
