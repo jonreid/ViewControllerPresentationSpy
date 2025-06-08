@@ -13,7 +13,7 @@ func verifyEqual<T: Equatable>(
     filePath: StaticString = #filePath,
     line: UInt = #line,
     column: UInt = #column,
-    failure: any Failing = Fail()
+    failure: any Failing = FailReal()
 ) {
     if actual == expected { return }
     let message = message.map { " - \($0)" } ?? ""
@@ -31,7 +31,7 @@ func verifyIdentical<T: AnyObject>(
     filePath: StaticString = #filePath,
     line: UInt = #line,
     column: UInt = #column,
-    failure: any Failing = Fail()
+    failure: any Failing = FailReal()
 ) {
     if actual === expected { return }
     let message = message.map { " - \($0)" } ?? ""
@@ -49,7 +49,7 @@ func verifyIdentical<T: AnyObject>(
     filePath: StaticString = #filePath,
     line: UInt = #line,
     column: UInt = #column,
-    failure: any Failing = Fail()
+    failure: any Failing = FailReal()
 ) {
     guard let expected, let actual else { return }
     verifyIdentical(
@@ -71,7 +71,7 @@ func verifyCalledOnce(
     filePath: StaticString = #filePath,
     line: UInt = #line,
     column: UInt = #column,
-    failure: any Failing = Fail()
+    failure: any Failing = FailReal()
 ) -> Bool {
     if count == 0 {
         failure.fail(
@@ -97,7 +97,7 @@ func verifyAnimated(
     filePath: StaticString = #filePath,
     line: UInt = #line,
     column: UInt = #column,
-    failure: any Failing = Fail()
+    failure: any Failing = FailReal()
 ) {
     if actual == expected { return }
     let message = expected ? "Expected animated \(action), but was not animated"
@@ -118,7 +118,7 @@ func verifyType<BaseClass, Specific>(
     filePath: StaticString = #filePath,
     line: UInt = #line,
     column: UInt = #column,
-    failure: any Failing = Fail()
+    failure: any Failing = FailReal()
 ) -> Specific? {
     guard let typed = actual as? Specific else {
         failure.fail(

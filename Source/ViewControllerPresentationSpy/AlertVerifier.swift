@@ -49,7 +49,7 @@ public class AlertVerifier: NSObject {
     @objc override public init() {
         super.init()
         guard !AlertVerifier.isSwizzled else {
-            Fail().fail(
+            FailReal().fail(
                 message: """
                     More than one instance of AlertVerifier exists. This may be caused by \
                     creating one setUp() but failing to set the property to nil in tearDown().
@@ -143,7 +143,7 @@ extension AlertVerifier {
         filePath: StaticString = #filePath,
         line: UInt = #line,
         column: UInt = #column,
-        failure: any Failing = Fail()
+        failure: any Failing = FailReal()
     ) {
         let continueTest = verifyCalledOnce(
             count: presentedCount,

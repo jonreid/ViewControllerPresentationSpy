@@ -12,7 +12,7 @@ public protocol Failing {
     func fail(message: String, location: SourceLocation)
 }
 
-public struct Fail: Failing {
+public struct FailReal: Failing {
     public init() {}
     
     public func fail(message: String, location: SourceLocation) {
