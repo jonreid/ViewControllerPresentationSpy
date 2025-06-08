@@ -145,7 +145,7 @@ extension AlertVerifier {
         column: UInt = #column,
         failure: any Failing = FailReal()
     ) {
-        let continueTest = verifyCalledOnce(
+        let continueTest = assertCalledOnce(
             count: presentedCount,
             action: "present",
             fileID: fileID,
@@ -154,7 +154,7 @@ extension AlertVerifier {
             failure: failure
         )
         guard continueTest else { return }
-        verifyEqual(
+        assertEqual(
             actual: self.title,
             expected: title,
             message: "alert title",
@@ -164,7 +164,7 @@ extension AlertVerifier {
             column: column,
             failure: failure
         )
-        verifyEqual(
+        assertEqual(
             actual: self.message,
             expected: message,
             message: "alert message",
@@ -174,7 +174,7 @@ extension AlertVerifier {
             column: column,
             failure: failure
         )
-        verifyAnimated(
+        assertAnimated(
             actual: self.animated,
             expected: animated,
             action: "present",
@@ -185,7 +185,7 @@ extension AlertVerifier {
         )
         verifyActions(expected: actions, file: file, line: line)
         verifyPreferredStyle(expected: preferredStyle, file: file, line: line)
-        verifyIdentical(
+        assertIdentical(
             actual: self.presentingViewController,
             expected: presentingViewController,
             message: "presenting view controller",

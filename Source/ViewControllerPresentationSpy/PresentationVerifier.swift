@@ -110,7 +110,7 @@ public extension PresentationVerifier {
         column: UInt = #column,
         failure: any Failing = FailReal()
     ) -> VC? {
-        let continueTest = verifyCalledOnce(
+        let continueTest = assertCalledOnce(
             count: presentedCount,
             action: "present",
             fileID: fileID,
@@ -119,7 +119,7 @@ public extension PresentationVerifier {
             failure: failure
         )
         guard continueTest else { return nil }
-        verifyAnimated(
+        assertAnimated(
             actual: self.animated,
             expected: animated,
             action: "present",
@@ -128,7 +128,7 @@ public extension PresentationVerifier {
             line: line,
             failure: failure
         )
-        verifyIdentical(
+        assertIdentical(
             actual: self.presentingViewController,
             expected: presentingViewController,
             message: "presenting view controller",
@@ -138,7 +138,7 @@ public extension PresentationVerifier {
             column: column,
             failure: failure
         )
-        let nextVC = verifyType(
+        let nextVC = assertType(
             self.presentedViewController,
             expectedType: VC.self,
             fileID: fileID,

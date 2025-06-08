@@ -5,7 +5,7 @@
 import UIKit
 import XCTest
 
-func verifyEqual<T: Equatable>(
+func assertEqual<T: Equatable>(
     actual: T,
     expected: T,
     message: String? = nil,
@@ -23,7 +23,7 @@ func verifyEqual<T: Equatable>(
     )
 }
 
-func verifyIdentical<T: AnyObject>(
+func assertIdentical<T: AnyObject>(
     actual: T,
     expected: T,
     message: String? = nil,
@@ -41,7 +41,7 @@ func verifyIdentical<T: AnyObject>(
     )
 }
 
-func verifyIdentical<T: AnyObject>(
+func assertIdentical<T: AnyObject>(
     actual: T?,
     expected: T?,
     message: String? = nil,
@@ -52,7 +52,7 @@ func verifyIdentical<T: AnyObject>(
     failure: any Failing = FailReal()
 ) {
     guard let expected, let actual else { return }
-    verifyIdentical(
+    assertIdentical(
         actual: actual,
         expected: expected,
         message: message,
@@ -64,7 +64,7 @@ func verifyIdentical<T: AnyObject>(
     )
 }
 
-func verifyCalledOnce(
+func assertCalledOnce(
     count: Int,
     action: String,
     fileID: String = #fileID,
@@ -89,7 +89,7 @@ func verifyCalledOnce(
     return true // Continue test
 }
 
-func verifyAnimated(
+func assertAnimated(
     actual: Bool,
     expected: Bool,
     action: String,
@@ -111,7 +111,7 @@ func verifyAnimated(
 /// Verifies that actual object is of the expected type, returning downcast instance if successful.
 /// Otherwise, it fails the test reporting the actual type, and returns nil.
 @discardableResult
-func verifyType<BaseClass, Specific>(
+func assertType<BaseClass, Specific>(
     _ actual: BaseClass?,
     expectedType: Specific.Type,
     fileID: String = #fileID,
