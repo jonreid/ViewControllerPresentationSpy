@@ -5,7 +5,7 @@
 import UIKit
 import XCTest
 
-func assertEqual<T: Equatable>(
+func expectToEqual<T: Equatable>(
     actual: T,
     expected: T,
     message: String? = nil,
@@ -13,7 +13,7 @@ func assertEqual<T: Equatable>(
     filePath: StaticString = #filePath,
     line: UInt = #line,
     column: UInt = #column,
-    failure: any Failing = FailReal()
+    failure: any Failing = Fail()
 ) {
     if actual == expected { return }
     let message = message.map { " - \($0)" } ?? ""
@@ -31,7 +31,7 @@ func assertIdentical<T: AnyObject>(
     filePath: StaticString = #filePath,
     line: UInt = #line,
     column: UInt = #column,
-    failure: any Failing = FailReal()
+    failure: any Failing = Fail()
 ) {
     if actual === expected { return }
     let message = message.map { " - \($0)" } ?? ""
@@ -49,7 +49,7 @@ func assertIdentical<T: AnyObject>(
     filePath: StaticString = #filePath,
     line: UInt = #line,
     column: UInt = #column,
-    failure: any Failing = FailReal()
+    failure: any Failing = Fail()
 ) {
     guard let expected, let actual else { return }
     assertIdentical(
@@ -71,7 +71,7 @@ func assertCalledOnce(
     filePath: StaticString = #filePath,
     line: UInt = #line,
     column: UInt = #column,
-    failure: any Failing = FailReal()
+    failure: any Failing = Fail()
 ) -> Bool {
     if count == 0 {
         failure.fail(
@@ -97,7 +97,7 @@ func assertAnimated(
     filePath: StaticString = #filePath,
     line: UInt = #line,
     column: UInt = #column,
-    failure: any Failing = FailReal()
+    failure: any Failing = Fail()
 ) {
     if actual == expected { return }
     let message = expected ? "Expected animated \(action), but was not animated"
@@ -111,14 +111,14 @@ func assertAnimated(
 /// Verifies that actual object is of the expected type, returning downcast instance if successful.
 /// Otherwise, it fails the test reporting the actual type, and returns nil.
 @discardableResult
-func assertType<BaseClass, Specific>(
+func expectType<BaseClass, Specific>(
     _ actual: BaseClass?,
     expectedType: Specific.Type,
     fileID: String = #fileID,
     filePath: StaticString = #filePath,
     line: UInt = #line,
     column: UInt = #column,
-    failure: any Failing = FailReal()
+    failure: any Failing = Fail()
 ) -> Specific? {
     guard let typed = actual as? Specific else {
         failure.fail(

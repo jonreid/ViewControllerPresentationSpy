@@ -38,7 +38,7 @@ public class DismissalVerifier: NSObject {
     @objc override public init() {
         super.init()
         guard !DismissalVerifier.isSwizzled else {
-            FailReal().fail(
+            Fail().fail(
                 message: """
                     More than one instance of DismissalVerifier exists. This may be caused by \
                     creating one setUp() but failing to set the property to nil in tearDown().
@@ -93,7 +93,7 @@ public extension DismissalVerifier {
         filePath: StaticString = #filePath,
         line: UInt = #line,
         column: UInt = #column,
-        failure: any Failing = FailReal()
+        failure: any Failing = Fail()
     ) {
         let continueTest = assertCalledOnce(
             count: dismissedCount,

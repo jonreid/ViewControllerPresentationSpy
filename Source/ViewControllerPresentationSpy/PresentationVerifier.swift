@@ -41,7 +41,7 @@ public class PresentationVerifier: NSObject {
     @objc override public init() {
         super.init()
         guard !PresentationVerifier.isSwizzled else {
-            FailReal().fail(
+            Fail().fail(
                 message: """
                     More than one instance of PresentationVerifier exists. This may be caused by \
                     creating one setUp() but failing to set the property to nil in tearDown().
@@ -51,7 +51,7 @@ public class PresentationVerifier: NSObject {
             return
         }
         guard !AlertVerifier.isSwizzled else {
-            FailReal().fail(
+            Fail().fail(
                 message: """
                     A PresentationVerifier may not be created while an AlertVerifier exists. Try \
                     making the AlertVerifier optional, and setting it to nil before creating the \
@@ -108,7 +108,7 @@ public extension PresentationVerifier {
         filePath: StaticString = #filePath,
         line: UInt = #line,
         column: UInt = #column,
-        failure: any Failing = FailReal()
+        failure: any Failing = Fail()
     ) -> VC? {
         let continueTest = assertCalledOnce(
             count: presentedCount,
@@ -138,7 +138,7 @@ public extension PresentationVerifier {
             column: column,
             failure: failure
         )
-        let nextVC = assertType(
+        let nextVC = expectType(
             self.presentedViewController,
             expectedType: VC.self,
             fileID: fileID,
