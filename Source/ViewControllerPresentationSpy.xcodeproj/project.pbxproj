@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F5FF9AF2DFE2BD400FB2080 /* FailKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0F5FF9AE2DFE2BD400FB2080 /* FailKit */; };
 		0FD886F52DFD39EF00C3687E /* FailKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0FD886F42DFD39EF00C3687E /* FailKit */; };
 		48007C7E2079A76E007A4AB0 /* ViewControllerPresentationSpy.h in Headers */ = {isa = PBXBuildFile; fileRef = 48007C7C2079A76E007A4AB0 /* ViewControllerPresentationSpy.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		48213D3D25DF8B6300201AEF /* PresentationVerifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1701BF26D1A6EC6D6736E3 /* PresentationVerifier.swift */; };
@@ -60,17 +61,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F5FF9AF2DFE2BD400FB2080 /* FailKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F5FF9AD2DFE2BD400FB2080 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		48007C6F2079A76E007A4AB0 = {
 			isa = PBXGroup;
 			children = (
 				48007C7B2079A76E007A4AB0 /* ViewControllerPresentationSpy */,
 				48007C9C2079A8AF007A4AB0 /* Supporting Files */,
+				0F5FF9AD2DFE2BD400FB2080 /* Frameworks */,
 				48007C7A2079A76E007A4AB0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -461,6 +471,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		0F5FF9AE2DFE2BD400FB2080 /* FailKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0FD886F32DFD39EF00C3687E /* XCRemoteSwiftPackageReference "FailKit" */;
+			productName = FailKit;
+		};
 		0FD886F42DFD39EF00C3687E /* FailKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 0FD886F32DFD39EF00C3687E /* XCRemoteSwiftPackageReference "FailKit" */;
