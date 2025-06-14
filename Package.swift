@@ -1,4 +1,5 @@
-// swift-tools-version:5.3
+// swift-tools-version: 6.1
+
 import PackageDescription
 
 let package = Package(
@@ -13,9 +14,13 @@ let package = Package(
             targets: ["ViewControllerPresentationSpy"]
         ),
     ],
+    dependencies: [
+        .package(url: "https://github.com/jonreid/FailKit.git", branch: "main")
+    ],
     targets: [
         .target(
             name: "ViewControllerPresentationSpy",
+            dependencies: ["FailKit"],
             path: "Source",
             exclude: [
                 "MakeDistribution.sh",
