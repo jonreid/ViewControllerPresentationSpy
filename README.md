@@ -37,7 +37,7 @@ For concrete examples, see _[iOS Unit Testing by Example](https://iosunittesting
     * [Carthage](#carthage)
     * [Prebuilt Framework](#prebuilt-framework)
     * [Build Your Own](#build-your-own)
-  * [Author](#author)<!-- endToc -->
+  * [About the Author](#about-the-author)<!-- endToc -->
 
 ## Writing Tests
 
