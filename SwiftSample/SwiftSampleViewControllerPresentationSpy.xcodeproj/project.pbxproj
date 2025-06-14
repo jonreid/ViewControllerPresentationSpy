@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F5FF9B42DFE2DF200FB2080 /* FailKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0F5FF9B32DFE2DF200FB2080 /* FailKit */; };
 		0FA8E45B2CCDF9C300678893 /* ViewControllerPresentationSpy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 480A9BAD22E3B4F000513296 /* ViewControllerPresentationSpy.framework */; };
 		483E05211DE8064D00B5E4E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483E05201DE8064D00B5E4E4 /* AppDelegate.swift */; };
 		483E05231DE8064D00B5E4E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483E05221DE8064D00B5E4E4 /* ViewController.swift */; };
@@ -88,6 +89,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0FA8E45B2CCDF9C300678893 /* ViewControllerPresentationSpy.framework in Frameworks */,
+				0F5FF9B42DFE2DF200FB2080 /* FailKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,6 +234,9 @@
 				Base,
 			);
 			mainGroup = 483E05141DE8064D00B5E4E4;
+			packageReferences = (
+				0F5FF9B22DFE2DF200FB2080 /* XCRemoteSwiftPackageReference "FailKit" */,
+			);
 			productRefGroup = 483E051E1DE8064D00B5E4E4 /* Products */;
 			projectDirPath = "";
 			projectReferences = (
@@ -496,6 +501,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0F5FF9B22DFE2DF200FB2080 /* XCRemoteSwiftPackageReference "FailKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jonreid/FailKit";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0F5FF9B32DFE2DF200FB2080 /* FailKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0F5FF9B22DFE2DF200FB2080 /* XCRemoteSwiftPackageReference "FailKit" */;
+			productName = FailKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 483E05151DE8064D00B5E4E4 /* Project object */;
 }
