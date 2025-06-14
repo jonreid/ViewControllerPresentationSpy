@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0F43E8272DD84E7600FCD50A /* Fail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F43E8262DD84E7600FCD50A /* Fail.swift */; };
-		0F43E8282DD84E7600FCD50A /* Fail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F43E8262DD84E7600FCD50A /* Fail.swift */; };
+		0FD886F52DFD39EF00C3687E /* FailKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0FD886F42DFD39EF00C3687E /* FailKit */; };
 		48007C7E2079A76E007A4AB0 /* ViewControllerPresentationSpy.h in Headers */ = {isa = PBXBuildFile; fileRef = 48007C7C2079A76E007A4AB0 /* ViewControllerPresentationSpy.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		48213D3D25DF8B6300201AEF /* PresentationVerifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1701BF26D1A6EC6D6736E3 /* PresentationVerifier.swift */; };
 		48213D3E25DF8B6300201AEF /* AlertVerifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB170F803977DDBC293D88B0 /* AlertVerifier.swift */; };
@@ -32,7 +31,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0F43E8262DD84E7600FCD50A /* Fail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fail.swift; sourceTree = "<group>"; };
 		48007C792079A76E007A4AB0 /* ViewControllerPresentationSpy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ViewControllerPresentationSpy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		48007C7C2079A76E007A4AB0 /* ViewControllerPresentationSpy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewControllerPresentationSpy.h; sourceTree = "<group>"; };
 		48007C7D2079A76E007A4AB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -54,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FD886F52DFD39EF00C3687E /* FailKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,7 +91,6 @@
 				BB170F803977DDBC293D88B0 /* AlertVerifier.swift */,
 				BB1701CD1FBD8F6138CD874B /* DismissalVerifier.swift */,
 				BB1701C77B1F2B9326CD33DA /* VerifyHelpers.swift */,
-				0F43E8262DD84E7600FCD50A /* Fail.swift */,
 				48007C7C2079A76E007A4AB0 /* ViewControllerPresentationSpy.h */,
 				BB1707DE38257385128F7C87 /* UIAlertAction+Mocking.swift */,
 				BB1706C2B7CE68DD81C1E383 /* ClosureContainer.swift */,
@@ -197,6 +195,9 @@
 				Base,
 			);
 			mainGroup = 48007C6F2079A76E007A4AB0;
+			packageReferences = (
+				0FD886F32DFD39EF00C3687E /* XCRemoteSwiftPackageReference "FailKit" */,
+			);
 			productRefGroup = 48007C7A2079A76E007A4AB0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -229,7 +230,6 @@
 				BB17038F1FA4823879B0BF2F /* DismissalVerifier.swift in Sources */,
 				BB1709E0725162F8F0C4DCDD /* UIAlertController+Mocking.swift in Sources */,
 				BB170F3D4FC42BC149330EEF /* UIAlertAction+Mocking.swift in Sources */,
-				0F43E8282DD84E7600FCD50A /* Fail.swift in Sources */,
 				BB17023083C66FBB74B52808 /* UIViewController+Mocking.swift in Sources */,
 				BB170BB52E39A56EE31E8D49 /* NSObject+Swizzling.swift in Sources */,
 			);
@@ -246,7 +246,6 @@
 				48213D4125DF8B6300201AEF /* VerifyHelpers.swift in Sources */,
 				48213D3D25DF8B6300201AEF /* PresentationVerifier.swift in Sources */,
 				BB170585B7E1C561C02496A3 /* UIAlertController+Mocking.swift in Sources */,
-				0F43E8272DD84E7600FCD50A /* Fail.swift in Sources */,
 				BB1705C6B173DC8FC2D19089 /* UIViewController+Mocking.swift in Sources */,
 				BB170F3DDB5120350DD16667 /* NSObject+Swizzling.swift in Sources */,
 			);
@@ -449,6 +448,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0FD886F32DFD39EF00C3687E /* XCRemoteSwiftPackageReference "FailKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jonreid/FailKit";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0FD886F42DFD39EF00C3687E /* FailKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0FD886F32DFD39EF00C3687E /* XCRemoteSwiftPackageReference "FailKit" */;
+			productName = FailKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 48007C702079A76E007A4AB0 /* Project object */;
 }

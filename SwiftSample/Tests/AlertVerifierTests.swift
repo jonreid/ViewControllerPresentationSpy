@@ -3,6 +3,7 @@
 // SPDX-License-Identifier: MIT
 
 @testable import SwiftSampleViewControllerPresentationSpy
+import FailKit
 import ViewControllerPresentationSpy
 import XCTest
 
@@ -216,17 +217,5 @@ final class AlertVerifierTests: XCTestCase, Sendable {
 
         XCTAssertEqual(failSpy.callCount, 1, "call count")
         XCTAssertEqual(failSpy.messages.first, "Expected non-animated present, but was animated")
-    }
-}
-
-final class FailSpy: Failing {
-    private(set) var callCount = 0
-    private(set) var messages: [String] = []
-    private(set) var locations: [SourceLocation] = []
-
-    func fail(message: String, location: SourceLocation) {
-        callCount += 1
-        self.messages.append(message)
-        self.locations.append(location)
     }
 }

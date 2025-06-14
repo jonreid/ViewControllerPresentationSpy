@@ -3,6 +3,7 @@
 // SPDX-License-Identifier: MIT
 
 @testable import SwiftSampleViewControllerPresentationSpy
+import FailKit
 import ViewControllerPresentationSpy
 import XCTest
 

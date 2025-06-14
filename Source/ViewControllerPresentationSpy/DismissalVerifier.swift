@@ -2,8 +2,8 @@
 // Copyright 2015 Jonathan M. Reid. https://github.com/jonreid/ViewControllerPresentationSpy/blob/main/LICENSE.txt
 // SPDX-License-Identifier: MIT
 
+import FailKit
 import UIKit
-import XCTest
 
 /**
     Captures dismissed view controllers.
