@@ -3,7 +3,6 @@
 [![Build Status](https://github.com/jonreid/ViewControllerPresentationSpy/actions/workflows/build.yml/badge.svg)](https://github.com/jonreid/ViewControllerPresentationSpy/actions/workflows/build.yml)
 [![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fjonreid%2FViewControllerPresentationSpy%2Fbadge%3Ftype%3Dswift-versions)](https://swiftpackageindex.com/jonreid/ViewControllerPresentationSpy)
 [![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fjonreid%2FViewControllerPresentationSpy%2Fbadge%3Ftype%3Dplatforms)](https://swiftpackageindex.com/jonreid/ViewControllerPresentationSpy)
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 ViewControllerPresentationSpy has three verifiers:
 * `AlertVerifier` to capture alerts and action sheets
@@ -34,7 +33,6 @@ For concrete examples, see _[iOS Unit Testing by Example](https://iosunittesting
   * [How Do I Add ViewControllerPresentationSpy to My Project?](#how-do-i-add-viewcontrollerpresentationspy-to-my-project)
     * [Swift Package Manager](#swift-package-manager)
     * [CocoaPods](#cocoapods)
-    * [Carthage](#carthage)
     * [Prebuilt Framework](#prebuilt-framework)
     * [Build Your Own](#build-your-own)
   * [About the Author](#about-the-author)<!-- endToc -->
@@ -330,14 +328,6 @@ target 'MyTests' do
   inherit! :search_paths
   pod 'ViewControllerPresentationSpy', '~> 7.0'
 end
-```
-
-### Carthage
-
-Add the following to your Cartfile:
-
-```
-github "jonreid/ViewControllerPresentationSpy" ~> 7.0
 ```
 
 ### Prebuilt Framework

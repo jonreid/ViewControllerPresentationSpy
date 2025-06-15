@@ -27,15 +27,6 @@ jobs:
       - name: Build
         run: set -o pipefail && xcodebuild build -project '${{ matrix.run-config['project'] }}' -scheme '${{ matrix.run-config['scheme'] }}' -sdk '${{ matrix.run-config['sdk'] }}' -destination '${{ matrix.run-config['destination'] }}' CODE_SIGNING_ALLOWED='NO' | xcbeautify
 
-  buildCarthage:
-    needs: [ build ]
-    name: Build Carthage
-    runs-on: macos-latest
-    steps:
-    - uses: actions/checkout@v4
-    - name: Build
-      run: carthage build --configuration Release --no-skip-current --use-xcframeworks
-
   podspec:
     needs: [ build ]
     name: Pod Spec Lint
@@ -46,7 +37,7 @@ jobs:
         run: pod spec lint --quick
 
   auto-merge:
-    needs: [ buildCarthage, podspec ]
+    needs: [ podspec ]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
