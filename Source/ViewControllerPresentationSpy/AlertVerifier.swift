@@ -182,10 +182,25 @@ extension AlertVerifier {
             fileID: fileID,
             filePath: filePath,
             line: line,
+            column: column,
             failure: failure
         )
-        verifyActions(expected: actions, file: file, line: line)
-        verifyPreferredStyle(expected: preferredStyle, file: file, line: line)
+        verifyActions(
+            expected: actions,
+            fileID: fileID,
+            filePath: filePath,
+            line: line,
+            column: column,
+            failure: failure
+        )
+        verifyPreferredStyle(
+            expected: preferredStyle,
+            fileID: fileID,
+            filePath: filePath,
+            line: line,
+            column: column,
+            failure: failure
+        )
         assertIdentical(
             actual: self.presentingViewController,
             expected: presentingViewController,
@@ -198,23 +213,36 @@ extension AlertVerifier {
         )
     }
 
-    private func verifyActions(expected: [Action], file: StaticString, line: UInt) {
+    private func verifyActions(
+        expected: [Action],
+        fileID: String = #fileID,
+        filePath: StaticString = #filePath,
+        line: UInt = #line,
+        column: UInt = #column,
+        failure: any Failing = Fail()
+    ) {
         let actual = actionsAsSwiftType()
         let minCount = min(actual.count, expected.count)
         for i in 0 ..< minCount {
             if actual[i] != expected[i] {
-                XCTFail("Action \(i): Expected \(expected[i]), but was \(actual[i])",
-                        file: file, line: line)
+                failure.fail(
+                    message: "Action \(i): Expected \(expected[i]), but was \(actual[i])",
+                    location: SourceLocation(fileID: fileID, filePath: filePath, line: line, column: column)
+                )
             }
         }
         if actual.count < expected.count {
             let missing = expected[actual.count ..< expected.count].map { $0.description }
-            XCTFail("Did not meet count of \(expected.count) actions, missing \(missing.joined(separator: ", "))",
-                    file: file, line: line)
+            failure.fail(
+                message: "Did not meet count of \(expected.count) actions, missing \(missing.joined(separator: ", "))",
+                location: SourceLocation(fileID: fileID, filePath: filePath, line: line, column: column)
+            )
         } else if actual.count > expected.count {
             let extra = actual[expected.count ..< actual.count].map { $0.description }
-            XCTFail("Exceeded count of \(expected.count) actions, with unexpected \(extra.joined(separator: ", "))",
-                    file: file, line: line)
+            failure.fail(
+                message: "Exceeded count of \(expected.count) actions, with unexpected \(extra.joined(separator: ", "))",
+                location: SourceLocation(fileID: fileID, filePath: filePath, line: line, column: column)
+            )
         }
     }
 
@@ -233,17 +261,27 @@ extension AlertVerifier {
         }
     }
 
-    private func verifyPreferredStyle(expected: UIAlertController.Style,
-                                      file: StaticString,
-                                      line: UInt)
-    {
+    private func verifyPreferredStyle(
+        expected: UIAlertController.Style,
+        fileID: String = #fileID,
+        filePath: StaticString = #filePath,
+        line: UInt = #line,
+        column: UInt = #column,
+        failure: any Failing = Fail()
+    ) {
         let actual = preferredStyle
         if actual != expected {
             switch expected {
             case .actionSheet:
-                XCTFail("Expected preferred style .actionSheet, but was .alert", file: file, line: line)
+                failure.fail(
+                    message: "Expected preferred style .actionSheet, but was .alert",
+                    location: SourceLocation(fileID: fileID, filePath: filePath, line: line, column: column)
+                )
             case .alert:
-                XCTFail("Expected preferred style .alert, but was .actionSheet", file: file, line: line)
+                failure.fail(
+                    message: "Expected preferred style .alert, but was .actionSheet",
+                    location: SourceLocation(fileID: fileID, filePath: filePath, line: line, column: column)
+                )
             @unknown default:
                 fatalError("Unknown UIAlertController.Style for preferred style")
             }
