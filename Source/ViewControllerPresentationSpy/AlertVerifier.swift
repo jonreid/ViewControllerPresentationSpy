@@ -139,7 +139,6 @@ extension AlertVerifier {
         actions: [Action],
         preferredStyle: UIAlertController.Style = .alert,
         presentingViewController: UIViewController? = nil,
-        file: StaticString = #filePath,
         fileID: String = #fileID,
         filePath: StaticString = #filePath,
         line: UInt = #line,
