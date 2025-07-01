@@ -4,7 +4,6 @@
 
 import FailKit
 import UIKit
-import XCTest
 
 /**
     Captures presented UIAlertControllers.
