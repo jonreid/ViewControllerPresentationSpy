@@ -9,9 +9,7 @@ import Testing
 import UIKit
 
 @MainActor
-@Suite(.serialized)
 final class AlertVerifierSwiftTests: @unchecked Sendable {
-    private let sut = AlertVerifier()
     private let vc: ViewController
 
     init() {
@@ -26,6 +24,7 @@ final class AlertVerifierSwiftTests: @unchecked Sendable {
 
     @Test("wrong title and message")
     func wrongTitleAndMessage() throws {
+        let sut = AlertVerifier()
         let failSpy = FailSpy()
         showAlert()
 
@@ -49,6 +48,7 @@ final class AlertVerifierSwiftTests: @unchecked Sendable {
 
     @Test("wrong presenting view controller")
     func wrongPresentingViewController() throws {
+        let sut = AlertVerifier()
         let failSpy = FailSpy()
         showAlert()
 
@@ -118,15 +118,19 @@ final class AlertVerifierSwiftTests: @unchecked Sendable {
 
     @Test("execute action for button with title with nonexistent title throws exception")
     func executeActionForButtonWithTitle_withNonexistentTitle_throwsException() throws {
+        let sut = AlertVerifier()
+
         showAlert()
 
         #expect(throws: (any Error).self) {
-            try self.sut.executeAction(forButton: "NO SUCH BUTTON")
+            try sut.executeAction(forButton: "NO SUCH BUTTON")
         }
     }
 
     @Test("execute action for button with title without handler should not crash")
     func executeActionForButtonWithTitle_withoutHandler_shouldNotCrash() throws {
+        let sut = AlertVerifier()
+
         showAlert()
 
         try sut.executeAction(forButton: "No Handler")
@@ -134,6 +138,7 @@ final class AlertVerifierSwiftTests: @unchecked Sendable {
 
     @Test("showing alert with completion captures completion")
     func showingAlert_withCompletion_capturesCompletion() throws {
+        let sut = AlertVerifier()
         var completionCallCount = 0
         vc.alertPresentedCompletion = {
             completionCallCount += 1
@@ -148,6 +153,8 @@ final class AlertVerifierSwiftTests: @unchecked Sendable {
 
     @Test("showing alert without completion does not capture completion")
     func showingAlert_withoutCompletion_doesNotCaptureCompletion() throws {
+        let sut = AlertVerifier()
+
         showAlert()
 
         #expect(sut.capturedCompletion == nil)
@@ -155,6 +162,7 @@ final class AlertVerifierSwiftTests: @unchecked Sendable {
 
     @Test("showing alert executes completion")
     func showingAlert_executesCompletion() throws {
+        let sut = AlertVerifier()
         var completionCallCount = 0
         sut.testCompletion = {
             completionCallCount += 1
@@ -167,6 +175,7 @@ final class AlertVerifierSwiftTests: @unchecked Sendable {
 
     @Test("not showing alert does not execute completion")
     func notShowingAlert_doesNotExecuteCompletion() throws {
+        let sut = AlertVerifier()
         var completionCallCount = 0
         sut.testCompletion = {
             completionCallCount += 1
@@ -177,6 +186,7 @@ final class AlertVerifierSwiftTests: @unchecked Sendable {
 
     @Test("not shown")
     func notShown() throws {
+        let sut = AlertVerifier()
         let failSpy = FailSpy()
 
         sut.verify(
@@ -198,6 +208,7 @@ final class AlertVerifierSwiftTests: @unchecked Sendable {
 
     @Test("shown twice")
     func shownTwice() throws {
+        let sut = AlertVerifier()
         let failSpy = FailSpy()
         showAlert()
         showAlert()
@@ -221,6 +232,7 @@ final class AlertVerifierSwiftTests: @unchecked Sendable {
 
     @Test("wrong animated flag")
     func wrongAnimatedFlag() throws {
+        let sut = AlertVerifier()
         let failSpy = FailSpy()
         showAlert()
 
