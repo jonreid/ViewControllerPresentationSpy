@@ -32,7 +32,6 @@ final class AlertVerifierTests: XCTestCase, Sendable {
 
     func test_wrongTitleAndMessage() throws {
         let failSpy = FailSpy()
-
         showAlert()
 
         sut.verify(
@@ -61,7 +60,6 @@ final class AlertVerifierTests: XCTestCase, Sendable {
 
     func test_wrongPresentingViewController() throws {
         let failSpy = FailSpy()
-
         showAlert()
 
         sut.verify(
@@ -86,24 +84,18 @@ final class AlertVerifierTests: XCTestCase, Sendable {
     }
 
     func verify(_ actual: String, hasPrefix prefix: String, file: StaticString = #filePath, line: UInt = #line) {
-        guard actual.hasPrefix(prefix) else {
-            XCTFail("Expected string starting with \"\(prefix)\", but was \"\(actual)\"", file: file, line: line)
-            return
-        }
+        if actual.hasPrefix(prefix) { return }
+        XCTFail("Expected string starting with \"\(prefix)\", but was \"\(actual)\"", file: file, line: line)
     }
 
     func verify(_ actual: String, hasSuffix suffix: String, file: StaticString = #filePath, line: UInt = #line) {
-        guard actual.hasSuffix(suffix) else {
-            XCTFail("Expected string ending with \"\(suffix)\", but was \"\(actual)\"", file: file, line: line)
-            return
-        }
+        if actual.hasSuffix(suffix) { return }
+        XCTFail("Expected string ending with \"\(suffix)\", but was \"\(actual)\"", file: file, line: line)
     }
 
     func verify(_ actual: String, contains substring: String, file: StaticString = #filePath, line: UInt = #line) {
-        guard actual.contains(substring) else {
-            XCTFail("Expected string containing \"\(substring)\", but was \"\(actual)\"", file: file, line: line)
-            return
-        }
+        if actual.contains(substring) { return }
+        XCTFail("Expected string containing \"\(substring)\", but was \"\(actual)\"", file: file, line: line)
     }
 
     func test_executeActionForButtonWithTitle_withNonexistentTitle_throwsException() throws {
@@ -123,6 +115,7 @@ final class AlertVerifierTests: XCTestCase, Sendable {
         vc.alertPresentedCompletion = {
             completionCallCount += 1
         }
+
         showAlert()
 
         XCTAssertEqual(completionCallCount, 0, "precondition")
