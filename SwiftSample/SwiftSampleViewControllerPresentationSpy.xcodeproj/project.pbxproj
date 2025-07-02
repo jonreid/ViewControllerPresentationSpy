@@ -11,6 +11,7 @@
 		0FA8E45B2CCDF9C300678893 /* ViewControllerPresentationSpy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 480A9BAD22E3B4F000513296 /* ViewControllerPresentationSpy.framework */; };
 		0FDB25F82E14B9EE009F223B /* AlertVerifierSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDB25F72E14B9EE009F223B /* AlertVerifierSwiftTests.swift */; };
 		0FDB25FC2E14C503009F223B /* PresentationVerifierSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDB25FB2E14C503009F223B /* PresentationVerifierSwiftTests.swift */; };
+		0FDB25FE2E14EB9B009F223B /* DismissalVerifierSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDB25FD2E14EB9B009F223B /* DismissalVerifierSwiftTests.swift */; };
 		483E05361DE8064D00B5E4E4 /* ViewControllerAlertTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483E05351DE8064D00B5E4E4 /* ViewControllerAlertTests.swift */; };
 		BB17009B68161DEF4B893859 /* ViewControllerPresentationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB170641301DFD266F710CFF /* ViewControllerPresentationTests.swift */; };
 		BB1702F538CDAC8D7AD2DD6B /* PresentationVerifierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB170F190A3F87881ED05594 /* PresentationVerifierTests.swift */; };
@@ -52,6 +53,7 @@
 /* Begin PBXFileReference section */
 		0FDB25F72E14B9EE009F223B /* AlertVerifierSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertVerifierSwiftTests.swift; sourceTree = "<group>"; };
 		0FDB25FB2E14C503009F223B /* PresentationVerifierSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationVerifierSwiftTests.swift; sourceTree = "<group>"; };
+		0FDB25FD2E14EB9B009F223B /* DismissalVerifierSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissalVerifierSwiftTests.swift; sourceTree = "<group>"; };
 		48007CA72079B1A2007A4AB0 /* ViewControllerPresentationSpy.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ViewControllerPresentationSpy.xcodeproj; path = ../../Source/ViewControllerPresentationSpy.xcodeproj; sourceTree = "<group>"; };
 		4804BCA822E169A9000130AD /* XcodeWarnings.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = XcodeWarnings.xcconfig; path = ../../Source/XcodeWarnings.xcconfig; sourceTree = "<group>"; };
 		483E051D1DE8064D00B5E4E4 /* SwiftSampleViewControllerPresentationSpy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftSampleViewControllerPresentationSpy.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -148,6 +150,7 @@
 				BB170F190A3F87881ED05594 /* PresentationVerifierTests.swift */,
 				0FDB25FB2E14C503009F223B /* PresentationVerifierSwiftTests.swift */,
 				BB17083802A53CACC6764A2E /* DismissalVerifierTests.swift */,
+				0FDB25FD2E14EB9B009F223B /* DismissalVerifierSwiftTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 				483E05361DE8064D00B5E4E4 /* ViewControllerAlertTests.swift in Sources */,
 				BB17009B68161DEF4B893859 /* ViewControllerPresentationTests.swift in Sources */,
 				0FDB25F82E14B9EE009F223B /* AlertVerifierSwiftTests.swift in Sources */,
+				0FDB25FE2E14EB9B009F223B /* DismissalVerifierSwiftTests.swift in Sources */,
 				BB170E974A1EAE6E715F3539 /* AlertVerifierTests.swift in Sources */,
 				BB1702F538CDAC8D7AD2DD6B /* PresentationVerifierTests.swift in Sources */,
 				0FDB25FC2E14C503009F223B /* PresentationVerifierSwiftTests.swift in Sources */,

@@ -119,6 +119,6 @@ final class DismissalVerifierTests: XCTestCase, Sendable {
 }
 
 @MainActor
-func tap(_ button: UIBarButtonItem) {
+private func tap(_ button: UIBarButtonItem) {
     _ = button.target?.perform(button.action, with: nil)
 }
