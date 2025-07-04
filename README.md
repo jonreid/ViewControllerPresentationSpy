@@ -312,10 +312,7 @@ Include a ViewControllerPresentationSpy package in your Package.swift manifest's
 
 ```swift
 dependencies: [
-    .package(
-        url: "https://github.com/jonreid/ViewControllerPresentationSpy",
-        .upToNextMajor(from: "7.0.0")
-    ),
+    .package(url: "https://github.com/jonreid/ViewControllerPresentationSpy", .from "7.0.0"),
 ],
 ```
 
