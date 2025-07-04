@@ -301,7 +301,14 @@ func test_presentViewOnMainDispatchQueue_doesThing() throws {
 ### Can I see some examples?
 
 There are sample apps in both Swift and Objective-C. Run them on both phone & pad to see what
-they do, then read the ViewControllerAlertTests and ViewControllerPresentationTests.
+they do, then read the
+[ViewControllerAlertTests](https://github.com/jonreid/ViewControllerPresentationSpy/blob/main/SwiftSample/Tests/ViewControllerAlertTests.swift)
+and
+[ViewControllerPresentationTests](https://github.com/jonreid/ViewControllerPresentationSpy/blob/main/SwiftSample/Tests/ViewControllerPresentationTests.swift).
+For Swift Testing, read
+[ViewControllerAlertSwiftTests](https://github.com/jonreid/ViewControllerPresentationSpy/blob/main/SwiftSample/Tests/ViewControllerAlertSwiftTests.swift)
+and
+[ViewControllerPresentationSwiftTests](https://github.com/jonreid/ViewControllerPresentationSpy/blob/main/SwiftSample/Tests/ViewControllerPresentationSwiftTests.swift).
 
 
 ## How Do I Add ViewControllerPresentationSpy to My Project?
