@@ -1,5 +1,6 @@
 # Added by hand
 Package.resolved
+**/Package.resolved
 *.gcda
 *.gcno
 
