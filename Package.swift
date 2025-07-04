@@ -15,7 +15,7 @@ let package = Package(
         ),
     ],
     dependencies: [
-        .package(url: "https://github.com/jonreid/FailKit.git", branch: "1.0.0")
+        .package(url: "https://github.com/jonreid/FailKit.git", from: "1.0.0")
     ],
     targets: [
         .target(
