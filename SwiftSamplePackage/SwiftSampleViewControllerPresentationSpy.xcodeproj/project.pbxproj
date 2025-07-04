@@ -455,8 +455,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/jonreid/FailKit";
 			requirement = {
-				branch = main;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
 			};
 		};
 		487C60BD2879F53E00DA427D /* XCRemoteSwiftPackageReference "ViewControllerPresentationSpy" */ = {

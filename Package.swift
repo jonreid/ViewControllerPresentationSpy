@@ -1,4 +1,4 @@
-// swift-tools-version: 6.1
+// swift-tools-version: 5.6
 
 import PackageDescription
 
@@ -15,7 +15,7 @@ let package = Package(
         ),
     ],
     dependencies: [
-        .package(url: "https://github.com/jonreid/FailKit.git", branch: "main")
+        .package(url: "https://github.com/jonreid/FailKit.git", branch: "1.0.0")
     ],
     targets: [
         .target(
