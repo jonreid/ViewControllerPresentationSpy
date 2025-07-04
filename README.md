@@ -4,7 +4,7 @@
 [![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fjonreid%2FViewControllerPresentationSpy%2Fbadge%3Ftype%3Dswift-versions)](https://swiftpackageindex.com/jonreid/ViewControllerPresentationSpy)
 [![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fjonreid%2FViewControllerPresentationSpy%2Fbadge%3Ftype%3Dplatforms)](https://swiftpackageindex.com/jonreid/ViewControllerPresentationSpy)
 
-ViewControllerPresentationSpy has three verifiers:
+ViewControllerPresentationSpy has three verifiers that work with either XCTest or Swift Testing.
 * `AlertVerifier` to capture alerts and action sheets
 * `PresentationVerifier` to capture presented view controllers
 * `DismissalVerifier` to capture dismissed view controllers
