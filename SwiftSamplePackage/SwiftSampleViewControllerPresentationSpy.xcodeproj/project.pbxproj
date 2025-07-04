@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0F5FF9B92DFE3C0000FB2080 /* FailKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0F5FF9B82DFE3C0000FB2080 /* FailKit */; };
+		0F8C24DA2E18673C00758B19 /* ViewControllerAlertSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8C24D92E18673C00758B19 /* ViewControllerAlertSwiftTests.swift */; };
+		0F8C24DC2E18675900758B19 /* ViewControllerPresentationSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8C24DB2E18675900758B19 /* ViewControllerPresentationSwiftTests.swift */; };
 		483E05211DE8064D00B5E4E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483E05201DE8064D00B5E4E4 /* AppDelegate.swift */; };
 		483E05231DE8064D00B5E4E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483E05221DE8064D00B5E4E4 /* ViewController.swift */; };
 		483E05261DE8064D00B5E4E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 483E05241DE8064D00B5E4E4 /* Main.storyboard */; };
@@ -34,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F8C24D92E18673C00758B19 /* ViewControllerAlertSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewControllerAlertSwiftTests.swift"; sourceTree = "<group>"; };
+		0F8C24DB2E18675900758B19 /* ViewControllerPresentationSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewControllerPresentationSwiftTests.swift"; sourceTree = "<group>"; };
 		4804BCA822E169A9000130AD /* XcodeWarnings.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = XcodeWarnings.xcconfig; path = ../../Source/XcodeWarnings.xcconfig; sourceTree = "<group>"; };
 		483E051D1DE8064D00B5E4E4 /* SwiftSampleViewControllerPresentationSpy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftSampleViewControllerPresentationSpy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		483E05201DE8064D00B5E4E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -120,7 +124,9 @@
 			isa = PBXGroup;
 			children = (
 				483E05351DE8064D00B5E4E4 /* ViewControllerAlertTests.swift */,
+				0F8C24D92E18673C00758B19 /* ViewControllerAlertSwiftTests.swift */,
 				BB170641301DFD266F710CFF /* ViewControllerPresentationTests.swift */,
+				0F8C24DB2E18675900758B19 /* ViewControllerPresentationSwiftTests.swift */,
 				483E05371DE8064D00B5E4E4 /* Info.plist */,
 				4804BCA822E169A9000130AD /* XcodeWarnings.xcconfig */,
 				BB170A0F6EDD04B901018053 /* AlertVerifierTests.swift */,
@@ -255,11 +261,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F8C24DC2E18675900758B19 /* ViewControllerPresentationSwiftTests.swift in Sources */,
 				483E05361DE8064D00B5E4E4 /* ViewControllerAlertTests.swift in Sources */,
 				BB17009B68161DEF4B893859 /* ViewControllerPresentationTests.swift in Sources */,
 				BB170E974A1EAE6E715F3539 /* AlertVerifierTests.swift in Sources */,
 				BB1702F538CDAC8D7AD2DD6B /* PresentationVerifierTests.swift in Sources */,
 				BB170882C39E82580AE429AB /* DismissalVerifierTests.swift in Sources */,
+				0F8C24DA2E18673C00758B19 /* ViewControllerAlertSwiftTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
