@@ -9,7 +9,7 @@ ViewControllerPresentationSpy has three verifiers that work with either XCTest o
 * `PresentationVerifier` to capture presented view controllers
 * `DismissalVerifier` to capture dismissed view controllers
 
-Segues can be captured. Nothing is actually presented or dismissed. This means:
+Nothing is actually presented or dismissed. Segues can be captured. This means:
 
 * The workflow doesn't pause for an alert action to be selected.
 * Tests are blazing fast.
