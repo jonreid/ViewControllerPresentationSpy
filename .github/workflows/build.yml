@@ -2,6 +2,9 @@ name: Build
 
 on:
   workflow_dispatch:
+  schedule:
+    # each 3rd day of month
+    - cron: "0 0 3 * *"
   push:
     branches: [ main ]
   pull_request:
