@@ -24,7 +24,7 @@ jobs:
           - { project: 'Source/ViewControllerPresentationSpy.xcodeproj', scheme: 'ViewControllerPresentationSpy-tvOS', sdk: 'appletvsimulator', destination: 'platform=tvOS Simulator,OS=latest,name=Apple TV' }
           - { project: 'ObjCSample/ObjCSampleViewControllerPresentationSpy.xcodeproj', scheme: 'ObjCSampleViewControllerPresentationSpy', sdk: 'iphonesimulator', destination: 'platform=iOS Simulator,OS=latest,name=iPhone 16' }
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - name: Show current version of Xcode
         run: xcodebuild -version
       - name: Build
@@ -35,7 +35,7 @@ jobs:
     name: Pod Spec Lint
     runs-on: macos-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - name: Lint the pod spec
         run: pod spec lint --quick
 
@@ -46,7 +46,7 @@ jobs:
       contents: write
       pull-requests: write
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - name: auto-merge
         if: |
           github.actor == 'dependabot[bot]' &&
