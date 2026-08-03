@@ -22,7 +22,7 @@ jobs:
       matrix:
         run-config:
           - { project: 'Source/ViewControllerPresentationSpy.xcodeproj', scheme: 'ViewControllerPresentationSpy-tvOS', sdk: 'appletvsimulator', destination: 'platform=tvOS Simulator,OS=latest,name=Apple TV' }
-          - { project: 'ObjCSample/ObjCSampleViewControllerPresentationSpy.xcodeproj', scheme: 'ObjCSampleViewControllerPresentationSpy', sdk: 'iphonesimulator', destination: 'platform=iOS Simulator,OS=latest,name=iPhone 16' }
+          - { project: 'ObjCSample/ObjCSampleViewControllerPresentationSpy.xcodeproj', scheme: 'ObjCSampleViewControllerPresentationSpy', sdk: 'iphonesimulator', destination: 'platform=iOS Simulator,OS=latest,name=iPhone 17' }
     steps:
       - uses: actions/checkout@v7
       - name: Show current version of Xcode
